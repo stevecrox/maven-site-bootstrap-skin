@@ -1,0 +1,97 @@
+## Licensed to the Apache Software Foundation (ASF) under one
+## or more contributor license agreements.  See the NOTICE file
+## distributed with this work for additional information
+## regarding copyright ownership.  The ASF licenses this file
+## to you under the Apache License, Version 2.0 (the
+## "License"); you may not use this file except in compliance
+## with the License.  You may obtain a copy of the License at
+##
+##     http://www.apache.org/licenses/LICENSE-2.0
+##
+## Unless required by applicable law or agreed to in writing,
+## software distributed under the License is distributed on an
+## "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+## KIND, either express or implied.  See the License for the
+## specific language governing permissions and limitations
+## under the License.
+##
+########################################################################################################################
+##
+########################################################################################################################
+#macro ( breadcrumbs $breadcrumbs $listCSSCLass $listItemCSSClass $spacerCSSClass )
+#**##set ( $breadcrumbDivider = $decoration.getCustomValue( 'bootstrapSkin.breadcrumbDivider', '/' ) )
+#**##set ( $breadcrumbs = $decoration.body.breadcrumbs )
+##
+#**##if ( $breadcrumbs && $breadcrumbs.size() > 0 )
+##
+#**##if ( $listCSSCLass )
+#*  *##set ( $listCSSCLass = ' class="breadcrumb ' + $listCSSCLass + '"' )
+#**##else
+#*  *##set ( $listCSSCLass = ' class="breadcrumb"' )
+#**##end
+##
+#**##if ( $listItemCSSClass )
+#*  *##set ( $listItemCSSClass = ' class="breadcrumb-item ' + $listItemCSSClass + '"' )
+#**##else
+#*  *##set ( $listItemCSSClass = ' class="breadcrumb-item"' )
+#**##end
+          <ol id="breadcrumbList" $listCSSCLass>
+#*  *##foreach( $item in $breadcrumbs )
+#*    *##set ( $currentItemHref = $PathTool.calculateLink( $item.href, $relativePath ) )
+#*    *##set ( $currentItemHref = $currentItemHref.replaceAll( '\\', '/' ) )
+#*    *##if ( ( $currentItemHref == '' ) )
+#*      *##set ( $currentItemHref = './' )
+#*    *##end
+##
+            <li id="breadcrumb${item.name}ListItem" $listItemCSSClass aria-current="page">##
+#*            *##link( $currentItemHref $item.name $item.target $item.img $item.position $item.alt $item.border $item.width $item.height false )##
+#*        *#</li>
+#*  *##end
+          </ol>
+#**##else
+########################################################################################################################
+## If there are no breadcrumbs supplied we need to inject and object to force the product/version section to render
+## in the correct location
+########################################################################################################################
+#**##if ( $spacerCSSClass )
+#*  *##set ( $spacerCSSClass = ' class="' + $spacerCSSClass + '"' )
+#**##else
+#*  *##set ( $spacerCSSClass = "" )
+#**##end
+          <div id="breadcrumbSpacer" $spacerCSSClass></div>
+#**##end
+#end
+########################################################################################################################
+##
+########################################################################################################################
+#macro ( publishDate $cssClass)
+##
+#**##set ( $skipGenerationDate = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.skipGenerationDate', 'false' ) ) )
+#**##set ( $skipGenerationVersion = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.skipGenerationVersion', 'false' ) ) )
+#**##set ( $dateValue = $decoration.getCustomValue( 'bootstrapSkin.publishDate', $date.get('yyyy-MM-dd') ) )
+##
+#**##if ( $cssClass )
+#*  *##set ( $cssClass = 'class="' + $cssClass + '"' )
+#**##else
+#*  *##set ( $cssClass = "" )
+#**##end
+##
+#**##if ( !$skipGenerationDate )
+#*  *##if ( $text.get( "template.lastpublished" ) )
+#*    *##set ( $lastPubPrefix = $text.get( "template.lastpublished" ) )
+#*  *##else
+#*    *##set ( $lastPubPrefix = "Last Published" )
+#*  *##end
+            <span id="projectLastPublished" $cssClass>$lastPubPrefix: ${dateValue}</span>
+            <span id="projectDateVersionSpacer" $cssClass>|</span>
+#**##end
+##
+#**##if ( !$skipGenerationVersion )
+#*  *##if ( $text.get( "template.version" ) )
+#*    *##set ( $versionPrefix = $text.get( "template.version" ) )
+#*  *##else
+#*    *##set ( $versionPrefix = "Version" )
+#*  *##end
+            <span id="projectVersion" $cssClass>$versionPrefix: ${project.version}</span>
+#**##end
+#end
