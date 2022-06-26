@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<project xmlns="http://maven.apache.org/DECORATION/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd">
+
+    <edit>${project.scm.url}</edit>
+
+    <skin>
+        <groupId>io.github.stevecrox</groupId>
+        <artifactId>maven-site-bootstrap-skin</artifactId>
+        <version>${project.version}</version>
+    </skin>
+
+    <custom>
+        <bootstrapSkin>
+            <contact>
+                <email>bootstrap-skin@maven.sites.uk</email>
+                <fax>01752 123456</fax>
+                <mobile>07712345678</mobile>
+                <landline>01752 987654</landline>
+                <address>
+                    <line1>Postbox</line1>
+                    <line2>221B Baker Street</line2>
+                    <cit>London</cit>
+                    <county>London</county>
+                    <country>England</country>
+                    <post_code>NW1 6XE</post_code>
+                </address>
+            </contact>
+            <gitHub>
+                <projectId>stevecrox/maven-site-bootstrap-skin</projectId>
+                <ribbonOrientation>right</ribbonOrientation>
+                <ribbonColor>red</ribbonColor>
+                <enabled>false</enabled>
+            </gitHub>
+            <sideBarEnabled>true</sideBarEnabled>
+            <topBarEnabled>true</topBarEnabled>
+        </bootstrapSkin>
+    </custom>
+
+    <body>
+        <breadcrumbs>
+            <item name="Maven Site Boostrap Skin"  href="https://github.com/stevecrox/maven-site-bootstrap-skin" />
+            <item name="Test"  href="https://github.com/stevecrox/maven-site-bootstrap-skin" />
+        </breadcrumbs>
+
+        <menu ref="parent"/>
+
+        <menu name="Overview">
+            <item name="Introduction" href="./index.html"/>
+        </menu>
+
+        <menu ref="reports"/>
+    </body>
+</project>
