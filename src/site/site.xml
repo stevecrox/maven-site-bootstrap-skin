@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/DECORATION/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd">
+
+    <edit>${project.scm.url}</edit>
+
+    <skin>
+        <groupId>io.github.stevecrox</groupId>
+        <artifactId>maven-site-bootstrap-skin</artifactId>
+        <version>${project.version}</version>
+    </skin>
+
+    <custom>
+        <bootstrapSkin>
+            <contact>
+                <email>bootstrap-skin@maven.sites.uk</email>
+                <fax>01752 123456</fax>
+                <mobile>07712345678</mobile>
+                <landline>01752 987654</landline>
+                <address>
+                    <line1>Postbox</line1>
+                    <line2>221B Baker Street</line2>
+                    <cit>London</cit>
+                    <county>London</county>
+                    <country>England</country>
+                    <post_code>NW1 6XE</post_code>
+                </address>
+            </contact>
+            <gitHub>
+                <projectId>stevecrox/maven-site-bootstrap-skin</projectId>
+                <ribbonOrientation>right</ribbonOrientation>
+                <ribbonColor>red</ribbonColor>
+                <enabled>false</enabled>
+            </gitHub>
+            <sideBarEnabled>true</sideBarEnabled>
+            <topBarEnabled>true</topBarEnabled>
+        </bootstrapSkin>
+    </custom>
+
+    <body>
+        <menu ref="parent"/>
+        <menu ref="reports"/>
+    </body>
+</project>
