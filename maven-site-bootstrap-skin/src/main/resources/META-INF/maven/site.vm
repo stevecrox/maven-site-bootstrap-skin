@@ -62,17 +62,19 @@
 
 ########################################################################################################################
 ## As a minimum the Navbar should contain breadcrumbs/version generated, if the topbar is enabled this should
-## go above, otherwise it seems maven tools can inject a banner into the project.
+## go above, otherwise it seems maven tools can inject a banner into the project
 ########################################################################################################################
-#**##set ( $navBarStyle = $decoration.getCustomValue( 'bootstrapSkin.navBarStyle', 'navbar-dark bg-dark' ) )
-#**##set ( $topBarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.topBarEnabled', 'true' ) ) )
-#**##set ( $sideBarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.sideBarEnabled', 'false' ) ) )
+#**##set ( $navBarStyle = $decoration.getCustomValue( 'bootstrapSkin.navbar.style', 'navbar-dark bg-dark' ) )
+#**##set ( $navbarOrientation = $decoration.getCustomValue( 'bootstrapSkin.navbar.menuOrientation', 'right' ) )
+#**##set ( $navbarOrientationLeft = "left" )
+#**##set ( $navbarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.enabled', 'true' ) ) )
+#**##set ( $sideBarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.sideBar.enabled', 'false' ) ) )
     <header>
 #*    *##forkMeOnGitHub()
 ########################################################################################################################
 ## If this conditional is true it will generate a standard fixed top navigation bar using Bootstrap standard layout
 ########################################################################################################################
-#*    *##if ( $topBarEnabled )
+#*    *##if ( $navbarEnabled )
       <nav class="navbar navbar-expand-md $navBarStyle">
         <div id="projectBarContainer" class="container-fluid">
           <a class="navbar-brand" href="#">Fixed navbar</a>
@@ -80,10 +82,16 @@
 #*          *# aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div id="navbarCollapse" class="collapse navbar-collapse justify-content-end">
+## Sets the alignment of buttons in the navbar
+#*      *##if ( $navbarOrientation == $navbarOrientationLeft )
+#*        *##set ( $navbarCollapseClass = "collapse navbar-collapse justify-content-start" )
+#*      *##else
+#*        *##set ( $navbarCollapseClass = "collapse navbar-collapse justify-content-end" )
+#*      *##end
+          <div id="navbarCollapse" class="${navbarCollapseClass}">
 #*          *##if( $decoration.body && $decoration.body.menus )
             <ul id="navbarList" class="navbar-nav">
-#*             *##topMenu( $decoration.body.menus )
+#*             *##topMenu( $decoration.body.menus $navbarOrientation $navbarOrientationLeft )
             </ul>
 #*        *##end
           </div>
@@ -119,7 +127,8 @@
       <p>Back to <a href="../sticky-footer/">the default sticky footer</a> minus the navbar.</p>
     </main>
 
-  <footer class="page-footer font-small py-4 bg-dark text-light">
+#**##set ( $footerStyle = $decoration.getCustomValue( 'bootstrapSkin.footer.style', 'bg-dark' ) )
+  <footer class="page-footer font-small py-4 $footerStyle">
     <div class="container-fluid text-md-left">
         <div class="row">
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0">
@@ -132,19 +141,19 @@
 #*          *##linkFooterDetail( 'bootstrapSkin.facebook.groupId' '' "https://www.facebook.com/groups/${facebookGroupId}" 'bi-facebook' 'me-4 text-reset' )
 ##
 #*          *##set ( $instagramAccountId = $decoration.getCustomValue( 'bootstrapSkin.instagram.accountId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.bootstrapSkin.instagram.accountId' '' "https://instagram.com//${instagramAccountId}" 'bi-twitter' 'me-4 text-reset' )
+#*          *##linkFooterDetail( 'bootstrapSkin.instagram.accountId' '' "https://instagram.com//${instagramAccountId}" 'bi-twitter' 'me-4 text-reset' )
 ##
 #*          *##set ( $twitterAccountId = $decoration.getCustomValue( 'bootstrapSkin.twitter.accountId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.bootstrapSkin.twitter.accountId' '' "https://twitter.com//${twitterAccountId}" 'bi-instagram' 'me-4 text-reset' )
+#*          *##linkFooterDetail( 'bootstrapSkin.twitter.accountId' '' "https://twitter.com//${twitterAccountId}" 'bi-instagram' 'me-4 text-reset' )
 ##
 #*          *##set ( $linkedinAccountId = $decoration.getCustomValue( 'bootstrapSkin.linkedin.accountId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.bootstrapSkin.linkedin.accountId' '' "https://linkedin.com/in/${linkedinAccountId}" 'bi-linkedin' 'me-4 text-reset' )
+#*          *##linkFooterDetail( 'bootstrapSkin.linkedin.accountId' '' "https://linkedin.com/in/${linkedinAccountId}" 'bi-linkedin' 'me-4 text-reset' )
 ##
 #*          *##set ( $gitHubProjectId = $decoration.getCustomValue( 'bootstrapSkin.gitHub.projectId' ) )
 #*          *##linkFooterDetail( 'bootstrapSkin.gitHub.projectId' '' "https://github.com/${gitHubProjectId}" 'bi-github' 'me-4 text-reset' )
 ##
 #*          *##set ( $gitLabProjectId = $decoration.getCustomValue( 'bootstrapSkin.gitlab.projectId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.gitHub.projectId' '' "https://github.com/${gitLabProjectId}" 'bi-gitlab' 'me-4 text-reset' )
+#*          *##linkFooterDetail( 'bootstrapSkin.gitlab.projectId' '' "https://gitlab.com/${gitLabProjectId}" 'bi-gitlab' 'me-4 text-reset' )
             </div>
 ##
             <div class="py-3">

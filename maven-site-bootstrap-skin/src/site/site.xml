@@ -49,10 +49,17 @@ under the License.
                 <projectId>stevecrox/maven-site-bootstrap-skin</projectId>
                 <ribbonOrientation>right</ribbonOrientation>
                 <ribbonColor>red</ribbonColor>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
             </gitHub>
+            <navbar>
+                <enabled>true</enabled>
+                <menuOrientation>left</menuOrientation>
+                <style>navbar-light bg-light</style>
+            </navbar>
+            <footer>
+                <style>bg-light</style>
+            </footer>
             <sideBarEnabled>true</sideBarEnabled>
-            <topBarEnabled>true</topBarEnabled>
         </bootstrapSkin>
     </custom>
 

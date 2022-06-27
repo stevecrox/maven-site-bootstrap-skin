@@ -18,7 +18,14 @@
 ########################################################################################################################
 ##
 ########################################################################################################################
-#macro ( topMenu $menus )
+#macro ( topMenu $menus $navbarOrientation $navbarOrientationLeft )
+## Use the
+#**##if ( $navbarOrientation == $navbarOrientationLeft )
+#*  *##set ( $subMenuClass = 'class="dropdown-menu submenu submenu-left"' )
+#**##else
+#*  *##set ( $subMenuClass = 'class="dropdown-menu submenu"' )
+#**##end
+##
 #**##foreach( $menu in $menus )
 #**##if ( $menu.name )
              <li class="nav-item dropdown">
@@ -31,7 +38,7 @@
 #*                 *##set ( $currentItemHref = $currentItemHref.replaceAll( '\\', '/' ) )
                    #topLink( $currentItemHref $item.name $item.target "dropdown-item" )
 
-                   <ul class="submenu dropdown-menu" id="${menu.name}MenuSubMenuDropdown">
+                   <ul id="${menu.name}MenuSubMenuDropdown" $subMenuClass>
 #*                   *##foreach( $subitem in $item.items )
 #*                   *##set ( $currentItemHref = $PathTool.calculateLink( $subitem.href, $relativePath ) )
 #*                   *##set ( $currentItemHref = $currentItemHref.replaceAll( '\\', '/' ) )
