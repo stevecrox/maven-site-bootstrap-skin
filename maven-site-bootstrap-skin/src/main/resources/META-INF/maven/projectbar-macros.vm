@@ -66,8 +66,8 @@
 ########################################################################################################################
 #macro ( publishDate $cssClass)
 ##
-#**##set ( $skipGenerationDate = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.skipGenerationDate', 'false' ) ) )
-#**##set ( $skipGenerationVersion = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.skipGenerationVersion', 'false' ) ) )
+#**##set ( $skipGenerationDate = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.skipGenerationDate', 'true' ) ) )
+#**##set ( $skipGenerationVersion = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.skipGenerationVersion', 'true' ) ) )
 #**##set ( $dateValue = $decoration.getCustomValue( 'bootstrapSkin.publishDate', $date.get('yyyy-MM-dd') ) )
 ##
 #**##if ( $cssClass )

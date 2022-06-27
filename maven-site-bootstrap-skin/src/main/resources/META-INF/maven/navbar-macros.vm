@@ -18,6 +18,26 @@
 ########################################################################################################################
 ##
 ########################################################################################################################
+#macro ( navBrand )
+## Only add a brand image if a location is supplied
+#**##if ( $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.src' ) )
+#*  *##set ( $navbarIconSrc = $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.src' ) )
+#*  *##set ( $navbarIconAlt = $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.alt', '' ) )
+#*  *##set ( $navbarIconHeight = $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.height', '32px' ) )
+#*  *##set ( $navbarIconWidth = $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.width', '32px' ) )
+##
+          <a id="navbarBrandLogo" class="navbar-brand ps-2" href="#">##
+#*        *#<img id="navbarIcon" src="$navbarIconSrc" alt="$navbarIconAlt" height="$navbarIconHeight" width="$navbarIconWidth"/>##
+#*        *#</a>
+#**##end
+##
+#**##if ( $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.brandEnabled', 'true' ) ) )
+          <a id="navbarBrandLink" class="navbar-brand" href="#">$project.name</a>
+#**##end
+#end
+########################################################################################################################
+##
+########################################################################################################################
 #macro ( topMenu $menus $navbarOrientation $navbarOrientationLeft )
 ## Use the
 #**##if ( $navbarOrientation == $navbarOrientationLeft )
