@@ -24,6 +24,7 @@
 #parse( "github-macros.vm" )
 #parse( "navbar-macros.vm" )
 #parse( "projectbar-macros.vm" )
+#parse( "sidebar-macros.vm" )
 ########################################################################################################################
 ##
 ########################################################################################################################
@@ -68,7 +69,7 @@
 #**##set ( $navbarOrientation = $decoration.getCustomValue( 'bootstrapSkin.navbar.menuOrientation', 'right' ) )
 #**##set ( $navbarOrientationLeft = "left" )
 #**##set ( $navbarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.enabled', 'true' ) ) )
-#**##set ( $sideBarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.sideBar.enabled', 'false' ) ) )
+#**##set ( $sideBarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.sidebar.enabled', 'false' ) ) )
     <header>
 #*    *##forkMeOnGitHub()
 ########################################################################################################################
@@ -121,12 +122,21 @@
 
 #*  *##if ( $sideBarEnabled )
     <main class="d-flex flex-row">
-#*  *##else
-    <main class="container-fluid">
-#*  *##end
-#*  *##if ( $sideBarEnabled )
+      <nav id="sidebar" class="nav navbar-expand-lg align-items-start $navBarStyle">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarSupportedContent" aria-controls="#sidebarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="sidebarSupportedContent" class="collapse navbar-collapse show">
+          <ul id="sidebarList" class="flex-column">
+#*          *##if( $decoration.body && $decoration.body.menus )
+#*            *##mainMenu( $decoration.body.menus )
+#*          *##end
+          </ul>
+        </div>
+      </nav>
       <div class="p-2">
 #*  *##else
+    <main class="container-fluid">
       <div>
 #*  *##end
 ##
@@ -150,12 +160,11 @@
   <footer class="page-footer font-small py-4 $footerStyle">
     <div class="container-fluid text-md-left">
         <div class="row">
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0">
+          <div class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0">
 #*          *##contactDetails()
           </div>
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0">
+          <div class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0">
 #*          *##socialMediaBar()
-##
             <div class="py-3">
               <p>&#169;
 #*            *##copyright()

@@ -45,12 +45,30 @@ under the License.
                     <post_code>NW1 6XE</post_code>
                 </address>
             </contact>
+            <bitbucket>
+                <projectId>test</projectId>
+            </bitbucket>
+            <facebook>
+                <groupId>test</groupId>
+            </facebook>
             <gitHub>
                 <projectId>stevecrox/maven-site-bootstrap-skin</projectId>
                 <ribbonOrientation>right</ribbonOrientation>
                 <ribbonColor>red</ribbonColor>
                 <enabled>true</enabled>
             </gitHub>
+            <gitLab>
+                <projectId>stevecrox/maven-site-bootstrap-skin</projectId>
+            </gitLab>
+            <instagram>
+                <accountId>test</accountId>
+            </instagram>
+            <linkedin>
+                <accountId>test</accountId>
+            </linkedin>
+            <twitter>
+                <accountId>test</accountId>
+            </twitter>
             <navbar>
                 <enabled>true</enabled>
                 <icon>
@@ -63,7 +81,9 @@ under the License.
             <footer>
                 <!--<style>bg-light</style> -->
             </footer>
-            <sideBarEnabled>true</sideBarEnabled>
+            <sidebar>
+                <enabled>true</enabled>
+            </sidebar>
             <skipGenerationDate>false</skipGenerationDate>
             <skipGenerationVersion>false</skipGenerationVersion>
         </bootstrapSkin>
