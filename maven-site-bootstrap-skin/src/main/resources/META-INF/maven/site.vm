@@ -154,26 +154,7 @@
 #*          *##contactDetails()
           </div>
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0">
-            <div>Get connected with us on social networks</div>
-            <div>
-#*          *##set ( $facebookGroupId = $decoration.getCustomValue( 'bootstrapSkin.facebook.groupId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.facebook.groupId' 'Facebook' "https://www.facebook.com/groups/${facebookGroupId}" 'bi-facebook' 'me-4 text-reset' )
-##
-#*          *##set ( $instagramAccountId = $decoration.getCustomValue( 'bootstrapSkin.instagram.accountId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.instagram.accountId' 'Instagram' "https://instagram.com//${instagramAccountId}" 'bi-twitter' 'me-4 text-reset' )
-##
-#*          *##set ( $twitterAccountId = $decoration.getCustomValue( 'bootstrapSkin.twitter.accountId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.twitter.accountId' 'Twitter' "https://twitter.com//${twitterAccountId}" 'bi-instagram' 'me-4 text-reset' )
-##
-#*          *##set ( $linkedinAccountId = $decoration.getCustomValue( 'bootstrapSkin.linkedin.accountId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.linkedin.accountId' 'LinkedIn' "https://linkedin.com/in/${linkedinAccountId}" 'bi-linkedin' 'me-4 text-reset' )
-##
-#*          *##set ( $gitHubProjectId = $decoration.getCustomValue( 'bootstrapSkin.gitHub.projectId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.gitHub.projectId' 'GitHub' "https://github.com/${gitHubProjectId}" 'bi-github' 'me-4 text-reset' )
-##
-#*          *##set ( $gitLabProjectId = $decoration.getCustomValue( 'bootstrapSkin.gitlab.projectId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.gitlab.projectId' 'GitLab' "https://gitlab.com/${gitLabProjectId}" 'bi-gitlab' 'me-4 text-reset' )
-            </div>
+#*          *##socialMediaBar()
 ##
             <div class="py-3">
               <p>&#169;

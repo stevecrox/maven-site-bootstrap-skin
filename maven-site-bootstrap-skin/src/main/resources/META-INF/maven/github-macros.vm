@@ -34,23 +34,21 @@
 #end
 ##
 #macro ( forkMeOnGitHub )
-#**##set ( $githubBannerEnabled = $decoration.getCustomValue( 'bootstrapSkin.gitHub.enabled', false ) )
-#**##if ( $decoration.getCustomChild( 'bootstrapSkin.gitHub.projectId' ) && $githubBannerEnabled )
+#**##set ( $githubBannerEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.gitHub.enabled', false ) ) )
+#**##set ( $gitHubProjectId = $decoration.getCustomValue( 'bootstrapSkin.gitHub.projectId', '' ) )
+#**##if ( $githubBannerEnabled && $gitHubProjectId.length() > 0  )
 ##
-#*  *##set ( $gitHubProjectId = $decoration.getCustomValue( 'bootstrapSkin.gitHub.projectId' ) )
-##
-#*  *##set ( $ribbonOrientation = 'left-top' )
 #*  *##if ( $decoration.getCustomValue( 'bootstrapSkin.gitHub.ribbonOrientation', '' ).equalsIgnoreCase( 'right' )
             || $decoration.getCustomValue( 'bootstrapSkin.gitHub.ribbonOrientation', '' ).equalsIgnoreCase( 'right-top' ) )
 #*    *##set ( $ribbonOrientation = 'right-top' )
-#*  *##end
-#*  *##if ( $decoration.getCustomValue( 'bootstrapSkin.gitHub.ribbonOrientation', '' ).equalsIgnoreCase( 'left' )
+#*  *##elseif ( $decoration.getCustomValue( 'bootstrapSkin.gitHub.ribbonOrientation', '' ).equalsIgnoreCase( 'left' )
             || $decoration.getCustomValue( 'bootstrapSkin.gitHub.ribbonOrientation', '' ).equalsIgnoreCase( 'left-top' ) )
 #*    *##set ( $ribbonOrientation = 'left-top' )
-#*  *##end
-#*  *##if ( $decoration.getCustomValue( 'bootstrapSkin.gitHub.ribbonOrientation', '' ).equalsIgnoreCase( 'right-bottom' )
+#*  *##elseif ( $decoration.getCustomValue( 'bootstrapSkin.gitHub.ribbonOrientation', '' ).equalsIgnoreCase( 'right-bottom' )
             || $decoration.getCustomValue( 'bootstrapSkin.gitHub.ribbonOrientation', '' ).equalsIgnoreCase( 'left-bottom' ) )
 #*    *##set ( $ribbonOrientation = "$decoration.getCustomValue( 'bootstrapSkin.gitHub.ribbonOrientation' ) fixed" )
+#*  *##else
+#*  *##set ( $ribbonOrientation = 'left-top' )
 #*  *##end
 ##
     <a class="github-fork-ribbon $ribbonOrientation" href="https://github.com/$gitHubProjectId" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
