@@ -29,6 +29,22 @@ under the License.
         <version>${project.version}</version>
     </skin>
 
+    <bannerLeft>
+        <href>https://github.com/stevecrox/maven-site-bootstrap-skin</href>
+        <border>0</border>
+        <width>340px</width>
+        <height>86px</height>
+        <src>image/example-banner-left.png</src>
+    </bannerLeft>
+
+    <bannerRight>
+        <href>https://github.com/stevecrox/maven-site-bootstrap-skin</href>
+        <border>0</border>
+        <width>256px</width>
+        <height>125px</height>
+        <src>image/example-banner-right.png</src>
+    </bannerRight>
+
     <custom>
         <bootstrapSkin>
             <contact>
@@ -73,6 +89,7 @@ under the License.
                 <enabled>true</enabled>
                 <icon>
                     <alt>test</alt>
+                    <href>#</href>
                     <src>image/example-logo.png</src>
                 </icon>
                 <menuOrientation>left</menuOrientation>
@@ -84,8 +101,6 @@ under the License.
             <sidebar>
                 <enabled>true</enabled>
             </sidebar>
-            <skipGenerationDate>false</skipGenerationDate>
-            <skipGenerationVersion>false</skipGenerationVersion>
         </bootstrapSkin>
     </custom>
 

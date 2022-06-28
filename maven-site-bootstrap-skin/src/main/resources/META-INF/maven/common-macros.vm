@@ -40,6 +40,60 @@
 ########################################################################################################################
 ##
 ########################################################################################################################
+#macro ( banner $id $name $title $href $src $alt $border $height $width $linkCSS )
+#*  *##if( $href )
+#*    *##if ( !$decoration.isLink( $href ) )
+#*      *##set ( $href = $PathTool.calculateLink( $href, $relativePath ) )
+#*      *##set ( $href = $hrf.replaceAll( '\\', '/' ) )
+#*      *##if ( ( $href == '' ) )
+#*        *##set ( $href = './' )
+#*      *##end
+#*    *##end
+#*    *#<a href="$href" id="${id}Link"#if( $alt ) title="$alt"#end#if( $linkCSS ) class="$linkCSS"#end>##
+#*  *##end
+##
+#*  *##if( $src )
+#*    *##if ( !$decoration.isLink( $src ) )
+#*      *##set ( $src = $PathTool.calculateLink( $src, $relativePath ) )
+#*      *##set ( $src = $src.replaceAll( '\\', '/' ) )
+#*    *##end
+#*    *##if ( $alt )
+#*      *##set ( $alt = ' alt="' + $alt + '"' )
+#*    *##elseif ( $name )
+#*      *##set ( $alt = ' alt="' + $name + '"' )
+#*    *##else
+#*      *##set ( $alt = ' alt=""' )
+#*    *##end
+#*    *##if( $border )
+#*      *##set ( $imgBorder = 'border: ' + $border + '; ' )
+#*    *##else
+#*      *##set ( $imgBorder = "" )
+#*    *##end
+#*    *##if( $width )
+#*      *##set ( $imgWidth = 'width="' + $width + '"' )
+#*    *##else
+#*      *##set ( $imgWidth = "" )
+#*    *##end
+#*    *##if( $height )
+#*      *##set ( $imgHeight = 'height="' + $height + '"' )
+#*    *##else
+#*      *##set ( $imgHeight = "" )
+#*    *##end
+#*    *##if( $title )
+#*      *##set ( $bannerTitle=' title="' + $title + '"' )
+#*    *##else
+#*      *##set ( $bannerTitle="" )
+#*    *##end
+#*    *#<img id="${id}Img" src="$src" $alt$bannerTitle $imgWidth $imgHeight #if ($imgBorder)style="$imgBorder"#end/>##
+#*  *##end
+##
+#*  *##if( $href )
+#*    *#</a>##
+#*  *##end
+#end
+########################################################################################################################
+##
+########################################################################################################################
 #macro ( link $href $name $target $img $position $alt $border $width $height $icon $linkClasses )
 #**##set ( $linkTitle = ' title="' + $name + '"' )
 #**##if( $target )

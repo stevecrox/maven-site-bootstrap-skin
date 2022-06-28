@@ -71,7 +71,26 @@
 #**##set ( $navbarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.enabled', 'true' ) ) )
 #**##set ( $sideBarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.sidebar.enabled', 'false' ) ) )
     <header>
-#*    *##forkMeOnGitHub()
+#*      *##forkMeOnGitHub()
+########################################################################################################################
+## The Site.xml allows you to specify a left/right banner
+########################################################################################################################
+#*    *##if ( $decoration.bannerLeft.src || $decoration.bannerRight.src )
+      <nav class="navbar navbar-expand-md $navBarStyle">
+        <div id="banner" class="container-fluid">
+          <div class="justify-content-start flex-fill">##
+#*          *##banner( "bannerLeft" $decoration.bannerLeft.name $decoration.bannerLeft.title $decoration.bannerLeft.href
+                       $decoration.bannerLeft.src $decoration.bannerLeft.alt $decoration.bannerLeft.border
+                       $decoration.bannerLeft.height $decoration.bannerLeft.width "navbar-brand ps-2" )##
+#*         *#</div>
+          <div class="justify-content-end">##
+#*          *##banner( "bannerRight" $decoration.bannerRight.name $decoration.bannerRight.title $decoration.bannerRight.href
+                       $decoration.bannerRight.src $decoration.bannerRight.alt $decoration.bannerRight.border
+                       $decoration.bannerRight.height $decoration.bannerRight.width "navbar-brand ps-2" )##
+#*         *#</div>
+        </div>
+      </nav>
+#*    *##end
 ########################################################################################################################
 ## If this conditional is true it will generate a standard fixed top navigation bar using Bootstrap standard layout
 ########################################################################################################################
@@ -98,28 +117,26 @@
           </div>
         </div>
       </nav>
-#*    *##else
-########################################################################################################################
-## If we don't have a Navigation bar, doxia-tools will allow the injection of banners at the top of the page. This
-## section uses the bootstrap nav bar to inject them at the top of the page.
-########################################################################################################################
-
-
 #*    *##end
 ########################################################################################################################
 ## If we don't have a Navigation bar, doxia-tools will allow the injection of banners at the top of the page. This
 ## section uses the bootstrap nav bar to inject them at the top of the page.
 ########################################################################################################################
+#**##set ( $pbarSkipGenerationDate = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.projectbar.skipGenerationDate', 'false' ) ) )
+#**##set ( $pbarSkipGenerationVersion = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.projectbar.skipGenerationVersion', 'false' ) ) )
+#**##set ( $pbarSkipBreadcrumb = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.projectbar.skipBreadcrumb', 'false' ) ) )
+##
+#*    *##if ( !$pbarSkipGenerationDate || !$pbarSkipGenerationVersion || $pbarSkipBreadcrumb )
       <nav id="projectBar" class="navbar py-0 $navBarStyle" aria-label="projectBarList">
         <div id="projectBarContainer" class="container-fluid">
-#*        *##breadcrumbs( $breadcrumbs "justify-content-start" "" "col justify-content-start" )
+#*        *##breadcrumbs( $pbarSkipBreadcrumb $breadcrumbs "justify-content-start" "" "col justify-content-start" )
           <div id="projectBaDateVersionContainer" class="justify-content-end">
-#*          *##publishDate( "px-1 navbar-text" )
+#*          *##publishDate( $pbarSkipGenerationDate $pbarSkipGenerationVersion "px-1 navbar-text" )
           </div>
         </div>
       </nav>
+#*    *##end
     </header>
-
 #*  *##if ( $sideBarEnabled )
     <main class="d-flex flex-row">
       <nav id="sidebar" class="nav navbar-expand-lg align-items-start $navBarStyle">

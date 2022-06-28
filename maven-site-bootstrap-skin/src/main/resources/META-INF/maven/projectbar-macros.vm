@@ -18,11 +18,11 @@
 ########################################################################################################################
 ##
 ########################################################################################################################
-#macro ( breadcrumbs $breadcrumbs $listCSSCLass $listItemCSSClass $spacerCSSClass )
+#macro ( breadcrumbs $skipBreadcrumb $breadcrumbs $listCSSCLass $listItemCSSClass $spacerCSSClass )
 #**##set ( $breadcrumbDivider = $decoration.getCustomValue( 'bootstrapSkin.breadcrumbDivider', '/' ) )
 #**##set ( $breadcrumbs = $decoration.body.breadcrumbs )
 ##
-#**##if ( $breadcrumbs && $breadcrumbs.size() > 0 )
+#**##if ( $breadcrumbs && $breadcrumbs.size() > 0 && !$skipBreadcrumb )
 ##
 #**##if ( $listCSSCLass )
 #*  *##set ( $listCSSCLass = ' class="breadcrumb ' + $listCSSCLass + '"' )
@@ -64,10 +64,8 @@
 ########################################################################################################################
 ##
 ########################################################################################################################
-#macro ( publishDate $cssClass)
+#macro ( publishDate $skipGenerationDate $skipGenerationVersion $cssClass)
 ##
-#**##set ( $skipGenerationDate = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.skipGenerationDate', 'true' ) ) )
-#**##set ( $skipGenerationVersion = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.skipGenerationVersion', 'true' ) ) )
 #**##set ( $dateValue = $decoration.getCustomValue( 'bootstrapSkin.publishDate', $date.get('yyyy-MM-dd') ) )
 ##
 #**##if ( $cssClass )
