@@ -156,11 +156,11 @@
           || $decoration.getCustomChild( 'bootstrapSkin.contact.address' ))
 ##
             <h5 class="text-uppercase fw-bold">Contact</h5>
+#*  *##addressContactDetail( 'bi-house px-1' 'my-0' )
 #*  *##set ( $orgEmail = $decoration.getCustomValue( 'bootstrapSkin.contact.email' ) )
 #*  *##linkFooterDetail( 'bootstrapSkin.contact.email' $orgEmail 'mailto:${orgEmail}' 'bi-envelope px-1' 'my-0' )
 #*  *##contactDetail( 'bootstrapSkin.contact.mobile' 'bi-phone px-1' 'my-0' )
 #*  *##contactDetail( 'bootstrapSkin.contact.landline' 'bi-telephone px-1' 'my-0' )
 #*  *##contactDetail( 'bootstrapSkin.contact.fax' 'bi-printer px-1' 'my-0' )
-#*  *##addressContactDetail( 'bi-house px-1' 'my-0' )
 #**##end
 #end
