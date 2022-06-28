@@ -53,13 +53,19 @@ under the License.
             </gitHub>
             <navbar>
                 <enabled>true</enabled>
+                <icon>
+                    <alt>test</alt>
+                    <src>image/example-logo.png</src>
+                </icon>
                 <menuOrientation>left</menuOrientation>
-                <style>navbar-light bg-light</style>
+                <!--<style>navbar-light bg-light</style> -->
             </navbar>
             <footer>
-                <style>bg-light</style>
+                <!--<style>bg-light</style> -->
             </footer>
             <sideBarEnabled>true</sideBarEnabled>
+            <skipGenerationDate>false</skipGenerationDate>
+            <skipGenerationVersion>false</skipGenerationVersion>
         </bootstrapSkin>
     </custom>
 

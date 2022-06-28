@@ -64,7 +64,7 @@
 ## As a minimum the Navbar should contain breadcrumbs/version generated, if the topbar is enabled this should
 ## go above, otherwise it seems maven tools can inject a banner into the project
 ########################################################################################################################
-#**##set ( $navBarStyle = $decoration.getCustomValue( 'bootstrapSkin.navbar.style', 'navbar-dark bg-primary' ) )
+#**##set ( $navBarStyle = $decoration.getCustomValue( 'bootstrapSkin.navbar.style', 'navbar-dark bg-dark' ) )
 #**##set ( $navbarOrientation = $decoration.getCustomValue( 'bootstrapSkin.navbar.menuOrientation', 'right' ) )
 #**##set ( $navbarOrientationLeft = "left" )
 #**##set ( $navbarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.enabled', 'true' ) ) )
@@ -111,8 +111,10 @@
 ########################################################################################################################
       <nav id="projectBar" class="navbar py-0 $navBarStyle" aria-label="projectBarList">
         <div id="projectBarContainer" class="container-fluid">
-#*        *##breadcrumbs( $breadcrumbs "col justify-content-start" "" "col justify-content-start" )
-#*        *##publishDate( "px-1 navbar-text" )
+#*        *##breadcrumbs( $breadcrumbs "justify-content-start" "" "col justify-content-start" )
+          <div id="projectBaDateVersionContainer" class="justify-content-end">
+#*          *##publishDate( "px-1 navbar-text" )
+          </div>
         </div>
       </nav>
     </header>
@@ -144,7 +146,7 @@
       </div>
     </main>
 
-#**##set ( $footerStyle = $decoration.getCustomValue( 'bootstrapSkin.footer.style', 'bg-primary text-light' ) )
+#**##set ( $footerStyle = $decoration.getCustomValue( 'bootstrapSkin.footer.style', 'bg-dark text-light' ) )
   <footer class="page-footer font-small py-4 $footerStyle">
     <div class="container-fluid text-md-left">
         <div class="row">
@@ -155,22 +157,22 @@
             <div>Get connected with us on social networks</div>
             <div>
 #*          *##set ( $facebookGroupId = $decoration.getCustomValue( 'bootstrapSkin.facebook.groupId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.facebook.groupId' '' "https://www.facebook.com/groups/${facebookGroupId}" 'bi-facebook' 'me-4 text-reset' )
+#*          *##linkFooterDetail( 'bootstrapSkin.facebook.groupId' 'Facebook' "https://www.facebook.com/groups/${facebookGroupId}" 'bi-facebook' 'me-4 text-reset' )
 ##
 #*          *##set ( $instagramAccountId = $decoration.getCustomValue( 'bootstrapSkin.instagram.accountId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.instagram.accountId' '' "https://instagram.com//${instagramAccountId}" 'bi-twitter' 'me-4 text-reset' )
+#*          *##linkFooterDetail( 'bootstrapSkin.instagram.accountId' 'Instagram' "https://instagram.com//${instagramAccountId}" 'bi-twitter' 'me-4 text-reset' )
 ##
 #*          *##set ( $twitterAccountId = $decoration.getCustomValue( 'bootstrapSkin.twitter.accountId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.twitter.accountId' '' "https://twitter.com//${twitterAccountId}" 'bi-instagram' 'me-4 text-reset' )
+#*          *##linkFooterDetail( 'bootstrapSkin.twitter.accountId' 'Twitter' "https://twitter.com//${twitterAccountId}" 'bi-instagram' 'me-4 text-reset' )
 ##
 #*          *##set ( $linkedinAccountId = $decoration.getCustomValue( 'bootstrapSkin.linkedin.accountId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.linkedin.accountId' '' "https://linkedin.com/in/${linkedinAccountId}" 'bi-linkedin' 'me-4 text-reset' )
+#*          *##linkFooterDetail( 'bootstrapSkin.linkedin.accountId' 'LinkedIn' "https://linkedin.com/in/${linkedinAccountId}" 'bi-linkedin' 'me-4 text-reset' )
 ##
 #*          *##set ( $gitHubProjectId = $decoration.getCustomValue( 'bootstrapSkin.gitHub.projectId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.gitHub.projectId' '' "https://github.com/${gitHubProjectId}" 'bi-github' 'me-4 text-reset' )
+#*          *##linkFooterDetail( 'bootstrapSkin.gitHub.projectId' 'GitHub' "https://github.com/${gitHubProjectId}" 'bi-github' 'me-4 text-reset' )
 ##
 #*          *##set ( $gitLabProjectId = $decoration.getCustomValue( 'bootstrapSkin.gitlab.projectId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.gitlab.projectId' '' "https://gitlab.com/${gitLabProjectId}" 'bi-gitlab' 'me-4 text-reset' )
+#*          *##linkFooterDetail( 'bootstrapSkin.gitlab.projectId' 'GitLab' "https://gitlab.com/${gitLabProjectId}" 'bi-gitlab' 'me-4 text-reset' )
             </div>
 ##
             <div class="py-3">

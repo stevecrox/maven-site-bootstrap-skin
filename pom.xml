@@ -41,6 +41,7 @@
 
     <modules>
         <module>maven-site-bootstrap-skin</module>
+        <module>maven-site-bootstrap-skin-integration-tests</module>
     </modules>
 
     <properties>

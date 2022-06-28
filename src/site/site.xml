@@ -12,28 +12,9 @@
 
     <custom>
         <bootstrapSkin>
-            <contact>
-                <email>bootstrap-skin@maven.sites.uk</email>
-                <fax>01752 123456</fax>
-                <mobile>07712345678</mobile>
-                <landline>01752 987654</landline>
-                <address>
-                    <line1>Postbox</line1>
-                    <line2>221B Baker Street</line2>
-                    <cit>London</cit>
-                    <county>London</county>
-                    <country>England</country>
-                    <post_code>NW1 6XE</post_code>
-                </address>
-            </contact>
             <gitHub>
                 <projectId>stevecrox/maven-site-bootstrap-skin</projectId>
-                <ribbonOrientation>right</ribbonOrientation>
-                <ribbonColor>red</ribbonColor>
-                <enabled>false</enabled>
             </gitHub>
-            <sideBarEnabled>true</sideBarEnabled>
-            <topBarEnabled>true</topBarEnabled>
         </bootstrapSkin>
     </custom>
 
