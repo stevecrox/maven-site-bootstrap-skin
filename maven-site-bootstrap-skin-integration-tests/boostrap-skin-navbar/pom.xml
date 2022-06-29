@@ -9,13 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>maven-site-bootstrap-skin-integration-tests</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>boostrap-skin-navbar</artifactId>
+    <name>Bootrap Skin Navbar Layout</name>
 
-    <modules>
-        <module>boostrap-skin-all-options</module>
-        <module>boostrap-skin-apache-options</module>
-        <module>boostrap-skin-navbar</module>
-    </modules>
 
 </project>
