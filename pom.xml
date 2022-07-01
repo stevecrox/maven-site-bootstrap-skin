@@ -19,8 +19,7 @@
     <scm>
         <connection>scm:git:https://github.com/stevecrox/maven-site-bootstrap-skin.git</connection>
         <developerConnection>scm:git:https://github.com/stevecrox/maven-site-bootstrap-skin.git</developerConnection>
-        <url>https://github.com/stevecrox/maven-site-bootstrap-skin/tree/${project.scm.tag}</url>
-        <tag>HEAD</tag>
+        <url>https://github.com/stevecrox/maven-site-bootstrap-skin</url>
     </scm>
 
     <issueManagement>
@@ -50,7 +49,9 @@
         <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
         <frontend-maven-plugin.version>1.12.1</frontend-maven-plugin.version>
         <!-- Apache Maven Release Plugin Versions. -->
+        <checksum-maven-plugin.version>1.11</checksum-maven-plugin.version>
         <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
+        <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
         <!-- Apache Maven Reporting Plugin Versions. -->
         <maven-site-plugin.version>4.0.0-M1</maven-site-plugin.version>
         <maven-project-info-reports-plugin.version>3.3.0</maven-project-info-reports-plugin.version>
@@ -95,15 +96,26 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
                     <version>${maven-gpg-plugin.version}</version>
+                    <configuration>
+                        <gpgArguments>
+                            <arg>--pinentry-mode</arg>
+                            <arg>loopback</arg>
+                        </gpgArguments>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugin</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${maven-release-plugin.version}</version>
+                    <configuration>
+                        <releaseProfiles>release</releaseProfiles>
+                    </configuration>
                 </plugin>
                 <!-- Apache Maven Reporting Plugin Versions. -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
                     <version>${maven-site-plugin.version}</version>
-                    <configuration>
-
-                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -128,6 +140,44 @@
         <contributor>
             <name>Stephen Crocker</name>
             <email>stevecrox AT hotmail DOT com DOT br</email>
+        </contributor>
+
+        <!-- This project has taken a number of elements from the maven-fluido-skin so I list the contributors here
+             to acknowledge their effort. -->
+        <contributor>
+            <name>Bruno P. Kinoshita</name>
+            <email>brunodepaulak AT yahoo DOT com DOT br</email>
+        </contributor>
+        <contributor>
+            <name>Carlos Villaronga</name>
+            <email>cvillaronga AT gmail DOT com</email>
+        </contributor>
+        <contributor>
+            <name>Christian Grobmeier</name>
+            <email>grobmeier AT apache DOT org</email>
+        </contributor>
+        <contributor>
+            <name>Conny Kreyssel</name>
+            <email>dev AT kreyssel DOT org</email>
+        </contributor>
+        <contributor>
+            <name>Michael Koch</name>
+            <email>tensberg AT gmx DOT net</email>
+        </contributor>
+        <contributor>
+            <name>Emmanuel Hugonnet</name>
+            <email>emmanuel DOT hugonnet AT gmail DOT com</email>
+        </contributor>
+        <contributor>
+            <name>Ivan Habunek</name>
+            <email>ihabunek AT apache DOT org</email>
+        </contributor>
+        <contributor>
+            <name>Eric Barboni</name>
+        </contributor>
+        <contributor>
+            <name>Michael Osipov</name>
+            <email>michaelo AT apache DOT org</email>
         </contributor>
     </contributors>
 
@@ -172,6 +222,29 @@
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>net.nicoulaj.maven.plugins</groupId>
+                        <artifactId>checksum-maven-plugin</artifactId>
+                        <version>${checksum-maven-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>source-release-checksum</id>
+                                <goals>
+                                    <goal>artifacts</goal>
+                                </goals>
+                                <phase>post-integration-test</phase>
+                                <configuration>
+                                    <algorithms>
+                                        <algorithm>SHA-512</algorithm>
+                                    </algorithms>
+                                    <includeClassifiers>source-release</includeClassifiers>
+                                    <excludeMainArtifact>true</excludeMainArtifact>
+                                    <csvSummary>false</csvSummary>
+                                    <attachChecksums>true</attachChecksums>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
