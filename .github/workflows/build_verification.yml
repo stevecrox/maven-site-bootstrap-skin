@@ -21,12 +21,6 @@ jobs:
         with:
           java-version: 11
           distribution: 'adopt'
-          OSSRH_USER: ${{ secrets.OSSRH_USER }}
-          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
-          GITHUB_USER: ${{ secrets.RELEASE_USER }}
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-          GPG_KEY_ID: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
-          GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
 
       - name: Cache Maven packages
         uses: actions/cache@v1
@@ -37,9 +31,16 @@ jobs:
 
       - name: Jacoco Coverage
         run: mvn --batch-mode org.jacoco:jacoco-maven-plugin:0.8.8:prepare-agent test org.jacoco:jacoco-maven-plugin:0.8.8:report
-
+        env:
+          OSSRH_USER: ${{ secrets.OSSRH_USER }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+          GITHUB_USER: ${{ secrets.RELEASE_USER }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
+          GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
+          
       - name: Build with Maven
-        run: mvn --batch-mode --settings .github/maven_settings.xml clean deploy -DskipTests=true
+        run: mvn --batch-mode --settings .github/maven_settings.xml clean install -DskipTests=true
         env:
           OSSRH_USER: ${{ secrets.OSSRH_USER }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
@@ -48,8 +49,30 @@ jobs:
           GPG_KEY_ID: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
           GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
 
+      - name: Checkstyle analyse
+        uses: dbelyaev/action-checkstyle@v0.5.1
+        with:
+          github_token: ${{ secrets.RELEASE_TOKEN }}
+          reporter: github-pr-review
+          level: warning
+          
       - name: SpotBugs
-        run: mvn --batch-mode com.github.spotbugs:spotbugs-maven-plugin:4.6.0.0:spotbugs
+        run: mvn --batch-mode com.github.spotbugs:spotbugs-maven-plugin:4.6.0.0:spotbugs -Dspotbugs.xmlOutput=true -Dspotbugs.effort=max -Dspotbugs.failOnError=false -Dspotbugs.threshold=low
+        env:
+          OSSRH_USER: ${{ secrets.OSSRH_USER }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+          GITHUB_USER: ${{ secrets.RELEASE_USER }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
+          GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
+          
+      - name: SpotBugs Annotation
+        uses: jwgmeligmeyling/spotbugs-github-action@master
+        with:
+          path: '**/spotbugsXml.xml'
+          token: ${{ secrets.RELEASE_TOKEN }}
 
       - name: PMD
-        run: mvn --batch-mode org.apache.maven.plugins:maven-pmd-plugin:3.16.0:pmd org.apache.maven.plugins:maven-pmd-plugin:3.16.0:cpd
+        uses: pmd/pmd-github-action@v1
+        with:
+          token: ${{ secrets.RELEASE_TOKEN }}
