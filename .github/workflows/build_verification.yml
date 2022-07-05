@@ -20,7 +20,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-          distribution: 'adopt'
+          gpg-private-key: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
+          gpg-passphrase: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
 
       - name: Cache Maven packages
         uses: actions/cache@v1
@@ -76,3 +77,4 @@ jobs:
         uses: pmd/pmd-github-action@v1
         with:
           token: ${{ secrets.RELEASE_TOKEN }}
+          rulesets: 'ruleset.xml'
