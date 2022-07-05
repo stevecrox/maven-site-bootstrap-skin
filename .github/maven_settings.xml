@@ -4,7 +4,12 @@
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
     <servers>
         <server>
-            <id>ossrh</id>
+            <id>main</id>
+            <username>${env.OSSRH_USER}</username>
+            <password>${env.OSSRH_TOKEN}</password>
+        </server>
+        <server>
+            <id>snapshots</id>
             <username>${env.OSSRH_USER}</username>
             <password>${env.OSSRH_TOKEN}</password>
         </server>
@@ -22,8 +27,10 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <gpg.keyname>${{ env.GPG_KEY_ID }}</gpg.keyname>
-                <gpg.passphrase>${{ env.GPG_PASSPHRASE }}</gpg.passphrase>
+                <gpg.keyname>${env.GPG_KEY_ID}</gpg.keyname>
+                <gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
+                <username>${env.GITHUB_USER}</username>
+                <password>${env.GITHUB_TOKEN}</password>
             </properties>
         </profile>
     </profiles>
