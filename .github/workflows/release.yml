@@ -16,13 +16,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-          distribution: 'adopt'
-          OSSRH_USER: ${{ secrets.OSSRH_USER }}
-          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
-          GITHUB_USER: ${{ secrets.RELEASE_USER }}
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-          GPG_KEY_ID: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
-          GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg-passphrase: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
 
       - name: Cache Maven packages
         uses: actions/cache@v2
@@ -30,11 +25,6 @@ jobs:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-maven-
-
-      - id: install-secret-key
-        name: Install gpg secret key
-        run: |
-             cat <(echo -e "${{ secrets.OSSRH_GPG_PRIVATE_KEY }}") | gpg --batch --import
 
       - name: Extract branch name
         id: extract_branch
@@ -55,9 +45,9 @@ jobs:
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
           GITHUB_USER: ${{ secrets.RELEASE_USER }}
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-          GPG_KEY_ID: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
-          GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
-
+          GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
+          
       - name: Release with Maven
         if: ${{ contains(github.ref, 'refs/heads/release') }}
         run: mvn --batch-mode --settings .github/maven_settings.xml release:perform -DreleaseVersion=${{ env.BRANCH_NAME }}
@@ -66,21 +56,13 @@ jobs:
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
           GITHUB_USER: ${{ secrets.RELEASE_USER }}
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-          GPG_KEY_ID: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
-          GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
+          GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
 
-      - name: Fetch all Branches
-        if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: git fetch --all
-
-      - name: Switch to main branch
-        if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: git checkout main
-
-      - name: Merge release banch into main
-        if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: git merge origin/release/${{ env.BRANCH_NAME }}
-
-      - name: Merge release banch into main
-        if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: git push origin main
+      - name: Merge Release branch into Main
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: release/${{ env.BRANCH_NAME }}
+          target_branch: main
+          github_token: ${{ secrets.RELEASE_TOKEN }}
