@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-          gpg-private-key: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
+          gpg-private-key: ${{ secrets.OSSRH_GPG_PRIVATE_KEY }}
           gpg-passphrase: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
 
       - name: Cache Maven packages
@@ -38,7 +38,7 @@ jobs:
           GITHUB_USER: ${{ secrets.RELEASE_USER }}
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
           GPG_KEY_ID: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
-          GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
+          GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
           
       - name: Build with Maven
         run: mvn --batch-mode --settings .github/maven_settings.xml clean install -DskipTests=true
@@ -48,7 +48,7 @@ jobs:
           GITHUB_USER: ${{ secrets.RELEASE_USER }}
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
           GPG_KEY_ID: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
-          GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
+          GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
 
       - name: Checkstyle analyse
         uses: dbelyaev/action-checkstyle@v0.5.1
@@ -65,7 +65,7 @@ jobs:
           GITHUB_USER: ${{ secrets.RELEASE_USER }}
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
           GPG_KEY_ID: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
-          GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEYNAME }}
+          GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
           
       - name: SpotBugs Annotation
         uses: jwgmeligmeyling/spotbugs-github-action@master
