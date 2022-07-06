@@ -50,7 +50,7 @@ jobs:
           
       - name: Release with Maven
         if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: mvn --batch-mode --settings .github/maven_settings.xml release:perform -DreleaseVersion=${{ env.BRANCH_NAME }} -Dgoals=clean package org.apache.maven.plugins:maven-gpg-plugin:3.0.1:sign net.nicoulaj.maven.plugins:checksum-maven-plugin:1.11:artifacts deploy scm-publish:publish-scm -DattachChecksums=true
+        run: mvn --batch-mode --settings .github/maven_settings.xml release:perform -DreleaseVersion=${{ env.BRANCH_NAME }} -Dgoals=clean package org.apache.maven.plugins:maven-gpg-plugin:3.0.1:sign net.nicoulaj.maven.plugins:checksum-maven-plugin:1.11:artifacts deploy site scm-publish:publish-scm -DattachChecksums=true
         env:
           OSSRH_USER: ${{ secrets.OSSRH_USER }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
