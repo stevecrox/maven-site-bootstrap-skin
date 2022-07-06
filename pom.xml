@@ -148,6 +148,7 @@
                     <configuration>
                         <content>${project.reporting.outputDirectory}</content>
                         <pubScmUrl>scm:git:https://github.com//stevecrox/maven-site-bootstrap-skin.github.io</pubScmUrl>
+                        <subDirectory>${project.groupId}/${project.artifactId}</subDirectory>
                         <scmBranch>main</scmBranch>
                         <serverId>site</serverId>
                     </configuration>
