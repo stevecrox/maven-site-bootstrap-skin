@@ -10,18 +10,14 @@
     <name>Maven Site Bootstrap Skin Parent</name>
     <description>The Maven Site Bootstrap Skin is an Apache Maven site skin built on top of the latest bootstrap
         framework.</description>
-    <inceptionYear>2021</inceptionYear>
-
-    <organization>
-        <name>Example Company</name>
-    </organization>
+    <inceptionYear>2022</inceptionYear>
 
     <scm>
         <connection>scm:git:https://github.com/stevecrox/maven-site-bootstrap-skin.git</connection>
         <developerConnection>scm:git:https://github.com/stevecrox/maven-site-bootstrap-skin.git</developerConnection>
         <url>https://github.com/stevecrox/maven-site-bootstrap-skin</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
     <issueManagement>
         <system>GitHub</system>
@@ -52,9 +48,9 @@
         <!-- Apache Maven Release Plugin Versions. -->
         <checksum-maven-plugin.version>1.11</checksum-maven-plugin.version>
         <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
-        <maven-release-plugin.version>3.0.0-M4</maven-release-plugin.version>
+        <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
         <!-- Apache Maven Reporting Plugin Versions. -->
-        <maven-site-plugin.version>4.0.0-M1</maven-site-plugin.version>
+        <maven-site-plugin.version>3.12.0</maven-site-plugin.version>
         <maven-project-info-reports-plugin.version>3.3.0</maven-project-info-reports-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.4.0</maven-javadoc-plugin.version>
