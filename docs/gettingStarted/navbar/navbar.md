@@ -42,7 +42,7 @@ The bootstrap navigation bar has the concept of 'navbar-brand', this is a sectio
 Similar to the banner bar the icon element can contain the same attributes as the `<img>` tag. If the icon element is left blank then no icon is added to the page, as a minimum the navbar-brand icon requires a `alt` or `src` attribute for something to be displayed. 
 
 ## Navigation Bar Style
-You can configure the CSS classes used on the navbar style. Bootstrap 5 contains a number of classes for common colouring, by default 'navbar-dark bg-dark' has been set as this provides a clear contrast between the banner and the main text.
+You can configure the CSS classes used on the navbar style. Bootstrap 5 contains a number of classes for common colouring, by default 'navbar-dark bg-primary' has been set as this provides a clear contrast between the banner and the main text.
 ```xml
 <project name="xxx">
     [...]

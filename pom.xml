@@ -43,6 +43,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Used to get the Site files into the right structure, while also being readable in an SCM. -->
+        <project.docs.directory>${project.basedir}/docs</project.docs.directory>
+        <project.build.interim.site.directory>${project.build.directory}/docs-site</project.build.interim.site.directory>
         <!-- Apache Maven Build Plugin Versions. -->
         <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
         <frontend-maven-plugin.version>1.12.1</frontend-maven-plugin.version>
@@ -54,6 +57,8 @@
         <maven-site-plugin.version>3.12.0</maven-site-plugin.version>
         <maven-project-info-reports-plugin.version>3.3.0</maven-project-info-reports-plugin.version>
         <maven-scm-publish-plugin-version>3.1.0</maven-scm-publish-plugin-version>
+        <maven-changelog-plugin-version>2.3</maven-changelog-plugin-version>
+        <taglist-maven-plugin-version>3.0.0</taglist-maven-plugin-version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.4.0</maven-javadoc-plugin.version>
         <!-- Frontend Javascript library versions. -->
@@ -130,11 +135,36 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
                     <version>${maven-site-plugin.version}</version>
+                    <configuration>
+                        <siteDirectory>${project.build.interim.site.directory}</siteDirectory>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-project-info-reports-plugin</artifactId>
                     <version>${maven-project-info-reports-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-changelog-plugin</artifactId>
+                    <version>${maven-changelog-plugin-version}</version>
+                    <configuration>
+                        <displayFileRevDetailUrl>${project.scm.url}/tree/master/%FILE%</displayFileRevDetailUrl>
+                        <displayChangeSetDetailUrl>${project.scm.url}/commit</displayChangeSetDetailUrl>
+                        <headingDateFormat>MM-dd-yyyy</headingDateFormat>
+                        <outputEncoding>${project.build.sourceEncoding}</outputEncoding>
+                        <type>range</type>
+                        <range>30</range>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>taglist-maven-plugin</artifactId>
+                    <version>${taglist-maven-plugin-version}</version>
+                    <configuration>
+                        <inputEncoding>${project.build.sourceEncoding}</inputEncoding>
+                        <sourceFileLocale>en</sourceFileLocale>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -160,7 +190,106 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-markdown-into-target</id>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <phase>validate</phase>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${project.docs.directory}/</directory>
+                                    <includes>
+                                        <include>**/*.md</include>
+                                    </includes>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${project.build.interim.site.directory}/markdown/</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-resources-into-target</id>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <phase>validate</phase>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${project.docs.directory}/</directory>
+                                    <excludes>
+                                        <exclude>**/*.md</exclude>
+                                        <exclude>site.xml</exclude>
+                                    </excludes>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${project.build.interim.site.directory}/resources/</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-sitexml-into-target</id>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <phase>validate</phase>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${project.docs.directory}/</directory>
+                                    <includes>
+                                        <include>site.xml</include>
+                                    </includes>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${project.build.interim.site.directory}/</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-site-resources-into-target</id>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <phase>validate</phase>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>src/site</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${project.build.interim.site.directory}</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-changelog-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>taglist-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </reporting>
 
     <developers>
         <developer>
