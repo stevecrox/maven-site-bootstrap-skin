@@ -124,7 +124,6 @@
                     <version>${maven-release-plugin.version}</version>
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
-                        <releaseProfiles>release</releaseProfiles>
                         <signTag>true</signTag>
                     </configuration>
                 </plugin>
@@ -200,7 +199,7 @@
 
     <profiles>
         <profile>
-            <id>package</id>
+            <id>documentation</id>
             <activation>
                 <file>
                     <exists>src/main/java</exists>
