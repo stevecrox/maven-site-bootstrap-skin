@@ -110,6 +110,7 @@
                     <version>${checksum-maven-plugin.version}</version>
                     <configuration>
                         <algorithms>
+                            <algorithm>MD5</algorithm>
                             <algorithm>SHA-512</algorithm>
                         </algorithms>
                         <attachChecksums>true</attachChecksums>
