@@ -10,11 +10,20 @@
     <name>Maven Site Bootstrap Skin Parent</name>
     <description>The Maven Site Bootstrap Skin is an Apache Maven site skin built on top of the latest bootstrap
         framework.</description>
+    <url>https://stevecrox.github.io/io.github.stevecrox/maven-site-bootstrap-skin-parent/</url>
     <inceptionYear>2021</inceptionYear>
 
     <organization>
-        <name>Example Company</name>
+        <name>stevecrox</name>
     </organization>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <scm>
         <connection>scm:git:https://github.com/stevecrox/maven-site-bootstrap-skin.git</connection>
@@ -241,14 +250,16 @@
         </plugins>
     </build>
 
-    <contributors>
-        <contributor>
+    <developers>
+        <developer>
             <name>Stephen Crocker</name>
             <email>stevecrox AT hotmail DOT com DOT br</email>
-        </contributor>
+        </developer>
+    </developers>
 
-        <!-- This project has taken a number of elements from the maven-fluido-skin so I list the contributors here
-             to acknowledge their effort. -->
+    <!-- This project has taken a number of elements from the maven-fluido-skin so I list the contributors here
+     to acknowledge their effort. -->
+    <contributors>
         <contributor>
             <name>Bruno P. Kinoshita</name>
             <email>brunodepaulak AT yahoo DOT com DOT br</email>
