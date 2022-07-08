@@ -4,7 +4,7 @@
 
     <groupId>com.github.stevecrox</groupId>
     <artifactId>maven-site-bootstrap-skin-parent</artifactId>
-    <version>0.9.5-SNAPSHOT</version>
+    <version>0.9.11-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Maven Site Bootstrap Skin Parent</name>
