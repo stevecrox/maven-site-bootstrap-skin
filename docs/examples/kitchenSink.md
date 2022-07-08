@@ -1,0 +1,3 @@
+# Full Example
+![](AllImageExample.png)
+In the above image the `site.xml` has every possible configuration set, this version includes breadcrumbs, version, date, banners a sidebar, contact details as well as social media. we have also altered the alignment of the drop downs menu in the navigation bar. Lastly the site directory contains a `maven-theme.css` file which includes the Superhero Bootswatch theme to add colouring to the website.

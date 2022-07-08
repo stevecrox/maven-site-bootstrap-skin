@@ -9,22 +9,16 @@ Skin configurations have been provided to demonstrated the [default navbar layou
 To use this skin in your project, use the skin element of the site.xml site descriptor:
 
 ```xml
-<project name="xxx">
-    [...]
-    <skin>
-        <groupId>io.github.stevecrox</groupId>
-        <artifactId>maven-site-bootstrap-skin-parent</artifactId>
-        <version>1.0.0</version>
-    </skin>
-    [...]
-</project>
+    <project name="xxx">
+      [...]
+      <skin>
+          <groupId>io.github.stevecrox</groupId>
+          <artifactId>maven-site-bootstrap-skin-parent</artifactId>
+          <version>1.0.0</version>
+      </skin>
+      [...]
+    </project>
 ```
 
-## Contents
- * [Getting Started](docs/gettingStarted/index.md)
- * Layouts
-   * [Default](docs/examples/default.md)
-   * [Apache](docs/examples/apache.md)
-   * [Kitchen Sink](docs/examples/kitchenSink.md)
- * [Development](docs/development/index.md)
+
 
