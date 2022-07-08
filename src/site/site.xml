@@ -4,11 +4,11 @@
 
     <edit>${project.scm.url}</edit>
 
-    <skin>
+    <!-- <skin>
         <groupId>io.github.stevecrox</groupId>
         <artifactId>maven-site-bootstrap-skin</artifactId>
         <version>${project.version}</version>
-    </skin>
+    </skin> -->
 
     <custom>
         <bootstrapSkin>
