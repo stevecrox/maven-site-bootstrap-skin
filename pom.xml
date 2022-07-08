@@ -2,35 +2,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.github.stevecrox</groupId>
+    <groupId>com.github.stevecrox</groupId>
     <artifactId>maven-site-bootstrap-skin-parent</artifactId>
-    <version>0.9.10-SNAPSHOT</version>
+    <version>0.9.5-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Maven Site Bootstrap Skin Parent</name>
     <description>The Maven Site Bootstrap Skin is an Apache Maven site skin built on top of the latest bootstrap
         framework.</description>
-    <url>https://stevecrox.github.io/io.github.stevecrox/maven-site-bootstrap-skin-parent/</url>
     <inceptionYear>2021</inceptionYear>
 
     <organization>
-        <name>stevecrox</name>
+        <name>Example Company</name>
     </organization>
-
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
 
     <scm>
         <connection>scm:git:https://github.com/stevecrox/maven-site-bootstrap-skin.git</connection>
         <developerConnection>scm:git:https://github.com/stevecrox/maven-site-bootstrap-skin.git</developerConnection>
         <url>https://github.com/stevecrox/maven-site-bootstrap-skin</url>
       <tag>HEAD</tag>
-    </scm>
+  </scm>
 
     <issueManagement>
         <system>GitHub</system>
@@ -46,10 +37,6 @@
             <id>main</id>
             <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
-        <site>
-            <id>site</id>
-            <url>file:///tmp/${project.artifactId}</url>
-        </site>
     </distributionManagement>
 
     <modules>
@@ -59,19 +46,15 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- Used to generate the website. -->
-        <project.docs.directory>${project.basedir}/docs</project.docs.directory>
-        <project.build.interim.site.directory>${project.build.directory}/docs-site</project.build.interim.site.directory>
         <!-- Apache Maven Build Plugin Versions. -->
         <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
         <frontend-maven-plugin.version>1.12.1</frontend-maven-plugin.version>
         <!-- Apache Maven Release Plugin Versions. -->
         <checksum-maven-plugin.version>1.11</checksum-maven-plugin.version>
         <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
-        <maven-release-plugin.version>3.0.0-M4</maven-release-plugin.version>
+        <maven-release-plugin.version>3.0.0-M6</maven-release-plugin.version>
         <!-- Apache Maven Reporting Plugin Versions. -->
         <maven-site-plugin.version>4.0.0-M1</maven-site-plugin.version>
-        <maven-scm-publish-plugin-version>3.1.0</maven-scm-publish-plugin-version>
         <maven-project-info-reports-plugin.version>3.3.0</maven-project-info-reports-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.4.0</maven-javadoc-plugin.version>
@@ -122,25 +105,12 @@
                     </configuration>
                 </plugin>
                 <plugin>
-                    <groupId>net.nicoulaj.maven.plugins</groupId>
-                    <artifactId>checksum-maven-plugin</artifactId>
-                    <version>${checksum-maven-plugin.version}</version>
-                    <configuration>
-                        <attachChecksums>true</attachChecksums>
-                        <algorithms>
-                            <algorithm>md5</algorithm>
-                            <algorithm>sha1</algorithm>
-                        </algorithms>
-                        <excludeMainArtifact>false</excludeMainArtifact>
-                        <includeClassifiers>source-release</includeClassifiers>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
+                    <groupId>org.apache.maven.plugin</groupId>
                     <artifactId>maven-release-plugin</artifactId>
                     <version>${maven-release-plugin.version}</version>
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <releaseProfiles>release</releaseProfiles>
                         <signTag>true</signTag>
                     </configuration>
                 </plugin>
@@ -149,21 +119,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
                     <version>${maven-site-plugin.version}</version>
-                    <configuration>
-                        <siteDirectory>${project.build.interim.site.directory}</siteDirectory>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-scm-publish-plugin</artifactId>
-                    <version>${maven-scm-publish-plugin-version}</version>
-                    <configuration>
-                        <content>${project.reporting.outputDirectory}</content>
-                        <pubScmUrl>scm:git:https://github.com//stevecrox/maven-site-bootstrap-skin.github.io</pubScmUrl>
-                        <subDirectory>${project.groupId}/${project.artifactId}</subDirectory>
-                        <scmBranch>main</scmBranch>
-                        <serverId>site</serverId>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -182,84 +137,16 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-markdown-into-target</id>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <phase>validate</phase>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${project.docs.directory}/</directory>
-                                    <includes>
-                                        <include>**/*.md</include>
-                                    </includes>
-                                    <filtering>true</filtering>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${project.build.interim.site.directory}/markdown/</outputDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>copy-resources-into-target</id>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <phase>validate</phase>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${project.docs.directory}/</directory>
-                                    <excludes>
-                                        <exclude>**/*.md</exclude>
-                                        <exclude>site.xml</exclude>
-                                    </excludes>
-                                    <filtering>false</filtering>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${project.build.interim.site.directory}/resources/</outputDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>copy-sitexml-into-target</id>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <phase>validate</phase>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${project.docs.directory}/</directory>
-                                    <includes>
-                                        <include>site.xml</include>
-                                    </includes>
-                                    <filtering>false</filtering>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${project.build.interim.site.directory}/</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
     </build>
 
-    <developers>
-        <developer>
+    <contributors>
+        <contributor>
             <name>Stephen Crocker</name>
             <email>stevecrox AT hotmail DOT com DOT br</email>
-        </developer>
-    </developers>
+        </contributor>
 
-    <!-- This project has taken a number of elements from the maven-fluido-skin so I list the contributors here
-     to acknowledge their effort. -->
-    <contributors>
+        <!-- This project has taken a number of elements from the maven-fluido-skin so I list the contributors here
+             to acknowledge their effort. -->
         <contributor>
             <name>Bruno P. Kinoshita</name>
             <email>brunodepaulak AT yahoo DOT com DOT br</email>
@@ -299,12 +186,7 @@
 
     <profiles>
         <profile>
-            <id>documentation</id>
-            <activation>
-                <file>
-                    <exists>src/main/java</exists>
-                </file>
-            </activation>
+            <id>release</id>
             <build>
                 <plugins>
                     <plugin>
@@ -330,6 +212,42 @@
                                 <goals>
                                     <goal>jar</goal>
                                 </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>net.nicoulaj.maven.plugins</groupId>
+                        <artifactId>checksum-maven-plugin</artifactId>
+                        <version>${checksum-maven-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>source-release-checksum</id>
+                                <goals>
+                                    <goal>artifacts</goal>
+                                </goals>
+                                <phase>post-integration-test</phase>
+                                <configuration>
+                                    <algorithms>
+                                        <algorithm>SHA-512</algorithm>
+                                    </algorithms>
+                                    <includeClassifiers>source-release</includeClassifiers>
+                                    <excludeMainArtifact>true</excludeMainArtifact>
+                                    <csvSummary>false</csvSummary>
+                                    <attachChecksums>true</attachChecksums>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
