@@ -39,7 +39,7 @@ jobs:
 
       - name: Prepare Release with Maven
         if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: mvn --batch-mode --settings .github/maven_settings.xml release:prepare -DreleaseVersion=${{ env.BRANCH_NAME }} -Dgoals=clean package org.apache.maven.plugins:maven-gpg-plugin:3.0.1:sign net.nicoulaj.maven.plugins:checksum-maven-plugin:1.11:artifacts deploy
+        run: mvn --batch-mode --settings .github/maven_settings.xml release:prepare -DreleaseVersion=${{ env.BRANCH_NAME }} -Dgoals=clean package org.apache.maven.plugins:maven-gpg-plugin:3.0.1:sign net.nicoulaj.maven.plugins:checksum-maven-plugin:1.11:artifacts deploy -Dgpg.keyname=${{ secrets.GPG_PRIVATE_KEYNAME }} -Dgpg.passphrase=${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }} -Dusername=${{ secrets.RELEASE_USER }} -Dpassword=${{ secrets.RELEASE_TOKEN }} 
         env:
           OSSRH_USER: ${{ secrets.OSSRH_USER }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
@@ -47,10 +47,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
           GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
-          
+         
       - name: Release with Maven
         if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: mvn --batch-mode --settings .github/maven_settings.xml release:perform -DreleaseVersion=${{ env.BRANCH_NAME }} -Dgoals=clean package gpg:sign checksum:artifacts deploy site scm-publish:publish-scm
+        run: mvn --batch-mode --settings .github/maven_settings.xml release:perform -DreleaseVersion=${{ env.BRANCH_NAME }} -Dgoals=clean package gpg:sign checksum:artifacts deploy site scm-publish:publish-scm -Dgpg.keyname=${{ secrets.GPG_PRIVATE_KEYNAME }} -Dgpg.passphrase=${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }} -Dusername=${{ secrets.RELEASE_USER }} -Dpassword=${{ secrets.RELEASE_TOKEN }} 
         env:
           OSSRH_USER: ${{ secrets.OSSRH_USER }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
