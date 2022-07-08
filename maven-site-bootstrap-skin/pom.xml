@@ -3,7 +3,7 @@
     <parent>
         <groupId>com.github.stevecrox</groupId>
         <artifactId>maven-site-bootstrap-skin-parent</artifactId>
-        <version>0.9.5-SNAPSHOT</version>
+        <version>0.9.10</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
