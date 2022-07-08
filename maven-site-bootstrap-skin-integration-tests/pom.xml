@@ -16,4 +16,8 @@
         <module>boostrap-skin-navbar</module>
     </modules>
 
+    <properties>
+        <!-- Used to get the Site files into the right structure, while also being readable in an SCM. -->
+        <project.docs.directory>${project.basedir}/src/site</project.docs.directory>
+    </properties>
 </project>
