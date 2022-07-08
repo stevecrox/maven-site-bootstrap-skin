@@ -163,12 +163,14 @@
         </pluginManagement>
     </build>
 
-    <contributors>
-        <contributor>
+    <developers>
+        <developer>
             <name>Stephen Crocker</name>
             <email>stevecrox AT hotmail DOT com DOT br</email>
-        </contributor>
+        </developer>
+    </developers>
 
+    <contributors>
         <!-- This project has taken a number of elements from the maven-fluido-skin so I list the contributors here
              to acknowledge their effort. -->
         <contributor>
