@@ -117,10 +117,13 @@
                     <artifactId>checksum-maven-plugin</artifactId>
                     <version>${checksum-maven-plugin.version}</version>
                     <configuration>
-                        <includeClassifiers>source-release</includeClassifiers>
-                        <excludeMainArtifact>true</excludeMainArtifact>
-                        <csvSummary>false</csvSummary>
                         <attachChecksums>true</attachChecksums>
+                        <algorithms>
+                            <algorithm>md5</algorithm>
+                            <algorithm>sha1</algorithm>
+                        </algorithms>
+                        <excludeMainArtifact>false</excludeMainArtifact>
+                        <includeClassifiers>source-release</includeClassifiers>
                     </configuration>
                 </plugin>
                 <plugin>
