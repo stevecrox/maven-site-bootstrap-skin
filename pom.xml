@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.stevecrox</groupId>
+    <groupId>io.github.stevecrox</groupId>
     <artifactId>maven-site-bootstrap-skin-parent</artifactId>
     <version>0.9.12-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -43,7 +43,6 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <skin.version>${project.version}</skin.version>
         <!-- Apache Maven Build Plugin Versions. -->
         <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
         <frontend-maven-plugin.version>1.12.1</frontend-maven-plugin.version>
