@@ -10,6 +10,7 @@
     <name>Maven Site Bootstrap Skin Parent</name>
     <description>The Maven Site Bootstrap Skin is an Apache Maven site skin built on top of the latest bootstrap
         framework.</description>
+    <url>https://stevecrox.github.io/io.github.stevecrox/maven-site-bootstrap-skin-parent/</url>
     <inceptionYear>2022</inceptionYear>
 
     <scm>
@@ -42,6 +43,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <skin.version>${project.version}</skin.version>
         <!-- Apache Maven Build Plugin Versions. -->
         <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
         <frontend-maven-plugin.version>1.12.1</frontend-maven-plugin.version>
@@ -52,6 +54,7 @@
         <!-- Apache Maven Reporting Plugin Versions. -->
         <maven-site-plugin.version>3.12.0</maven-site-plugin.version>
         <maven-project-info-reports-plugin.version>3.3.0</maven-project-info-reports-plugin.version>
+        <maven-scm-publish-plugin-version>3.1.0</maven-scm-publish-plugin-version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.4.0</maven-javadoc-plugin.version>
         <!-- Frontend Javascript library versions. -->
@@ -136,6 +139,18 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-scm-publish-plugin</artifactId>
+                    <version>${maven-scm-publish-plugin-version}</version>
+                    <configuration>
+                        <content>${project.reporting.outputDirectory}</content>
+                        <pubScmUrl>scm:git:https://github.com//stevecrox/stevecrox.github.io.git</pubScmUrl>
+                        <scmBranch>main</scmBranch>
+                        <serverId>site</serverId>
+                        <subDirectory>${project.groupId}/${project.artifactId}</subDirectory>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
                     <version>${maven-source-plugin.version}</version>
                 </plugin>
@@ -192,6 +207,14 @@
             <email>michaelo AT apache DOT org</email>
         </contributor>
     </contributors>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <profiles>
         <profile>
