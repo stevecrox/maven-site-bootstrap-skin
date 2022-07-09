@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>io.github.stevecrox</groupId>
+        <artifactId>maven-parent</artifactId>
+        <version>0.0.2</version>
+    </parent>
 
     <groupId>io.github.stevecrox</groupId>
     <artifactId>maven-site-bootstrap-skin-parent</artifactId>
@@ -25,42 +30,20 @@
         <url>https://github.com/stevecrox/maven-site-bootstrap-skin/issues</url>
     </issueManagement>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>main</id>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
     <modules>
         <module>maven-site-bootstrap-skin</module>
         <module>maven-site-bootstrap-skin-integration-tests</module>
     </modules>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Used to get the Site files into the right structure, while also being readable in an SCM. -->
         <project.docs.directory>${project.basedir}/docs</project.docs.directory>
         <project.build.interim.site.directory>${project.build.directory}/docs-site</project.build.interim.site.directory>
+        <!-- Overridable property for the version within the site.xml files, this is because
+             a release has to use the previous version. -->
+        <skin.version>${project.version}</skin.version>
         <!-- Apache Maven Build Plugin Versions. -->
-        <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
         <frontend-maven-plugin.version>1.12.1</frontend-maven-plugin.version>
-        <!-- Apache Maven Release Plugin Versions. -->
-        <checksum-maven-plugin.version>1.11</checksum-maven-plugin.version>
-        <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
-        <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
-        <!-- Apache Maven Reporting Plugin Versions. -->
-        <maven-site-plugin.version>3.12.0</maven-site-plugin.version>
-        <maven-project-info-reports-plugin.version>3.3.0</maven-project-info-reports-plugin.version>
-        <maven-scm-publish-plugin-version>3.1.0</maven-scm-publish-plugin-version>
-        <maven-changelog-plugin-version>2.3</maven-changelog-plugin-version>
-        <taglist-maven-plugin-version>3.0.0</taglist-maven-plugin-version>
-        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-        <maven-javadoc-plugin.version>3.4.0</maven-javadoc-plugin.version>
         <!-- Frontend Javascript library versions. -->
         <bootstrap.version>5.1.3</bootstrap.version>
         <bootstrap-icons.version>1.8.3</bootstrap-icons.version>
@@ -95,212 +78,13 @@
                         <workingDirectory>${project.build.directory}</workingDirectory>
                     </configuration>
                 </plugin>
-                <!-- Apache Maven Release Plugin Versions. -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-gpg-plugin</artifactId>
-                    <version>${maven-gpg-plugin.version}</version>
-                    <configuration>
-                        <gpgArguments>
-                            <arg>--pinentry-mode</arg>
-                            <arg>loopback</arg>
-                        </gpgArguments>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>net.nicoulaj.maven.plugins</groupId>
-                    <artifactId>checksum-maven-plugin</artifactId>
-                    <version>${checksum-maven-plugin.version}</version>
-                    <configuration>
-                        <algorithms>
-                            <algorithm>MD5</algorithm>
-                            <algorithm>SHA-512</algorithm>
-                        </algorithms>
-                        <attachChecksums>true</attachChecksums>
-                        <includeClassifiers>source-release</includeClassifiers>
-                        <excludeMainArtifact>false</excludeMainArtifact>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugin</groupId>
-                    <artifactId>maven-release-plugin</artifactId>
-                    <version>${maven-release-plugin.version}</version>
-                    <configuration>
-                        <autoVersionSubmodules>true</autoVersionSubmodules>
-                        <signTag>true</signTag>
-                    </configuration>
-                </plugin>
-                <!-- Apache Maven Reporting Plugin Versions. -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>${maven-site-plugin.version}</version>
-                    <configuration>
-                        <siteDirectory>${project.build.interim.site.directory}</siteDirectory>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-project-info-reports-plugin</artifactId>
-                    <version>${maven-project-info-reports-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-changelog-plugin</artifactId>
-                    <version>${maven-changelog-plugin-version}</version>
-                    <configuration>
-                        <displayFileRevDetailUrl>${project.scm.url}/tree/master/%FILE%</displayFileRevDetailUrl>
-                        <displayChangeSetDetailUrl>${project.scm.url}/commit</displayChangeSetDetailUrl>
-                        <headingDateFormat>MM-dd-yyyy</headingDateFormat>
-                        <outputEncoding>${project.build.sourceEncoding}</outputEncoding>
-                        <type>range</type>
-                        <range>30</range>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>taglist-maven-plugin</artifactId>
-                    <version>${taglist-maven-plugin-version}</version>
-                    <configuration>
-                        <inputEncoding>${project.build.sourceEncoding}</inputEncoding>
-                        <sourceFileLocale>en</sourceFileLocale>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-scm-publish-plugin</artifactId>
-                    <version>${maven-scm-publish-plugin-version}</version>
-                    <configuration>
-                        <content>${project.reporting.outputDirectory}</content>
-                        <pubScmUrl>scm:git:https://github.com//stevecrox/stevecrox.github.io.git</pubScmUrl>
-                        <scmBranch>main</scmBranch>
-                        <serverId>site</serverId>
-                        <subDirectory>${project.groupId}/${project.artifactId}</subDirectory>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <version>${maven-source-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${maven-javadoc-plugin.version}</version>
-                </plugin>
             </plugins>
         </pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-markdown-into-target</id>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <phase>validate</phase>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${project.docs.directory}/</directory>
-                                    <includes>
-                                        <include>**/*.md</include>
-                                    </includes>
-                                    <filtering>true</filtering>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${project.build.interim.site.directory}/markdown/</outputDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>copy-resources-into-target</id>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <phase>validate</phase>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${project.docs.directory}/</directory>
-                                    <excludes>
-                                        <exclude>**/*.md</exclude>
-                                        <exclude>site.xml</exclude>
-                                    </excludes>
-                                    <filtering>false</filtering>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${project.build.interim.site.directory}/resources/</outputDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>copy-sitexml-into-target</id>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <phase>validate</phase>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${project.docs.directory}/</directory>
-                                    <includes>
-                                        <include>site.xml</include>
-                                    </includes>
-                                    <filtering>false</filtering>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${project.build.interim.site.directory}/</outputDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>copy-site-resources-into-target</id>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <phase>validate</phase>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>src/site</directory>
-                                    <filtering>true</filtering>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${project.build.interim.site.directory}</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
     </build>
 
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-changelog-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>taglist-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </reporting>
-
-    <developers>
-        <developer>
-            <name>Stephen Crocker</name>
-            <email>stevecrox AT hotmail DOT com DOT br</email>
-        </developer>
-    </developers>
-
-    <contributors>
-        <!-- This project has taken a number of elements from the maven-fluido-skin so I list the contributors here
+    <!-- This project has taken a number of elements from the maven-fluido-skin so I list the contributors here
              to acknowledge their effort. -->
+    <contributors>
         <contributor>
             <name>Bruno P. Kinoshita</name>
             <email>brunodepaulak AT yahoo DOT com DOT br</email>
@@ -338,47 +122,93 @@
         </contributor>
     </contributors>
 
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
     <profiles>
         <profile>
             <id>documentation</id>
             <activation>
                 <file>
-                    <exists>src/main/java</exists>
+                    <exists>${project.docs.directory}</exists>
                 </file>
             </activation>
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <version>${maven-source-plugin.version}</version>
+                        <artifactId>maven-resources-plugin</artifactId>
                         <executions>
                             <execution>
-                                <id>attach-sources</id>
+                                <id>copy-markdown-into-target</id>
                                 <goals>
-                                    <goal>jar-no-fork</goal>
+                                    <goal>copy-resources</goal>
                                 </goals>
+                                <phase>validate</phase>
+                                <configuration>
+                                    <resources>
+                                        <resource>
+                                            <directory>${project.docs.directory}/</directory>
+                                            <includes>
+                                                <include>**/*.md</include>
+                                            </includes>
+                                            <filtering>true</filtering>
+                                        </resource>
+                                    </resources>
+                                    <outputDirectory>${project.build.interim.site.directory}/markdown/</outputDirectory>
+                                </configuration>
                             </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>${maven-javadoc-plugin.version}</version>
-                        <executions>
                             <execution>
-                                <id>attach-javadocs</id>
+                                <id>copy-resources-into-target</id>
                                 <goals>
-                                    <goal>jar</goal>
+                                    <goal>copy-resources</goal>
                                 </goals>
+                                <phase>validate</phase>
+                                <configuration>
+                                    <resources>
+                                        <resource>
+                                            <directory>${project.docs.directory}/</directory>
+                                            <excludes>
+                                                <exclude>**/*.md</exclude>
+                                                <exclude>site.xml</exclude>
+                                            </excludes>
+                                            <filtering>false</filtering>
+                                        </resource>
+                                    </resources>
+                                    <outputDirectory>${project.build.interim.site.directory}/resources/</outputDirectory>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>copy-sitexml-into-target</id>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <phase>validate</phase>
+                                <configuration>
+                                    <resources>
+                                        <resource>
+                                            <directory>${project.docs.directory}/</directory>
+                                            <includes>
+                                                <include>site.xml</include>
+                                            </includes>
+                                            <filtering>false</filtering>
+                                        </resource>
+                                    </resources>
+                                    <outputDirectory>${project.build.interim.site.directory}/</outputDirectory>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>copy-site-resources-into-target</id>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <phase>validate</phase>
+                                <configuration>
+                                    <resources>
+                                        <resource>
+                                            <directory>src/site</directory>
+                                            <filtering>true</filtering>
+                                        </resource>
+                                    </resources>
+                                    <outputDirectory>${project.build.interim.site.directory}</outputDirectory>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
