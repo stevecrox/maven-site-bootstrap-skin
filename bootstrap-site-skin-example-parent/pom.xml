@@ -9,6 +9,7 @@
 
     <groupId>io.github.stevecrox.maven.skins.example</groupId>
     <artifactId>bootstrap-site-skin-example-parent</artifactId>
+    <name>Maven Site Bootstrap Skin Examples Parent</name>
     <packaging>pom</packaging>
 
     <modules>

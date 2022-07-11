@@ -7,7 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>bootstrap-site-skin</artifactId>
-
+    <name>Maven Site Bootstrap Skin</name>
     <properties>
         <!-- Used to get the Site files into the right structure, while also being readable in an SCM. -->
         <project.docs.directory>${project.basedir}/src/site</project.docs.directory>

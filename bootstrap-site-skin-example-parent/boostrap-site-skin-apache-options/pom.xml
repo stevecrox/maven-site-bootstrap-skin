@@ -8,7 +8,5 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>boostrap-site-skin-apache-options</artifactId>
-    <name>Bootrap Skin Apache Layout</name>
-
-
+    <name>Maven Site Bootstrap Skin Apache Layout Example</name>
 </project>
