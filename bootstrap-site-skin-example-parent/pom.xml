@@ -12,13 +12,22 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>boostrap-skin-all-options</module>
-        <module>boostrap-skin-apache-options</module>
-        <module>boostrap-skin-navbar</module>
+        <module>boostrap-site-skin-all-options</module>
+        <module>boostrap-site-skin-apache-options</module>
+        <module>boostrap-site-skin-navbar</module>
     </modules>
 
-    <properties>
-        <!-- Used to get the Site files into the right structure, while also being readable in an SCM. -->
-        <project.docs.directory>${project.basedir}/src/site</project.docs.directory>
-    </properties>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <configuration>
+                        <siteDirectory>src/site</siteDirectory>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>

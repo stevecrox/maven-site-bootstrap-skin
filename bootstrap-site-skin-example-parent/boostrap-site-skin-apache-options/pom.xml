@@ -7,7 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>boostrap-skin-apache-options</artifactId>
+    <artifactId>boostrap-site-skin-apache-options</artifactId>
     <name>Bootrap Skin Apache Layout</name>
 
 

@@ -138,7 +138,7 @@
 #*    *##end
     </header>
 
-#**##set ( $bodyStyle = $decoration.getCustomValue( 'bootstrapSkin.body.style', 'bg-light p-5 rounded' ) )
+#**##set ( $bodyStyle = $decoration.getCustomValue( 'bootstrapSkin.body.style', 'bg-light text-dark rounded' ) )
 #*  *##if ( $sideBarEnabled )
     <main class="d-flex flex-row">
       <nav id="sidebar" class="nav navbar-expand-lg align-items-start $navBarStyle">
@@ -153,10 +153,10 @@
           </ul>
         </div>
       </nav>
-      <div class="$bodyStyle">
+      <div class="p-2 flex-fill $bodyStyle">
 #*  *##else
     <main class="container-fluid">
-      <div class="$bodyStyle">
+      <div class="p-5 $bodyStyle">
 #*  *##end
 ##
 #*    *##set ( $bodyColumnClass = $decoration.getCustomValue( 'bootstrapSkin.bodyColumnClass', 'col-sm-10' ) )

@@ -28,6 +28,17 @@
                 <filtering>true</filtering> <!-- add skin-info -->
             </resource>
         </resources>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <configuration>
+                        <siteDirectory>src/site</siteDirectory>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <!-- Lets use the frontend plugin to grab the release of bootstrap. -->
             <plugin>
