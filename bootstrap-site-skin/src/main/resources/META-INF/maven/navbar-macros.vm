@@ -34,7 +34,8 @@
              "navbar-brand ps-2" )
 ##
 #**##if ( $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.brandEnabled', 'true' ) ) )
-          <a id="navbarBrandLink" class="navbar-brand" href="#">$project.name</a>
+#**##set ( $brandHref = $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.href', '#' ) )
+          <a id="navbarBrandLink" class="navbar-brand" href="$brandHref">$project.name</a>
 #**##end
 #end
 ########################################################################################################################

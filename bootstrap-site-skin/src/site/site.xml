@@ -33,6 +33,11 @@ under the License.
             <gitHub>
                 <projectId>stevecrox/maven-site-bootstrap-skin</projectId>
             </gitHub>
+            <navbar>
+                <icon>
+                    <href>${project.url}/${project.groupId}/${project.artifactId}</href>
+                </icon>
+            </navbar>
         </bootstrapSkin>
     </custom>
 
