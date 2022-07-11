@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>maven-site-bootstrap-skin-parent</artifactId>
-        <groupId>com.github.stevecrox</groupId>
-        <version>0.9.5-SNAPSHOT</version>
+        <groupId>io.github.stevecrox.maven.skins</groupId>
+        <artifactId>bootstrap-skin-parent</artifactId>
+        <version>0.9.13-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>io.github.stevecrox.maven.skins.example</groupId>
     <artifactId>maven-site-bootstrap-skin-integration-tests</artifactId>
     <packaging>pom</packaging>
 
@@ -16,4 +17,8 @@
         <module>boostrap-skin-navbar</module>
     </modules>
 
+    <properties>
+        <!-- Used to get the Site files into the right structure, while also being readable in an SCM. -->
+        <project.docs.directory>${project.basedir}/src/site</project.docs.directory>
+    </properties>
 </project>
