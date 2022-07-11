@@ -8,7 +8,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.stevecrox.maven.skins.example</groupId>
-    <artifactId>maven-site-bootstrap-skin-integration-tests</artifactId>
+    <artifactId>bootstrap-site-skin-example-parent</artifactId>
     <packaging>pom</packaging>
 
     <modules>

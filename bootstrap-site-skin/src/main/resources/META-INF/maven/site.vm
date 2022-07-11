@@ -65,7 +65,7 @@
 ## As a minimum the Navbar should contain breadcrumbs/version generated, if the topbar is enabled this should
 ## go above, otherwise it seems maven tools can inject a banner into the project
 ########################################################################################################################
-#**##set ( $navBarStyle = $decoration.getCustomValue( 'bootstrapSkin.navbar.style', 'navbar-dark bg-primary' ) )
+#**##set ( $navBarStyle = $decoration.getCustomValue( 'bootstrapSkin.navbar.style', 'navbar-dark bg-dark ' ) )
 #**##set ( $navbarOrientation = $decoration.getCustomValue( 'bootstrapSkin.navbar.menuOrientation', 'right' ) )
 #**##set ( $navbarOrientationLeft = "left" )
 #**##set ( $navbarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.enabled', 'true' ) ) )
@@ -137,6 +137,8 @@
       </nav>
 #*    *##end
     </header>
+
+#**##set ( $bodyStyle = $decoration.getCustomValue( 'bootstrapSkin.body.style', 'bg-light p-5 rounded' ) )
 #*  *##if ( $sideBarEnabled )
     <main class="d-flex flex-row">
       <nav id="sidebar" class="nav navbar-expand-lg align-items-start $navBarStyle">
@@ -151,10 +153,10 @@
           </ul>
         </div>
       </nav>
-      <div class="p-2">
+      <div class="$bodyStyle">
 #*  *##else
     <main class="container-fluid">
-      <div>
+      <div class="$bodyStyle">
 #*  *##end
 ##
 #*    *##set ( $bodyColumnClass = $decoration.getCustomValue( 'bootstrapSkin.bodyColumnClass', 'col-sm-10' ) )
@@ -173,8 +175,8 @@
       </div>
     </main>
 
-#**##set ( $footerStyle = $decoration.getCustomValue( 'bootstrapSkin.footer.style', 'bg-primary text-light' ) )
-  <footer class="page-footer font-small py-4 $footerStyle">
+#**##set ( $footerStyle = $decoration.getCustomValue( 'bootstrapSkin.footer.style', 'footer mt-auto py-4 bg-light' ) )
+  <footer class="$footerStyle">
     <div class="container-fluid text-md-left">
         <div class="row">
           <div class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0">
