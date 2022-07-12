@@ -136,7 +136,7 @@
 #*    *##end
     </header>
 
-#**##set ( $bodyStyle = $decoration.getCustomValue( 'bootstrapSkin.body.style', 'bg-light text-dark rounded' ) )
+#**##set ( $bodyStyle = $decoration.getCustomValue( 'bootstrapSkin.body.style', 'rounded' ) )
 #*  *##if ( $sideBarEnabled )
     <main class="d-flex flex-row">
       <nav id="sidebar" class="nav navbar-expand-lg align-items-start $navBarStyle">
