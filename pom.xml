@@ -34,7 +34,7 @@
 
     <properties>
         <!-- Used to get the Site files into the right structure, while also being readable in an SCM. -->
-        <project.docs.directory>docs</project.docs.directory>
+        <project.docs.directory>${project.basedir}/docs</project.docs.directory>
         <project.build.interim.site.directory>${project.build.directory}/docs-site</project.build.interim.site.directory>
         <!-- Overridable property for the version within the site.xml files, this is because
              a release has to use the previous version. -->
