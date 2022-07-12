@@ -10,6 +10,5 @@
     <artifactId>boostrap-site-skin-all-options</artifactId>
     <packaging>jar</packaging>
     <name>Maven Site Bootstrap Skin All Options Configured Example</name>
-
-
+    <url>${parent.url}/${project.artifactId}</url>
 </project>

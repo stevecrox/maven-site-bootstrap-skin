@@ -4,7 +4,7 @@
     <parent>
         <groupId>io.github.stevecrox</groupId>
         <artifactId>maven-parent</artifactId>
-        <version>0.0.7</version>
+        <version>0.0.8-SNAPSHOT</version>
     </parent>
     <groupId>io.github.stevecrox.maven.skins</groupId>
     <artifactId>bootstrap-site-skin-parent</artifactId>
@@ -13,7 +13,7 @@
 
     <name>Maven Site Bootstrap Skin Parent</name>
     <description>The Maven Site Bootstrap Skin is an Apache Maven site skin built on top of the latest bootstrap framework.</description>
-    <url>https://stevecrox.github.io/${project.groupId}/${project.artifactId}/</url>
+    <url>https://${project.site.repository}/${project.groupId}/${project.artifactId}/</url>
     <inceptionYear>2022</inceptionYear>
 
     <scm>
@@ -35,11 +35,13 @@
 
     <properties>
         <!-- Used to get the Site files into the right structure, while also being readable in an SCM. -->
-        <project.docs.directory>${project.basedir}/docs</project.docs.directory>
+        <project.docs.directory>docs</project.docs.directory>
         <project.build.interim.site.directory>${project.build.directory}/docs-site</project.build.interim.site.directory>
         <!-- Overridable property for the version within the site.xml files, this is because
              a release has to use the previous version. -->
         <skin.version>${project.version}</skin.version>
+        <!-- Details for uploading sites into Repository. -->
+        <project.staging.directory>${project.build.directory}/staging</project.staging.directory>
         <!-- Apache Maven Build Plugin Versions. -->
         <frontend-maven-plugin.version>1.12.1</frontend-maven-plugin.version>
         <!-- Frontend Javascript library versions. -->
@@ -52,24 +54,6 @@
     </properties>
 
     <build>
-        <resources>
-            <resource>
-                <directory>${project.docs.directory}</directory>
-                <includes>
-                    <include>**/*.md</include>
-                </includes>
-                <filtering>true</filtering>
-                <targetPath>${project.build.interim.site.directory}/markdown</targetPath>
-            </resource>
-            <resource>
-                <directory>${project.docs.directory}</directory>
-                <excludes>
-                    <exclude>**/*.md</exclude>
-                </excludes>
-                <filtering>true</filtering>
-                <targetPath>${project.build.interim.site.directory}/resources</targetPath>
-            </resource>
-        </resources>
         <pluginManagement>
             <plugins>
                 <!-- Apache Maven Build Plugin Versions. -->
@@ -95,7 +79,6 @@
                     <configuration>
                         <workingDirectory>${project.build.interim.site.directory}</workingDirectory>
                     </configuration>
-
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -140,4 +123,99 @@
             <email>michaelo AT apache DOT org</email>
         </contributor>
     </contributors>
+
+    <profiles>
+        <profile>
+            <id>documentation</id>
+            <activation>
+                <file>
+                    <exists>${project.docs.directory}</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-markdown-into-target</id>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <phase>validate</phase>
+                                <configuration>
+                                    <resources>
+                                        <resource>
+                                            <directory>${project.docs.directory}/</directory>
+                                            <includes>
+                                                <include>**/*.md</include>
+                                            </includes>
+                                            <filtering>true</filtering>
+                                        </resource>
+                                    </resources>
+                                    <outputDirectory>${project.build.interim.site.directory}/markdown/</outputDirectory>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>copy-resources-into-target</id>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <phase>validate</phase>
+                                <configuration>
+                                    <resources>
+                                        <resource>
+                                            <directory>${project.docs.directory}/</directory>
+                                            <excludes>
+                                                <exclude>**/*.md</exclude>
+                                                <exclude>site.xml</exclude>
+                                            </excludes>
+                                            <filtering>false</filtering>
+                                        </resource>
+                                    </resources>
+                                    <outputDirectory>${project.build.interim.site.directory}/resources/</outputDirectory>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>copy-sitexml-into-target</id>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <phase>validate</phase>
+                                <configuration>
+                                    <resources>
+                                        <resource>
+                                            <directory>${project.docs.directory}/</directory>
+                                            <includes>
+                                                <include>site.xml</include>
+                                            </includes>
+                                            <filtering>false</filtering>
+                                        </resource>
+                                    </resources>
+                                    <outputDirectory>${project.build.interim.site.directory}/</outputDirectory>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>copy-site-resources-into-target</id>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <phase>validate</phase>
+                                <configuration>
+                                    <resources>
+                                        <resource>
+                                            <directory>src/site</directory>
+                                            <filtering>true</filtering>
+                                        </resource>
+                                    </resources>
+                                    <outputDirectory>${project.build.interim.site.directory}</outputDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

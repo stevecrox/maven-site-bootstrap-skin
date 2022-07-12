@@ -9,6 +9,7 @@
     <artifactId>bootstrap-site-skin</artifactId>
     <name>Maven Site Bootstrap Skin</name>
     <packaging>jar</packaging>
+    <url>https://${project.site.repository}/${parent.groupId}/${parent.artifactId}/${project.artifactId}</url>
 
     <build>
         <resources>
