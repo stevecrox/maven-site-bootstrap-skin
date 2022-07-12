@@ -21,7 +21,6 @@
 ########################################################################################################################
 #parse( "common-macros.vm" )
 #parse( "footer-macros.vm" )
-#parse( "github-macros.vm" )
 #parse( "navbar-macros.vm" )
 #parse( "projectbar-macros.vm" )
 #parse( "sidebar-macros.vm" )
@@ -71,7 +70,6 @@
 #**##set ( $navbarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.enabled', 'true' ) ) )
 #**##set ( $sideBarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.sidebar.enabled', 'false' ) ) )
     <header>
-#*      *##forkMeOnGitHub()
 ########################################################################################################################
 ## The Site.xml allows you to specify a left/right banner
 ########################################################################################################################

@@ -8,10 +8,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>bootstrap-site-skin</artifactId>
     <name>Maven Site Bootstrap Skin</name>
-    <properties>
-        <!-- Used to get the Site files into the right structure, while also being readable in an SCM. -->
-        <project.docs.directory>${project.basedir}/src/site</project.docs.directory>
-    </properties>
+    <packaging>jar</packaging>
 
     <build>
         <resources>
@@ -19,18 +16,32 @@
                 <directory>${project.basedir}/src/main/resources</directory>
                 <filtering>true</filtering> <!-- add skin-info -->
             </resource>
+            <resource>
+                <directory>${project.build.directory}/node_modules/bootstrap/dist</directory>
+            </resource>
+            <resource>
+                <directory>${project.build.directory}/node_modules/bootstrap-icons/font</directory>
+                <targetPath>${project.build.outputDirectory}/css</targetPath>
+            </resource>
+            <resource>
+                <directory>${project.build.directory}/node_modules/jquery/dist</directory>
+                <targetPath>${project.build.outputDirectory}/js</targetPath>
+            </resource>
+            <resource>
+                <directory>${project.build.directory}/node_modules/code-prettify/src</directory>
+                <includes>
+                    <include>prettify.css</include>
+                </includes>
+                <targetPath>${project.build.outputDirectory}/css</targetPath>
+            </resource>
+            <resource>
+                <directory>${project.build.directory}/node_modules/code-prettify/src</directory>
+                <includes>
+                    <include>prettify.js</include>
+                </includes>
+                <targetPath>${project.build.outputDirectory}/js</targetPath>
+            </resource>
         </resources>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <configuration>
-                        <siteDirectory>${project.basedir}/src/site</siteDirectory>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
         <plugins>
             <!-- Lets use the frontend plugin to grab the release of bootstrap. -->
             <plugin>
@@ -45,118 +56,7 @@
                             <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <arguments>install bootstrap@${bootstrap.version} bootstrap-icons@${bootstrap-icons.version} code-prettify@${code-prettify.version} github-fork-ribbon-css@${github-fork-ribbon-css.version} jquery@${jquery.version}</arguments>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-bootstrap-into-build-output</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${project.build.directory}/node_modules/bootstrap/dist</directory>
-                                    <filtering>false</filtering>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${project.build.outputDirectory}</outputDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>copy-bootstrap-icons-into-build-output</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${project.build.directory}/node_modules/bootstrap-icons/font</directory>
-                                    <filtering>false</filtering>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${project.build.outputDirectory}/css</outputDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>copy-github-fork-ribbon-css-into-build-output</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${project.build.directory}/node_modules/github-fork-ribbon-css/</directory>
-                                    <filtering>false</filtering>
-                                    <includes>
-                                        <include>*.css</include>
-                                    </includes>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${project.build.outputDirectory}/css</outputDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>copy-prettify-css-into-build-output</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${project.build.directory}/node_modules/code-prettify/src</directory>
-                                    <includes>
-                                        <include>prettify.css</include>
-                                    </includes>
-                                    <filtering>false</filtering>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${project.build.outputDirectory}/css</outputDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>copy-prettify-js-into-build-output</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${project.build.directory}/node_modules/code-prettify/src</directory>
-                                    <includes>
-                                        <include>prettify.js</include>
-                                    </includes>
-                                    <filtering>false</filtering>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${project.build.outputDirectory}/js</outputDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>copy-jquery-into-build-output</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${project.build.directory}/node_modules/jquery/dist</directory>
-                                    <filtering>false</filtering>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${project.build.outputDirectory}/js</outputDirectory>
+                            <arguments>install bootstrap@${bootstrap.version} bootstrap-icons@${bootstrap-icons.version} code-prettify@${code-prettify.version} jquery@${jquery.version}</arguments>
                         </configuration>
                     </execution>
                 </executions>

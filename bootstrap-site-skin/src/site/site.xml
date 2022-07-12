@@ -35,7 +35,7 @@ under the License.
             </gitHub>
             <navbar>
                 <icon>
-                    <href>${project.url}/${project.groupId}/${project.artifactId}</href>
+                    <href>https://stevecrox.github.io/${project.groupId}/${project.artifactId}</href>
                 </icon>
             </navbar>
         </bootstrapSkin>
@@ -59,7 +59,6 @@ under the License.
         <menu name="Development">
             <item name="Overview" href="https://stevecrox.github.io/${project.groupId}/bootstrap-site-skin-parent/development/index.html"/>
         </menu>
-        <menu ref="modules"/>
         <menu ref="reports"/>
     </body>
 </project>
