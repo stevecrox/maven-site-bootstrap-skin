@@ -129,7 +129,7 @@
             <id>documentation</id>
             <activation>
                 <file>
-                    <exists>${project.docs.directory}</exists>
+                    <exists>docs</exists>
                 </file>
             </activation>
             <build>
