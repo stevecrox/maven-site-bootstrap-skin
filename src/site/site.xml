@@ -52,9 +52,9 @@ under the License.
             <item name="Footer Configuration" href="${project.url}/gettingStarted/footer.html"/>
         </menu>
         <menu name="Layouts">
-            <item name="Default Example" href="${project.url}/examples/default.html"/>
-            <item name="Apache Image Layout Example" href="${project.url}/examples/apache.html"/>
-            <item name="Kitchen Sink Example" href="${project.url}/examples/kitchenSink.html"/>
+            <item name="Default Example" href="${project.url}/bootstrap-site-skin-example-parent/boostrap-site-skin-navbar/index.html"/>
+            <item name="Apache Image Layout Example" href="${project.url}/bootstrap-site-skin-example-parent/boostrap-site-skin-apache-options/index.html"/>
+            <item name="Kitchen Sink Example" href="${project.url}/bootstrap-site-skin-example-parent/boostrap-site-skin-all-options/index.html"/>
         </menu>
         <menu name="Development">
             <item name="Overview" href="${project.url}/development/index.html"/>
