@@ -25,7 +25,7 @@ under the License.
     <skin>
         <groupId>io.github.stevecrox.maven.skins</groupId>
         <artifactId>bootstrap-site-skin</artifactId>
-        <version>0.9.14</version>
+        <version>0.9.13</version>
     </skin>
 
     <custom>
@@ -33,6 +33,9 @@ under the License.
             <gitHub>
                 <projectId>stevecrox/maven-site-bootstrap-skin</projectId>
             </gitHub>
+            <twitter>
+                <accountId>stevecrox0914</accountId>
+            </twitter>
             <navbar>
                 <icon>
                     <href>${project.url}/${project.groupId}/${project.artifactId}</href>
@@ -42,7 +45,6 @@ under the License.
     </custom>
 
     <body>
-        <menu ref="parent"/>
         <menu name="Getting Started">
             <item name="Overview" href="${project.url}/gettingStarted/index.html"/>
             <item name="Banner Bar Configuration" href="${project.url}/gettingStarted/bannerbar/bannerbar.html"/>

@@ -41,7 +41,7 @@
              a release has to use the previous version. -->
         <skin.version>${project.version}</skin.version>
         <!-- Details for uploading sites into Repository. -->
-        <project.staging.directory>${project.build.directory}/staging</project.staging.directory>
+        <project.staging.directory>${project.build.directory}/staging/${project.artifactId}</project.staging.directory>
         <!-- Apache Maven Build Plugin Versions. -->
         <frontend-maven-plugin.version>1.12.1</frontend-maven-plugin.version>
         <!-- Frontend Javascript library versions. -->

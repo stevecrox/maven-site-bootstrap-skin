@@ -33,6 +33,9 @@ under the License.
             <gitHub>
                 <projectId>stevecrox/maven-site-bootstrap-skin</projectId>
             </gitHub>
+            <twitter>
+                <accountId>stevecrox0914</accountId>
+            </twitter>
             <navbar>
                 <icon>
                     <href>https://stevecrox.github.io/${project.groupId}/${project.artifactId}</href>
