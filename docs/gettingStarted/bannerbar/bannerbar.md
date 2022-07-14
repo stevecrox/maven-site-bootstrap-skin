@@ -11,8 +11,8 @@ The maven-site-plugin supports the definition of the icons using 'bannerLeft' an
     <bannerLeft>
         <href>https://github.com/stevecrox/maven-site-bootstrap-skin</href>
         <border>0</border>
-        <width>340px</width>
-        <height>86px</height>
+        <width>328px</width>
+        <height>116px</height>
         <src>image/example-banner-left.png</src>
     </bannerLeft>
 
