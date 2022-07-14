@@ -1,6 +1,6 @@
 # All Options Enabled Example
 
-This example should enable all possible options and configure them on a single page, it also includes the 'SuperHero' Bootswatch theme.
+This example should enable all possible options and configure them on a single page, it also includes the [United' Bootswatch theme](https://bootswatch.com/united/).
 
 The purpose of this theme is to allow us to demonstrate various capabilities of the skin to confirm nothing is obviously broken (and to also demonstrate what the skin can deliver.)
 
