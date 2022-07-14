@@ -1,10 +1,14 @@
-# All Options Enabled Example
+# Standard NavBar Example
 
 This example should enable all possible options and configure them on a single page, it also includes the [United' Bootswatch theme](https://bootswatch.com/united/).
 
 The purpose of this theme is to allow us to demonstrate various capabilities of the skin to confirm nothing is obviously broken (and to also demonstrate what the skin can deliver.)
 
-## Code Example
+## Markdown Render Tests
+
+The below sections are provided to test various Markdown elements have translated correctly into a maven site.
+
+### Code Example
 Below is some embedded JSON to confirm the prettify plugin is working as expected.
 
 ```json
@@ -14,9 +18,77 @@ Below is some embedded JSON to confirm the prettify plugin is working as expecte
   "age":  "26"
 }
 ```
-## Table Example
+### Table Example
 A simple table to confirm this is rendering correctly.
 
 | first name | surname | age |
 |------------| ------- | --- |
 | Joe        | Bloggs  | 26  |
+
+### Emphasis
+
+I just love **bold text** using stars, if we use a single star we create *italic text* and similarly _one underscore_ should work.
+
+When we ***use three stars*** it becomes bold and italic, similarly ___three underscores___ should work
+
+### Blockquotes
+
+Blockquotes can contain multiple paragraphs. Add a > on the blank lines between the paragraphs.
+
+> This skin is the best thing ever invented and I include toast in that statement
+> ...
+> Well maybe toast is better
+>> This line should be nested
+
+### Lists
+Below is an ordered:
+1. Bread
+2. Toaster
+3. Butter
+
+This list is unordered:
+* Dance All Night
+* To the
+
+  Best Song Ever (Best song eve should be indented and attached to bullet 2)
+* And I think it went Oh oh oh!
+
+## Configuration
+
+The following sections identify the various custom settings used within the site.xml and explains what we expect to result on the page.
+
+### Navbar
+We have limited navbar configuration to the icon elements href field, this should result in the `navbar-brand` element linking to the url within the href element.
+```xml
+  <navbar>
+    <icon>
+      <href>https://stevecrox.github.io/${project.groupId}/${project.artifactId}</href>
+    </icon>
+  </navbar>
+```
+
+### Project Bar
+The following secctions turn of all elements found within the 'project bar' this means no bread crumb release version or publish date is displayed. This should make the project bar invisible. 
+```xml
+  <projectbar>
+    <skipBreadcrumb>true</skipBreadcrumb>
+    <skipGenerationDate>true</skipGenerationDate>
+    <skipGenerationVersion>true</skipGenerationVersion>
+  </projectbar>
+```
+
+### Github
+I have added a Github element to ensure the footer has some content and the icon should appear on the right side of the footer.
+```xml
+            <gitHub>
+                <projectId>stevecrox/maven-site-bootstrap-skin</projectId>
+            </gitHub>
+```
+
+### Twitter
+I have added a Twitter element to ensure the footer has some content and the icon should appear on the right side of the footer.
+```xml
+  <twitter>
+    <accountId>stevecrox0914</accountId>
+  </twitter>
+```

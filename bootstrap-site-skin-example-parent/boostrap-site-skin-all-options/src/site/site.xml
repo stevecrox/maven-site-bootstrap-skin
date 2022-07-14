@@ -55,7 +55,7 @@ under the License.
                 <address>
                     <line1>Postbox</line1>
                     <line2>221B Baker Street</line2>
-                    <cit>London</cit>
+                    <city>London</city>
                     <county>London</county>
                     <country>England</country>
                     <post_code>NW1 6XE</post_code>
@@ -69,8 +69,6 @@ under the License.
             </facebook>
             <gitHub>
                 <projectId>stevecrox/maven-site-bootstrap-skin</projectId>
-                <ribbonOrientation>right</ribbonOrientation>
-                <ribbonColor>red</ribbonColor>
                 <enabled>true</enabled>
             </gitHub>
             <gitLab>
@@ -88,8 +86,8 @@ under the License.
             <navbar>
                 <enabled>true</enabled>
                 <icon>
-                    <alt>test</alt>
-                    <href>https://stevecrox.github.io/${project.groupId}/${project.artifactId}</href>
+                    <alt>alt text for example logo (for testing)</alt>
+                    <href>https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent/boostrap-site-skin-all-options/index.html</href>
                     <src>image/example-logo.png</src>
                 </icon>
                 <menuOrientation>left</menuOrientation>
@@ -97,6 +95,11 @@ under the License.
             <sidebar>
                 <enabled>true</enabled>
             </sidebar>
+            <projectbar>
+                <skipBreadcrumb>false</skipBreadcrumb>
+                <skipGenerationDate>true</skipGenerationDate>
+                <skipGenerationVersion>true</skipGenerationVersion>
+            </projectbar>
         </bootstrapSkin>
     </custom>
 
