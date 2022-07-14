@@ -41,7 +41,7 @@ Blockquotes can contain multiple paragraphs. Add a > on the blank lines between 
 >> This line should be nested
 
 ### Lists
-Below is an ordered:
+Below is an ordered list:
 1. Bread
 2. Toaster
 3. Butter
@@ -50,7 +50,7 @@ This list is unordered:
 * Dance All Night
 * To the
 
-  Best Song Ever (Best song eve should be indented and attached to bullet 2)
+  Best Song Ever (Best song ever should be indented and attached to bullet 2)
 * And I think it went Oh oh oh!
 
 ## Configuration
@@ -65,7 +65,7 @@ The Navbar is enabled should contain a logo next to the brand which includes alt
   <enabled>true</enabled>
   <icon>
     <alt>alt text for example logo (for testing)</alt>
-    <href>https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent/boostrap-site-skin-all-options/index.html</href>
+    <href>https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent</href>
     <src>image/example-logo.png</src>
   </icon>
   <menuOrientation>left</menuOrientation>

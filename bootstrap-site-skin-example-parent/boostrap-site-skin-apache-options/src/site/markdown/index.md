@@ -41,7 +41,7 @@ Blockquotes can contain multiple paragraphs. Add a > on the blank lines between 
 >> This line should be nested
 
 ### Lists
-Below is an ordered:
+Below is an ordered list:
 1. Bread
 2. Toaster
 3. Butter
@@ -50,5 +50,5 @@ This list is unordered:
 * Dance All Night
 * To the
 
-  Best Song Ever (Best song eve should be indented and attached to bullet 2)
+  Best Song Ever (Best song ever should be indented and attached to bullet 2)
 * And I think it went Oh oh oh!

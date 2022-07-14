@@ -39,7 +39,7 @@ Blockquotes can contain multiple paragraphs. Add a > on the blank lines between 
 >> This line should be nested
 
 ### Lists
-Below is an ordered:
+Below is an ordered list:
 1. Bread
 2. Toaster
 3. Butter
@@ -48,16 +48,14 @@ This list is unordered:
 * Dance All Night
 * To the
 
-  Best Song Ever (Best song eve should be indented and attached to bullet 2)
+  Best Song Ever (Best song ever should be indented and attached to bullet 2)
 * And I think it went Oh oh oh!
-
 
 ## Configuration
 
 The following sections identify the various custom settings used within the site.xml and explains what we expect to result on the page.
 
 ### Navbar
-
 The Navbar is enabled should contain a logo next to the brand which includes alternative text and links back to this page. You will notice that the menu links in the Navbar are normally weighted to the right of the Navbar the `menuOrientation` field here should move the menu so it sits next to the brand. Sub menu overlays should be adjusted to appear on the right on the menu dropdown.
 ```xml
 <navbar>
