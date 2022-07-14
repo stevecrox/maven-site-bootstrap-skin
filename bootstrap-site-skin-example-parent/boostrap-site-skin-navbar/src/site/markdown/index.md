@@ -58,13 +58,18 @@ This list is unordered:
 The following sections identify the various custom settings used within the site.xml and explains what we expect to result on the page.
 
 ### Navbar
-We have limited navbar configuration to the icon elements href field, this should result in the `navbar-brand` element linking to the url within the href element.
+
+The Navbar is enabled should contain a logo next to the brand which includes alternative text and links back to this page. You will notice that the menu links in the Navbar are normally weighted to the right of the Navbar the `menuOrientation` field here should move the menu so it sits next to the brand. Sub menu overlays should be adjusted to appear on the right on the menu dropdown.
 ```xml
-  <navbar>
-    <icon>
-      <href>https://stevecrox.github.io/${project.groupId}/${project.artifactId}</href>
-    </icon>
-  </navbar>
+<navbar>
+  <enabled>true</enabled>
+  <icon>
+    <alt>alt text for example logo (for testing)</alt>
+    <href>https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent/boostrap-site-skin-all-options/index.html</href>
+    <src>image/example-logo.png</src>
+  </icon>
+  <menuOrientation>left</menuOrientation>
+</navbar>
 ```
 
 ### Project Bar
@@ -80,9 +85,9 @@ The following secctions turn of all elements found within the 'project bar' this
 ### Github
 I have added a Github element to ensure the footer has some content and the icon should appear on the right side of the footer.
 ```xml
-            <gitHub>
-                <projectId>stevecrox/maven-site-bootstrap-skin</projectId>
-            </gitHub>
+  <gitHub>
+    <projectId>stevecrox/maven-site-bootstrap-skin</projectId>
+  </gitHub>
 ```
 
 ### Twitter

@@ -35,7 +35,7 @@ under the License.
             </gitHub>
             <navbar>
                 <icon>
-                    <href>https://stevecrox.github.io/io.github.stevecrox.maven.skins/${project.artifactId}</href>
+                    <href>https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent</href>
                 </icon>
             </navbar>
         </bootstrapSkin>

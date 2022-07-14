@@ -36,8 +36,8 @@ under the License.
             <navbar>
                 <enabled>true</enabled>
                 <icon>
-                    <alt>test</alt>
-                    <href>https://stevecrox.github.io/io.github.stevecrox.maven.skins/${project.artifactId}</href>
+                    <alt>alt text for example logo (for testing)</alt>
+                    <href>https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent/boostrap-site-skin-all-options/index.html</href>
                     <src>image/example-logo.png</src>
                 </icon>
             </navbar>
