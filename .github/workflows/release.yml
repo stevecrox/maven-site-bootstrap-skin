@@ -39,7 +39,7 @@ jobs:
 
       - name: Prepare Release with Maven
         if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: mvn --batch-mode --settings .github/maven_settings.xml release:prepare -DreleaseVersion=${{ env.BRANCH_NAME }} -Dgoals=clean,install -Dskin.version=${{ env.BRANCH_NAME }}
+        run: mvn --batch-mode --settings .github/maven_settings.xml release:prepare -DreleaseVersion=${{ env.BRANCH_NAME }} -Dskin.version=${{ env.BRANCH_NAME }} -Dgoals=clean,deploy,site,site:stage,scm-publish:publish-scm
         env:
           OSSRH_USER: ${{ secrets.OSSRH_USER }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
@@ -50,7 +50,7 @@ jobs:
          
       - name: Release with Maven
         if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: mvn --batch-mode --settings .github/maven_settings.xml release:perform -DreleaseVersion=${{ env.BRANCH_NAME }} -Dgoals=clean,deploy,site,site:stage,scm-publish:publish-scm -Dskin.version=${{ env.BRANCH_NAME }}
+        run: mvn --batch-mode --settings .github/maven_settings.xml release:perform -DreleaseVersion=${{ env.BRANCH_NAME }} -Dskin.version=${{ env.BRANCH_NAME }} -Dgoals=clean,deploy,site,site:stage,scm-publish:publish-scm
         env:
           OSSRH_USER: ${{ secrets.OSSRH_USER }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
@@ -66,3 +66,4 @@ jobs:
           from_branch: release/${{ env.BRANCH_NAME }}
           target_branch: main
           github_token: ${{ secrets.RELEASE_TOKEN }}
+          label: 'Merging release ${{ env.BRANCH_NAME }} into main'
