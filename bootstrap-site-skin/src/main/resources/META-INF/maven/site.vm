@@ -143,12 +143,10 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarSupportedContent" aria-controls="#sidebarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div id="sidebarSupportedContent" class="collapse navbar-collapse show">
-          <ul id="sidebarList" class="flex-column">
-#*          *##if( $decoration.body && $decoration.body.menus )
-#*            *##mainMenu( $decoration.body.menus )
-#*          *##end
-          </ul>
+        <div id="sidebarSupportedContent" class="collapse navbar-collapse">
+#*        *##if( $decoration.body && $decoration.body.menus )
+#*          *##mainMenu( $decoration.body.menus )
+#*        *##end
         </div>
       </nav>
       <div class="p-5 flex-fill $bodyStyle">
