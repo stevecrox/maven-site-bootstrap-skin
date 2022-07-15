@@ -40,7 +40,7 @@
 ########################################################################################################################
 ##
 ########################################################################################################################
-#macro ( banner $id $name $title $href $src $alt $border $height $width $linkCSS )
+#macro ( banner $id $name $title $href $src $alt $border $height $width $linkCSS $linkText)
 #*  *##if( $href )
 #*    *##if ( !$decoration.isLink( $href ) )
 #*      *##set ( $href = $PathTool.calculateLink( $href, $relativePath ) )
@@ -88,6 +88,10 @@
 #*  *##end
 ##
 #*  *##if( $href )
+#*    *##if($linkText )
+##  There is a space in front of the text to ensure everything is spaced correctly
+#*      *# $linkText
+#*    *##end
 #*    *#</a>##
 #*  *##end
 #end

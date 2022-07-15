@@ -22,6 +22,12 @@
 ## Only add a brand image if a location is supplied
 #**##set ( $banner = $decoration.getCustomChild( 'bootstrapSkin.navbar.icon' ) )
 ##
+#**##if ( $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.brand.enabled', 'true' ) ) )
+#**##set ( $brandText = $decoration.getCustomValue( 'bootstrapSkin.navbar.brand.text', $project.name ) )
+#**##else
+#**##set ( $brandText = '' )
+#**##end
+##
 #**##banner ( "navbarIcon"
              $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.name', 'Navbar Brand Icon' )
              $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.title', 'Navbar Brand Icon' )
@@ -31,12 +37,8 @@
              $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.border' )
              $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.height', '32px' )
              $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.width', '32px' )
-             "navbar-brand ps-2" )
-##
-#**##if ( $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.brandEnabled', 'true' ) ) )
-#**##set ( $brandHref = $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.href', '#' ) )
-          <a id="navbarBrandLink" class="navbar-brand" href="$brandHref">$project.name</a>
-#**##end
+             "navbar-brand text-wrap ps-2"
+             $brandText)
 #end
 ########################################################################################################################
 ##
