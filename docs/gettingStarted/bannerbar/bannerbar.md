@@ -1,6 +1,7 @@
 # Banner Bar
-
+<hr/>
 Most Apache Maven sites have a 'banner' along the top this typically contains two icons referencing the Apache project and a proejct logo as shown below.
+
 ![](bannerbar.png)
 
 The maven-site-plugin supports the definition of the icons using 'bannerLeft' and 'bannerRight' elements. Below is an example of these sections being defined within a `site.xml` file.

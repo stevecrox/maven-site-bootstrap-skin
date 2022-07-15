@@ -1,5 +1,5 @@
 # Getting Started
-
+<hr/>
 The aim of this skin is to make each aspect of the layout configuration but provide sane defaults so you can minimise the amount of configuration you need to provide
 
 ## Usage
@@ -25,12 +25,20 @@ This skin supports a number of configuration options, allowing you to enable var
 * [Banner Bar Configuration](bannerbar/bannerbar.md)
 * [Navbar Configuration](navbar/navbar.md)
 * [Footer Configuration](footer.md)
-* [Project Info Bar Configuration](projectinfobar.md)
+* [Project Info Bar Configuration](projectinfobar/projectinfobar.md)
 * [Sidebar Configuration](sidebar.md)
 
 ## Theming
-By default no theming is applied
-
+The Bootstrap default theme is used unless either a Bootswatch theme is specified or a `css/maven-theme.css` file has been included within the site resources. Below is an example of adding the [darkly bootswatch theme](https://bootswatch.com/darkly/) to the site.
+```xml
+    <project name="xxx">
+      [...]
+      <bootstrapSkin>
+          <bootswatchStyle>darkly</bootswatchStyle>
+      </bootstrapSkin>
+      [...]
+    </project>
+```
 
 ## Responsive Design
 All elements within the skin should follow responsive design using Bootstraps inherit Responsive design elements. The site layout is tested using the test widths the [bootstrap grid system](https://getbootstrap.com/docs/5.0/layout/grid/) specifies to confirm it scales correctly.

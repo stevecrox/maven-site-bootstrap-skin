@@ -1,11 +1,9 @@
-#Navigation Bar
-
+# Navigation Bar
+<hr/>
 By default the skin will generate a [Fixed Navbar](https://getbootstrap.com/docs/5.0/examples/navbar-fixed/), however there are a number of configuration options to change the design of the navigation bar.
 
 ## Enable/Disable the navigation bar
-
 The skin allows you to disable or enable the naviation bar by setting a custom element, as shown below:
-```xml
 ```xml
 <project name="xxx">
     [...]
