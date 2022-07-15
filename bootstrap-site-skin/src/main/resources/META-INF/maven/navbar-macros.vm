@@ -58,7 +58,7 @@
                <ul class="dropdown-menu" aria-labelledby="${menu.name}MenuDropdown">
 #*    *##foreach( $item in $menu.items )
 #*      *##if ( $item.items.size() > 0 )
-                 <li class="dropdown-submenu">
+                 <li class="nav-item dropdown-item dropdown-submenu">
 #*                 *##set ( $currentItemHref = $PathTool.calculateLink( $item.href, $relativePath ) )
 #*                 *##set ( $currentItemHref = $currentItemHref.replaceAll( '\\', '/' ) )
                    #topLink( $currentItemHref $item.name $item.target "dropdown-item" )
