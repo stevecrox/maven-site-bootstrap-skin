@@ -152,9 +152,13 @@
         </div>
       </nav>
       <div class="p-5 flex-fill $bodyStyle">
+## As the sidebar causes us to use the flex system we have to limit the source body sections using a flex class
+#*    *##set ( $sourceBodyClass = 'd-inline-flex' )
 #*  *##else
     <main class="container">
       <div class="p-5 $bodyStyle">
+## The grid system  contains the source code areas
+#*    *##set ( $sourceBodyClass = '' )
 #*  *##end
 ##
 #*    *##set ( $bodyColumnClass = $decoration.getCustomValue( 'bootstrapSkin.bodyColumnClass', 'col-sm-10' ) )
@@ -163,9 +167,9 @@
 #*        *#$bodyContent
 #*      *##else
 #*        *##if ( $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.sourceLineNumbersEnabled', 'true' ) ) )
-#*          *##set ( $sourceStyle = "prettyprint linenums" )
+#*          *##set ( $sourceStyle = "$sourceBodyClass prettyprint linenums" )
 #*        *##else
-#*          *##set ( $sourceStyle = "prettyprint" )
+#*          *##set ( $sourceStyle = "$sourceBodyClass prettyprint" )
 #*        *##end
 ##
 #*        *#$bodyContent.replaceAll( "<div class=${esc.q}source${esc.q}>(\r?\n)?<pre>", "<div class=${esc.q}source${esc.q}><pre class=${esc.q}$sourceStyle${esc.q}>" ).replaceAll( "class=${esc.q}bodyTable${esc.q}", "class=${esc.q}table table-striped${esc.q}" )
