@@ -47,8 +47,11 @@
     <link rel="stylesheet" href="$relativePath/css/bootstrap.min.css" />
     <link rel="stylesheet" href="$relativePath/css/bootstrap-icons.css" />
     <link rel="stylesheet" href="$relativePath/css/maven-base.css" />
-    <link rel="stylesheet" href="$relativePath/css/gh-fork-ribbon.css" />
     <link rel="stylesheet" href="$relativePath/css/prettify.css" />
+#**##set ( $themeCssLink = $decoration.getCustomValue( 'bootstrapSkin.bootswatchStyle' ) )
+#**##if( $themeCssLink )
+    <link rel="stylesheet" href="https://bootswatch.com/5/$themeCssLink/bootstrap.min.css" />
+#**##end
     <link rel="stylesheet" href="$relativePath/css/maven-theme.css" />
     <link rel="stylesheet" href="$relativePath/css/site.css" />
 ##

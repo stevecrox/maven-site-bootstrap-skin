@@ -47,6 +47,7 @@ under the License.
 
     <custom>
         <bootstrapSkin>
+            <bootswatchStyle>litera</bootswatchStyle>
             <contact>
                 <email>bootstrap-skin@maven.sites.uk</email>
                 <fax>01752 123456</fax>

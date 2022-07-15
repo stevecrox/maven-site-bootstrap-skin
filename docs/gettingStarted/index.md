@@ -29,11 +29,10 @@ This skin supports a number of configuration options, allowing you to enable var
 * [Sidebar Configuration](sidebar.md)
 
 ## Theming
-
+By default no theming is applied
 
 
 ## Responsive Design
-
 All elements within the skin should follow responsive design using Bootstraps inherit Responsive design elements. The site layout is tested using the test widths the [bootstrap grid system](https://getbootstrap.com/docs/5.0/layout/grid/) specifies to confirm it scales correctly.
 
 ## Examples
