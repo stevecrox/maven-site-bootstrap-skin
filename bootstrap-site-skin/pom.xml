@@ -15,7 +15,6 @@
         <resources>
             <resource>
                 <directory>${project.basedir}/src/main/resources</directory>
-                <filtering>true</filtering> <!-- add skin-info -->
             </resource>
             <resource>
                 <directory>${project.build.directory}/node_modules/bootstrap/dist</directory>

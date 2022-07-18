@@ -65,8 +65,8 @@
 ##
 ########################################################################################################################
 #macro ( publishDate $skipGenerationDate $skipGenerationVersion $cssClass)
-##
-#**##set ( $dateValue = $decoration.getCustomValue( 'bootstrapSkin.publishDate', $date.get('yyyy-MM-dd') ) )
+#**##set ( $dateFormat = $decoration.getCustomValue( 'publishDate.format', 'yyyy-MM-dd' ) )
+#**##set ( $dateValue = $decoration.getCustomValue( 'bootstrapSkin.publishDate', $date.get($dateFormat) ) )
 ##
 #**##if ( $cssClass )
 #*  *##set ( $cssClass = 'class="' + $cssClass + '"' )
@@ -90,6 +90,7 @@
 #*  *##else
 #*    *##set ( $versionPrefix = "Version" )
 #*  *##end
-            <span id="projectVersion" $cssClass>$versionPrefix: ${project.version}</span>
+#*  *##set ( $version = $decoration.getValue( 'project.version', 'Unknown' ) )
+            <span id="projectVersion" ${cssClass}>${versionPrefix}: ${project.version}</span>
 #**##end
 #end
