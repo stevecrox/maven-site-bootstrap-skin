@@ -182,16 +182,25 @@
   <footer class="$footerStyle">
     <div class="container-fluid text-md-left">
         <div class="row">
-          <div class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0">
+          <div id="ContactDetailsDiv" class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0">
 #*          *##contactDetails()
           </div>
-          <div class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0">
+          <div id="socialMediaDiv" class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0">
 #*          *##socialMediaBar()
-            <div class="py-3">
+            <div id="copyrightDiv" class="pt-3">
               <p>&#169;
 #*            *##copyright()
               </p>
             </div>
+#*          *##if( $decoration.poweredBy.size() > 0 )
+              <div id="poweredByDiv">##
+#*              *##foreach ( $item in $decoration.poweredBy )
+#*                *##banner( "poweredBy" $item.name $item.title $item.href
+                             $item.img $item.alt $item.border
+                             $item.height $item.width "ps-2" )##
+#*              *##end
+#*            *#</div>
+#*          *##end
           </div>
         </div>
       </div>

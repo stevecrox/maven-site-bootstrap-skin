@@ -45,6 +45,10 @@ under the License.
         <src>image/example-banner-right.png</src>
     </bannerRight>
 
+    <poweredBy>
+        <logo name="Apache" img="image/example-banner-right.png" alt="alternativeText" border="0" width="128px" height="62px" />
+    </poweredBy>
+
     <custom>
         <bootstrapSkin>
             <gitHub>

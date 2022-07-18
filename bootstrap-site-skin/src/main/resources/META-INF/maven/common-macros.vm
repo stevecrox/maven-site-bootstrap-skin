@@ -34,6 +34,20 @@
 #*    *##elseif ( ${project.organization.name} )
 #*      *#${project.organization.name}
 #*    *##end
+#*  *##elseif ( ${project.developers} )
+#*    *##if ( $project.developers.size() > 1 )
+#*      *##foreach( $developer in $project.developers )
+#*        *##if ( $developer.name )
+#*          *#$developer.name ,
+#*        *##end
+#*      *##end
+#*    *##else
+#*      *##foreach( $developer in $project.developers )
+#*        *##if ( $developer.name )
+#*          *#$developer.name
+#*        *##end
+#*      *##end
+#*    *##end
 #*  *##end
 #**##end
 #end
@@ -57,6 +71,7 @@
 #*      *##set ( $src = $PathTool.calculateLink( $src, $relativePath ) )
 #*      *##set ( $src = $src.replaceAll( '\\', '/' ) )
 #*    *##end
+##
 #*    *##if ( $alt )
 #*      *##set ( $alt = ' alt="' + $alt + '"' )
 #*    *##elseif ( $name )
@@ -64,27 +79,31 @@
 #*    *##else
 #*      *##set ( $alt = ' alt=""' )
 #*    *##end
+##
 #*    *##if( $border )
 #*      *##set ( $imgBorder = 'border: ' + $border + '; ' )
 #*    *##else
 #*      *##set ( $imgBorder = "" )
 #*    *##end
+##
 #*    *##if( $width )
 #*      *##set ( $imgWidth = 'width="' + $width + '"' )
 #*    *##else
 #*      *##set ( $imgWidth = "" )
 #*    *##end
+##
 #*    *##if( $height )
 #*      *##set ( $imgHeight = 'height="' + $height + '"' )
 #*    *##else
 #*      *##set ( $imgHeight = "" )
 #*    *##end
+##
 #*    *##if( $title )
 #*      *##set ( $bannerTitle=' title="' + $title + '"' )
 #*    *##else
 #*      *##set ( $bannerTitle="" )
 #*    *##end
-#*    *#<img id="${id}Img" src="$src" $alt$bannerTitle $imgWidth $imgHeight #if ($imgBorder)style="$imgBorder"#end/>##
+#*    *#<img id="${id}Img" src="$src" $alt $bannerTitle $imgWidth $imgHeight #if ($imgBorder)style="$imgBorder"#end/>##
 #*  *##end
 ##
 #*  *##if( $href )
