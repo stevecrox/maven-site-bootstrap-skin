@@ -10,19 +10,19 @@ The maven-site-plugin supports the definition of the icons using 'bannerLeft' an
 <project name="xxx">
     [...]
     <bannerLeft>
-        <href>https://github.com/stevecrox/maven-site-bootstrap-skin</href>
-        <border>0</border>
-        <width>328px</width>
-        <height>116px</height>
-        <src>image/example-banner-left.png</src>
+      <href>https://github.com/stevecrox/maven-site-bootstrap-skin</href>
+      <border>0</border>
+      <width>328px</width>
+      <height>116px</height>
+      <src>image/example-banner-left.png</src>
     </bannerLeft>
 
     <bannerRight>
-        <href>https://github.com/stevecrox/maven-site-bootstrap-skin</href>
-        <border>0</border>
-        <width>256px</width>
-        <height>125px</height>
-        <src>image/example-banner-right.png</src>
+      <href>https://github.com/stevecrox/maven-site-bootstrap-skin</href>
+      <border>0</border>
+      <width>256px</width>
+      <height>125px</height>
+      <src>image/example-banner-right.png</src>
     </bannerRight>
     [...]
 </project>

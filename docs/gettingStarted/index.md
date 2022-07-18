@@ -33,9 +33,11 @@ The Bootstrap default theme is used unless either a Bootswatch theme is specifie
 ```xml
     <project name="xxx">
       [...]
-      <bootstrapSkin>
+      <custom>
+        <bootstrapSkin>
           <bootswatchStyle>darkly</bootswatchStyle>
-      </bootstrapSkin>
+        </bootstrapSkin>
+      </custom>
       [...]
     </project>
 ```

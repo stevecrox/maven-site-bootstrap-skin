@@ -48,7 +48,7 @@ under the License.
             <item name="Configuration">
                 <item name="Banner Bar Configuration" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/gettingStarted/bannerbar/bannerbar.html"/>
                 <item name="Navbar Configuration" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/gettingStarted/navbar/navbar.html"/>
-                <item name="Project Info Bar Configuration" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/gettingStarted/projectinfobar.html"/>
+                <item name="Project Info Bar Configuration" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/gettingStarted/projectinfobar/projectinfobar.html"/>
                 <item name="Sidebar Configuration" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/gettingStarted/sidebar.html"/>
                 <item name="Footer Configuration" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/gettingStarted/footer.html"/>
             </item>

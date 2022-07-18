@@ -8,11 +8,11 @@ The skin allows you to disable or enable the naviation bar by setting a custom e
 <project name="xxx">
     [...]
     <custom>
-        <bootstrapSkin>
-            <navbar>
-                <enabled>true</enabled>
-            </navbar>
-        </bootstrapSkin>
+      <bootstrapSkin>
+        <navbar>
+          <enabled>true</enabled>
+        </navbar>
+      </bootstrapSkin>
     </custom>
     [...]
 </project>
@@ -24,15 +24,15 @@ The bootstrap navigation bar has the concept of 'navbar-brand', this is a sectio
 <project name="xxx">
     [...]
     <custom>
-        <bootstrapSkin>
-            <navbar>
-                <icon>
-                    <alt>test</alt>
-                    <href>#</href>
-                    <src>image/example-logo.png</src>
-                </icon>
-            </navbar>
-        </bootstrapSkin>
+      <bootstrapSkin>
+        <navbar>
+          <icon>
+            <alt>test</alt>
+            <href>#</href>
+            <src>image/example-logo.png</src>
+          </icon>
+        </navbar>
+      </bootstrapSkin>
     </custom>
     [...]
 </project>
@@ -45,11 +45,11 @@ You can configure the CSS classes used on the navbar style. Bootstrap 5 contains
 <project name="xxx">
     [...]
     <custom>
-        <bootstrapSkin>
-            <navbar>
-                <style>bg-light</style>
-            </navbar>
-        </bootstrapSkin>
+      <bootstrapSkin>
+        <navbar>
+          <style>bg-light</style>
+        </navbar>
+      </bootstrapSkin>
     </custom>
     [...]
 </project>
