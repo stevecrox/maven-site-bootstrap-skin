@@ -130,10 +130,12 @@
 #*  *##set ( $cssParagraph = "" )
 #**##end
 ##
-#**##if( $href )
-#*  *##set ( $href = 'href=" ' + $href + '"' )
-#**##else
-#*  *##set ( $href = "" )
+#**##if ( !$decoration.isLink( $href ) )
+#*  *##set ( $href = $PathTool.calculateLink( $href, $relativePath ) )
+#*  *##set ( $href = 'href=" ' + $hrf.replaceAll( '\\', '/' ) + '"' )
+#*  *##if ( ( $href == '' ) )
+#*    *##set ( $href = "" )
+#*  *##end
 #**##end
 ##
 #**##if( $text )

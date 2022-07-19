@@ -118,6 +118,13 @@
 ##
 ########################################################################################################################
 #macro ( link $href $name $target $img $position $alt $border $width $height $icon $linkClasses )
+#**##if ( !$decoration.isLink( $href ) )
+#*  *##set ( $href = $PathTool.calculateLink( $href, $relativePath ) )
+#*  *##set ( $href = $hrf.replaceAll( '\\', '/' ) )
+#*  *##if ( ( $href == '' ) )
+#*    *##set ( $href = './' )
+#*  *##end
+#**##end
 #**##set ( $linkTitle = ' title="' + $name + '"' )
 #**##if( $target )
 #*  *##set ( $linkTarget = ' target="' + $target + '"' )

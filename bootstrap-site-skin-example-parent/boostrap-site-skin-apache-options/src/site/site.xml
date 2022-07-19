@@ -59,7 +59,7 @@ under the License.
                 <enabled>false</enabled>
                 <menuOrientation>left</menuOrientation>
                 <icon>
-                    <href>https://stevecrox.github.io/${project.groupId}/${project.artifactId}</href>
+                    <href>./index.html</href>
                 </icon>
             </navbar>
             <sidebar>
@@ -75,23 +75,23 @@ under the License.
         </breadcrumbs>
         <menu ref="parent"/>
         <menu name="Getting Started">
-            <item name="Overview" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/gettingStarted/index.html"/>
+            <item name="Overview" href="../../gettingStarted/index.html"/>
             <item name="Configuration">
-                <item name="Banner Bar Configuration" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/gettingStarted/bannerbar/bannerbar.html"/>
-                <item name="Navbar Configuration" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/gettingStarted/navbar/navbar.html"/>
-                <item name="Project Info Bar Configuration" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/gettingStarted/projectinfobar/projectinfobar.html"/>
-                <item name="Sidebar Configuration" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/gettingStarted/sidebar.html"/>
-                <item name="Footer Configuration" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/gettingStarted/footer.html"/>
+                <item name="Banner Bar Configuration" href="../../gettingStarted/bannerbar/bannerbar.html"/>
+                <item name="Navbar Configuration" href="../../gettingStarted/navbar/navbar.html"/>
+                <item name="Project Info Bar Configuration" href="../../gettingStarted/projectinfobar/projectinfobar.html"/>
+                <item name="Sidebar Configuration" href="../../gettingStarted/sidebar.html"/>
+                <item name="Footer Configuration" href="../../gettingStarted/footer.html"/>
             </item>
-            <item name="Theming" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/gettingStarted/theming.html"/>
+            <item name="Theming" href="../../gettingStarted/theming.html"/>
         </menu>
         <menu name="Layouts">
-            <item name="Default Example" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent/boostrap-site-skin-navbar/index.html"/>
-            <item name="Apache Layout Example" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent/boostrap-site-skin-apache-options/index.html"/>
-            <item name="Kitchen Sink Example" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent/boostrap-site-skin-all-options/index.html"/>
+            <item name="Default Example" href="../../bootstrap-site-skin-example-parent/boostrap-site-skin-navbar/index.html"/>
+            <item name="Apache Layout Example" href="../../bootstrap-site-skin-example-parent/boostrap-site-skin-apache-options/index.html"/>
+            <item name="Kitchen Sink Example" href="../../bootstrap-site-skin-example-parent/boostrap-site-skin-all-options/index.html"/>
         </menu>
         <menu name="Development">
-            <item name="Overview" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/development/index.html"/>
+            <item name="Overview" href="../../development/index.html"/>
         </menu>
         <menu ref="modules"/>
         <menu ref="reports"/>
