@@ -1,6 +1,4 @@
-# Kitchen Sink Example
-
-This example alters all possible options from their default and displays them on a single page, it also includes the ['Litera' Bootswatch theme](https://bootswatch.com/litera/).
+This example alters all possible options from their default and displays them on a single page, it also includes the ['Litera' Bootswatch theme](https://bootswatch.com/litera/). The [Maven Default Skin](https://maven.apache.org/skins/maven-default-skin/sample/) link has been provided to compare with this skin.
 
 The purpose of this theme is to allow us to demonstrate various capabilities of the skin to confirm nothing is obviously broken (and to also demonstrate what the skin can deliver.)
 

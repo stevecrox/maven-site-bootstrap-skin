@@ -1,6 +1,4 @@
-# MkDocs styled website example
-
-This example disabled the project information bar and aligns the Navbar links to the left to mimic a MkDocs layout, it also includes the ['SuperHero' Bootswatch theme](https://bootswatch.com/superhero/).
+This example disabled the project information bar and aligns the Navbar links to the left to mimic a MkDocs layout, it also includes the ['SuperHero' Bootswatch theme](https://bootswatch.com/superhero/). The [Maven Default Skin](https://maven.apache.org/skins/maven-default-skin/sample/) link has been provided to compare with this skin.
 
 The purpose of this theme is to allow us to demonstrate various capabilities of the skin to confirm nothing is obviously broken (and to also demonstrate what the skin can deliver.)
 
