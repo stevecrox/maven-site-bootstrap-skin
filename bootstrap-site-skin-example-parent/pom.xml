@@ -11,7 +11,7 @@
     <artifactId>bootstrap-site-skin-example-parent</artifactId>
     <name>Maven Site Bootstrap Skin Examples Parent</name>
     <packaging>pom</packaging>
-    <url>${parent.url}/${project.artifactId}</url>
+    <url>https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent</url>
 
     <properties>
         <examples.url>https://stevecrox.github.io/${parent.groupId}/${parent.artifactId}/${project.artifactId}</examples.url>

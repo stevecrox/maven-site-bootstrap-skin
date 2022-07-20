@@ -10,5 +10,5 @@
     <artifactId>boostrap-site-skin-all-options</artifactId>
     <packaging>jar</packaging>
     <name>Kitchen Sink Example</name>
-    <url>${parent.url}/${project.artifactId}</url>
+    <url>https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent/boostrap-site-skin-all-options</url>
 </project>

@@ -10,6 +10,5 @@
     <artifactId>boostrap-site-skin-navbar</artifactId>
     <packaging>jar</packaging>
     <name>MkDocs Example</name>
-
-
+    <url>https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent/boostrap-site-skin-navbar</url>
 </project>
