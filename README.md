@@ -5,9 +5,10 @@ The skin allows a number of configuration options allowing you to alter the layo
 ## Contents
 * [Getting Started](docs/gettingStarted/index.md)
 * Layouts
-   * [Default](docs/examples/default.md)
-   * [Apache](docs/examples/apache.md)
-   * [Kitchen Sink](docs/examples/kitchenSink.md)
+   * [Default](https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin/index.html)
+   * [Apache Layout](https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent/boostrap-site-skin-apache-options/index.html)
+   * [Navbar Layout](https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent/boostrap-site-skin-navbar/index.html)
+   * [Kitchen Sink](https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent/boostrap-site-skin-all-options/index.html)
 * [Development](docs/development/index.md)
 
 ## Features
