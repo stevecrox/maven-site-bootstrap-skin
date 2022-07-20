@@ -13,7 +13,7 @@
 
     <name>Maven Site Bootstrap Skin Parent</name>
     <description>The Maven Site Bootstrap Skin is an Apache Maven site skin built on top of the latest bootstrap framework.</description>
-    <url>https://${project.site.repository}/${project.groupId}/${project.artifactId}/</url>
+    <url>https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/</url>
     <inceptionYear>2022</inceptionYear>
 
     <scm>
