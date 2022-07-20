@@ -48,6 +48,11 @@ All elements within the skin should follow responsive design using Bootstraps in
 ## Examples
 
 The layout options are sites using different `site.xml` configurations, these are provided for testing purposes but should also be useful in identifying how you can use the tool. The Source code can be [found on github](https://github.com/stevecrox/maven-site-bootstrap-skin), you can find the site.xml files here:
-* [Default Example](https://github.com/stevecrox/maven-site-bootstrap-skin/blob/main/bootstrap-site-skin-example-parent/boostrap-site-skin-navbar/src/site/site.xml)
-* [Apache Image Layout Example](https://github.com/stevecrox/maven-site-bootstrap-skin/blob/main/bootstrap-site-skin-example-parent/boostrap-site-skin-apache-options/src/site/site.xml)
-* [Kitchen Sink Example](https://github.com/stevecrox/maven-site-bootstrap-skin/blob/main/bootstrap-site-skin-example-parent/boostrap-site-skin-all-options/src/site/site.xml)
+
+| Layout | Description |
+| ------ | ----------- |
+| [Default](../bootstrap-site-skin/index.html) | The Layout with no custom configuration options set. |
+| [Apache](../bootstrap-site-skin-example-parent/boostrap-site-skin-apache-options/index.html) | This layout recreates the Apache website structure, it also has a theme applied |
+| [Kitchen](../bootstrap-site-skin-example-parent/boostrap-site-skin-all-options/index.html)| This layout modifies every single configuration option away from the default values |
+| [MkDocs](../bootstrap-site-skin-example-parent/boostrap-site-skin-navbar/index.html) | This Layout recreates a MkDocs structure. |
+ 
