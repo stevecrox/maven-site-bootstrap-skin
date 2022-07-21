@@ -40,8 +40,8 @@ under the License.
     <bannerRight>
         <href>https://github.com/stevecrox/maven-site-bootstrap-skin</href>
         <border>0</border>
-        <width>256px</width>
-        <height>125px</height>
+        <width>223px</width>
+        <height>86px</height>
         <src>image/example-banner-right.png</src>
     </bannerRight>
 
@@ -69,8 +69,8 @@ under the License.
                 <groupId>test</groupId>
             </facebook>
             <gitHub>
-                <projectId>stevecrox/maven-site-bootstrap-skin</projectId>
-                <enabled>true</enabled>
+                <organisation>stevecrox</organisation>
+                <repository>maven-site-bootstrap-skin</repository>
             </gitHub>
             <gitLab>
                 <projectId>stevecrox/maven-site-bootstrap-skin</projectId>
