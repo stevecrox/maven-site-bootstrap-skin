@@ -37,14 +37,6 @@ under the License.
         <src>image/example-banner-left.png</src>
     </bannerLeft>
 
-    <bannerRight>
-        <href>https://github.com/stevecrox/maven-site-bootstrap-skin</href>
-        <border>0</border>
-        <width>223px</width>
-        <height>86px</height>
-        <src>image/example-banner-right.png</src>
-    </bannerRight>
-
     <custom>
         <bootstrapSkin>
             <bootswatchStyle>litera</bootswatchStyle>
