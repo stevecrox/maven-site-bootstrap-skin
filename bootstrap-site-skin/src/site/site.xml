@@ -31,7 +31,8 @@ under the License.
     <custom>
         <bootstrapSkin>
             <gitHub>
-                <projectId>stevecrox/maven-site-bootstrap-skin</projectId>
+                <organisation>stevecrox</organisation>
+                <repository>maven-site-bootstrap-skin</repository>
             </gitHub>
             <twitter>
                 <accountId>stevecrox0914</accountId>
