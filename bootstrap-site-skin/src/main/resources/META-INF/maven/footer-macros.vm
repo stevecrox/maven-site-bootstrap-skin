@@ -192,13 +192,15 @@
 ##
 #*          *##set ( $gitHubOrg = $decoration.getCustomValue( 'bootstrapSkin.gitHub.organisation' ) )
 #*          *##set ( $gitHubRepo = $decoration.getCustomValue( 'bootstrapSkin.gitHub.repository' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.gitHub.projectId' '' "https://github.com/${$gitHubOrg}/${$gitHubRepo}" 'bi-github text-dark' 'p-1' )
+#*          *##linkFooterDetail( 'bootstrapSkin.gitHub.projectId' '' "https://github.com/${gitHubOrg}/${gitHubRepo}" 'bi-github text-dark' 'p-1' )
 ##
-#*          *##set ( $gitLabProjectId = $decoration.getCustomValue( 'bootstrapSkin.gitLab.projectId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.gitLab.projectId' '' "https://gitlab.com/${gitLabProjectId}" 'bi-git text-dark' 'p-1' )
+#*          *##set ( $gitLabProj = $decoration.getCustomValue( 'bootstrapSkin.gitLab.project' ) )
+#*          *##set ( $gitLabRepo = $decoration.getCustomValue( 'bootstrapSkin.gitLab.repository' ) )
+#*          *##linkFooterDetail( 'bootstrapSkin.gitLab.projectId' '' "https://gitlab.com/${gitLabProj}/${gitLabRepo}" 'bi-git text-dark' 'p-1' )
 ##
-#*          *##set ( $bitbucketProjectId = $decoration.getCustomValue( 'bootstrapSkin.bitbucket.projectId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.bitbucket.projectId' '' "https://bitbucket.com/${$bitbucketProjectId}" 'bi-git text-dark' 'p-1' )
+#*          *##set ( $bitbucketProj = $decoration.getCustomValue( 'bootstrapSkin.bitbucket.project' ) )
+#*          *##set ( $bitbucketRepo = $decoration.getCustomValue( 'bootstrapSkin.bitbucket.repository' ) )
+#*          *##linkFooterDetail( 'bootstrapSkin.bitbucket.projectId' '' "https://bitbucket.com/${bitbucketProj}/${bitbucketRepo}" 'bi-git text-dark' 'p-1' )
 ##
             </div>
 #**##end
