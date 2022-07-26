@@ -40,23 +40,29 @@ The bootstrap navigation bar has the concept of 'navbar-brand', this is a sectio
 Similar to the banner bar the icon element can contain the same attributes as the `<img>` tag. If the icon element is left blank then no icon is added to the page, as a minimum the navbar-brand icon requires a `alt` or `src` attribute for something to be displayed. 
 
 ## Navigation Bar Style
-You can configure the CSS classes used on the navbar style. Bootstrap 5 contains a number of classes for common colouring, by default 'navbar-dark bg-primary' has been set as this provides a clear contrast between the banner and the main text.
+You can configure the CSS classes used on the navbar style. Bootstrap 5 contains a number of classes for common colouring, by default 'navbar-dark bg-dark' has been set as this provides a clear contrast between the banner and the main text.
 ```xml
 <project name="xxx">
     [...]
     <custom>
       <bootstrapSkin>
         <navbar>
-          <style>bg-light</style>
+          <style>navbar-light bg-light</style>
         </navbar>
       </bootstrapSkin>
     </custom>
     [...]
 </project>
 ```
+The above configuration would change the NavBar to look like the following
+
+![](navbarlight.png)
 
 ## Navigation Bar Orientation
-By default the Navigation bar will place the drop down menu on the right side of the navigation bar like so:
+By default the Navigation bar will place the dropdown menu on the right side of the navigation bar like so.
+
 ![](navbarorientationright.png)
+
 This can be changed by setting the menu orientation value within the `site.xml`, the acceptable values are `left` and `right`. Below is an example where the orientation has been set to the right.
+
 ![](navbarorientationleft.png)

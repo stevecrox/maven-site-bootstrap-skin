@@ -55,7 +55,8 @@ under the License.
                 </address>
             </contact>
             <bitbucket>
-                <projectId>test</projectId>
+                <project>stevecrox</project>
+                <repository>maven-site-bootstrap-skin</repository>
             </bitbucket>
             <facebook>
                 <groupId>test</groupId>
@@ -65,7 +66,8 @@ under the License.
                 <repository>maven-site-bootstrap-skin</repository>
             </gitHub>
             <gitLab>
-                <projectId>stevecrox/maven-site-bootstrap-skin</projectId>
+                <project>stevecrox</project>
+                <repository>maven-site-bootstrap-skin</repository>
             </gitLab>
             <instagram>
                 <accountId>test</accountId>

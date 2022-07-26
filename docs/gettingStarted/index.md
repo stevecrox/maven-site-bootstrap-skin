@@ -24,7 +24,7 @@ This skin supports a number of configuration options, allowing you to enable var
 
 * [Banner Bar Configuration](bannerbar/bannerbar.md)
 * [Navbar Configuration](navbar/navbar.md)
-* [Footer Configuration](footer.md)
+* [Footer Configuration](footer/footer.md)
 * [Project Info Bar Configuration](projectinfobar/projectinfobar.md)
 * [Sidebar Configuration](sidebar.md)
 

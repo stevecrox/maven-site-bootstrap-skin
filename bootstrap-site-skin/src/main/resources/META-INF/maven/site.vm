@@ -67,7 +67,7 @@
 ## As a minimum the Navbar should contain breadcrumbs/version generated, if the topbar is enabled this should
 ## go above, otherwise it seems maven tools can inject a banner into the project
 ########################################################################################################################
-#**##set ( $navBarStyle = $decoration.getCustomValue( 'bootstrapSkin.navbar.style', 'navbar-dark bg-dark ' ) )
+#**##set ( $navBarStyle = $decoration.getCustomValue( 'bootstrapSkin.navbar.style', 'navbar-dark bg-dark' ) )
 #**##set ( $navbarOrientation = $decoration.getCustomValue( 'bootstrapSkin.navbar.menuOrientation', 'right' ) )
 #**##set ( $navbarOrientationLeft = "left" )
 #**##set ( $navbarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.enabled', 'true' ) ) )
