@@ -71,7 +71,7 @@ The Navbar is enabled should contain a logo next to the brand which includes alt
 ```
 
 ### Project Bar
-The following secctions turn of all elements found within the 'project bar' this means no bread crumb release version or publish date is displayed. This should make the project bar invisible. 
+The following sections turn of all elements found within the 'project bar' this means no bread crumb release version or publish date is displayed. This should make the project bar invisible. 
 ```xml
   <projectbar>
     <skipBreadcrumb>true</skipBreadcrumb>
@@ -80,18 +80,41 @@ The following secctions turn of all elements found within the 'project bar' this
   </projectbar>
 ```
 
-### Github
-I have added a Github element to ensure the footer has some content and the icon should appear on the right side of the footer.
+
+### Footer Elements
+
+The sections below relate to configuration of the page footer.
+
+#### GitHub
+Github is one of several source control management solutions supported in the media bar, the Github element has 2 attributes, organisation and repository. organisation is the Github user/organisation to whom the repository belongs, while repository is the Github repository name. The skin will use this to build the URL with the path https://github.com/stevecrox/maven-site-bootstrap-skin
 ```xml
-  <gitHub>
-    <projectId>stevecrox/maven-site-bootstrap-skin</projectId>
-  </gitHub>
+<project name="xxx">
+  [...]
+  <custom>
+    <bootstrapSkin>
+      <gitHub>
+        <organisation>stevecrox</organisation>
+        <repository>maven-site-bootstrap-skin</repository>
+      </gitHub>
+    </bootstrapSkin>
+  </custom>
+  [...]
+</project>
 ```
 
-### Twitter
-I have added a Twitter element to ensure the footer has some content and the icon should appear on the right side of the footer.
+#### Twitter
+I have added a Twitter element to ensure the footer has some content and the icon should appear on the right side of the footer. This will create the url `https://twitter.com/stevecrox0914`
+
 ```xml
-  <twitter>
-    <accountId>stevecrox0914</accountId>
-  </twitter>
+<project name="xxx">
+  [...]
+  <custom>
+    <bootstrapSkin>
+      <twitter>
+        <accountId>stevecrox0914</accountId>
+      </twitter>
+    </bootstrapSkin>
+  </custom>
+  [...]
+</project>
 ```
