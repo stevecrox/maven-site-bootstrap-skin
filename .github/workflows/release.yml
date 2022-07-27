@@ -66,4 +66,4 @@ jobs:
           from_branch: release/${{ env.BRANCH_NAME }}
           target_branch: main
           github_token: ${{ secrets.RELEASE_TOKEN }}
-          label: 'Merging release ${{ env.BRANCH_NAME }} into main'
+          message: 'Merging release ${{ env.BRANCH_NAME }} into main'
