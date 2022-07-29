@@ -22,10 +22,10 @@ To use this skin in your project, use the skin element of the site.xml site desc
 
 This skin supports a number of configuration options, allowing you to enable various Bootstrap components and configure them to meet your needs. The configuration is specified within the [`site.xml`](https://maven.apache.org/doxia/doxia-sitetools/doxia-decoration-model/decoration.html) using the `<custom><bootstrapSkin>` element. The following links provide information on various aspects of the skins.
 
-* [Banner Bar Configuration](bannerbar/bannerbar.md)
-* [Navbar Configuration](navbar/navbar.md)
-* [Footer Configuration](footer/footer.md)
-* [Project Info Bar Configuration](projectinfobar/projectinfobar.md)
+* [Banner Bar Configuration](bannerbar/index.md)
+* [Navbar Configuration](navbar/index.md)
+* [Footer Configuration](footer/index.md)
+* [Project Info Bar Configuration](projectinfobar/index.md)
 * [Sidebar Configuration](sidebar.md)
 
 ## Theming

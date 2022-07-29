@@ -108,11 +108,11 @@ under the License.
         <menu name="Getting Started">
             <item name="Overview" href="../../gettingStarted/index.html"/>
             <item name="Configuration">
-                <item name="Banner Bar Configuration" href="../../gettingStarted/bannerbar/bannerbar.html"/>
-                <item name="Navbar Configuration" href="../../gettingStarted/navbar/navbar.html"/>
-                <item name="Project Info Bar Configuration" href="../../gettingStarted/projectinfobar/projectinfobar.html"/>
+                <item name="Banner Bar Configuration" href="../../gettingStarted/bannerbar/index.html"/>
+                <item name="Navbar Configuration" href="../../gettingStarted/navbar/index.html"/>
+                <item name="Project Info Bar Configuration" href="../../gettingStarted/projectinfobar/index.html"/>
                 <item name="Sidebar Configuration" href="../../gettingStarted/sidebar.html"/>
-                <item name="Footer Configuration" href="../../gettingStarted/footer.html"/>
+                <item name="Footer Configuration" href="../../gettingStarted/footer/index.html"/>
             </item>
             <item name="Theming" href="../../gettingStarted/theming.html"/>
         </menu>
