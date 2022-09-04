@@ -28,7 +28,7 @@
 ##
 ########################################################################################################################
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
   <head>
     <meta charset="${outputEncoding}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -61,7 +61,7 @@
 #**##if( $headContent )$headContent#end
 ##
   </head>
-  <body>
+  <body class="d-flex flex-column h-100">
 
 ########################################################################################################################
 ## As a minimum the Navbar should contain breadcrumbs/version generated, if the topbar is enabled this should
@@ -141,7 +141,7 @@
 
 #**##set ( $bodyStyle = $decoration.getCustomValue( 'bootstrapSkin.body.style', 'rounded' ) )
 #*  *##if ( $sideBarEnabled )
-    <main class="d-flex flex-row">
+    <main class="d-flex flex-row flex-shrink-0" role="main">
       <nav id="sidebar" class="nav navbar-expand-lg align-items-start $navBarStyle">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarSupportedContent" aria-controls="#sidebarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -156,8 +156,8 @@
 ## As the sidebar causes us to use the flex system we have to limit the source body sections using a flex class
 #*    *##set ( $sourceBodyClass = 'd-inline-flex' )
 #*  *##else
-    <main class="container">
-      <div class="p-5 $bodyStyle">
+    <main class="flex-shrink-0" role="main">
+      <div class="container $bodyStyle">
 ## The grid system  contains the source code areas
 #*    *##set ( $sourceBodyClass = '' )
 #*  *##end
@@ -178,7 +178,7 @@
       </div>
     </main>
 
-#**##set ( $footerStyle = $decoration.getCustomValue( 'bootstrapSkin.footer.style', 'footer mt-auto py-4 bg-light' ) )
+#**##set ( $footerStyle = $decoration.getCustomValue( 'bootstrapSkin.footer.style', 'footer mt-auto py-4 bg-dark text-light' ) )
   <footer class="$footerStyle">
     <div class="container-fluid text-md-left">
         <div class="row">
