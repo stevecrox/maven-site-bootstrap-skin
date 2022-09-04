@@ -179,28 +179,28 @@
             <div>Get connected with us on social networks</div>
             <div>
 #*          *##set ( $facebookGroupId = $decoration.getCustomValue( 'bootstrapSkin.facebook.groupId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.facebook.groupId' '' "https://www.facebook.com/groups/${facebookGroupId}" 'bi-facebook text-dark' 'p-1' )
+#*          *##linkFooterDetail( 'bootstrapSkin.facebook.groupId' '' "https://www.facebook.com/groups/${facebookGroupId}" 'bi-facebook text-light' 'p-1' )
 ##
 #*          *##set ( $instagramAccountId = $decoration.getCustomValue( 'bootstrapSkin.instagram.accountId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.instagram.accountId' '' "https://instagram.com/${instagramAccountId}" 'bi-instagram text-dark' 'p-1' )
+#*          *##linkFooterDetail( 'bootstrapSkin.instagram.accountId' '' "https://instagram.com/${instagramAccountId}" 'bi-instagram text-light' 'p-1' )
 ##
 #*          *##set ( $twitterAccountId = $decoration.getCustomValue( 'bootstrapSkin.twitter.accountId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.twitter.accountId' '' "https://twitter.com/${twitterAccountId}" 'bi-twitter text-dark' 'p-1' )
+#*          *##linkFooterDetail( 'bootstrapSkin.twitter.accountId' '' "https://twitter.com/${twitterAccountId}" 'bi-twitter text-light' 'p-1' )
 ##
 #*          *##set ( $linkedinAccountId = $decoration.getCustomValue( 'bootstrapSkin.linkedin.accountId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.linkedin.accountId' '' "https://linkedin.com/in/${linkedinAccountId}" 'bi-linkedin text-dark' 'p-1' )
+#*          *##linkFooterDetail( 'bootstrapSkin.linkedin.accountId' '' "https://linkedin.com/in/${linkedinAccountId}" 'bi-linkedin text-light' 'p-1' )
 ##
 #*          *##set ( $gitHubOrg = $decoration.getCustomValue( 'bootstrapSkin.gitHub.organisation' ) )
 #*          *##set ( $gitHubRepo = $decoration.getCustomValue( 'bootstrapSkin.gitHub.repository' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.gitHub.projectId' '' "https://github.com/${gitHubOrg}/${gitHubRepo}" 'bi-github text-dark' 'p-1' )
+#*          *##linkFooterDetail( 'bootstrapSkin.gitHub.projectId' '' "https://github.com/${gitHubOrg}/${gitHubRepo}" 'bi-github text-light' 'p-1' )
 ##
 #*          *##set ( $gitLabProj = $decoration.getCustomValue( 'bootstrapSkin.gitLab.project' ) )
 #*          *##set ( $gitLabRepo = $decoration.getCustomValue( 'bootstrapSkin.gitLab.repository' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.gitLab.projectId' '' "https://gitlab.com/${gitLabProj}/${gitLabRepo}" 'bi-git text-dark' 'p-1' )
+#*          *##linkFooterDetail( 'bootstrapSkin.gitLab.projectId' '' "https://gitlab.com/${gitLabProj}/${gitLabRepo}" 'bi-git text-light' 'p-1' )
 ##
 #*          *##set ( $bitbucketProj = $decoration.getCustomValue( 'bootstrapSkin.bitbucket.project' ) )
 #*          *##set ( $bitbucketRepo = $decoration.getCustomValue( 'bootstrapSkin.bitbucket.repository' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.bitbucket.projectId' '' "https://bitbucket.com/${bitbucketProj}/${bitbucketRepo}" 'bi-git text-dark' 'p-1' )
+#*          *##linkFooterDetail( 'bootstrapSkin.bitbucket.projectId' '' "https://bitbucket.com/${bitbucketProj}/${bitbucketRepo}" 'bi-git text-light' 'p-1' )
 ##
             </div>
 #**##end
