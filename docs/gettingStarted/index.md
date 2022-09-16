@@ -10,9 +10,9 @@ To use this skin in your project, use the skin element of the site.xml site desc
     <project name="xxx">
       [...]
       <skin>
-          <groupId>io.github.stevecrox</groupId>
-          <artifactId>maven-site-bootstrap-skin-parent</artifactId>
-          <version>1.0.0</version>
+          <groupId>io.github.stevecrox.maven.skins</groupId>
+          <artifactId>bootstrap-site-skin</artifactId>
+          <version>1.0.1-SNAPSHOT</version>
       </skin>
       [...]
     </project>
