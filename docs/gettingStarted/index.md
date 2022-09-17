@@ -12,7 +12,7 @@ To use this skin in your project, use the skin element of the site.xml site desc
       <skin>
           <groupId>io.github.stevecrox.maven.skins</groupId>
           <artifactId>bootstrap-site-skin</artifactId>
-          <version>1.0.1-SNAPSHOT</version>
+          <version>${project.version}</version>
       </skin>
       [...]
     </project>
