@@ -4,7 +4,7 @@
     <parent>
         <groupId>io.github.stevecrox</groupId>
         <artifactId>maven-parent</artifactId>
-        <version>0.0.12</version>
+        <version>0.0.14</version>
     </parent>
     <groupId>io.github.stevecrox.maven.skins</groupId>
     <artifactId>bootstrap-site-skin-parent</artifactId>
@@ -27,13 +27,6 @@
         <system>GitHub</system>
         <url>https://github.com/stevecrox/maven-site-bootstrap-skin/issues</url>
     </issueManagement>
-
-    <distributionManagement>
-        <site>
-            <id>site</id>
-            <url>./</url>
-        </site>
-    </distributionManagement>
 
     <modules>
         <module>bootstrap-site-skin</module>
