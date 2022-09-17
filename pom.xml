@@ -28,6 +28,13 @@
         <url>https://github.com/stevecrox/maven-site-bootstrap-skin/issues</url>
     </issueManagement>
 
+    <distributionManagement>
+        <site>
+            <id>site</id>
+            <url>./</url>
+        </site>
+    </distributionManagement>
+
     <modules>
         <module>bootstrap-site-skin</module>
         <module>bootstrap-site-skin-example-parent</module>
