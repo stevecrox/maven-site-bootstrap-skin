@@ -10,5 +10,5 @@
     <artifactId>boostrap-site-skin-apache-options</artifactId>
     <packaging>jar</packaging>
     <name>Apache Layout Example</name>
-    <url>https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent/boostrap-site-skin-apache-options/</url>
+    <url>https://stevecrox.github.io/maven-site-bootstrap-skin/bootstrap-site-skin-example-parent/boostrap-site-skin-apache-options/</url>
 </project>
