@@ -34,6 +34,8 @@
     </modules>
 
     <properties>
+        <!-- Workaround in path due to file name length issues. -->
+        <project.staging.directory>${java.io.tmpdir}/staging/</project.staging.directory>
         <!-- Overridable property for the version within the site.xml files, this is because
              a release has to use the previous version. -->
         <skin.version>${project.version}</skin.version>
