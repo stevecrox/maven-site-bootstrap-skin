@@ -4,7 +4,7 @@
     <parent>
         <groupId>io.github.stevecrox</groupId>
         <artifactId>maven-parent</artifactId>
-        <version>0.0.14</version>
+        <version>1.0.0</version>
     </parent>
     <groupId>io.github.stevecrox.maven.skins</groupId>
     <artifactId>bootstrap-site-skin-parent</artifactId>
@@ -34,8 +34,7 @@
     </modules>
 
     <properties>
-        <!-- Workaround in path due to file name length issues. -->
-        <project.staging.directory>${java.io.tmpdir}/staging/</project.staging.directory>
+        <scmpublish.content>${project.build.directory}/staging/bootstrap-site-skin-parent/</scmpublish.content>
         <!-- Overridable property for the version within the site.xml files, this is because
              a release has to use the previous version. -->
         <skin.version>${project.version}</skin.version>
