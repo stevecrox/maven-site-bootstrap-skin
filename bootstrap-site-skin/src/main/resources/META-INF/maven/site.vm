@@ -141,7 +141,7 @@
 
 #**##set ( $bodyStyle = $decoration.getCustomValue( 'bootstrapSkin.body.style', 'rounded' ) )
 #*  *##if ( $sideBarEnabled )
-    <main class="d-flex flex-row flex-shrink-0 h-100" role="main">
+    <main class="d-flex flex-row flex-shrink-0" role="main">
       <nav id="sidebar" class="nav navbar-expand-lg align-items-start $navBarStyle">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarSupportedContent" aria-controls="#sidebarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -156,7 +156,7 @@
 ## As the sidebar causes us to use the flex system we have to limit the source body sections using a flex class
 #*    *##set ( $sourceBodyClass = 'd-inline-flex' )
 #*  *##else
-    <main class="flex-shrink-0 h-100" role="main">
+    <main class="flex-shrink-0" role="main">
       <div class="container $bodyStyle">
 ## The grid system  contains the source code areas
 #*    *##set ( $sourceBodyClass = '' )
