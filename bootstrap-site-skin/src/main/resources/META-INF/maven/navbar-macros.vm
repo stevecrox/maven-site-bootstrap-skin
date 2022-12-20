@@ -63,12 +63,16 @@
 
                    <ul id="${menu.name}MenuSubMenuDropdown" $subMenuClass>
 #*                   *##foreach( $subitem in $item.items )
-                     <li class="nav-item dropdown-item">#topLink( $subitem.href $subitem.name $subitem.target "dropdown-item" )</li>
+                     <li class="nav-item dropdown-item">
+                       #topLink( $subitem.href $subitem.name $subitem.target "dropdown-item" )
+                     </li>
 #*                   *##end
                    </ul>
                  </li>
 #*      *##else
-                 <li class="nav-item dropdown-item" id="${item.name}Dropdown">#topLink( $item.href $item.name $item.target "dropdown-item" )</li>
+                 <li class="nav-item dropdown-item" id="${item.name}Dropdown">
+                   #topLink( $item.href $item.name $item.target "dropdown-item" )
+                 </li>
 #*      *##end
 #*    *##end
                </ul>
@@ -81,23 +85,19 @@
 ##
 ########################################################################################################################
 #macro ( topLink $href $name $target $classes )
-#**##set ( $linkTitle = ' title="' + $name + '"' )
-#**##if( $target )
-#*  *##set ( $linkTarget = ' target="' + $target + '"' )
-#**##else
-#*  *##set ( $linkTarget = "" )
-#**##end
-#**##if ( ( $href == '' ) )
-#*  *##set ( $href = './' )
-#**##end
-#**##if ( $alignedFileName == $href )
-#*  *#<a title="$name" class="$classes">$name</a>##
-#**##else
-#*  *##if ( !$decoration.isLink( $href ) )
-#*    *##set ( $href = $PathTool.calculateLink( $href, $relativePath ) )
-#*    *##set ( $href = $hrf.replaceAll( '\\', '/' ) )
+#**##if( $href )
+#*  *##if ( $alignedFileName == $href )
+#*    *#<a title="$name" class="$classes">$name</a>##
+#*  *##else
+#*    *##if ( !$decoration.isLink( $href ) )
+#*      *##set ( $href = $PathTool.calculateLink( $href, $relativePath ) )
+#*      *##set ( $href = $href.replaceAll( '\\', '/' ) )
+#*      *##if ( ( $href == '' ) )
+#*        *##set ( $href = './' )
+#*      *##end
+#*    *##end
+#*    *#<a href="$href" id="${name}DropdownLink" title="${name}" #if( $target )target="$target"#end class="$classes" >$name</a>##
 #*  *##end
-#*  *#<a href="$href"$linkTarget title="$name" class="$classes" >$name</a>##
 #**##end
 #end
 ##
