@@ -58,7 +58,7 @@
 #*  *##if( $href )
 #*    *##if ( !$decoration.isLink( $href ) )
 #*      *##set ( $href = $PathTool.calculateLink( $href, $relativePath ) )
-#*      *##set ( $href = $hrf.replaceAll( '\\', '/' ) )
+#*      *##set ( $href = $href.replaceAll( '\\', '/' ) )
 #*      *##if ( ( $href == '' ) )
 #*        *##set ( $href = './' )
 #*      *##end
