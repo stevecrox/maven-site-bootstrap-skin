@@ -123,16 +123,16 @@
 ## If we don't have a Navigation bar, doxia-tools will allow the injection of banners at the top of the page. This
 ## section uses the bootstrap nav bar to inject them at the top of the page.
 ########################################################################################################################
-#**##set ( $pbarSkipGenerationDate = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.projectbar.skipGenerationDate', 'false' ) ) )
-#**##set ( $pbarSkipGenerationVersion = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.projectbar.skipGenerationVersion', 'false' ) ) )
-#**##set ( $pbarSkipBreadcrumb = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.projectbar.skipBreadcrumb', 'false' ) ) )
+#**##set ( $pbarGenerateDate = $decoration.publishDate.position )
+#**##set ( $pbarGenerateVersion = $decoration.version.position )
+#**##set ( $pbarGenerateBreadcrumb = $decoration.getCustomValue( 'bootstrapSkin.projectbar.skipBreadcrumb', 'none' ) )
 ##
-#*    *##if ( !$pbarSkipGenerationDate || !$pbarSkipGenerationVersion || $pbarSkipBreadcrumb )
+#*    *##if ( $pbarGenerateDate != 'none' || $pbarGenerateVersion != 'none' || $pbarGenerateBreadcrumb != 'none' )
       <nav id="projectBar" class="navbar py-0 $navBarStyle" aria-label="projectBarList">
         <div id="projectBarContainer" class="container-fluid">
-#*        *##breadcrumbs( $pbarSkipBreadcrumb $breadcrumbs "justify-content-start" "" "col justify-content-start" )
+#*        *##breadcrumbs( $breadcrumbs "justify-content-start" "" "col justify-content-start" )
           <div id="projectBaDateVersionContainer" class="justify-content-end">
-#*          *##publishDate( $pbarSkipGenerationDate $pbarSkipGenerationVersion "px-1 navbar-text" )
+#*          *##publishDate( "px-1 navbar-text" )
           </div>
         </div>
       </nav>
