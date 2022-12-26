@@ -64,9 +64,11 @@
 ########################################################################################################################
 ##
 ########################################################################################################################
-#macro ( publishDate $skipGenerationDate $skipGenerationVersion $cssClass)
+#macro ( publishDate $cssClass)
 #**##set ( $dateFormat = $decoration.getCustomValue( 'publishDate.format', 'yyyy-MM-dd' ) )
 #**##set ( $dateValue = $decoration.getCustomValue( 'bootstrapSkin.publishDate', $date.get($dateFormat) ) )
+#**##set ( $datePos = $decoration.publishDate.position )
+#**##set ( $versionPos = $decoration.version.position )
 ##
 #**##if ( $cssClass )
 #*  *##set ( $cssClass = 'class="' + $cssClass + '"' )
@@ -74,7 +76,7 @@
 #*  *##set ( $cssClass = "" )
 #**##end
 ##
-#**##if ( !$skipGenerationDate )
+#**##if ( $datePos == 'left' || $datePos == 'right' )
 #*  *##if ( $text.get( "template.lastpublished" ) )
 #*    *##set ( $lastPubPrefix = $text.get( "template.lastpublished" ) )
 #*  *##else
@@ -84,7 +86,7 @@
             <span id="projectDateVersionSpacer" $cssClass>|</span>
 #**##end
 ##
-#**##if ( !$skipGenerationVersion )
+#**##if ( $versionPos == 'left' || $versionPos == 'right' )
 #*  *##if ( $text.get( "template.version" ) )
 #*    *##set ( $versionPrefix = $text.get( "template.version" ) )
 #*  *##else
