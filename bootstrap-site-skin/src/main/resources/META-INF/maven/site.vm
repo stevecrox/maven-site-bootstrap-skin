@@ -123,20 +123,7 @@
 ## If we don't have a Navigation bar, doxia-tools will allow the injection of banners at the top of the page. This
 ## section uses the bootstrap nav bar to inject them at the top of the page.
 ########################################################################################################################
-#**##set ( $pbarGenerateDate = $decoration.publishDate.position )
-#**##set ( $pbarGenerateVersion = $decoration.version.position )
-#**##set ( $pbarGenerateBreadcrumb = $decoration.getCustomValue( 'bootstrapSkin.projectbar.skipBreadcrumb', 'none' ) )
-##
-#*    *##if ( $pbarGenerateDate != 'none' || $pbarGenerateVersion != 'none' || $pbarGenerateBreadcrumb != 'none' )
-      <nav id="projectBar" class="navbar py-0 $navBarStyle" aria-label="projectBarList">
-        <div id="projectBarContainer" class="container-fluid">
-#*        *##breadcrumbs( $breadcrumbs "justify-content-start" "" "col justify-content-start" )
-          <div id="projectBaDateVersionContainer" class="justify-content-end">
-#*          *##publishDate( "px-1 navbar-text" )
-          </div>
-        </div>
-      </nav>
-#*    *##end
+#*    *##projectBar( $navBarStyle )
     </header>
 
 #**##set ( $bodyStyle = $decoration.getCustomValue( 'bootstrapSkin.body.style', 'rounded' ) )
