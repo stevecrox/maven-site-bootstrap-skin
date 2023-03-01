@@ -28,6 +28,9 @@ under the License.
         <version>${skin.version}</version>
     </skin>
 
+    <publishDate position="right"/>
+    <version position="left"/>
+
     <custom>
         <bootstrapSkin>
             <gitHub>
