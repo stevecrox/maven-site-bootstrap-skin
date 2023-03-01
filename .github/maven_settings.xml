@@ -25,6 +25,10 @@
         </server>
     </servers>
 
+    <activeProfiles>
+        <activeProfile>release</activeProfile>
+    </activeProfiles>
+
     <profiles>
         <profile>
             <id>release</id>
@@ -36,6 +40,7 @@
                 <gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
                 <username>${env.GITHUB_USER}</username>
                 <password>${env.GITHUB_TOKEN}</password>
+                <signTag>true</signTag>
             </properties>
         </profile>
     </profiles>
