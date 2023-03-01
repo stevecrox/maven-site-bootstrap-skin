@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="generator" content="#generatedBy()" />
-    <title>Maven Site Bootstrap Skin &#x2013; </title>
+    <title>Maven Site Bootstrap Skin</title>
     <link rel="icon" href="./img/favicons/favicon.ico">
     <!-- CSS Stylesheets, site.css is included so downstream projects can override them as appropriate. -->
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
@@ -84,6 +84,8 @@
                    <a href="project-info.html" id="Project InformationDropdownLink" title="Project Information"  class="dropdown-item" >Project Information</a>
                    <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu">
                      <li class="nav-item dropdown-item">
+                       <a href="ci-management.html" id="CI ManagementDropdownLink" title="CI Management"  class="dropdown-item" >CI Management</a>                     </li>
+                     <li class="nav-item dropdown-item">
                        <a href="dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                     </li>
                      <li class="nav-item dropdown-item">
                        <a href="distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                     </li>
@@ -109,6 +111,12 @@
                    <a href="project-reports.html" id="Project ReportsDropdownLink" title="Project Reports"  class="dropdown-item" >Project Reports</a>
                    <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu">
                      <li class="nav-item dropdown-item">
+                       <a href="cpd.html" id="CPDDropdownLink" title="CPD"  class="dropdown-item" >CPD</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="pmd.html" id="PMDDropdownLink" title="PMD"  class="dropdown-item" >PMD</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                     </li>
+                     <li class="nav-item dropdown-item">
                        <a href="changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                     </li>
                      <li class="nav-item dropdown-item">
                        <a href="file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                     </li>
@@ -125,51 +133,49 @@
       <nav id="projectBar" class="navbar py-0 navbar-dark bg-dark" aria-label="projectBarList">
         <div id="projectBarContainer" class="container-fluid">
           <div id="projectBaDateVersionContainer" class="justify-content-start">
-            <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2023-01-06</span>
+            <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2023-03-01</span>
             <span id="projectDateVersionSpacer" class="px-1 navbar-text">|</span>
-            <span id="projectVersion" class="px-1 navbar-text">Version: 1.0.11</span>
+            <span id="projectVersion" class="px-1 navbar-text">Version: 1.0.12</span>
           </div>
-          <div id="breadcrumbSpacer"  class=""></div>
+          <div id="breadcrumbSpacer" ></div>
         </div>
       </nav>
     </header>
 
     <main class="flex-shrink-0" role="main">
       <div class="container rounded">
-<p>The Maven Site Bootstrap Skin is an Apache Maven site skin built on top of <a class="externalLink" href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">Bootstrap 5</a>. It allows you to supply a <a class="externalLink" href="https://bootswatch.com/">Bootswatch Theme</a> as a CSS file as well as other additional CSS.</p>
-<p>The skin allows a number of configuration options allowing you to alter the layout to suit your design tastes. Example skin configurations have been provided to demonstrate the <a class="externalLink" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin/index.html">default navbar layout</a> and the <a class="externalLink" href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent/boostrap-site-skin-apache-options/index.html">Apache standard layout</a>. The <a class="externalLink" href="https://maven.apache.org/skins/maven-default-skin/sample/">Maven Default Skin</a> link has been provided to compare with this skin.</p><section>
-<h2><a name="Markdown_Render_Tests"></a>Markdown Render Tests</h2>
+<p>The Maven Site Bootstrap Skin is an Apache Maven site skin built on top of <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/" class="externalLink">Bootstrap 5</a>. It allows you to supply a <a href="https://bootswatch.com/" class="externalLink">Bootswatch Theme</a> as a CSS file as well as other additional CSS.</p>
+<p>The skin allows a number of configuration options allowing you to alter the layout to suit your design tastes. Example skin configurations have been provided to demonstrate the <a href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin/index.html" class="externalLink">default navbar layout</a> and the <a href="https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent/boostrap-site-skin-apache-options/index.html" class="externalLink">Apache standard layout</a>. The <a href="https://maven.apache.org/skins/maven-default-skin/sample/" class="externalLink">Maven Default Skin</a> link has been provided to compare with this skin.</p><section><section>
+<h2>Markdown Render Tests</h2>
 <p>The below sections are provided to test various Markdown elements have translated correctly into a maven site.</p><section>
-<h3><a name="Code_Example"></a>Code Example</h3>
+<h3>Code Example</h3>
 <p>Below is some embedded JSON to confirm the prettify plugin is working as expected.</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-json">{  
+<div class="verbatim">
+<pre><code class="language-json">{  
   &quot;first name&quot;: &quot;Joe&quot;,
   &quot;surname&quot;: &quot;Bloggs&quot;,
   &quot;age&quot;:  &quot;26&quot;
 }
 </code></pre></div></section><section>
-<h3><a name="Table_Example"></a>Table Example</h3>
+<h3>Table Example</h3>
 <p>A simple table to confirm this is rendering correctly.</p>
-<table border="0" class="table table-striped">
+<table class="table table-striped">
 <thead>
-
 <tr class="a">
 <th>first name</th>
 <th>surname</th>
-<th>age</th></tr>
-</thead><tbody>
-
+<th>age</th></tr></thead><tbody>
 <tr class="b">
-<td align="left">Joe</td>
+<td>Joe</td>
 <td>Bloggs</td>
-<td>26</td></tr>
-</tbody>
-</table></section><section>
-<h3><a name="Emphasis"></a>Emphasis</h3>
-<p>I just love <b>bold text</b> using stars, if we use a single star we create <i>italic text</i> and similarly <i>one underscore</i> should work.</p>
-<p>When we <i><b>use three stars</b></i> it becomes bold and italic, similarly <i><b>three underscores</b></i> should work</p></section><section>
-<h3><a name="Blockquotes"></a>Blockquotes</h3>
+<td>26</td></tr></tbody>
+</table>
+</section><section>
+<h3>Emphasis</h3>
+<p>I just love <strong>bold text</strong> using stars, if we use a single star we create <em>italic text</em> and similarly <em>one underscore</em> should work.</p>
+<p>When we <em><strong>use three stars</strong></em> it becomes bold and italic, similarly <em><strong>three underscores</strong></em> should work</p></section><section>
+<h3>Blockquotes</h3>
 <p>Blockquotes can contain multiple paragraphs. Add a &gt; on the blank lines between the paragraphs.</p>
 <blockquote>
 
@@ -181,7 +187,7 @@ Well maybe toast is better</p>
 <p>This line should be nested</p>
 </blockquote>
 </blockquote></section><section>
-<h3><a name="Lists"></a>Lists</h3>
+<h3>Lists</h3>
 <p>Below is an ordered list:</p>
 <ol style="list-style-type: decimal">
 
@@ -193,25 +199,20 @@ Well maybe toast is better</p>
 <ul>
 
 <li>
-
-<p>Dance All Night</p>
-</li>
+<p>Dance All Night</p></li>
 <li>
-
 <p>To the</p>
-<p>Best Song Ever (Best song ever should be indented and attached to bullet 2)</p>
-</li>
+<p>Best Song Ever (Best song ever should be indented and attached to bullet 2)</p></li>
 <li>
-
-<p>And I think it went Oh oh oh!</p>
-</li>
+<p>And I think it went Oh oh oh!</p></li>
 </ul></section></section><section>
-<h2><a name="Configuration"></a>Configuration</h2>
+<h2>Configuration</h2>
 <p>The following sections identify the various custom settings used within the site.xml and explains what we expect to result on the page.</p><section>
-<h3><a name="Navbar"></a>Navbar</h3>
+<h3>Navbar</h3>
 <p>The Navbar is enabled should contain a logo next to the brand which includes alternative text and links back to this page. You will notice that the menu links in the Navbar are normally weighted to the right of the Navbar the <code>menuOrientation</code> field here should move the menu so it sits next to the brand. Sub menu overlays should be adjusted to appear on the right on the menu dropdown.</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;navbar&gt;
+<div class="verbatim">
+<pre><code class="language-xml">&lt;navbar&gt;
   &lt;enabled&gt;true&lt;/enabled&gt;
   &lt;icon&gt;
     &lt;href&gt;https://stevecrox.github.io/${project.groupId}/${project.artifactId}&lt;/href&gt;
@@ -219,10 +220,11 @@ Well maybe toast is better</p>
   &lt;menuOrientation&gt;left&lt;/menuOrientation&gt;
 &lt;/navbar&gt;
 </code></pre></div></section><section>
-<h3><a name="GitHub"></a>GitHub</h3>
-<p>Github is one of several source control management solutions supported in the media bar, the Github element has 2 attributes, organisation and repository. organisation is the Github user/organisation to whom the repository belongs, while repository is the Github repository name. The skin will use this to build the URL with the path <a class="externalLink" href="https://github.com/stevecrox/maven-site-bootstrap-skin">https://github.com/stevecrox/maven-site-bootstrap-skin</a></p>
+<h3>GitHub</h3>
+<p>Github is one of several source control management solutions supported in the media bar, the Github element has 2 attributes, organisation and repository. organisation is the Github user/organisation to whom the repository belongs, while repository is the Github repository name. The skin will use this to build the URL with the path <a href="https://github.com/stevecrox/maven-site-bootstrap-skin" class="externalLink">https://github.com/stevecrox/maven-site-bootstrap-skin</a></p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
+<div class="verbatim">
+<pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
   [...]
   &lt;custom&gt;
     &lt;bootstrapSkin&gt;
@@ -235,10 +237,11 @@ Well maybe toast is better</p>
   [...]
 &lt;/project&gt;
 </code></pre></div><section>
-<h4><a name="Twitter"></a>Twitter</h4>
+<h4>Twitter</h4>
 <p>I have added a Twitter element to ensure the footer has some content and the icon should appear on the right side of the footer. This will create the url <code>https://twitter.com/stevecrox0914</code></p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
+<div class="verbatim">
+<pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
   [...]
   &lt;custom&gt;
     &lt;bootstrapSkin&gt;
@@ -249,7 +252,7 @@ Well maybe toast is better</p>
   &lt;/custom&gt;
   [...]
 &lt;/project&gt;
-</code></pre></div></section></section></section>
+</code></pre></div></section></section></section></section>
       </div>
     </main>
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="generator" content="#generatedBy()" />
-    <title>MkDocs Example &#x2013; </title>
+    <title>MkDocs Example</title>
     <link rel="icon" href="./img/favicons/favicon.ico">
     <!-- CSS Stylesheets, site.css is included so downstream projects can override them as appropriate. -->
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
@@ -20,7 +20,7 @@
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div id="projectBarContainer" class="container-fluid">
-<a href="./index.html" id="navbarIconLink" title="alt text for example logo (for testing)" class="navbar-brand text-wrap ps-2"><img id="navbarIconImg" src="image/example-logo.png"  alt="alt text for example logo (for testing)"  title="Navbar Brand Icon" width="32px" height="32px" style=""/> MkDocs Example
+<a href="./index.html" id="navbarIconLink" title="alt text for example logo (for testing)" class="navbar-brand text-wrap ps-2"><img id="navbarIconImg" src="image/example-logo.png"  alt="alt text for example logo (for testing)"  title="Navbar Brand Icon" width="32px" height="32px" /> MkDocs Example
 </a>          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -84,6 +84,8 @@
                    <a href="project-info.html" id="Project InformationDropdownLink" title="Project Information"  class="dropdown-item" >Project Information</a>
                    <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu submenu-left">
                      <li class="nav-item dropdown-item">
+                       <a href="ci-management.html" id="CI ManagementDropdownLink" title="CI Management"  class="dropdown-item" >CI Management</a>                     </li>
+                     <li class="nav-item dropdown-item">
                        <a href="dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                     </li>
                      <li class="nav-item dropdown-item">
                        <a href="distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                     </li>
@@ -109,6 +111,8 @@
                    <a href="project-reports.html" id="Project ReportsDropdownLink" title="Project Reports"  class="dropdown-item" >Project Reports</a>
                    <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu submenu-left">
                      <li class="nav-item dropdown-item">
+                       <a href="jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                     </li>
+                     <li class="nav-item dropdown-item">
                        <a href="changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                     </li>
                      <li class="nav-item dropdown-item">
                        <a href="file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                     </li>
@@ -125,51 +129,49 @@
       <nav id="projectBar" class="navbar py-0 navbar-dark bg-dark" aria-label="projectBarList">
         <div id="projectBarContainer" class="container-fluid">
           <div id="projectBaDateVersionContainer" class="justify-content-start">
-            <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2023-01-06</span>
+            <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2023-03-01</span>
             <span id="projectDateVersionSpacer" class="px-1 navbar-text">|</span>
-            <span id="projectVersion" class="px-1 navbar-text">Version: 1.0.11</span>
+            <span id="projectVersion" class="px-1 navbar-text">Version: 1.0.12</span>
           </div>
-          <div id="breadcrumbSpacer"  class=""></div>
+          <div id="breadcrumbSpacer" ></div>
         </div>
       </nav>
     </header>
 
     <main class="flex-shrink-0" role="main">
       <div class="container rounded">
-<p>This example should enable all possible options and configure them on a single page, it also includes the <a class="externalLink" href="https://bootswatch.com/united/">United Bootswatch theme</a>. The <a class="externalLink" href="https://maven.apache.org/skins/maven-default-skin/sample/">Maven Default Skin</a> link has been provided to compare with this skin.</p>
-<p>The purpose of this theme is to allow us to demonstrate various capabilities of the skin to confirm nothing is obviously broken (and to also demonstrate what the skin can deliver.)</p><section>
-<h2><a name="Markdown_Render_Tests"></a>Markdown Render Tests</h2>
+<p>This example should enable all possible options and configure them on a single page, it also includes the <a href="https://bootswatch.com/united/" class="externalLink">United Bootswatch theme</a>. The <a href="https://maven.apache.org/skins/maven-default-skin/sample/" class="externalLink">Maven Default Skin</a> link has been provided to compare with this skin.</p>
+<p>The purpose of this theme is to allow us to demonstrate various capabilities of the skin to confirm nothing is obviously broken (and to also demonstrate what the skin can deliver.)</p><section><section>
+<h2>Markdown Render Tests</h2>
 <p>The below sections are provided to test various Markdown elements have translated correctly into a maven site.</p><section>
-<h3><a name="Code_Example"></a>Code Example</h3>
+<h3>Code Example</h3>
 <p>Below is some embedded JSON to confirm the prettify plugin is working as expected.</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-json">{  
+<div class="verbatim">
+<pre><code class="language-json">{  
   &quot;first name&quot;: &quot;Joe&quot;,
   &quot;surname&quot;: &quot;Bloggs&quot;,
   &quot;age&quot;:  &quot;26&quot;
 }
 </code></pre></div></section><section>
-<h3><a name="Table_Example"></a>Table Example</h3>
+<h3>Table Example</h3>
 <p>A simple table to confirm this is rendering correctly.</p>
-<table border="0" class="table table-striped">
+<table class="table table-striped">
 <thead>
-
 <tr class="a">
 <th>first name</th>
 <th>surname</th>
-<th>age</th></tr>
-</thead><tbody>
-
+<th>age</th></tr></thead><tbody>
 <tr class="b">
-<td align="left">Joe</td>
+<td>Joe</td>
 <td>Bloggs</td>
-<td>26</td></tr>
-</tbody>
-</table></section><section>
-<h3><a name="Emphasis"></a>Emphasis</h3>
-<p>I just love <b>bold text</b> using stars, if we use a single star we create <i>italic text</i> and similarly <i>one underscore</i> should work.</p>
-<p>When we <i><b>use three stars</b></i> it becomes bold and italic, similarly <i><b>three underscores</b></i> should work</p></section><section>
-<h3><a name="Blockquotes"></a>Blockquotes</h3>
+<td>26</td></tr></tbody>
+</table>
+</section><section>
+<h3>Emphasis</h3>
+<p>I just love <strong>bold text</strong> using stars, if we use a single star we create <em>italic text</em> and similarly <em>one underscore</em> should work.</p>
+<p>When we <em><strong>use three stars</strong></em> it becomes bold and italic, similarly <em><strong>three underscores</strong></em> should work</p></section><section>
+<h3>Blockquotes</h3>
 <p>Blockquotes can contain multiple paragraphs. Add a &gt; on the blank lines between the paragraphs.</p>
 <blockquote>
 
@@ -181,7 +183,7 @@ Well maybe toast is better</p>
 <p>This line should be nested</p>
 </blockquote>
 </blockquote></section><section>
-<h3><a name="Lists"></a>Lists</h3>
+<h3>Lists</h3>
 <p>Below is an ordered list:</p>
 <ol style="list-style-type: decimal">
 
@@ -193,25 +195,20 @@ Well maybe toast is better</p>
 <ul>
 
 <li>
-
-<p>Dance All Night</p>
-</li>
+<p>Dance All Night</p></li>
 <li>
-
 <p>To the</p>
-<p>Best Song Ever (Best song ever should be indented and attached to bullet 2)</p>
-</li>
+<p>Best Song Ever (Best song ever should be indented and attached to bullet 2)</p></li>
 <li>
-
-<p>And I think it went Oh oh oh!</p>
-</li>
+<p>And I think it went Oh oh oh!</p></li>
 </ul></section></section><section>
-<h2><a name="Configuration"></a>Configuration</h2>
+<h2>Configuration</h2>
 <p>The following sections identify the various custom settings used within the site.xml and explains what we expect to result on the page.</p><section>
-<h3><a name="Navbar"></a>Navbar</h3>
+<h3>Navbar</h3>
 <p>The Navbar is enabled should contain a logo next to the brand which includes alternative text and links back to this page. You will notice that the menu links in the Navbar are normally weighted to the right of the Navbar the <code>menuOrientation</code> field here should move the menu so it sits next to the brand. Sub menu overlays should be adjusted to appear on the right on the menu dropdown.</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;navbar&gt;
+<div class="verbatim">
+<pre><code class="language-xml">&lt;navbar&gt;
   &lt;enabled&gt;true&lt;/enabled&gt;
   &lt;icon&gt;
     &lt;alt&gt;alt text for example logo (for testing)&lt;/alt&gt;
@@ -221,21 +218,23 @@ Well maybe toast is better</p>
   &lt;menuOrientation&gt;left&lt;/menuOrientation&gt;
 &lt;/navbar&gt;
 </code></pre></div></section><section>
-<h3><a name="Project_Bar"></a>Project Bar</h3>
+<h3>Project Bar</h3>
 <p>The following sections turn of all elements found within the &#x2018;project bar&#x2019; this means no bread crumb release version or publish date is displayed. This should make the project bar invisible.</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">  &lt;projectbar&gt;
+<div class="verbatim">
+<pre><code class="language-xml">  &lt;projectbar&gt;
     &lt;skipBreadcrumb&gt;true&lt;/skipBreadcrumb&gt;
     &lt;skipGenerationDate&gt;true&lt;/skipGenerationDate&gt;
     &lt;skipGenerationVersion&gt;true&lt;/skipGenerationVersion&gt;
   &lt;/projectbar&gt;
 </code></pre></div></section><section>
-<h3><a name="Footer_Elements"></a>Footer Elements</h3>
+<h3>Footer Elements</h3>
 <p>The sections below relate to configuration of the page footer.</p><section>
-<h4><a name="GitHub"></a>GitHub</h4>
-<p>Github is one of several source control management solutions supported in the media bar, the Github element has 2 attributes, organisation and repository. organisation is the Github user/organisation to whom the repository belongs, while repository is the Github repository name. The skin will use this to build the URL with the path <a class="externalLink" href="https://github.com/stevecrox/maven-site-bootstrap-skin">https://github.com/stevecrox/maven-site-bootstrap-skin</a></p>
+<h4>GitHub</h4>
+<p>Github is one of several source control management solutions supported in the media bar, the Github element has 2 attributes, organisation and repository. organisation is the Github user/organisation to whom the repository belongs, while repository is the Github repository name. The skin will use this to build the URL with the path <a href="https://github.com/stevecrox/maven-site-bootstrap-skin" class="externalLink">https://github.com/stevecrox/maven-site-bootstrap-skin</a></p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
+<div class="verbatim">
+<pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
   [...]
   &lt;custom&gt;
     &lt;bootstrapSkin&gt;
@@ -248,10 +247,11 @@ Well maybe toast is better</p>
   [...]
 &lt;/project&gt;
 </code></pre></div></section><section>
-<h4><a name="Twitter"></a>Twitter</h4>
+<h4>Twitter</h4>
 <p>I have added a Twitter element to ensure the footer has some content and the icon should appear on the right side of the footer. This will create the url <code>https://twitter.com/stevecrox0914</code></p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
+<div class="verbatim">
+<pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
   [...]
   &lt;custom&gt;
     &lt;bootstrapSkin&gt;
@@ -262,7 +262,7 @@ Well maybe toast is better</p>
   &lt;/custom&gt;
   [...]
 &lt;/project&gt;
-</code></pre></div></section></section></section>
+</code></pre></div></section></section></section></section>
       </div>
     </main>
 

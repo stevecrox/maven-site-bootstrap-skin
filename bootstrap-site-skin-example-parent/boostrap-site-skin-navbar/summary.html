@@ -20,7 +20,7 @@
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div id="projectBarContainer" class="container-fluid">
-<a href="./index.html" id="navbarIconLink" title="alt text for example logo (for testing)" class="navbar-brand text-wrap ps-2"><img id="navbarIconImg" src="image/example-logo.png"  alt="alt text for example logo (for testing)"  title="Navbar Brand Icon" width="32px" height="32px" style=""/> MkDocs Example
+<a href="./index.html" id="navbarIconLink" title="alt text for example logo (for testing)" class="navbar-brand text-wrap ps-2"><img id="navbarIconImg" src="image/example-logo.png"  alt="alt text for example logo (for testing)"  title="Navbar Brand Icon" width="32px" height="32px" /> MkDocs Example
 </a>          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -84,6 +84,8 @@
                    <a href="project-info.html" id="Project InformationDropdownLink" title="Project Information"  class="dropdown-item" >Project Information</a>
                    <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu submenu-left">
                      <li class="nav-item dropdown-item">
+                       <a href="ci-management.html" id="CI ManagementDropdownLink" title="CI Management"  class="dropdown-item" >CI Management</a>                     </li>
+                     <li class="nav-item dropdown-item">
                        <a href="dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                     </li>
                      <li class="nav-item dropdown-item">
                        <a href="distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                     </li>
@@ -109,6 +111,8 @@
                    <a href="project-reports.html" id="Project ReportsDropdownLink" title="Project Reports"  class="dropdown-item" >Project Reports</a>
                    <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu submenu-left">
                      <li class="nav-item dropdown-item">
+                       <a href="jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                     </li>
+                     <li class="nav-item dropdown-item">
                        <a href="changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                     </li>
                      <li class="nav-item dropdown-item">
                        <a href="file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                     </li>
@@ -125,11 +129,11 @@
       <nav id="projectBar" class="navbar py-0 navbar-dark bg-dark" aria-label="projectBarList">
         <div id="projectBarContainer" class="container-fluid">
           <div id="projectBaDateVersionContainer" class="justify-content-start">
-            <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2023-01-06</span>
+            <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2023-03-01</span>
             <span id="projectDateVersionSpacer" class="px-1 navbar-text">|</span>
-            <span id="projectVersion" class="px-1 navbar-text">Version: 1.0.11</span>
+            <span id="projectVersion" class="px-1 navbar-text">Version: 1.0.12</span>
           </div>
-          <div id="breadcrumbSpacer"  class=""></div>
+          <div id="breadcrumbSpacer" ></div>
         </div>
       </nav>
     </header>
@@ -137,43 +141,40 @@
     <main class="flex-shrink-0" role="main">
       <div class="container rounded">
 <section>
-<h2><a name="Project_Summary"></a>Project Summary</h2><a name="Project_Summary"></a><section>
-<h3><a name="Project_Information"></a>Project Information</h3><a name="Project_Information"></a>
-<table border="0" class="table table-striped">
+<h1>Project Summary</h1><a id="Project_Summary"></a><section>
+<h2>Project Information</h2><a id="Project_Information"></a>
+<table class="table table-striped">
 <tr class="a">
 <th>Field</th>
 <th>Value</th></tr>
 <tr class="b">
-<td align="left">Name</td>
+<td style="text-align: left;">Name</td>
 <td>MkDocs Example</td></tr>
 <tr class="a">
-<td align="left">Description</td>
+<td style="text-align: left;">Description</td>
 <td>The Maven Site Bootstrap Skin is an Apache Maven site skin built on top of the latest bootstrap framework.</td></tr>
 <tr class="b">
-<td align="left">Homepage</td>
+<td style="text-align: left;">Homepage</td>
 <td><a class="externalLink" href="https://stevecrox.github.io/maven-site-bootstrap-skin/bootstrap-site-skin-example-parent/boostrap-site-skin-navbar/">https://stevecrox.github.io/maven-site-bootstrap-skin/bootstrap-site-skin-example-parent/boostrap-site-skin-navbar/</a></td></tr></table></section><section>
-<h3><a name="Project_Organization"></a>Project Organization</h3><a name="Project_Organization"></a>
+<h2>Project Organization</h2><a id="Project_Organization"></a>
 <p>This project does not belong to an organization.</p></section><section>
-<h3><a name="Build_Information"></a>Build Information</h3><a name="Build_Information"></a>
-<table border="0" class="table table-striped">
+<h2>Build Information</h2><a id="Build_Information"></a>
+<table class="table table-striped">
 <tr class="a">
 <th>Field</th>
 <th>Value</th></tr>
 <tr class="b">
-<td align="left">GroupId</td>
+<td style="text-align: left;">GroupId</td>
 <td>io.github.stevecrox.maven.skins.example</td></tr>
 <tr class="a">
-<td align="left">ArtifactId</td>
+<td style="text-align: left;">ArtifactId</td>
 <td>boostrap-site-skin-navbar</td></tr>
 <tr class="b">
-<td align="left">Version</td>
-<td>1.0.11</td></tr>
+<td style="text-align: left;">Version</td>
+<td>1.0.12</td></tr>
 <tr class="a">
-<td align="left">Type</td>
-<td>jar</td></tr>
-<tr class="b">
-<td align="left">Java Version</td>
-<td>1.8</td></tr></table></section></section>
+<td style="text-align: left;">Type</td>
+<td>pom</td></tr></table></section></section>
       </div>
     </main>
 

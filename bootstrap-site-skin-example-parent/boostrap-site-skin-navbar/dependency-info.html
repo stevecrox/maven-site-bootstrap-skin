@@ -20,7 +20,7 @@
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div id="projectBarContainer" class="container-fluid">
-<a href="./index.html" id="navbarIconLink" title="alt text for example logo (for testing)" class="navbar-brand text-wrap ps-2"><img id="navbarIconImg" src="image/example-logo.png"  alt="alt text for example logo (for testing)"  title="Navbar Brand Icon" width="32px" height="32px" style=""/> MkDocs Example
+<a href="./index.html" id="navbarIconLink" title="alt text for example logo (for testing)" class="navbar-brand text-wrap ps-2"><img id="navbarIconImg" src="image/example-logo.png"  alt="alt text for example logo (for testing)"  title="Navbar Brand Icon" width="32px" height="32px" /> MkDocs Example
 </a>          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -84,6 +84,8 @@
                    <a href="project-info.html" id="Project InformationDropdownLink" title="Project Information"  class="dropdown-item" >Project Information</a>
                    <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu submenu-left">
                      <li class="nav-item dropdown-item">
+                       <a href="ci-management.html" id="CI ManagementDropdownLink" title="CI Management"  class="dropdown-item" >CI Management</a>                     </li>
+                     <li class="nav-item dropdown-item">
                        <a title="Dependency Information" class="dropdown-item">Dependency Information</a>                     </li>
                      <li class="nav-item dropdown-item">
                        <a href="distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                     </li>
@@ -109,6 +111,8 @@
                    <a href="project-reports.html" id="Project ReportsDropdownLink" title="Project Reports"  class="dropdown-item" >Project Reports</a>
                    <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu submenu-left">
                      <li class="nav-item dropdown-item">
+                       <a href="jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                     </li>
+                     <li class="nav-item dropdown-item">
                        <a href="changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                     </li>
                      <li class="nav-item dropdown-item">
                        <a href="file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                     </li>
@@ -125,11 +129,11 @@
       <nav id="projectBar" class="navbar py-0 navbar-dark bg-dark" aria-label="projectBarList">
         <div id="projectBarContainer" class="container-fluid">
           <div id="projectBaDateVersionContainer" class="justify-content-start">
-            <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2023-01-06</span>
+            <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2023-03-01</span>
             <span id="projectDateVersionSpacer" class="px-1 navbar-text">|</span>
-            <span id="projectVersion" class="px-1 navbar-text">Version: 1.0.11</span>
+            <span id="projectVersion" class="px-1 navbar-text">Version: 1.0.12</span>
           </div>
-          <div id="breadcrumbSpacer"  class=""></div>
+          <div id="breadcrumbSpacer" ></div>
         </div>
       </nav>
     </header>
@@ -137,29 +141,34 @@
     <main class="flex-shrink-0" role="main">
       <div class="container rounded">
 <section>
-<h2><a name="Dependency_Information"></a>Dependency Information</h2><a name="Dependency_Information"></a><section>
-<h3><a name="Apache_Maven"></a>Apache Maven</h3><a name="Apache_Maven"></a>
-<div class="source"><pre class=" prettyprint linenums">&lt;dependency&gt;
+<h1>Dependency Information</h1><a id="Dependency_Information"></a><section>
+<h2>Apache Maven</h2><a id="Apache_Maven"></a>
+<div class="verbatim">
+<pre>&lt;dependency&gt;
   &lt;groupId&gt;io.github.stevecrox.maven.skins.example&lt;/groupId&gt;
   &lt;artifactId&gt;boostrap-site-skin-navbar&lt;/artifactId&gt;
-  &lt;version&gt;1.0.11&lt;/version&gt;
+  &lt;version&gt;1.0.12&lt;/version&gt;
+  &lt;type&gt;pom&lt;/type&gt;
 &lt;/dependency&gt;</pre></div></section><section>
-<h3><a name="Apache_Buildr"></a>Apache Buildr</h3><a name="Apache_Buildr"></a>
-<div class="source"><pre class=" prettyprint linenums">'io.github.stevecrox.maven.skins.example:boostrap-site-skin-navbar:jar:1.0.11'</pre></div></section><section>
-<h3><a name="Apache_Ivy"></a>Apache Ivy</h3><a name="Apache_Ivy"></a>
-<div class="source"><pre class=" prettyprint linenums">&lt;dependency org=&quot;io.github.stevecrox.maven.skins.example&quot; name=&quot;boostrap-site-skin-navbar&quot; rev=&quot;1.0.11&quot;&gt;
-  &lt;artifact name=&quot;boostrap-site-skin-navbar&quot; type=&quot;jar&quot; /&gt;
+<h2>Apache Ivy</h2><a id="Apache_Ivy"></a>
+<div class="verbatim">
+<pre>&lt;dependency org=&quot;io.github.stevecrox.maven.skins.example&quot; name=&quot;boostrap-site-skin-navbar&quot; rev=&quot;1.0.12&quot;&gt;
+  &lt;artifact name=&quot;boostrap-site-skin-navbar&quot; type=&quot;pom&quot; /&gt;
 &lt;/dependency&gt;</pre></div></section><section>
-<h3><a name="Groovy_Grape"></a>Groovy Grape</h3><a name="Groovy_Grape"></a>
-<div class="source"><pre class=" prettyprint linenums">@Grapes(
-@Grab(group='io.github.stevecrox.maven.skins.example', module='boostrap-site-skin-navbar', version='1.0.11')
+<h2>Groovy Grape</h2><a id="Groovy_Grape"></a>
+<div class="verbatim">
+<pre>@Grapes(
+@Grab(group='io.github.stevecrox.maven.skins.example', module='boostrap-site-skin-navbar', version='1.0.12')
 )</pre></div></section><section>
-<h3><a name="Gradle.2FGrails"></a>Gradle/Grails</h3><a name="Gradle.2FGrails"></a>
-<div class="source"><pre class=" prettyprint linenums">compile 'io.github.stevecrox.maven.skins.example:boostrap-site-skin-navbar:1.0.11'</pre></div></section><section>
-<h3><a name="Scala_SBT"></a>Scala SBT</h3><a name="Scala_SBT"></a>
-<div class="source"><pre class=" prettyprint linenums">libraryDependencies += &quot;io.github.stevecrox.maven.skins.example&quot; % &quot;boostrap-site-skin-navbar&quot; % &quot;1.0.11&quot;</pre></div></section><section>
-<h3><a name="Leiningen"></a>Leiningen</h3><a name="Leiningen"></a>
-<div class="source"><pre class=" prettyprint linenums">[io.github.stevecrox.maven.skins.example/boostrap-site-skin-navbar &quot;1.0.11&quot;]</pre></div></section></section>
+<h2>Gradle/Grails</h2><a id="Gradle.2FGrails"></a>
+<div class="verbatim">
+<pre>compile 'io.github.stevecrox.maven.skins.example:boostrap-site-skin-navbar:1.0.12'</pre></div></section><section>
+<h2>Scala SBT</h2><a id="Scala_SBT"></a>
+<div class="verbatim">
+<pre>libraryDependencies += &quot;io.github.stevecrox.maven.skins.example&quot; % &quot;boostrap-site-skin-navbar&quot; % &quot;1.0.12&quot;</pre></div></section><section>
+<h2>Leiningen</h2><a id="Leiningen"></a>
+<div class="verbatim">
+<pre>[io.github.stevecrox.maven.skins.example/boostrap-site-skin-navbar &quot;1.0.12&quot;]</pre></div></section></section>
       </div>
     </main>
 

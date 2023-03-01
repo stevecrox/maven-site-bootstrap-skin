@@ -27,7 +27,7 @@
       </nav>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div id="projectBarContainer" class="container-fluid">
-<a href="./index.html" id="navbarIconLink" title="alt text for example logo (for testing)" class="navbar-brand text-wrap ps-2"><img id="navbarIconImg" src="./image/example-logo.png"  alt="alt text for example logo (for testing)"  title="Navbar Brand Icon" width="32px" height="32px" style=""/> Kitchen Sink Example
+<a href="./index.html" id="navbarIconLink" title="alt text for example logo (for testing)" class="navbar-brand text-wrap ps-2"><img id="navbarIconImg" src="./image/example-logo.png"  alt="alt text for example logo (for testing)"  title="Navbar Brand Icon" width="32px" height="32px" /> Kitchen Sink Example
 </a>          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -91,6 +91,8 @@
                    <a href="project-info.html" id="Project InformationDropdownLink" title="Project Information"  class="dropdown-item" >Project Information</a>
                    <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu submenu-left">
                      <li class="nav-item dropdown-item">
+                       <a href="ci-management.html" id="CI ManagementDropdownLink" title="CI Management"  class="dropdown-item" >CI Management</a>                     </li>
+                     <li class="nav-item dropdown-item">
                        <a href="dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                     </li>
                      <li class="nav-item dropdown-item">
                        <a href="distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                     </li>
@@ -116,6 +118,8 @@
                    <a href="project-reports.html" id="Project ReportsDropdownLink" title="Project Reports"  class="dropdown-item" >Project Reports</a>
                    <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu submenu-left">
                      <li class="nav-item dropdown-item">
+                       <a href="jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                     </li>
+                     <li class="nav-item dropdown-item">
                        <a href="changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                     </li>
                      <li class="nav-item dropdown-item">
                        <a href="file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                     </li>
@@ -132,29 +136,11 @@
       <nav id="projectBar" class="navbar py-0 navbar-dark bg-dark" aria-label="projectBarList">
         <div id="projectBarContainer" class="container-fluid">
           <div id="projectBaDateVersionContainer" class="justify-content-start">
-            <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2023-01-06</span>
+            <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2023-03-01</span>
             <span id="projectDateVersionSpacer" class="px-1 navbar-text">|</span>
-            <span id="projectVersion" class="px-1 navbar-text">Version: 1.0.11</span>
+            <span id="projectVersion" class="px-1 navbar-text">Version: 1.0.12</span>
           </div>
-          <ol id="breadcrumbList"  class="breadcrumb [name = 'Maven Site Boostrap Skin'
-href = 'https://github.com/stevecrox/maven-site-bootstrap-skin'
-img = 'null'
-position = 'left'
-alt = 'null'
-border = 'null'
-width = 'null'
-height = 'null'
-target = 'null'
-title = 'null', name = 'Test'
-href = 'https://github.com/stevecrox/maven-site-bootstrap-skin'
-img = 'null'
-position = 'left'
-alt = 'null'
-border = 'null'
-width = 'null'
-height = 'null'
-target = 'null'
-title = 'null']">
+          <ol id="breadcrumbList"  class="breadcrumb">
             <li id="breadcrumbMaven Site Boostrap SkinListItem"  class="breadcrumb-item justify-content-start" aria-current="page">
 <a id="Maven Site Boostrap SkinLink" href="https://github.com/stevecrox/maven-site-bootstrap-skin" title="Maven Site Boostrap Skin">Maven Site Boostrap Skin</a></li>
             <li id="breadcrumbTestListItem"  class="breadcrumb-item justify-content-start" aria-current="page">
@@ -173,46 +159,48 @@ title = 'null']">
   <ul class="navbar-nav nav nav-tabs flex-column">
    <li class="nav-header">Parent Project</li>
     <li class="nav-item">
-<a id="Maven Site Bootstrap Skin Examples ParentLink" href="../index.html" class="nav-link" title="Maven Site Bootstrap Skin Examples Parent">Maven Site Bootstrap Skin Examples Parent<span id="Maven Site Bootstrap Skin Examples ParentLinkSpan" class="none"></span></a></li>
+<a id="Maven Site Bootstrap Skin Examples ParentLink" href="$href" class="nav-link" title="Maven Site Bootstrap Skin Examples Parent">Maven Site Bootstrap Skin Examples Parent<span id="Maven Site Bootstrap Skin Examples ParentLinkSpan" class="none"></span></a></li>
    <li class="nav-header">Getting Started</li>
     <li class="nav-item">
-<a id="OverviewLink" href="../../gettingStarted/index.html" class="nav-link" title="Overview">Overview<span id="OverviewLinkSpan" class="none"></span></a></li>
+<a id="OverviewLink" href="$href" class="nav-link" title="Overview">Overview<span id="OverviewLinkSpan" class="none"></span></a></li>
     <li class="nav-header">
-<a id="ConfigurationLink" href="./" class="nav-link" title="Configuration">Configuration<span id="ConfigurationLinkSpan" class="glyphicon glyphicon-chevron-down flex-row flex-wrap ms-md-auto"></span></a>      <ul class="nav nav-tabs flex-column">
+<a id="ConfigurationLink" href="$href" class="nav-link" title="Configuration">Configuration<span id="ConfigurationLinkSpan" class="glyphicon glyphicon-chevron-down flex-row flex-wrap ms-md-auto"></span></a>      <ul class="nav nav-tabs flex-column">
       <li class="nav-item">
-<a id="Banner Bar ConfigurationLink" href="../../gettingStarted/bannerbar/index.html" class="nav-link" title="Banner Bar Configuration">Banner Bar Configuration<span id="Banner Bar ConfigurationLinkSpan" class="none"></span></a></li>
+<a id="Banner Bar ConfigurationLink" href="$href" class="nav-link" title="Banner Bar Configuration">Banner Bar Configuration<span id="Banner Bar ConfigurationLinkSpan" class="none"></span></a></li>
       <li class="nav-item">
-<a id="Navbar ConfigurationLink" href="../../gettingStarted/navbar/index.html" class="nav-link" title="Navbar Configuration">Navbar Configuration<span id="Navbar ConfigurationLinkSpan" class="none"></span></a></li>
+<a id="Navbar ConfigurationLink" href="$href" class="nav-link" title="Navbar Configuration">Navbar Configuration<span id="Navbar ConfigurationLinkSpan" class="none"></span></a></li>
       <li class="nav-item">
-<a id="Project Info Bar ConfigurationLink" href="../../gettingStarted/projectinfobar/index.html" class="nav-link" title="Project Info Bar Configuration">Project Info Bar Configuration<span id="Project Info Bar ConfigurationLinkSpan" class="none"></span></a></li>
+<a id="Project Info Bar ConfigurationLink" href="$href" class="nav-link" title="Project Info Bar Configuration">Project Info Bar Configuration<span id="Project Info Bar ConfigurationLinkSpan" class="none"></span></a></li>
       <li class="nav-item">
-<a id="Sidebar ConfigurationLink" href="../../gettingStarted/sidebar.html" class="nav-link" title="Sidebar Configuration">Sidebar Configuration<span id="Sidebar ConfigurationLinkSpan" class="none"></span></a></li>
+<a id="Sidebar ConfigurationLink" href="$href" class="nav-link" title="Sidebar Configuration">Sidebar Configuration<span id="Sidebar ConfigurationLinkSpan" class="none"></span></a></li>
       <li class="nav-item">
-<a id="Footer ConfigurationLink" href="../../gettingStarted/footer/index.html" class="nav-link" title="Footer Configuration">Footer Configuration<span id="Footer ConfigurationLinkSpan" class="none"></span></a></li>
+<a id="Footer ConfigurationLink" href="$href" class="nav-link" title="Footer Configuration">Footer Configuration<span id="Footer ConfigurationLinkSpan" class="none"></span></a></li>
       </ul></li>
     <li class="nav-item">
-<a id="ThemingLink" href="../../gettingStarted/theming.html" class="nav-link" title="Theming">Theming<span id="ThemingLinkSpan" class="none"></span></a></li>
+<a id="ThemingLink" href="$href" class="nav-link" title="Theming">Theming<span id="ThemingLinkSpan" class="none"></span></a></li>
    <li class="nav-header">Layouts</li>
     <li class="nav-item">
-<a id="Default ExampleLink" href="../../bootstrap-site-skin/index.html" class="nav-link" title="Default Example">Default Example<span id="Default ExampleLinkSpan" class="none"></span></a></li>
+<a id="Default ExampleLink" href="$href" class="nav-link" title="Default Example">Default Example<span id="Default ExampleLinkSpan" class="none"></span></a></li>
     <li class="nav-item">
-<a id="Apache Layout ExampleLink" href="../boostrap-site-skin-apache-options/index.html" class="nav-link" title="Apache Layout Example">Apache Layout Example<span id="Apache Layout ExampleLinkSpan" class="none"></span></a></li>
+<a id="Apache Layout ExampleLink" href="$href" class="nav-link" title="Apache Layout Example">Apache Layout Example<span id="Apache Layout ExampleLinkSpan" class="none"></span></a></li>
     <li class="nav-item">
-<a id="Kitchen Sink ExampleLink" href="../boostrap-site-skin-all-options/index.html" class="nav-link" title="Kitchen Sink Example">Kitchen Sink Example<span id="Kitchen Sink ExampleLinkSpan" class="none"></span></a></li>
+<a id="Kitchen Sink ExampleLink" href="$href" class="nav-link" title="Kitchen Sink Example">Kitchen Sink Example<span id="Kitchen Sink ExampleLinkSpan" class="none"></span></a></li>
     <li class="nav-item">
-<a id="MkDocs ExampleLink" href="../boostrap-site-skin-navbar/index.html" class="nav-link" title="MkDocs Example">MkDocs Example<span id="MkDocs ExampleLinkSpan" class="none"></span></a></li>
+<a id="MkDocs ExampleLink" href="$href" class="nav-link" title="MkDocs Example">MkDocs Example<span id="MkDocs ExampleLinkSpan" class="none"></span></a></li>
    <li class="nav-header">Development</li>
     <li class="nav-item">
-<a id="OverviewLink" href="../../development/index.html" class="nav-link" title="Overview">Overview<span id="OverviewLinkSpan" class="none"></span></a></li>
+<a id="OverviewLink" href="$href" class="nav-link" title="Overview">Overview<span id="OverviewLinkSpan" class="none"></span></a></li>
    <li class="nav-header">Project Documentation</li>
     <li class="nav-item">
-<a id="Project InformationLink" href="project-info.html" class="nav-link" title="Project Information">Project Information<span id="Project InformationLinkSpan" class="glyphicon glyphicon-chevron-right flex-row flex-wrap ms-md-auto"></span></a></li>
+<a id="Project InformationLink" href="$href" class="nav-link" title="Project Information">Project Information<span id="Project InformationLinkSpan" class="glyphicon glyphicon-chevron-right flex-row flex-wrap ms-md-auto"></span></a></li>
     <li class="nav-header">
-<a id="Project ReportsLink" href="project-reports.html" class="nav-link" title="Project Reports">Project Reports<span id="Project ReportsLinkSpan" class="glyphicon glyphicon-chevron-down flex-row flex-wrap ms-md-auto"></span></a>      <ul class="nav nav-tabs flex-column">
+<a id="Project ReportsLink" href="$href" class="nav-link" title="Project Reports">Project Reports<span id="Project ReportsLinkSpan" class="glyphicon glyphicon-chevron-down flex-row flex-wrap ms-md-auto"></span></a>      <ul class="nav nav-tabs flex-column">
       <li class="nav-item">
-<a id="Change LogLink" href="changelog.html" class="nav-link" title="Change Log">Change Log<span id="Change LogLinkSpan" class="none"></span></a></li>
+<a id="JaCoCo AggregateLink" href="$href" class="nav-link" title="JaCoCo Aggregate">JaCoCo Aggregate<span id="JaCoCo AggregateLinkSpan" class="none"></span></a></li>
       <li class="nav-item">
-<a id="File ActivityLink" href="file-activity.html" class="nav-link" title="File Activity">File Activity<span id="File ActivityLinkSpan" class="none"></span></a></li>
+<a id="Change LogLink" href="$href" class="nav-link" title="Change Log">Change Log<span id="Change LogLinkSpan" class="none"></span></a></li>
+      <li class="nav-item">
+<a id="File ActivityLink" href="$href" class="nav-link" title="File Activity">File Activity<span id="File ActivityLinkSpan" class="none"></span></a></li>
       <li class="active nav-item"><a><span class="none"></span>Developer Activity</a></li>
       </ul></li>
   </ul>
@@ -220,18 +208,17 @@ title = 'null']">
       </nav>
       <div class="p-5 flex-fill rounded">
 <section>
-<h2><a name="Developer_Activity_Report"></a>Developer Activity Report</h2><section>
-<h3><a name="Changes_between_12-07-2022_and_01-07-2023"></a>Changes between 12-07-2022 and 01-07-2023</h3>
-<p>Total commits: 3<br />Total number of files changed: 1</p>
-<table border="0" class="table table-striped">
+<h1>Developer Activity Report</h1><section>
+<h2>Changes between 01-30-2023 and 03-02-2023</h2>
+<p>Total commits: 1<br />Total number of files changed: 5</p>
 <tr class="a">
 <th>Developer</th>
 <th>Total commits</th>
 <th>Total Number of Files Changed</th></tr>
 <tr class="b">
-<td>GitHub Action &lt;github@stevecrox.github.io&gt;</td>
-<td>3</td>
-<td>1</td></tr></table></section></section>
+<td>stevecrox &lt;stevecrox@hotmail.com&gt;</td>
+<td>1</td>
+<td>5</td></tr></table></section></section>
       </div>
     </main>
 
