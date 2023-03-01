@@ -1,15 +1,10 @@
-name: Build Verification of Maven project
-
+name: Updated Dependencies of Maven project
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    types: [opened, synchronize, reopened]
+  schedule:
+    - cron:  '30 11 * * *'
   workflow_dispatch:
-
 jobs:
-  build:
+  build_test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -36,19 +31,33 @@ jobs:
           git_committer_email: "stevecrox@hotmail.com"
           git_commit_gpgsign: true
           git_push_gpgsign: false
-          git_tag_gpgsign: true
+          git_tag_gpgsign: false
 
-      - name: Build with Maven
-        run: mvn --batch-mode --settings .github/maven_settings.xml clean install
+      - name: Update Parent
+        run: mvn --batch-mode --settings .github/maven_settings.xml org.codehaus.mojo:versions-maven-plugin:update-parent ${{ secrets.MAVEN_VERSION_OPTS }}
         env:
           GITHUB_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
-          GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
           OSSRH_USER: ${{ secrets.OSSRH_USER }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
 
-  analyse:
+      - name: Update Properties
+        run: mvn --batch-mode --settings .github/maven_settings.xml org.codehaus.mojo:versions-maven-plugin:update-properties ${{ secrets.MAVEN_VERSION_OPTS }}
+        env:
+          GITHUB_USER: ${{ secrets.SCM_USER }}
+          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
+          OSSRH_USER: ${{ secrets.OSSRH_USER }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+
+      - name: Build with Maven
+        run: mvn --batch-mode --settings .github/maven_settings.xml clean install -DskipTests=true
+        env:
+          GITHUB_USER: ${{ secrets.SCM_USER }}
+          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
+          OSSRH_USER: ${{ secrets.OSSRH_USER }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+
+  update_versions:
     runs-on: ubuntu-latest
     steps:
       - name: Check out Source Code
@@ -74,37 +83,37 @@ jobs:
           git_push_gpgsign: false
           git_tag_gpgsign: true
 
+      - name: Update Parent
+        run: mvn --batch-mode --settings .github/maven_settings.xml org.codehaus.mojo:versions-maven-plugin:update-parent ${{ secrets.MAVEN_VERSION_OPTS }}
+        env:
+          GITHUB_USER: ${{ secrets.SCM_USER }}
+          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
+          OSSRH_USER: ${{ secrets.OSSRH_USER }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+
+      - name: Update Properties
+        run: mvn --batch-mode --settings .github/maven_settings.xml org.codehaus.mojo:versions-maven-plugin:update-properties ${{ secrets.MAVEN_VERSION_OPTS }}
+        env:
+          GITHUB_USER: ${{ secrets.SCM_USER }}
+          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
+          OSSRH_USER: ${{ secrets.OSSRH_USER }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+
       - name: Jacoco Coverage
         run: mvn --batch-mode --settings .github/maven_settings.xml org.jacoco:jacoco-maven-plugin:0.8.8:prepare-agent test org.jacoco:jacoco-maven-plugin:0.8.8:report install
         env:
           GITHUB_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
-          GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
           OSSRH_USER: ${{ secrets.OSSRH_USER }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
-
-      - name: Checkstyle analyse
-        uses: dbelyaev/action-checkstyle@v0.5.1
-        with:
-          github_token: ${{ secrets.SCM_TOKEN }}
-          reporter: github-pr-review
-          level: warning
 
       - name: SpotBugs
         run: mvn --batch-mode --settings .github/maven_settings.xml com.github.spotbugs:spotbugs-maven-plugin:4.6.0.0:spotbugs -Dspotbugs.xmlOutput=true -Dspotbugs.effort=max -Dspotbugs.failOnError=false -Dspotbugs.threshold=low
         env:
           GITHUB_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
-          GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
           OSSRH_USER: ${{ secrets.OSSRH_USER }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
-
-      - name: SpotBugs Annotation
-        uses: jwgmeligmeyling/spotbugs-github-action@master
-        with:
-          path: '**/spotbugsXml.xml'
 
       - name: PMD
         run: mvn --batch-mode --settings .github/maven_settings.xml --file pom.xml pmd:pmd pmd:cpd
@@ -114,7 +123,10 @@ jobs:
           OSSRH_USER: ${{ secrets.OSSRH_USER }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
 
-      - name: PMD Annotation
-        uses: jwgmeligmeyling/pmd-github-action@master
-        with:
-          path: '**/pmd.xml'
+      - name: Checkin
+        run: mvn --batch-mode --settings .github/maven_settings.xml org.apache.maven.plugins:maven-scm-plugin:1.11.2:checkin -Dmessage="Updated Properties"
+        env:
+          GITHUB_USER: ${{ secrets.SCM_USER }}
+          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
+          OSSRH_USER: ${{ secrets.OSSRH_USER }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
