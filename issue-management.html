@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,12 +15,13 @@
     <link rel="stylesheet" href="./css/maven-theme.css" />
     <link rel="stylesheet" href="./css/site.css" />
   </head>
-  <body>
+  <body class="d-flex flex-column h-100">
 
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div id="projectBarContainer" class="container-fluid">
-<a href="$href" id="navbarIconLink" title="Navbar Brand Icon" class="navbar-brand text-wrap ps-2">          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+<a href="./index.html" id="navbarIconLink" title="Navbar Brand Icon" class="navbar-brand text-wrap ps-2"> Maven Site Bootstrap Skin Parent
+</a>          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div id="navbarCollapse" class="collapse navbar-collapse justify-content-end">
@@ -28,73 +29,107 @@
              <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="Getting StartedMenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Getting Started <b class="caret"></b></a>
                <ul class="dropdown-menu" aria-labelledby="Getting StartedMenuDropdown">
-                 <li class="nav-item dropdown-item" id="OverviewDropdown"><a href="$href" title="Overview" class="dropdown-item" >Overview</a></li>
+                 <li class="nav-item dropdown-item" id="OverviewDropdown">
+                   <a href="gettingStarted/index.html" id="OverviewDropdownLink" title="Overview"  class="dropdown-item" >Overview</a>                 </li>
                  <li class="nav-item dropdown-item dropdown-submenu">
-                   <a href="$href" title="Configuration" class="dropdown-item" >Configuration</a>
+                   
                    <ul id="Getting StartedMenuSubMenuDropdown" class="dropdown-menu submenu">
-                     <li class="nav-item dropdown-item"><a href="$href" title="Banner Bar Configuration" class="dropdown-item" >Banner Bar Configuration</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="Navbar Configuration" class="dropdown-item" >Navbar Configuration</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="Project Info Bar Configuration" class="dropdown-item" >Project Info Bar Configuration</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="Sidebar Configuration" class="dropdown-item" >Sidebar Configuration</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="Footer Configuration" class="dropdown-item" >Footer Configuration</a></li>
+                     <li class="nav-item dropdown-item">
+                       <a href="gettingStarted/bannerbar/index.html" id="Banner Bar ConfigurationDropdownLink" title="Banner Bar Configuration"  class="dropdown-item" >Banner Bar Configuration</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="gettingStarted/navbar/index.html" id="Navbar ConfigurationDropdownLink" title="Navbar Configuration"  class="dropdown-item" >Navbar Configuration</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="gettingStarted/projectinfobar/index.html" id="Project Info Bar ConfigurationDropdownLink" title="Project Info Bar Configuration"  class="dropdown-item" >Project Info Bar Configuration</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="gettingStarted/sidebar.html" id="Sidebar ConfigurationDropdownLink" title="Sidebar Configuration"  class="dropdown-item" >Sidebar Configuration</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="gettingStarted/footer/index.html" id="Footer ConfigurationDropdownLink" title="Footer Configuration"  class="dropdown-item" >Footer Configuration</a>                     </li>
                    </ul>
                  </li>
-                 <li class="nav-item dropdown-item" id="ThemingDropdown"><a href="$href" title="Theming" class="dropdown-item" >Theming</a></li>
+                 <li class="nav-item dropdown-item" id="ThemingDropdown">
+                   <a href="gettingStarted/theming.html" id="ThemingDropdownLink" title="Theming"  class="dropdown-item" >Theming</a>                 </li>
                </ul>
              </li>
              <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="LayoutsMenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Layouts <b class="caret"></b></a>
                <ul class="dropdown-menu" aria-labelledby="LayoutsMenuDropdown">
-                 <li class="nav-item dropdown-item" id="Default ExampleDropdown"><a href="$href" title="Default Example" class="dropdown-item" >Default Example</a></li>
-                 <li class="nav-item dropdown-item" id="Apache Layout ExampleDropdown"><a href="$href" title="Apache Layout Example" class="dropdown-item" >Apache Layout Example</a></li>
-                 <li class="nav-item dropdown-item" id="Kitchen Sink ExampleDropdown"><a href="$href" title="Kitchen Sink Example" class="dropdown-item" >Kitchen Sink Example</a></li>
-                 <li class="nav-item dropdown-item" id="MkDocs ExampleDropdown"><a href="$href" title="MkDocs Example" class="dropdown-item" >MkDocs Example</a></li>
+                 <li class="nav-item dropdown-item" id="Default ExampleDropdown">
+                   <a href="bootstrap-site-skin/index.html" id="Default ExampleDropdownLink" title="Default Example"  class="dropdown-item" >Default Example</a>                 </li>
+                 <li class="nav-item dropdown-item" id="Apache Layout ExampleDropdown">
+                   <a href="bootstrap-site-skin-example-parent/boostrap-site-skin-apache-options/index.html" id="Apache Layout ExampleDropdownLink" title="Apache Layout Example"  class="dropdown-item" >Apache Layout Example</a>                 </li>
+                 <li class="nav-item dropdown-item" id="Kitchen Sink ExampleDropdown">
+                   <a href="bootstrap-site-skin-example-parent/boostrap-site-skin-all-options/index.html" id="Kitchen Sink ExampleDropdownLink" title="Kitchen Sink Example"  class="dropdown-item" >Kitchen Sink Example</a>                 </li>
+                 <li class="nav-item dropdown-item" id="MkDocs ExampleDropdown">
+                   <a href="bootstrap-site-skin-example-parent/boostrap-site-skin-navbar/index.html" id="MkDocs ExampleDropdownLink" title="MkDocs Example"  class="dropdown-item" >MkDocs Example</a>                 </li>
                </ul>
              </li>
              <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="DevelopmentMenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Development <b class="caret"></b></a>
                <ul class="dropdown-menu" aria-labelledby="DevelopmentMenuDropdown">
-                 <li class="nav-item dropdown-item" id="OverviewDropdown"><a href="$href" title="Overview" class="dropdown-item" >Overview</a></li>
+                 <li class="nav-item dropdown-item" id="OverviewDropdown">
+                   <a href="development/index.html" id="OverviewDropdownLink" title="Overview"  class="dropdown-item" >Overview</a>                 </li>
                </ul>
              </li>
              <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="ModulesMenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Modules <b class="caret"></b></a>
                <ul class="dropdown-menu" aria-labelledby="ModulesMenuDropdown">
-                 <li class="nav-item dropdown-item" id="Maven Site Bootstrap SkinDropdown"><a href="$href" title="Maven Site Bootstrap Skin" class="dropdown-item" >Maven Site Bootstrap Skin</a></li>
-                 <li class="nav-item dropdown-item" id="Maven Site Bootstrap Skin Examples ParentDropdown"><a href="$href" title="Maven Site Bootstrap Skin Examples Parent" class="dropdown-item" >Maven Site Bootstrap Skin Examples Parent</a></li>
+                 <li class="nav-item dropdown-item" id="Maven Site Bootstrap SkinDropdown">
+                   <a href="bootstrap-site-skin/index.html" id="Maven Site Bootstrap SkinDropdownLink" title="Maven Site Bootstrap Skin"  class="dropdown-item" >Maven Site Bootstrap Skin</a>                 </li>
+                 <li class="nav-item dropdown-item" id="Maven Site Bootstrap Skin Examples ParentDropdown">
+                   <a href="bootstrap-site-skin-example-parent/index.html" id="Maven Site Bootstrap Skin Examples ParentDropdownLink" title="Maven Site Bootstrap Skin Examples Parent"  class="dropdown-item" >Maven Site Bootstrap Skin Examples Parent</a>                 </li>
                </ul>
              </li>
              <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="Project DocumentationMenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Project Documentation <b class="caret"></b></a>
                <ul class="dropdown-menu" aria-labelledby="Project DocumentationMenuDropdown">
                  <li class="nav-item dropdown-item dropdown-submenu">
-                   <a href="$href" title="Project Information" class="dropdown-item" >Project Information</a>
+                   <a href="project-info.html" id="Project InformationDropdownLink" title="Project Information"  class="dropdown-item" >Project Information</a>
                    <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu">
-                     <li class="nav-item dropdown-item"><a href="$href" title="CI Management" class="dropdown-item" >CI Management</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="Dependency Convergence" class="dropdown-item" >Dependency Convergence</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="Dependency Information" class="dropdown-item" >Dependency Information</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="Distribution Management" class="dropdown-item" >Distribution Management</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="About" class="dropdown-item" >About</a></li>
-                     <li class="nav-item dropdown-item"><a title="Issue Management" class="dropdown-item">Issue Management</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="Licenses" class="dropdown-item" >Licenses</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="Project Modules" class="dropdown-item" >Project Modules</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="Plugin Management" class="dropdown-item" >Plugin Management</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="Plugins" class="dropdown-item" >Plugins</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="Source Code Management" class="dropdown-item" >Source Code Management</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="Summary" class="dropdown-item" >Summary</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="Team" class="dropdown-item" >Team</a></li>
+                     <li class="nav-item dropdown-item">
+                       <a href="ci-management.html" id="CI ManagementDropdownLink" title="CI Management"  class="dropdown-item" >CI Management</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="dependency-convergence.html" id="Dependency ConvergenceDropdownLink" title="Dependency Convergence"  class="dropdown-item" >Dependency Convergence</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="index.html" id="AboutDropdownLink" title="About"  class="dropdown-item" >About</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a title="Issue Management" class="dropdown-item">Issue Management</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="licenses.html" id="LicensesDropdownLink" title="Licenses"  class="dropdown-item" >Licenses</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="modules.html" id="Project ModulesDropdownLink" title="Project Modules"  class="dropdown-item" >Project Modules</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="plugin-management.html" id="Plugin ManagementDropdownLink" title="Plugin Management"  class="dropdown-item" >Plugin Management</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="plugins.html" id="PluginsDropdownLink" title="Plugins"  class="dropdown-item" >Plugins</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="scm.html" id="Source Code ManagementDropdownLink" title="Source Code Management"  class="dropdown-item" >Source Code Management</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="summary.html" id="SummaryDropdownLink" title="Summary"  class="dropdown-item" >Summary</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="team.html" id="TeamDropdownLink" title="Team"  class="dropdown-item" >Team</a>                     </li>
                    </ul>
                  </li>
                  <li class="nav-item dropdown-item dropdown-submenu">
-                   <a href="$href" title="Project Reports" class="dropdown-item" >Project Reports</a>
+                   <a href="project-reports.html" id="Project ReportsDropdownLink" title="Project Reports"  class="dropdown-item" >Project Reports</a>
                    <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu">
-                     <li class="nav-item dropdown-item"><a href="$href" title="CPD" class="dropdown-item" >CPD</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="PMD" class="dropdown-item" >PMD</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="JaCoCo Aggregate" class="dropdown-item" >JaCoCo Aggregate</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="Change Log" class="dropdown-item" >Change Log</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="File Activity" class="dropdown-item" >File Activity</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="Developer Activity" class="dropdown-item" >Developer Activity</a></li>
-                     <li class="nav-item dropdown-item"><a href="$href" title="Surefire Report" class="dropdown-item" >Surefire Report</a></li>
+                     <li class="nav-item dropdown-item">
+                       <a href="cpd.html" id="CPDDropdownLink" title="CPD"  class="dropdown-item" >CPD</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="pmd.html" id="PMDDropdownLink" title="PMD"  class="dropdown-item" >PMD</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="dev-activity.html" id="Developer ActivityDropdownLink" title="Developer Activity"  class="dropdown-item" >Developer Activity</a>                     </li>
+                     <li class="nav-item dropdown-item">
+                       <a href="surefire-report.html" id="Surefire ReportDropdownLink" title="Surefire Report"  class="dropdown-item" >Surefire Report</a>                     </li>
                    </ul>
                  </li>
                </ul>
@@ -105,18 +140,18 @@
       </nav>
       <nav id="projectBar" class="navbar py-0 navbar-dark bg-dark" aria-label="projectBarList">
         <div id="projectBarContainer" class="container-fluid">
-          <div id="breadcrumbSpacer"  class="col justify-content-start"></div>
-          <div id="projectBaDateVersionContainer" class="justify-content-end">
-            <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2023-03-02</span>
+          <div id="projectBaDateVersionContainer" class="justify-content-start">
+            <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2023-03-03</span>
             <span id="projectDateVersionSpacer" class="px-1 navbar-text">|</span>
-            <span id="projectVersion" class="px-1 navbar-text">Version: 1.0.14</span>
+            <span id="projectVersion" class="px-1 navbar-text">Version: 1.0.15</span>
           </div>
+          <div id="breadcrumbSpacer" ></div>
         </div>
       </nav>
     </header>
 
-    <main class="container">
-      <div class="p-5 rounded">
+    <main class="flex-shrink-0" role="main">
+      <div class="container rounded">
 <section>
 <h1>Overview</h1><a id="Overview"></a>
 <p>This project uses GitHub to manage its issues.</p></section><section>
@@ -127,7 +162,7 @@
       </div>
     </main>
 
-  <footer class="footer mt-auto py-4 bg-light">
+  <footer class="footer mt-auto py-4 bg-dark text-light">
     <div class="container-fluid text-md-left">
         <div class="row">
           <div id="ContactDetailsDiv" class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0">
@@ -135,8 +170,8 @@
           <div id="socialMediaDiv" class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0">
             <div>Get connected with us on social networks</div>
             <div>
-            <a id="bootstrapSkin.twitter.accountIdLinkContact" https://twitter.com/stevecrox0914 class=" p-1"><i id="bootstrapSkin.twitter.accountIdLinkIcon" class=" bi-twitter text-dark px-1"></i></a>
-            <a id="bootstrapSkin.gitHub.projectIdLinkContact" https://github.com/stevecrox/maven-site-bootstrap-skin class=" p-1"><i id="bootstrapSkin.gitHub.projectIdLinkIcon" class=" bi-github text-dark px-1"></i></a>
+            <a id="bootstrapSkin.twitter.accountIdLinkContact" https://twitter.com/stevecrox0914 class=" p-1"><i id="bootstrapSkin.twitter.accountIdLinkIcon" class=" bi-twitter text-light px-1"></i></a>
+            <a id="bootstrapSkin.gitHub.projectIdLinkContact" https://github.com/stevecrox/maven-site-bootstrap-skin class=" p-1"><i id="bootstrapSkin.gitHub.projectIdLinkIcon" class=" bi-github text-light px-1"></i></a>
             </div>
             <div id="copyrightDiv" class="pt-3">
               <p>&#169;
