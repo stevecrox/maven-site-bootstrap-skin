@@ -37,7 +37,8 @@
         <scmpublish.content>${project.build.directory}/staging/bootstrap-site-skin-parent/</scmpublish.content>
         <!-- Overridable property for the version within the site.xml files, this is because
              a release has to use the previous version. -->
-        <skin.version>${project.version}</skin.version>
+        <skin.last.release.version>1.0.14</skin.last.release.version>
+        <skin.version>${parent.version}</skin.version>
         <!-- Apache Maven Build Plugin Versions. -->
         <frontend-maven-plugin.version>1.12.1</frontend-maven-plugin.version>
         <!-- Frontend Javascript library versions. -->
