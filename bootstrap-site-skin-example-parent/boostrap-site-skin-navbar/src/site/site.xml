@@ -28,8 +28,12 @@ under the License.
         <version>${skin.version}</version>
     </skin>
 
+    <publishDate position="none"/>
+    <version position="none"/>
+
     <custom>
         <bootstrapSkin>
+            <bootswatchStyle>cerulean</bootswatchStyle>
             <gitHub>
                 <organisation>stevecrox</organisation>
                 <repository>maven-site-bootstrap-skin</repository>
@@ -41,12 +45,11 @@ under the License.
                     <href>./index.html</href>
                     <src>image/example-logo.png</src>
                 </icon>
-                <menuOrientation>left</menuOrientation>
+                <menuOrientation>center</menuOrientation>
+                <style>navbar-dark bg-primary</style>
             </navbar>
             <projectbar>
                 <skipBreadcrumb>true</skipBreadcrumb>
-                <skipGenerationDate>true</skipGenerationDate>
-                <skipGenerationVersion>true</skipGenerationVersion>
             </projectbar>
         </bootstrapSkin>
     </custom>

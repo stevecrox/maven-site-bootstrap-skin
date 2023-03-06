@@ -70,6 +70,7 @@
 #**##set ( $navBarStyle = $decoration.getCustomValue( 'bootstrapSkin.navbar.style', 'navbar-dark bg-dark' ) )
 #**##set ( $navbarOrientation = $decoration.getCustomValue( 'bootstrapSkin.navbar.menuOrientation', 'right' ) )
 #**##set ( $navbarOrientationLeft = "left" )
+#**##set ( $navbarOrientationCenter = "center" )
 #**##set ( $navbarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.enabled', 'true' ) ) )
 #**##set ( $sideBarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.sidebar.enabled', 'false' ) ) )
     <header>
@@ -107,7 +108,11 @@
 #*      *##if ( $navbarOrientation == $navbarOrientationLeft )
 #*        *##set ( $navbarCollapseClass = "collapse navbar-collapse justify-content-start" )
 #*      *##else
-#*        *##set ( $navbarCollapseClass = "collapse navbar-collapse justify-content-end" )
+#*        *##if ( $navbarOrientation == $navbarOrientationCenter )
+#*          *##set ( $navbarCollapseClass = "collapse navbar-collapse justify-content-center" )
+#*        *##else
+#*          *##set ( $navbarCollapseClass = "collapse navbar-collapse justify-content-end" )
+#*        *##end
 #*      *##end
           <div id="navbarCollapse" class="${navbarCollapseClass}">
 #*          *##if( $decoration.body && $decoration.body.menus )
