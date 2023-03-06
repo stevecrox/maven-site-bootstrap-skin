@@ -1,6 +1,38 @@
-This example should enable all possible options and configure them on a single page, it also includes the [United Bootswatch theme](https://bootswatch.com/united/). The [Maven Default Skin](https://maven.apache.org/skins/maven-default-skin/sample/) link has been provided to compare with this skin.
+This page tries to mimic the look and feel of the [MKDocs homepage|https://www.mkdocs.org]. It uses the following modifications to the default settings to accomplish this:
 
-The purpose of this theme is to allow us to demonstrate various capabilities of the skin to confirm nothing is obviously broken (and to also demonstrate what the skin can deliver.)
+## CSS Theming
+
+We have added an image (taken from the MKDocs home page) and set the following in the maven-theme.css so the background grid from the MKDocs home page is displayed.
+
+```json
+body {
+  background: url(../image/grid.png) repeat-x;
+}
+```
+
+## NavBar Settings
+
+The Navbar 'menu orientation' has been center aligned, the theme of the site has been set to [Cerulean|https://bootswatch.com/cerulean/] and we have to modify the Navbar style to get a blue theme in the Navbar. 
+
+```xml
+    <bootstrapSkin>
+        <bootswatchStyle>cerulean</bootswatchStyle>
+        <navbar>
+            <menuOrientation>center</menuOrientation>
+            <style>navbar-dark bg-primary</style>
+        </navbar>
+    </bootstrapSkin>
+
+```
+
+## Project Bar Settings
+
+The publish Date and Version sections have been disabled by setting the position to none.
+
+```xml
+    <publishDate position="none"/>
+    <version position="none"/>
+```
 
 ## Markdown Render Tests
 
