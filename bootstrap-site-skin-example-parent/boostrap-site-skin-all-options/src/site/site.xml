@@ -37,6 +37,9 @@ under the License.
         <src>image/example-banner-left.png</src>
     </bannerLeft>
 
+    <publishDate position="none"/>
+    <version position="none"/>
+
     <custom>
         <bootstrapSkin>
             <bootswatchStyle>litera</bootswatchStyle>
@@ -92,8 +95,6 @@ under the License.
             </sidebar>
             <projectbar>
                 <skipBreadcrumb>false</skipBreadcrumb>
-                <skipGenerationDate>true</skipGenerationDate>
-                <skipGenerationVersion>true</skipGenerationVersion>
             </projectbar>
         </bootstrapSkin>
     </custom>
