@@ -126,7 +126,7 @@
 #*    *##projectBar( $navBarStyle )
     </header>
 
-#**##set ( $bodyStyle = $decoration.getCustomValue( 'bootstrapSkin.body.style', 'rounded' ) )
+#**##set ( $bodyStyle = $decoration.getCustomValue( 'bootstrapSkin.body.style', 'mt-3 rounded' ) )
 #*  *##if ( $sideBarEnabled )
     <main class="d-flex flex-row flex-shrink-0" role="main">
       <nav id="sidebar" class="nav navbar-expand-lg align-items-start $navBarStyle">
