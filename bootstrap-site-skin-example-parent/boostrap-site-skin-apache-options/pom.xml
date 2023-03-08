@@ -7,7 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>boostrap-site-skin-apache-options</artifactId>
+    <artifactId>boostrap-site-skin-apache2</artifactId>
     <packaging>pom</packaging>
     <name>Apache Layout Example</name>
     <url>https://stevecrox.github.io/maven-site-bootstrap-skin/bootstrap-site-skin-example-parent/boostrap-site-skin-apache-options/</url>
