@@ -10,5 +10,5 @@
     <artifactId>boostrap-site-skin-mkdocs</artifactId>
     <packaging>pom</packaging>
     <name>MkDocs Example</name>
-    <url>https://stevecrox.github.io/maven-site-bootstrap-skin/bootstrap-site-skin-example-parent/boostrap-site-skin-navbar/</url>
+    <url>https://stevecrox.github.io/maven-site-bootstrap-skin/bootstrap-site-skin-example-parent/boostrap-site-skin-mkdocs/</url>
 </project>
