@@ -1,39 +1,5 @@
 This page tries to mimic the look and feel of the [MKDocs homepage|https://www.mkdocs.org]. It uses the following modifications to the default settings to accomplish this:
 
-## CSS Theming
-
-We have added an image (taken from the MKDocs home page) and set the following in the maven-theme.css so the background grid from the MKDocs home page is displayed.
-
-```json
-body {
-  background: url(../image/grid.png) repeat-x;
-}
-```
-
-## NavBar Settings
-
-The Navbar 'menu orientation' has been center aligned, the theme of the site has been set to [Cerulean|https://bootswatch.com/cerulean/] and we have to modify the Navbar style to get a blue theme in the Navbar. 
-
-```xml
-    <bootstrapSkin>
-        <bootswatchStyle>cerulean</bootswatchStyle>
-        <navbar>
-            <menuOrientation>center</menuOrientation>
-            <style>navbar-dark bg-primary</style>
-        </navbar>
-    </bootstrapSkin>
-
-```
-
-## Project Bar Settings
-
-The publish Date and Version sections have been disabled by setting the position to none.
-
-```xml
-    <publishDate position="none"/>
-    <version position="none"/>
-```
-
 ## Markdown Render Tests
 
 The below sections are provided to test various Markdown elements have translated correctly into a maven site.
@@ -87,29 +53,48 @@ This list is unordered:
 
 The following sections identify the various custom settings used within the site.xml and explains what we expect to result on the page.
 
+## CSS Theming
+
+We have added an image (taken from the MKDocs home page) and set the following in the maven-theme.css so the background grid from the MKDocs home page is displayed.
+
+```json
+body {
+  background: url(../image/grid.png) repeat-x;
+}
+```
+
 ### Navbar
 
-The Navbar is enabled should contain a logo next to the brand which includes alternative text and links back to this page. You will notice that the menu links in the Navbar are normally weighted to the right of the Navbar the `menuOrientation` field here should move the menu so it sits next to the brand. Sub menu overlays should be adjusted to appear on the right on the menu dropdown.
+The Navbar is enabled should contain a logo next to the brand which includes alternative text and links back to this page. You will notice that the menu links in the Navbar are normally weighted to the right of the Navbar the `menuOrientation` field here should move the menu so it sits next to the brand in the center. Sub menu overlays should be adjusted to appear on the right on the menu dropdown.
+The theme of the site has been set to [Cerulean|https://bootswatch.com/cerulean/] and we have to modify the Navbar style to get a blue theme in the Navbar to replicate the mkdocs look.
+
 ```xml
-<navbar>
-  <enabled>true</enabled>
-  <icon>
-    <alt>alt text for example logo (for testing)</alt>
-    <href>https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent/boostrap-site-skin-all-options/index.html</href>
-    <src>image/example-logo.png</src>
-  </icon>
-  <menuOrientation>left</menuOrientation>
+<bootstrapSkin>
+  <bootswatchStyle>cerulean</bootswatchStyle>
+  <navbar>
+    <enabled>true</enabled>
+    <icon>
+      <alt>alt text for example logo (for testing)</alt>
+      <href>https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent/boostrap-site-skin-all-options/index.html</href>
+      <src>image/example-logo.png</src>
+    </icon>
+    <menuOrientation>center</menuOrientation>
+    <style>navbar-dark bg-primary</style>
 </navbar>
 ```
 
 ### Project Bar
 The following sections turn of all elements found within the 'project bar' this means no bread crumb release version or publish date is displayed. This should make the project bar invisible. 
 ```xml
-  <projectbar>
-    <skipBreadcrumb>true</skipBreadcrumb>
-    <skipGenerationDate>true</skipGenerationDate>
-    <skipGenerationVersion>true</skipGenerationVersion>
-  </projectbar>
+<publishDate position="none"/>
+<version position="none"/>
+<custom>
+  <bootstrapSkin>
+    <projectbar>
+      <skipBreadcrumb>true</skipBreadcrumb>
+    </projectbar>
+  </bootstrapSkin>
+</custom>
 ```
 
 
