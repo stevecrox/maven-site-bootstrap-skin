@@ -34,6 +34,9 @@ under the License.
     <custom>
         <bootstrapSkin>
             <bootswatchStyle>cerulean</bootswatchStyle>
+            <footer>
+                <style>footer mt-auto py-4 bg-light text-dark</style>
+            </footer>
             <gitHub>
                 <organisation>stevecrox</organisation>
                 <repository>maven-site-bootstrap-skin</repository>
