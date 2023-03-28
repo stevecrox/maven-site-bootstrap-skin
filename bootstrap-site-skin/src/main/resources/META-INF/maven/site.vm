@@ -98,7 +98,11 @@
 ########################################################################################################################
 #*    *##if ( $navbarEnabled )
       <nav class="navbar navbar-expand-md $navBarStyle">
+#*      *##if ( $navbarOrientation == $navbarOrientationCenter )
+        <div id="projectBarContainer" class="container-fluid justify-content-center">
+#*      *##else
         <div id="projectBarContainer" class="container-fluid">
+#*      *##end
 #*        *##navBrand()
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"##
 #*          *# aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -109,7 +113,7 @@
 #*        *##set ( $navbarCollapseClass = "collapse navbar-collapse justify-content-start" )
 #*      *##else
 #*        *##if ( $navbarOrientation == $navbarOrientationCenter )
-#*          *##set ( $navbarCollapseClass = "collapse navbar-collapse justify-content-center" )
+#*          *##set ( $navbarCollapseClass = "collapse navbar-collapse flex-grow-0" )
 #*        *##else
 #*          *##set ( $navbarCollapseClass = "collapse navbar-collapse justify-content-end" )
 #*        *##end
@@ -174,9 +178,7 @@
   <footer class="$footerStyle">
     <div class="container-fluid text-md-left">
         <div class="row">
-          <div id="ContactDetailsDiv" class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0">
-#*          *##contactDetails()
-          </div>
+#*        *##contactDetails( "col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0" )
           <div id="socialMediaDiv" class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0">
 #*          *##socialMediaBar()
             <div id="copyrightDiv" class="pt-3">

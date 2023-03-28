@@ -145,18 +145,19 @@
 #**##end
 ##
 #**##if ( $decoration.getCustomValue( $property ) )
-            <a id="${property}LinkContact" $href ${cssParagraph}><i id="${property}LinkIcon" $cssIcon></i>$text</a>
+            <a id="${property}LinkContact" href="${href}" ${cssParagraph}><i id="${property}LinkIcon" $cssIcon></i>$text</a>
 #**##end
 #end
 ########################################################################################################################
 ##
 ########################################################################################################################
-#macro ( contactDetails )
+#macro ( contactDetails $css )
 #**##if ( $decoration.getCustomValue( 'bootstrapSkin.contact.email' )
           || $decoration.getCustomValue( 'bootstrapSkin.contact.mobile' )
           || $decoration.getCustomValue( 'bootstrapSkin.contact.telephone' )
           || $decoration.getCustomChild( 'bootstrapSkin.contact.address' ) )
 ##
+          <div id="ContactDetailsDiv" class="${css}">
             <h5 class="text-uppercase fw-bold">Contact</h5>
 #*  *##addressContactDetail( 'bi-house px-1' 'my-0' )
 #*  *##set ( $orgEmail = $decoration.getCustomValue( 'bootstrapSkin.contact.email' ) )
@@ -164,43 +165,49 @@
 #*  *##contactDetail( 'bootstrapSkin.contact.mobile' 'bi-phone px-1' 'my-0' )
 #*  *##contactDetail( 'bootstrapSkin.contact.landline' 'bi-telephone px-1' 'my-0' )
 #*  *##contactDetail( 'bootstrapSkin.contact.fax' 'bi-printer px-1' 'my-0' )
+           </div>
 #**##end
 #end
 ########################################################################################################################
 ##
 ########################################################################################################################
-#macro ( socialMediaBar )
+#macro ( socialMediaBar  )
+
 #**##if ( $decoration.getCustomValue( 'bootstrapSkin.facebook.groupId' )
           || $decoration.getCustomValue( 'bootstrapSkin.instagram.accountId' )
           || $decoration.getCustomValue( 'bootstrapSkin.linkedin.accountId' )
-          || $decoration.getCustomChild( 'bootstrapSkin.gitHub.projectId' )
-          || $decoration.getCustomChild( 'bootstrapSkin.gitlab.projectId' ) )
+          || $decoration.getCustomChild( 'bootstrapSkin.gitHub.organisation' )
+          || $decoration.getCustomChild( 'bootstrapSkin.gitHub.repository' )
+          || $decoration.getCustomChild( 'bootstrapSkin.gitLab.project' )
+          || $decoration.getCustomChild( 'bootstrapSkin.bitbucket.project'  )
+          || $decoration.getCustomChild( 'bootstrapSkin.gitHub.repository' )
+          || $decoration.getCustomChild( 'bootstrapSkin.bitbucket.repository' ) )
 ##
             <div>Get connected with us on social networks</div>
             <div>
 #*          *##set ( $facebookGroupId = $decoration.getCustomValue( 'bootstrapSkin.facebook.groupId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.facebook.groupId' '' "https://www.facebook.com/groups/${facebookGroupId}" 'bi-facebook text-light' 'p-1' )
+#*          *##linkFooterDetail( 'bootstrapSkin.facebook.groupId' '' "https://www.facebook.com/groups/${facebookGroupId}" 'bi-facebook' 'p-1' )
 ##
 #*          *##set ( $instagramAccountId = $decoration.getCustomValue( 'bootstrapSkin.instagram.accountId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.instagram.accountId' '' "https://instagram.com/${instagramAccountId}" 'bi-instagram text-light' 'p-1' )
+#*          *##linkFooterDetail( 'bootstrapSkin.instagram.accountId' '' "https://instagram.com/${instagramAccountId}" 'bi-instagram' 'p-1' )
 ##
 #*          *##set ( $twitterAccountId = $decoration.getCustomValue( 'bootstrapSkin.twitter.accountId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.twitter.accountId' '' "https://twitter.com/${twitterAccountId}" 'bi-twitter text-light' 'p-1' )
+#*          *##linkFooterDetail( 'bootstrapSkin.twitter.accountId' '' "https://twitter.com/${twitterAccountId}" 'bi-twitter' 'p-1' )
 ##
 #*          *##set ( $linkedinAccountId = $decoration.getCustomValue( 'bootstrapSkin.linkedin.accountId' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.linkedin.accountId' '' "https://linkedin.com/in/${linkedinAccountId}" 'bi-linkedin text-light' 'p-1' )
+#*          *##linkFooterDetail( 'bootstrapSkin.linkedin.accountId' '' "https://linkedin.com/in/${linkedinAccountId}" 'bi-linkedin' 'p-1' )
 ##
 #*          *##set ( $gitHubOrg = $decoration.getCustomValue( 'bootstrapSkin.gitHub.organisation' ) )
 #*          *##set ( $gitHubRepo = $decoration.getCustomValue( 'bootstrapSkin.gitHub.repository' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.gitHub.projectId' '' "https://github.com/${gitHubOrg}/${gitHubRepo}" 'bi-github text-light' 'p-1' )
+#*          *##linkFooterDetail( 'bootstrapSkin.gitHub.projectId' '' "https://github.com/${gitHubOrg}/${gitHubRepo}" 'bi-github' 'p-1' )
 ##
 #*          *##set ( $gitLabProj = $decoration.getCustomValue( 'bootstrapSkin.gitLab.project' ) )
 #*          *##set ( $gitLabRepo = $decoration.getCustomValue( 'bootstrapSkin.gitLab.repository' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.gitLab.projectId' '' "https://gitlab.com/${gitLabProj}/${gitLabRepo}" 'bi-git text-light' 'p-1' )
+#*          *##linkFooterDetail( 'bootstrapSkin.gitLab.projectId' '' "https://gitlab.com/${gitLabProj}/${gitLabRepo}" 'bi-git' 'p-1' )
 ##
 #*          *##set ( $bitbucketProj = $decoration.getCustomValue( 'bootstrapSkin.bitbucket.project' ) )
 #*          *##set ( $bitbucketRepo = $decoration.getCustomValue( 'bootstrapSkin.bitbucket.repository' ) )
-#*          *##linkFooterDetail( 'bootstrapSkin.bitbucket.projectId' '' "https://bitbucket.com/${bitbucketProj}/${bitbucketRepo}" 'bi-git text-light' 'p-1' )
+#*          *##linkFooterDetail( 'bootstrapSkin.bitbucket.projectId' '' "https://bitbucket.com/${bitbucketProj}/${bitbucketRepo}" 'bi-git' 'p-1' )
 ##
             </div>
 #**##end

@@ -25,11 +25,8 @@ under the License.
     <skin>
         <groupId>io.github.stevecrox.maven.skins</groupId>
         <artifactId>bootstrap-site-skin</artifactId>
-        <version>${skin.last.release.version}</version>
+        <version>${skin.version}</version>
     </skin>
-
-    <publishDate position="right"/>
-    <version position="left"/>
 
     <custom>
         <bootstrapSkin>

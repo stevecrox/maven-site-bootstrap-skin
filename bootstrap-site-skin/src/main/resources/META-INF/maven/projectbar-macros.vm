@@ -26,6 +26,7 @@
 #*  *##if ( $pbarGenerateDate != 'none' || $pbarGenerateVersion != 'none' || ( $breadcrumbs && $breadcrumbs.size() > 0 ) )
       <nav id="projectBar" class="navbar py-0 $navBarStyle" aria-label="projectBarList">
         <div id="projectBarContainer" class="container-fluid">
+
 ##
 #*        *##if ( $pbarGenerateDate == 'left' || $pbarGenerateVersion == 'left' )
           <div id="projectBaDateVersionContainer" class="justify-content-start">
