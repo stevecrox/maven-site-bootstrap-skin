@@ -63,24 +63,30 @@ body {
 }
 ```
 
+The theme of the site has been set to [Cerulean|https://bootswatch.com/cerulean/] and we have to modify the Navbar style to get a blue theme in the Navbar to replicate the mkdocs look.
+```xml
+<custom>
+  <bootstrapSkin>
+    <bootswatchStyle>cerulean</bootswatchStyle>
+  </bootstrapSkin>
+</custom>
+```
+
 ### Navbar
 
-The Navbar is enabled should contain a logo next to the brand which includes alternative text and links back to this page. You will notice that the menu links in the Navbar are normally weighted to the right of the Navbar the `menuOrientation` field here should move the menu so it sits next to the brand in the center. Sub menu overlays should be adjusted to appear on the right on the menu dropdown.
+The Navbar is enabled links back to this page. You will notice that the menu links in the Navbar are normally weighted to the right of the Navbar the `menuOrientation` field here should move the menu so it sits next to the brand in the center. Sub menu overlays should be adjusted to appear on the right on the menu dropdown.
 The theme of the site has been set to [Cerulean|https://bootswatch.com/cerulean/] and we have to modify the Navbar style to get a blue theme in the Navbar to replicate the mkdocs look.
 
 ```xml
-<bootstrapSkin>
-  <bootswatchStyle>cerulean</bootswatchStyle>
-  <navbar>
-    <enabled>true</enabled>
-    <icon>
-      <alt>alt text for example logo (for testing)</alt>
-      <href>https://stevecrox.github.io/io.github.stevecrox.maven.skins/bootstrap-site-skin-parent/bootstrap-site-skin-example-parent/boostrap-site-skin-all-options/index.html</href>
-      <src>image/example-logo.png</src>
-    </icon>
-    <menuOrientation>center</menuOrientation>
-    <style>navbar-dark bg-primary</style>
-</navbar>
+<custom>
+  <bootstrapSkin>
+    <navbar>
+      <enabled>true</enabled>
+      <menuOrientation>center</menuOrientation>
+      <style>navbar-dark bg-primary</style>
+    </navbar>
+  </bootstrapSkin>
+</custom>
 ```
 
 ### Project Bar
@@ -97,10 +103,26 @@ The following sections turn of all elements found within the 'project bar' this 
 </custom>
 ```
 
-
 ### Footer Elements
 
 The sections below relate to configuration of the page footer.
+
+#### Theming
+
+We have modified the Bootstrap classes associated with the footer from the default to recreate the look of Mk Docs.
+
+```xml
+<project name="xxx">
+  [...]
+  <custom>
+    <bootstrapSkin>
+      <footer>
+        <style>footer mt-auto py-4 bg-light text-dark</style>
+      </footer>
+    </bootstrapSkin>
+  </custom>
+</project>
+```
 
 #### GitHub
 Github is one of several source control management solutions supported in the media bar, the Github element has 2 attributes, organisation and repository. organisation is the Github user/organisation to whom the repository belongs, while repository is the Github repository name. The skin will use this to build the URL with the path https://github.com/stevecrox/maven-site-bootstrap-skin
