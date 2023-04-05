@@ -1,4 +1,4 @@
-This page tries to mimic the look and feel of the [MKDocs homepage|https://www.mkdocs.org]. Below the render tests are instructions on how this look was created.
+This page tries to mimic the look and feel of the [MKDocs homepage](https://www.mkdocs.org). Below the render tests are instructions on how this look was created.
 
 ## Markdown Render Tests
 
