@@ -19,7 +19,7 @@
 
     <modules>
         <module>boostrap-site-skin-all-options</module>
-        <module>boostrap-site-skin-apache-options</module>
+        <module>boostrap-site-skin-apache</module>
         <module>boostrap-site-skin-mkdocs</module>
     </modules>
 
