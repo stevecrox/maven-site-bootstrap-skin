@@ -10,5 +10,5 @@
     <artifactId>boostrap-site-skin-apache</artifactId>
     <packaging>pom</packaging>
     <name>Apache Layout Example</name>
-    <url>https://stevecrox.github.io/maven-site-bootstrap-skin/bootstrap-site-skin-example-parent/boostrap-site-skin-apache-options/</url>
+    <url>https://stevecrox.github.io/maven-site-bootstrap-skin/bootstrap-site-skin-example-parent/boostrap-site-skin-apache/</url>
 </project>
