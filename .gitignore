@@ -4,6 +4,8 @@
 # User-specific stuff
 .idea/
 **/*.iml
+.vscode/
+.DS_Store
 
 ##################################################################
 # Maven
