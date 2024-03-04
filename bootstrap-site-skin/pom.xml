@@ -56,7 +56,7 @@
                             <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <arguments>install bootstrap@${bootstrap.version} bootstrap-icons@${bootstrap-icons.version} code-prettify@${code-prettify.version} jquery@${jquery.version}</arguments>
+                            <arguments>install</arguments>
                         </configuration>
                     </execution>
                 </executions>
