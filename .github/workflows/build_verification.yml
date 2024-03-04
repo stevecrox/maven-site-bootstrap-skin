@@ -7,13 +7,30 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
   workflow_dispatch:
+  workflow_call:
+    secrets:
+      GPG_PRIVATE_KEY:
+        required: true
+      GPG_PRIVATE_KEY_PASSPHRASE:
+        required: true
+      SCM_USER:
+        required: true
+      SCM_TOKEN:
+        required: true
+      SONAR_TOKEN:
+        required: true
+
+permissions:
+  contents: read
+  actions: read
+  checks: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 8, 11, 17 ]
+        version: [ 8, 11, 17, 21]
     steps:
       - name: Check out Source Code
         uses: actions/checkout@v2.5.0
