@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out Source Code
-        uses: actions/checkout@v2.5.0
+        uses: actions/checkout@v4.1.1
 
       - name: Set up JDK 21
         uses: actions/setup-java@v3
