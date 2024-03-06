@@ -15,20 +15,77 @@
 ## specific language governing permissions and limitations
 ## under the License.
 ##
+
+########################################################################################################################
+##
+########################################################################################################################
+#macro ( navBrandBar $navbarOrientation )
+  <nav class="navbar navbar-expand-md $navBarStyle">
+    #if ( $navbarOrientation == $navbarOrientationCenter )
+      <div id="projectBarContainer" class="container-fluid justify-content-center">
+    #else
+      <div id="projectBarContainer" class="container-fluid">
+    #end
+    
+    #navBrand()
+    #navBrandBarCollapse($navbarOrientation)
+
+  </nav>
+#end
+
+########################################################################################################################
+##
+########################################################################################################################
+#macro ( navBrandBarCollapse $navbarOrientation $navbarOrientationLeft )
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  ## Sets the alignment of buttons in the navbar
+  #if ( $navbarOrientation == $navbarOrientationLeft )
+    #set ( $navbarCollapseClass = "collapse navbar-collapse justify-content-start" )
+  #else
+    #if ( $navbarOrientation == "center" )
+      #set ( $navbarCollapseClass = "collapse navbar-collapse flex-grow-1" )
+    #else
+      #set ( $navbarCollapseClass = "collapse navbar-collapse justify-content-end" )
+    #end
+  #end
+
+  ## Get the size for the SCM Icon, based on the size of the branding itself.
+  #set ( $height = $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.height', '32px' ) )
+  #set ( $width = $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.width', '32px' ) )
+
+  ## Builds the collapse component as it exists on the navBrandBar
+  <div id="NavBrandBar.Collapse.Container" class="${navbarCollapseClass}">
+    <div class="d-flex navbar-nav">
+      <a id="NavBrandBar.Link.scm" href="https://github.com/PallasSystems/react-bootstrap-table" data-rr-ui-event-key="https://github.com/PallasSystems/react-bootstrap-table" class="nav-link">
+        #gitHubSVG( $width $height )
+      </a>
+      #if( $decoration.body && $decoration.body.menus )
+        <ul id="navbarList" class="navbar-nav">
+          #topMenu( $decoration.body.menus $navbarOrientation $navbarOrientationLeft )
+        </ul>
+      #end
+    </div>
+  </div>
+#end
+
+
 ########################################################################################################################
 ##
 ########################################################################################################################
 #macro ( navBrand )
 ## Only add a brand image if a location is supplied
-#**##set ( $banner = $decoration.getCustomChild( 'bootstrapSkin.navbar.icon' ) )
-##
-#**##if ( $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.brand.enabled', 'true' ) ) )
-#**##set ( $brandText = $decoration.getCustomValue( 'bootstrapSkin.navbar.brand.text', $project.name ) )
-#**##else
-#**##set ( $brandText = '' )
-#**##end
-##
-#**##banner ( "navbarIcon"
+#set ( $banner = $decoration.getCustomChild( 'bootstrapSkin.navbar.icon' ) )
+
+#if ( $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.brand.enabled', 'true' ) ) )
+  #set ( $brandText = $decoration.getCustomValue( 'bootstrapSkin.navbar.brand.text', $project.name ) )
+#else
+  #set ( $brandText = '' )
+#end
+
+#banner ( "navbarIcon"
              $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.name', 'Navbar Brand Icon' )
              $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.title', 'Navbar Brand Icon' )
              $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.href', '#' )
@@ -40,75 +97,75 @@
              "navbar-brand text-wrap ps-2"
              $brandText)
 #end
+
 ########################################################################################################################
 ##
 ########################################################################################################################
 #macro ( topMenu $menus $navbarOrientation $navbarOrientationLeft )
-## Use the
-#**##if ( $navbarOrientation == $navbarOrientationLeft )
-#*  *##set ( $subMenuClass = 'class="dropdown-menu submenu submenu-left"' )
-#**##else
-#*  *##set ( $subMenuClass = 'class="dropdown-menu submenu"' )
-#**##end
-##
-#**##foreach( $menu in $menus )
-#**##if ( $menu.name )
-             <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="${menu.name}MenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">$menu.name <b class="caret"></b></a>
-               <ul class="dropdown-menu" aria-labelledby="${menu.name}MenuDropdown">
-#*    *##foreach( $item in $menu.items )
-#*      *##if ( $item.items.size() > 0 )
-                 <li class="nav-item dropdown-item dropdown-submenu">
-                   #topLink( $item.href $item.name $item.target "dropdown-item" )
-
-                   <ul id="${menu.name}MenuSubMenuDropdown" $subMenuClass>
-#*                   *##foreach( $subitem in $item.items )
-                     <li class="nav-item dropdown-item">
-                       #topLink( $subitem.href $subitem.name $subitem.target "dropdown-item" )
-                     </li>
-#*                   *##end
-                   </ul>
-                 </li>
-#*      *##else
-                 <li class="nav-item dropdown-item" id="${item.name}Dropdown">
-                   #topLink( $item.href $item.name $item.target "dropdown-item" )
-                 </li>
-#*      *##end
-#*    *##end
-               </ul>
-             </li>
-#*  *##end
-#**##end
+  ## Use the
+  #if ( $navbarOrientation == $navbarOrientationLeft )
+    #set ( $subMenuClass = 'class="dropdown-menu submenu submenu-left"' )
+  #else
+    #set ( $subMenuClass = 'class="dropdown-menu submenu"' )
+  #end
+  
+  #foreach( $menu in $menus )
+    #if ( $menu.name )
+      <li class="nav-item dropdown">
+        <a class="navbar_collapse_menu nav-link dropdown-toggle" href="#" id="${menu.name}MenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">$menu.name <b class="caret"></b></a>
+        <ul class="dropdown-menu" aria-labelledby="${menu.name}MenuDropdown">
+          #foreach( $item in $menu.items )
+            #if ( $item.items.size() > 0 )
+              <li class="nav-item dropdown-item dropdown-submenu">
+                #topLink( $item.href $item.name $item.target "dropdown-item" )
+                <ul id="${menu.name}MenuSubMenuDropdown" $subMenuClass>
+                  #foreach( $subitem in $item.items )
+                    <li class="nav-item dropdown-item">
+                      #topLink( $subitem.href $subitem.name $subitem.target "dropdown-item" )
+                    </li>
+                  #end
+                </ul>
+              </li>
+            #else
+              <li class="nav-item dropdown-item" id="${item.name}Dropdown">
+                #topLink( $item.href $item.name $item.target "dropdown-item" )
+              </li>
+            #end
+          #end
+        </ul>
+      </li>
+    #end
+  #end
 #end
-##
+
 ########################################################################################################################
 ##
 ########################################################################################################################
 #macro ( topLink $href $name $target $classes )
-#**##if( $href )
-#*  *##if ( $alignedFileName == $href )
-#*    *#<a title="$name" class="$classes">$name</a>##
-#*  *##else
-#*    *##if ( !$decoration.isLink( $href ) )
-#*      *##set ( $href = $PathTool.calculateLink( $href, $relativePath ) )
-#*      *##set ( $href = $href.replaceAll( '\\', '/' ) )
-#*      *##if ( ( $href == '' ) )
-#*        *##set ( $href = './' )
-#*      *##end
-#*    *##end
-#*    *#<a href="$href" id="${name}DropdownLink" title="${name}" #if( $target )target="$target"#end class="$classes" >$name</a>##
-#*  *##end
-#**##end
+  #if( $href )
+    #if ( $alignedFileName == $href )
+      <a title="$name" class="$classes">$name</a>##
+    #else
+      #if ( !$decoration.isLink( $href ) )
+        #set ( $href = $PathTool.calculateLink( $href, $relativePath ) )
+        ##set ( $href = $href.replaceAll( '\\', '/' ) )
+        #if ( ( $href == '' ) )
+          #set ( $href = './' )
+        #end
+      #end
+      <a href="$href" id="${name}DropdownLink" title="${name}" #if( $target )target="$target"#end class="$classes" >$name</a>##
+    #end
+  #end
 #end
-##
+
 ########################################################################################################################
 ##
 ########################################################################################################################
 #macro ( topLinks $links )
-#**##set ( $counter = 0 )
-#**##foreach( $item in $links )
-#*  *##set ( $counter = $counter + 1 )
+#set ( $counter = 0 )
+#foreach( $item in $links )
+  #set ( $counter = $counter + 1 )
                    <li>#topLink( $item.href $item.name $item.target )</li>
-#**##end
+#end
 #end
 ##

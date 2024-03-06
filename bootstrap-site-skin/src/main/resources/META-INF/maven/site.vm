@@ -24,6 +24,7 @@
 #parse( "navbar-macros.vm" )
 #parse( "projectbar-macros.vm" )
 #parse( "sidebar-macros.vm" )
+#parse( "svg/scm.vm" )
 ########################################################################################################################
 ##
 ########################################################################################################################
@@ -39,26 +40,30 @@
 #if ( $documentDate )
     <meta name="date" content="$documentDate" />
 #end
+
 #if ( $title )
     <title>$title</title>
 #end
+
     <link rel="icon" href="$relativePath/img/favicons/favicon.ico">
     <!-- CSS Stylesheets, site.css is included so downstream projects can override them as appropriate. -->
     <link rel="stylesheet" href="$relativePath/css/bootstrap.min.css" />
     <link rel="stylesheet" href="$relativePath/css/bootstrap-icons.css" />
     <link rel="stylesheet" href="$relativePath/css/maven-base.css" />
     <link rel="stylesheet" href="$relativePath/css/prettify.css" />
-#**##set ( $themeCssLink = $decoration.getCustomValue( 'bootstrapSkin.bootswatchStyle' ) )
-#**##if( $themeCssLink )
+
+#set ( $themeCssLink = $decoration.getCustomValue( 'bootstrapSkin.bootswatchStyle' ) )
+
+#if( $themeCssLink )
     <link rel="stylesheet" href="https://bootswatch.com/5/$themeCssLink/bootstrap.min.css" />
-#**##end
+#end
     <link rel="stylesheet" href="$relativePath/css/maven-theme.css" />
     <link rel="stylesheet" href="$relativePath/css/site.css" />
 ##
-#**##if( $decoration.body.head )
-#*  *#$render.eval( $decoration.body.head )
-#**##end
-#**##if( $headContent )$headContent#end
+#if( $decoration.body.head )
+  $render.eval( $decoration.body.head )
+#end
+#if( $headContent )$headContent#end
 ##
   </head>
   <body class="d-flex flex-column h-100">
@@ -67,12 +72,12 @@
 ## As a minimum the Navbar should contain breadcrumbs/version generated, if the topbar is enabled this should
 ## go above, otherwise it seems maven tools can inject a banner into the project
 ########################################################################################################################
-#**##set ( $navBarStyle = $decoration.getCustomValue( 'bootstrapSkin.navbar.style', 'navbar-dark bg-dark' ) )
-#**##set ( $navbarOrientation = $decoration.getCustomValue( 'bootstrapSkin.navbar.menuOrientation', 'right' ) )
-#**##set ( $navbarOrientationLeft = "left" )
-#**##set ( $navbarOrientationCenter = "center" )
-#**##set ( $navbarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.enabled', 'true' ) ) )
-#**##set ( $sideBarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.sidebar.enabled', 'false' ) ) )
+#set ( $navBarStyle = $decoration.getCustomValue( 'bootstrapSkin.navbar.style', 'navbar-dark bg-dark' ) )
+#set ( $navbarOrientation = $decoration.getCustomValue( 'bootstrapSkin.navbar.menuOrientation', 'right' ) )
+#set ( $navbarOrientationLeft = "left" )
+#set ( $navbarOrientationCenter = "center" )
+#set ( $navbarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.enabled', 'true' ) ) )
+#set ( $sideBarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.sidebar.enabled', 'false' ) ) )
     <header>
 ########################################################################################################################
 ## The Site.xml allows you to specify a left/right banner
@@ -97,36 +102,7 @@
 ## If this conditional is true it will generate a standard fixed top navigation bar using Bootstrap standard layout
 ########################################################################################################################
 #*    *##if ( $navbarEnabled )
-      <nav class="navbar navbar-expand-md $navBarStyle">
-#*      *##if ( $navbarOrientation == $navbarOrientationCenter )
-        <div id="projectBarContainer" class="container-fluid justify-content-center">
-#*      *##else
-        <div id="projectBarContainer" class="container-fluid">
-#*      *##end
-#*        *##navBrand()
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"##
-#*          *# aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-## Sets the alignment of buttons in the navbar
-#*      *##if ( $navbarOrientation == $navbarOrientationLeft )
-#*        *##set ( $navbarCollapseClass = "collapse navbar-collapse justify-content-start" )
-#*      *##else
-#*        *##if ( $navbarOrientation == $navbarOrientationCenter )
-#*          *##set ( $navbarCollapseClass = "collapse navbar-collapse flex-grow-0" )
-#*        *##else
-#*          *##set ( $navbarCollapseClass = "collapse navbar-collapse justify-content-end" )
-#*        *##end
-#*      *##end
-          <div id="navbarCollapse" class="${navbarCollapseClass}">
-#*          *##if( $decoration.body && $decoration.body.menus )
-            <ul id="navbarList" class="navbar-nav">
-#*             *##topMenu( $decoration.body.menus $navbarOrientation $navbarOrientationLeft )
-            </ul>
-#*        *##end
-          </div>
-        </div>
-      </nav>
+#*      *##navBrandBar($navbarOrientation)
 #*    *##end
 ########################################################################################################################
 ## If we don't have a Navigation bar, doxia-tools will allow the injection of banners at the top of the page. This
@@ -135,8 +111,8 @@
 #*    *##projectBar( $navBarStyle )
     </header>
 
-#**##set ( $bodyStyle = $decoration.getCustomValue( 'bootstrapSkin.body.style', 'mt-3 rounded' ) )
-#*  *##if ( $sideBarEnabled )
+#set ( $bodyStyle = $decoration.getCustomValue( 'bootstrapSkin.body.style', 'mt-3 rounded' ) )
+  #if ( $sideBarEnabled )
     <main class="d-flex flex-row flex-shrink-0" role="main">
       <nav id="sidebar" class="nav navbar-expand-lg align-items-start $navBarStyle">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarSupportedContent" aria-controls="#sidebarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -151,12 +127,12 @@
       <div class="p-5 flex-fill $bodyStyle">
 ## As the sidebar causes us to use the flex system we have to limit the source body sections using a flex class
 #*    *##set ( $sourceBodyClass = 'd-inline-flex' )
-#*  *##else
+  #else
     <main class="flex-shrink-0" role="main">
       <div class="container $bodyStyle">
 ## The grid system  contains the source code areas
 #*    *##set ( $sourceBodyClass = '' )
-#*  *##end
+  #end
 ##
 #*    *##set ( $bodyColumnClass = $decoration.getCustomValue( 'bootstrapSkin.bodyColumnClass', 'col-sm-10' ) )
 ##
@@ -174,7 +150,7 @@
       </div>
     </main>
 
-#**##set ( $footerStyle = $decoration.getCustomValue( 'bootstrapSkin.footer.style', 'footer mt-auto py-4 bg-dark text-light' ) )
+#set ( $footerStyle = $decoration.getCustomValue( 'bootstrapSkin.footer.style', 'footer mt-auto py-4 bg-dark text-light' ) )
   <footer class="$footerStyle">
     <div class="container-fluid text-md-left">
         <div class="row">
