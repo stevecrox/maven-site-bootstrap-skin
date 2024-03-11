@@ -1,0 +1,17 @@
+/*
+ * Declare different heights because we have used
+ * rem and that is a function of text height and
+ * screen width changes the text height (and the
+ * required height of the box).
+ */
+ @media only screen and (max-width: 540px) {
+    nav.navbar_suffix_menu {
+      display: none;
+    }
+  }
+  
+  @media only screen and (min-width: 540px) {
+    a.navbar_collapse_menu {
+      display: none;
+    }
+  }
