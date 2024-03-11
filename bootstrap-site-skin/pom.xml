@@ -17,25 +17,25 @@
                 <directory>${project.basedir}/src/main/resources</directory>
             </resource>
             <resource>
-                <directory>${project.build.directory}/node_modules/bootstrap/dist</directory>
+                <directory>${project.basedir}/node_modules/bootstrap/dist</directory>
             </resource>
             <resource>
-                <directory>${project.build.directory}/node_modules/bootstrap-icons/font</directory>
+                <directory>${project.basedir}/node_modules/bootstrap-icons/font</directory>
                 <targetPath>${project.build.outputDirectory}/css</targetPath>
             </resource>
             <resource>
-                <directory>${project.build.directory}/node_modules/jquery/dist</directory>
+                <directory>${project.basedir}/node_modules/jquery/dist</directory>
                 <targetPath>${project.build.outputDirectory}/js</targetPath>
             </resource>
             <resource>
-                <directory>${project.build.directory}/node_modules/code-prettify/src</directory>
+                <directory>${project.basedir}/node_modules/code-prettify/src</directory>
                 <includes>
                     <include>prettify.css</include>
                 </includes>
                 <targetPath>${project.build.outputDirectory}/css</targetPath>
             </resource>
             <resource>
-                <directory>${project.build.directory}/node_modules/code-prettify/src</directory>
+                <directory>${project.basedir}/node_modules/code-prettify/src</directory>
                 <includes>
                     <include>prettify.js</include>
                 </includes>
@@ -43,13 +43,25 @@
             </resource>
         </resources>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${project.basedir}/node_modules</directory>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+
             <!-- Lets use the frontend plugin to grab the release of bootstrap. -->
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>retrieve-bootstrap</id>
+                        <id>retrieve-npm</id>
                         <phase>generate-resources</phase>
                         <goals>
                             <goal>install-node-and-npm</goal>
