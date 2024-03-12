@@ -4,13 +4,13 @@
  * screen width changes the text height (and the
  * required height of the box).
  */
- @media only screen and (max-width: 540px) {
+ @media only screen and (max-width: 765px) {
     nav.navbar_suffix_menu {
       display: none;
     }
   }
   
-  @media only screen and (min-width: 540px) {
+  @media only screen and (min-width: 765px) {
     a.navbar_collapse_menu {
       display: none;
     }
