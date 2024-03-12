@@ -64,7 +64,7 @@
       </a>
       #if( $decoration.body && $decoration.body.menus )
         <ul id="navbarList" class="navbar-nav">
-          #topMenu( $decoration.body.menus $navbarOrientation $navbarOrientationLeft )
+          #topMenu( $decoration.body.menus $navbarOrientation $navbarOrientationLeft 'navbar_collapse_menu' )
         </ul>
       #end
     </div>
@@ -101,7 +101,7 @@
 ########################################################################################################################
 ##
 ########################################################################################################################
-#macro ( topMenu $menus $navbarOrientation $navbarOrientationLeft )
+#macro ( topMenu $menus $navbarOrientation $navbarOrientationLeft $navbarLinkCSS )
   ## Use the
   #if ( $navbarOrientation == $navbarOrientationLeft )
     #set ( $subMenuClass = 'class="dropdown-menu submenu submenu-left"' )
@@ -112,7 +112,7 @@
   #foreach( $menu in $menus )
     #if ( $menu.name )
       <li class="nav-item dropdown">
-        <a class="navbar_collapse_menu nav-link dropdown-toggle" href="#" id="${menu.name}MenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">$menu.name <b class="caret"></b></a>
+        <a class="$navbarLinkCSS nav-link dropdown-toggle" href="#" id="${menu.name}MenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">$menu.name <b class="caret"></b></a>
         <ul class="dropdown-menu" aria-labelledby="${menu.name}MenuDropdown">
           #foreach( $item in $menu.items )
             #if ( $item.items.size() > 0 )
