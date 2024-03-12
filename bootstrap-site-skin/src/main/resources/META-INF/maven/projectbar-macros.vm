@@ -18,71 +18,81 @@
 ########################################################################################################################
 ##
 ########################################################################################################################
-#macro ( projectBar $navBarStyle)
-#**##set ( $pbarGenerateDate = $decoration.publishDate.position )
-#**##set ( $pbarGenerateVersion = $decoration.version.position )
-#**##set ( $pbarBreadcrumbs = $decoration.body.breadcrumbs )
-##
-#*  *##if ( $pbarGenerateDate != 'none' || $pbarGenerateVersion != 'none' || ( $breadcrumbs && $breadcrumbs.size() > 0 ) )
-      <nav id="projectBar" class="navbar py-0 $navBarStyle" aria-label="projectBarList">
-        <div id="projectBarContainer" class="container-fluid">
+#macro ( projectBar $navBarStyle $navbarMenuOrientation )
+  #set ( $pbarGenerateDate = $decoration.publishDate.position )
+  #set ( $pbarGenerateVersion = $decoration.version.position )
+  #set ( $pbarBreadcrumbs = $decoration.body.breadcrumbs )
+  #set ( $pbarMenu = $decoration.body.menus )
 
-##
-#*        *##if ( $pbarGenerateDate == 'left' || $pbarGenerateVersion == 'left' )
+  #if ( $pbarGenerateDate != 'none' || $pbarGenerateVersion != 'none' 
+        || ( $breadcrumbs && $breadcrumbs.size() > 0 || ( $pbarMenu && $pbarMenu.size() > 0 ) ) )
+    <nav id="projectBar" class="navbar navbar-expand-sm $navBarStyle" aria-label="projectBarList">
+      <div id="projectBarContainer" class="border-top  container-fluid">
+
+        #if ( $pbarGenerateDate == 'left' || $pbarGenerateVersion == 'left' || $navbarMenuOrientation == 'left' )
+
+            #if ( $navbarMenuOrientation == 'left' && $pbarMenu && $pbarMenu.size() > 0 )
+                <ul id="navbarList" class="navbar-nav navbar_suffix_menu">
+                  #topMenu( $pbarMenu $navbarOrientation 'left' 'navbar_suffix_menu' )
+                </ul>
+            #end
+
           <div id="projectBaDateVersionContainer" class="justify-content-start">
-#*          *##if ( $pbarGenerateDate == 'left' )
-#*            *##publishDate( "px-1 navbar-text" )
-#*          *##end
-#*          *##if ( $pbarGenerateDate == 'left' && $pbarGenerateVersion == 'left' )
-            <span id="projectDateVersionSpacer" $cssClass>|</span>
-#*          *##end
-#*          *##if ( $pbarGenerateVersion == 'left' )
-#*            *##publishVersion( "px-1 navbar-text" )
-#*          *##end
+            #if ( $pbarGenerateDate == 'left' )
+              #publishDate( "px-1 navbar-text" )
+            #end
+          
+            #if ( $pbarGenerateDate == 'left' && $pbarGenerateVersion == 'left' )
+              <span id="projectDateVersionSpacer" $cssClass>|</span>
+            #end
+          
+            #if ( $pbarGenerateVersion == 'left' )
+              #publishVersion( "px-1 navbar-text" )
+            #end
           </div>
-#*        *##end
-##
-#*        *##breadcrumbs( $breadcrumbs "justify-content-start" "" "col justify-content-start" )
-##
-#*        *##if ( $pbarGenerateDate == 'right' || $pbarGenerateVersion == 'right' )
+        #end
+        
+        #breadcrumbs( $breadcrumbs "justify-content-start" "" "col justify-content-start" )
+
+        #if ( $pbarGenerateDate == 'right' || $pbarGenerateVersion == 'right' )
           <div id="projectBaDateVersionContainer" class="justify-content-end">
-#*          *##if ( $pbarGenerateDate == 'right' )
-#*            *##publishDate( "px-1 navbar-text" )
-#*          *##end
-#*          *##if ( $pbarGenerateDate == 'right' && $pbarGenerateVersion == 'right' )
-            <span id="projectDateVersionSpacer" $cssClass>|</span>
-#*          *##end
-#*          *##if ( $pbarGenerateVersion == 'right' )
-#*            *##publishVersion( "px-1 navbar-text" )
-#*          *##end
+            #if ( $pbarGenerateDate == 'right' )
+              #publishDate( "px-1 navbar-text" )
+            #end
+            #if ( $pbarGenerateDate == 'right' && $pbarGenerateVersion == 'right' )
+              <span id="projectDateVersionSpacer" $cssClass>|</span>
+            #end
+            #if ( $pbarGenerateVersion == 'right' )
+              #publishVersion( "px-1 navbar-text" )
+            #end
           </div>
-#*        *##end
-        </div>
-      </nav>
-#*  *##end
+        #end
+      </div>
+    </nav>
+  #end
 #end
 ########################################################################################################################
 ##
 ########################################################################################################################
 #macro ( breadcrumbs $listCSSCLass $listItemCSSClass $spacerCSSClass )
-#**##set ( $breadcrumbDivider = $decoration.getCustomValue( 'bootstrapSkin.breadcrumbDivider', '/' ) )
-#**##set ( $breadcrumbs = $decoration.body.breadcrumbs )
+#set ( $breadcrumbDivider = $decoration.getCustomValue( 'bootstrapSkin.breadcrumbDivider', '/' ) )
+#set ( $breadcrumbs = $decoration.body.breadcrumbs )
 ##
-#**##if ( $breadcrumbs && $breadcrumbs.size() > 0 )
+#if ( $breadcrumbs && $breadcrumbs.size() > 0 )
 ##
-#**##if ( $listCSSCLass )
-#*  *##set ( $listCSSCLass = ' class="breadcrumb ' + $listCSSCLass + '"' )
-#**##else
-#*  *##set ( $listCSSCLass = ' class="breadcrumb"' )
-#**##end
+#if ( $listCSSCLass )
+  #set ( $listCSSCLass = ' class="breadcrumb ' + $listCSSCLass + '"' )
+#else
+  #set ( $listCSSCLass = ' class="breadcrumb"' )
+#end
 ##
-#**##if ( $listItemCSSClass )
-#*  *##set ( $listItemCSSClass = ' class="breadcrumb-item ' + $listItemCSSClass + '"' )
-#**##else
-#*  *##set ( $listItemCSSClass = ' class="breadcrumb-item"' )
-#**##end
+#if ( $listItemCSSClass )
+  #set ( $listItemCSSClass = ' class="breadcrumb-item ' + $listItemCSSClass + '"' )
+#else
+  #set ( $listItemCSSClass = ' class="breadcrumb-item"' )
+#end
           <ol id="breadcrumbList" $listCSSCLass>
-#*  *##foreach( $item in $breadcrumbs )
+  #foreach( $item in $breadcrumbs )
 #*    *##set ( $currentItemHref = $PathTool.calculateLink( $item.href, $relativePath ) )
 #*    *##set ( $currentItemHref = $currentItemHref.replaceAll( '\\', '/' ) )
 #*    *##if ( ( $currentItemHref == '' ) )
@@ -91,41 +101,41 @@
 ##
             <li id="breadcrumb${item.name}ListItem" $listItemCSSClass aria-current="page">##
 #*            *##link( $currentItemHref $item.name $item.target $item.img $item.position $item.alt $item.border $item.width $item.height false )##
-#*        *#</li>
-#*  *##end
+          </li>
+  #end
           </ol>
-#**##else
+#else
 ########################################################################################################################
 ## If there are no breadcrumbs supplied we need to inject and object to force the product/version section to render
 ## in the correct location
 ########################################################################################################################
-#**##if ( $spacerCSSClass )
-#*  *##set ( $spacerCSSClass = ' class="' + $spacerCSSClass + '"' )
-#**##else
-#*  *##set ( $spacerCSSClass = "" )
-#**##end
+#if ( $spacerCSSClass )
+  #set ( $spacerCSSClass = ' class="' + $spacerCSSClass + '"' )
+#else
+  #set ( $spacerCSSClass = "" )
+#end
           <div id="breadcrumbSpacer" $spacerCSSClass></div>
-#**##end
+#end
 #end
 ##
 ########################################################################################################################
 ##
 ########################################################################################################################
 #macro ( publishDate $cssClass)
-#**##set ( $dateFormat = $decoration.getCustomValue( 'publishDate.format', 'yyyy-MM-dd' ) )
-#**##set ( $dateValue = $decoration.getCustomValue( 'bootstrapSkin.publishDate', $date.get($dateFormat) ) )
+#set ( $dateFormat = $decoration.getCustomValue( 'publishDate.format', 'yyyy-MM-dd' ) )
+#set ( $dateValue = $decoration.getCustomValue( 'bootstrapSkin.publishDate', $date.get($dateFormat) ) )
 ##
-#**##if ( $cssClass )
-#*  *##set ( $cssClass = 'class="' + $cssClass + '"' )
-#**##else
-#*  *##set ( $cssClass = "" )
-#**##end
+#if ( $cssClass )
+  #set ( $cssClass = 'class="' + $cssClass + '"' )
+#else
+  #set ( $cssClass = "" )
+#end
 ##
-#**##if ( $text.get( "template.lastpublished" ) )
-#*  *##set ( $lastPubPrefix = $text.get( "template.lastpublished" ) )
-#**##else
-#*  *##set ( $lastPubPrefix = "Last Published" )
-#**##end
+#if ( $text.get( "template.lastpublished" ) )
+  #set ( $lastPubPrefix = $text.get( "template.lastpublished" ) )
+#else
+  #set ( $lastPubPrefix = "Last Published" )
+#end
             <span id="projectLastPublished" $cssClass>$lastPubPrefix: ${dateValue}</span>
 #end
 ########################################################################################################################
@@ -133,17 +143,17 @@
 ########################################################################################################################
 #macro ( publishVersion $cssClass)
 ##
-#**##if ( $cssClass )
-#*  *##set ( $cssClass = 'class="' + $cssClass + '"' )
-#**##else
-#*  *##set ( $cssClass = "" )
-#**##end
+#if ( $cssClass )
+  #set ( $cssClass = 'class="' + $cssClass + '"' )
+#else
+  #set ( $cssClass = "" )
+#end
 ##
-#**##if ( $text.get( "template.version" ) )
-#*  *##set ( $versionPrefix = $text.get( "template.version" ) )
-#**##else
-#*  *##set ( $versionPrefix = "Version" )
-#**##end
-#**##set ( $version = $decoration.getValue( 'project.version', 'Unknown' ) )
+#if ( $text.get( "template.version" ) )
+  #set ( $versionPrefix = $text.get( "template.version" ) )
+#else
+  #set ( $versionPrefix = "Version" )
+#end
+#set ( $version = $decoration.getValue( 'project.version', 'Unknown' ) )
             <span id="projectVersion" ${cssClass}>${versionPrefix}: ${project.version}</span>
 #end
