@@ -72,71 +72,72 @@
 ## As a minimum the Navbar should contain breadcrumbs/version generated, if the topbar is enabled this should
 ## go above, otherwise it seems maven tools can inject a banner into the project
 ########################################################################################################################
-#set ( $navBarStyle = $decoration.getCustomValue( 'bootstrapSkin.navbar.style', 'navbar-dark bg-dark' ) )
-#set ( $navbarOrientation = $decoration.getCustomValue( 'bootstrapSkin.navbar.menuOrientation', 'right' ) )
-#set ( $navbarOrientationLeft = "left" )
-#set ( $navbarOrientationCenter = "center" )
-#set ( $navbarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.enabled', 'true' ) ) )
-#set ( $sideBarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.sidebar.enabled', 'false' ) ) )
+    #set ( $navBarStyle = $decoration.getCustomValue( 'bootstrapSkin.navbar.style', 'navbar-dark bg-dark' ) )
+    #set ( $navbarMenuOrientation = $decoration.getCustomValue( 'bootstrapSkin.navbar.menuOrientation', 'left' ) )
+    #set ( $navbarOrientationLeft = "left" )
+    #set ( $navbarOrientationCenter = "center" )
+    #set ( $navbarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.enabled', 'true' ) ) )
+    #set ( $sideBarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.sidebar.enabled', 'false' ) ) )
     <header>
 ########################################################################################################################
 ## The Site.xml allows you to specify a left/right banner
 ########################################################################################################################
-#*    *##if ( $decoration.bannerLeft.src || $decoration.bannerRight.src )
-      <nav class="navbar navbar-expand-md $navBarStyle">
-        <div id="banner" class="container-fluid">
-          <div class="justify-content-start flex-fill">##
-#*          *##banner( "bannerLeft" $decoration.bannerLeft.name $decoration.bannerLeft.title $decoration.bannerLeft.href
+      #if ( $decoration.bannerLeft.src || $decoration.bannerRight.src )
+        <nav class="navbar navbar-expand-md $navBarStyle">
+          <div id="banner" class="container-fluid">
+            <div class="justify-content-start flex-fill">##
+              #banner( "bannerLeft" $decoration.bannerLeft.name $decoration.bannerLeft.title $decoration.bannerLeft.href
                        $decoration.bannerLeft.src $decoration.bannerLeft.alt $decoration.bannerLeft.border
                        $decoration.bannerLeft.height $decoration.bannerLeft.width "navbar-brand ps-2" )##
-#*         *#</div>
-          <div class="justify-content-end">##
-#*          *##banner( "bannerRight" $decoration.bannerRight.name $decoration.bannerRight.title $decoration.bannerRight.href
+            </div>
+            <div class="justify-content-end">##
+              #banner( "bannerRight" $decoration.bannerRight.name $decoration.bannerRight.title $decoration.bannerRight.href
                        $decoration.bannerRight.src $decoration.bannerRight.alt $decoration.bannerRight.border
                        $decoration.bannerRight.height $decoration.bannerRight.width "navbar-brand ps-2" )##
-#*         *#</div>
-        </div>
-      </nav>
-#*    *##end
+            </div>
+          </div>
+        </nav>
+      #end
 ########################################################################################################################
 ## If this conditional is true it will generate a standard fixed top navigation bar using Bootstrap standard layout
 ########################################################################################################################
-#*    *##if ( $navbarEnabled )
-#*      *##navBrandBar($navbarOrientation)
-#*    *##end
+      #if ( $navbarEnabled )
+        #navBrandBar( $navbarMenuOrientation )
+      #end
 ########################################################################################################################
 ## If we don't have a Navigation bar, doxia-tools will allow the injection of banners at the top of the page. This
 ## section uses the bootstrap nav bar to inject them at the top of the page.
 ########################################################################################################################
-#*    *##projectBar( $navBarStyle )
+      #projectBar( $navBarStyle $navbarMenuOrientation )
     </header>
 
-#set ( $bodyStyle = $decoration.getCustomValue( 'bootstrapSkin.body.style', 'mt-3 rounded' ) )
-  #if ( $sideBarEnabled )
-    <main class="d-flex flex-row flex-shrink-0" role="main">
-      <nav id="sidebar" class="nav navbar-expand-lg align-items-start $navBarStyle">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarSupportedContent" aria-controls="#sidebarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div id="sidebarSupportedContent" class="collapse navbar-collapse">
-#*        *##if( $decoration.body && $decoration.body.menus )
-#*          *##mainMenu( $decoration.body.menus )
-#*        *##end
-        </div>
-      </nav>
-      <div class="p-5 flex-fill $bodyStyle">
-## As the sidebar causes us to use the flex system we have to limit the source body sections using a flex class
-#*    *##set ( $sourceBodyClass = 'd-inline-flex' )
-  #else
-    <main class="flex-shrink-0" role="main">
-      <div class="container $bodyStyle">
-## The grid system  contains the source code areas
-#*    *##set ( $sourceBodyClass = '' )
-  #end
-##
-#*    *##set ( $bodyColumnClass = $decoration.getCustomValue( 'bootstrapSkin.bodyColumnClass', 'col-sm-10' ) )
-##
-#*      *##if ( $title && $title.endsWith( "Project License" ) )
+    #set ( $bodyStyle = $decoration.getCustomValue( 'bootstrapSkin.body.style', 'mt-3 rounded' ) )
+    #if ( $sideBarEnabled )
+      <main class="d-flex flex-row flex-shrink-0" role="main">
+        <nav id="sidebar" class="nav navbar-expand-lg align-items-start $navBarStyle">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarSupportedContent" aria-controls="#sidebarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="sidebarSupportedContent" class="collapse navbar-collapse">
+            #if( $decoration.body && $decoration.body.menus )
+              #mainMenu( $decoration.body.menus )
+            #end
+          </div>
+        </nav>
+        <div class="p-5 flex-fill $bodyStyle">
+          ## As the sidebar causes us to use the flex system we have to limit 
+          ## the source body sections using a flex class
+          #set ( $sourceBodyClass = 'd-inline-flex' )
+    #else
+      <main class="flex-shrink-0" role="main">
+        <div class="container $bodyStyle">
+          ## The grid system  contains the source code areas
+          #set ( $sourceBodyClass = '' )
+    #end
+    
+    #set ( $bodyColumnClass = $decoration.getCustomValue( 'bootstrapSkin.bodyColumnClass', 'col-sm-10' ) )
+
+    #if ( $title && $title.endsWith( "Project License" ) )
 #*        *#$bodyContent
 #*      *##else
 #*        *##if ( $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.sourceLineNumbersEnabled', 'true' ) ) )
