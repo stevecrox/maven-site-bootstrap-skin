@@ -74,8 +74,6 @@
 ########################################################################################################################
     #set ( $navBarStyle = $decoration.getCustomValue( 'bootstrapSkin.navbar.style', 'navbar-dark bg-dark' ) )
     #set ( $navbarMenuOrientation = $decoration.getCustomValue( 'bootstrapSkin.navbar.menuOrientation', 'left' ) )
-    #set ( $navbarOrientationLeft = "left" )
-    #set ( $navbarOrientationCenter = "center" )
     #set ( $navbarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.enabled', 'true' ) ) )
     #set ( $sideBarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.sidebar.enabled', 'false' ) ) )
     <header>
