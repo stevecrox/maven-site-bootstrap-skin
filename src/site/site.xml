@@ -52,7 +52,7 @@ under the License.
 
     <body>
         <menu name="Getting Started" >
-            <item name="Overview" href="./gettingStarted/bannerbar/index.html"/>
+            <item name="Overview" href="./gettingStarted/index.html"/>
             <item name="Development" href="./development/index.html"/>
         </menu>
         <menu name="API">
@@ -69,7 +69,6 @@ under the License.
             <item name="Kitchen Sink Example" href="./bootstrap-site-skin-example-parent/boostrap-site-skin-all-options/index.html"/>
             <item name="MkDocs Example" href="./bootstrap-site-skin-example-parent/boostrap-site-skin-mkdocs/index.html"/>
         </menu>
-        <menu ref="modules"/>
         <menu ref="reports"/>
     </body>
 </project>

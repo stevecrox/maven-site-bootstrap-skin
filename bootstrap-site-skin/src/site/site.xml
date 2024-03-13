@@ -50,7 +50,7 @@ under the License.
     <body>
         <menu name="Getting Started">
             <item name="Overview" href="../gettingStarted/index.html"/>
-            <item name="Development" href="../bootstrap-site-skin-parent/development/index.html"/>
+            <item name="Development" href="../development/index.html"/>
         </menu>
         <menu name="API">
             <item name="Banner Bar Configuration" href="../gettingStarted/bannerbar/index.html"/>
