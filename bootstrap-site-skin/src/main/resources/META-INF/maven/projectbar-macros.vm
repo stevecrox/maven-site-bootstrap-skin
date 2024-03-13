@@ -33,7 +33,7 @@
 
             #if ( $navbarMenuOrientation == 'left' && $pbarMenu && $pbarMenu.size() > 0 )
                 <ul id="navbarList" class="navbar-nav navbar_suffix_menu">
-                  #topMenu( $pbarMenu $navbarOrientation 'left' 'navbar_suffix_menu' )
+                  #topMenu( $pbarMenu $navbarOrientation 'navbar_suffix_menu' )
                 </ul>
             #end
 
