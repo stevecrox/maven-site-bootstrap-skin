@@ -63,8 +63,8 @@
         #gitHubSVG( $width $height )
       </a>
       #if( $decoration.body && $decoration.body.menus )
-        <ul id="navbarList" class="navbar-nav">
-          #topMenu( $decoration.body.menus $navbarOrientation $navbarOrientationLeft 'navbar_collapse_menu' )
+        <ul id="NavBrandBar.Menu.List" class="navbar-nav">
+          #topMenu( $decoration.body.menus $navbarOrientation 'navbar_collapse_menu' )
         </ul>
       #end
     </div>
@@ -101,9 +101,9 @@
 ########################################################################################################################
 ##
 ########################################################################################################################
-#macro ( topMenu $menus $navbarOrientation $navbarOrientationLeft $navbarLinkCSS )
+#macro ( topMenu $menus $navbarOrientation $navbarLinkCSS )
   ## Use the
-  #if ( $navbarOrientation == $navbarOrientationLeft )
+  #if ( $navbarOrientation == 'left' )
     #set ( $subMenuClass = 'class="dropdown-menu submenu submenu-left"' )
   #else
     #set ( $subMenuClass = 'class="dropdown-menu submenu"' )
@@ -112,8 +112,8 @@
   #foreach( $menu in $menus )
     #if ( $menu.name )
       <li class="nav-item dropdown">
-        <a class="$navbarLinkCSS nav-link dropdown-toggle" href="#" id="${menu.name}MenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">$menu.name <b class="caret"></b></a>
-        <ul class="dropdown-menu" aria-labelledby="${menu.name}MenuDropdown">
+        <a class="$navbarLinkCSS nav-link dropdown-toggle" href="#" id="Menu.Dropdown.${menu.name}" role="button" data-bs-toggle="dropdown" aria-expanded="false">$menu.name <b class="caret"></b></a>
+        <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.${menu.name}">
           #foreach( $item in $menu.items )
             #if ( $item.items.size() > 0 )
               <li class="nav-item dropdown-item dropdown-submenu">
