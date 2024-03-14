@@ -174,31 +174,35 @@
 ########################################################################################################################
 #macro ( socialMediaBar  )
 
-  #if ( $decoration.getCustomValue( 'bootstrapSkin.facebook.groupId' ) )
-    #set ( $facebookGroupId = $decoration.getCustomValue( 'bootstrapSkin.facebook.groupId' ) )
-    <a id="SocialMediaSectionWrapper.IconBlock.facebook" class="text-light, px-1" href="https://www.facebook.com/groups/${facebookGroupId}">
-      #facebook( 16 16 )
-    </a>
-  #end
+  <div id="SocialMediaSectionWrapper" class="pt-2">
+    <p id="SocialMediaSectionWrapper.IconBlock" class="m-1">
+      #if ( $decoration.getCustomValue( 'bootstrapSkin.facebook.groupId' ) )
+        #set ( $facebookGroupId = $decoration.getCustomValue( 'bootstrapSkin.facebook.groupId' ) )
+        <a id="SocialMediaSectionWrapper.IconBlock.facebook" class="text-light, px-1" href="https://www.facebook.com/groups/${facebookGroupId}">
+          #facebook( '1em' '1em' )
+        </a>
+      #end
 
-  #if ( $decoration.getCustomValue( 'bootstrapSkin.instagram.accountId' ) )
-    #set ( $instagramAccountId = $decoration.getCustomValue( 'bootstrapSkin.instagram.accountId' ) )
-    <a id="SocialMediaSectionWrapper.IconBlock.instagram" class="text-light, px-1" href="https://instagram.com/${instagramAccountId}">
-      #instagram( 16 16 )
-    </a>
-  #end
+      #if ( $decoration.getCustomValue( 'bootstrapSkin.instagram.accountId' ) )
+        #set ( $instagramAccountId = $decoration.getCustomValue( 'bootstrapSkin.instagram.accountId' ) )
+        <a id="SocialMediaSectionWrapper.IconBlock.instagram" class="text-light, px-1" href="https://instagram.com/${instagramAccountId}">
+          #instagram( '1em' '1em' )
+        </a>
+      #end
 
-  #if ( $decoration.getCustomValue( 'bootstrapSkin.linkedin.accountId' ) )
-    #set ( $linkedinAccountId = $decoration.getCustomValue( 'bootstrapSkin.linkedin.accountId' ) )
-    <a id="SocialMediaSectionWrapper.IconBlock.linkedin" class="text-light, px-1" href="https://linkedin.com/in/${linkedinAccountId}">
-      #linkedin( 16 16 )
-    </a>
-  #end
+      #if ( $decoration.getCustomValue( 'bootstrapSkin.linkedin.accountId' ) )
+        #set ( $linkedinAccountId = $decoration.getCustomValue( 'bootstrapSkin.linkedin.accountId' ) )
+        <a id="SocialMediaSectionWrapper.IconBlock.linkedin" class="text-light, px-1" href="https://linkedin.com/in/${linkedinAccountId}">
+          #linkedin( '1em' '1em' )
+        </a>
+      #end
 
-  #if ( $decoration.getCustomValue( 'bootstrapSkin.twitter.accountId' ) )
-    #set ( $twitterAccountId = $decoration.getCustomValue( 'bootstrapSkin.twitter.accountId' ) )
-    <a id="SocialMediaSectionWrapper.IconBlock.twitter" class="text-light, px-1" href=https://twitter.com/${twitterAccountId}">
-      #twitter( 16 16 )
-    </a>
-  #end
+      #if ( $decoration.getCustomValue( 'bootstrapSkin.twitter.accountId' ) )
+        #set ( $twitterAccountId = $decoration.getCustomValue( 'bootstrapSkin.twitter.accountId' ) )
+        <a id="SocialMediaSectionWrapper.IconBlock.twitter" class="text-light, px-1" href="https://twitter.com/${twitterAccountId}">
+          #twitter( '1em' '1em' )
+        </a>
+      #end
+    </p>
+  </div>
 #end
