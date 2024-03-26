@@ -12,6 +12,9 @@
 
 
 
+
+
+
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -35,20 +38,28 @@
   </head>
   <body class="d-flex flex-column h-100">
 
-    <header>
-                      <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-          <div id="projectBarContainer" class="container-fluid">
+    <header class="sticky-top">
+                      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+          <div id="NavBrandBar.Container" class="container-fluid">
         
+      
     
-
-<a href="../index.html" id="navbarIconLink" title="Navbar Brand Icon" class="navbar-brand text-wrap ps-2"> MkDocs Example
-</a>      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavBrandBar.Collapse.Container" aria-controls="NavBrandBar.Collapse.Container" aria-expanded="false" aria-label="Toggle navigation">
+                      <a href="../index.html" id="NavBrandBar.BrandLink"
+              title="Navbar Brand Icon"
+            
+              class="text-light active navbar-brand"
+          >
+  
+  
+                  MkDocs Example
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#NavBrandBar.Collapse.Container" aria-controls="NavBrandBar.Collapse.Container" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
               
   
-    <div id="NavBrandBar.Collapse.Container" class="collapse navbar-collapse flex-grow-1">
+    <div id="NavBrandBar.Collapse.Container" class="navbar-collapse collapse flex-grow-1">
     <div class="d-flex navbar-nav">
       <a id="NavBrandBar.Link.scm" href="https://github.com/PallasSystems/react-bootstrap-table" data-rr-ui-event-key="https://github.com/PallasSystems/react-bootstrap-table" class="nav-link">
         
@@ -157,7 +168,7 @@
     </nav>
       </header>
 
-              <main class="flex-shrink-0" role="main">
+              <main class="flex-grow-1" role="main">
         <div class="container mt-3 rounded">
                   
     
@@ -168,28 +179,28 @@
 <pre>&lt;dependency&gt;
   &lt;groupId&gt;io.github.stevecrox.maven.skins.example&lt;/groupId&gt;
   &lt;artifactId&gt;boostrap-site-skin-mkdocs&lt;/artifactId&gt;
-  &lt;version&gt;1.1.7&lt;/version&gt;
+  &lt;version&gt;1.1.8&lt;/version&gt;
   &lt;type&gt;pom&lt;/type&gt;
 &lt;/dependency&gt;</pre></div></section><section>
 <h2>Apache Ivy</h2><a id="Apache_Ivy"></a>
 <div class="verbatim">
-<pre>&lt;dependency org=&quot;io.github.stevecrox.maven.skins.example&quot; name=&quot;boostrap-site-skin-mkdocs&quot; rev=&quot;1.1.7&quot;&gt;
+<pre>&lt;dependency org=&quot;io.github.stevecrox.maven.skins.example&quot; name=&quot;boostrap-site-skin-mkdocs&quot; rev=&quot;1.1.8&quot;&gt;
   &lt;artifact name=&quot;boostrap-site-skin-mkdocs&quot; type=&quot;pom&quot; /&gt;
 &lt;/dependency&gt;</pre></div></section><section>
 <h2>Groovy Grape</h2><a id="Groovy_Grape"></a>
 <div class="verbatim">
 <pre>@Grapes(
-@Grab(group='io.github.stevecrox.maven.skins.example', module='boostrap-site-skin-mkdocs', version='1.1.7')
+@Grab(group='io.github.stevecrox.maven.skins.example', module='boostrap-site-skin-mkdocs', version='1.1.8')
 )</pre></div></section><section>
 <h2>Gradle/Grails</h2><a id="Gradle.2FGrails"></a>
 <div class="verbatim">
-<pre>compile 'io.github.stevecrox.maven.skins.example:boostrap-site-skin-mkdocs:1.1.7'</pre></div></section><section>
+<pre>compile 'io.github.stevecrox.maven.skins.example:boostrap-site-skin-mkdocs:1.1.8'</pre></div></section><section>
 <h2>Scala SBT</h2><a id="Scala_SBT"></a>
 <div class="verbatim">
-<pre>libraryDependencies += &quot;io.github.stevecrox.maven.skins.example&quot; % &quot;boostrap-site-skin-mkdocs&quot; % &quot;1.1.7&quot;</pre></div></section><section>
+<pre>libraryDependencies += &quot;io.github.stevecrox.maven.skins.example&quot; % &quot;boostrap-site-skin-mkdocs&quot; % &quot;1.1.8&quot;</pre></div></section><section>
 <h2>Leiningen</h2><a id="Leiningen"></a>
 <div class="verbatim">
-<pre>[io.github.stevecrox.maven.skins.example/boostrap-site-skin-mkdocs &quot;1.1.7&quot;]</pre></div></section></section>
+<pre>[io.github.stevecrox.maven.skins.example/boostrap-site-skin-mkdocs &quot;1.1.8&quot;]</pre></div></section></section>
       </div>
     </main>
 
@@ -216,9 +227,11 @@
           <div class="mx-auto mb-md-0 mb-4 col-xl-3 col-lg-3 col-md-4">
             <div id="copyrightDiv" class="pt-3">
               <p>&#169;
-                      2022&#x2013;2024
-Stephen Crocker
-              </p>
+                  
+          2022&#x2013;2024
+    
+                                        Stephen Crocker
+                                            </p>
                           </div>
           </div>
         </div>
