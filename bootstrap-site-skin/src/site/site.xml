@@ -40,10 +40,13 @@ under the License.
             <navbar>
                 <icon>
                     <href>../index.html</href>
-                    <height>2rem</height>
-                    <width>2.5rem</width>
+                    <height>3.5rem</height>
+                    <width>4rem</width>
                 </icon>
             </navbar>
+            <contact>
+                <email>bootstrap-skin@maven.sites.uk</email>
+            </contact>
         </bootstrapSkin>
     </custom>
 

@@ -20,11 +20,11 @@
 ##
 ########################################################################################################################
 #macro ( navBrandBar $navbarOrientation )
-  <nav class="navbar navbar-expand-md $navBarStyle">
+  <nav class="navbar navbar-expand-sm $navBarStyle">
     #if ( $navbarOrientation == $navbarOrientationCenter )
-      <div id="projectBarContainer" class="container-fluid justify-content-center">
+      <div id="NavBrandBar.Container" class="container-fluid justify-content-center">
     #else
-      <div id="projectBarContainer" class="container-fluid">
+      <div id="NavBrandBar.Container" class="container-fluid">
     #end
     
     #navBrand()
@@ -37,18 +37,18 @@
 ##
 ########################################################################################################################
 #macro ( navBrandBarCollapse $navbarOrientation $navbarOrientationLeft )
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavBrandBar.Collapse.Container" aria-controls="NavBrandBar.Collapse.Container" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#NavBrandBar.Collapse.Container" aria-controls="NavBrandBar.Collapse.Container" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   ## Sets the alignment of buttons in the navbar
   #if ( $navbarOrientation == $navbarOrientationLeft )
-    #set ( $navbarCollapseClass = "collapse navbar-collapse justify-content-start" )
+    #set ( $navbarCollapseClass = "justify-content-start navbar-collapse collapse" )
   #else
     #if ( $navbarOrientation == "center" )
-      #set ( $navbarCollapseClass = "collapse navbar-collapse flex-grow-1" )
+      #set ( $navbarCollapseClass = "navbar-collapse collapse flex-grow-1" )
     #else
-      #set ( $navbarCollapseClass = "collapse navbar-collapse justify-content-end" )
+      #set ( $navbarCollapseClass = "justify-content-end navbar-collapse collapse" )
     #end
   #end
 
@@ -76,16 +76,16 @@
 ##
 ########################################################################################################################
 #macro ( navBrand )
-## Only add a brand image if a location is supplied
-#set ( $banner = $decoration.getCustomChild( 'bootstrapSkin.navbar.icon' ) )
+  ## Only add a brand image if a location is supplied
+  #set ( $banner = $decoration.getCustomChild( 'bootstrapSkin.navbar.icon' ) )
 
-#if ( $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.brand.enabled', 'true' ) ) )
-  #set ( $brandText = $decoration.getCustomValue( 'bootstrapSkin.navbar.brand.text', $project.name ) )
-#else
-  #set ( $brandText = '' )
-#end
+  #if ( $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.brand.enabled', 'true' ) ) )
+    #set ( $brandText = $decoration.getCustomValue( 'bootstrapSkin.navbar.brand.text', $project.name ) )
+  #else
+    #set ( $brandText = '' )
+  #end
 
-#banner ( "navbarIcon"
+  #banner ( "NavBrandBar.Brand"
              $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.name', 'Navbar Brand Icon' )
              $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.title', 'Navbar Brand Icon' )
              $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.href', '#' )
@@ -94,7 +94,7 @@
              $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.border' )
              $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.height', '32px' )
              $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.width', '32px' )
-             "navbar-brand text-wrap ps-2"
+             $decoration.getCustomValue( 'bootstrapSkin.navbar.icon.style', 'text-light active navbar-brand' )
              $brandText)
 #end
 

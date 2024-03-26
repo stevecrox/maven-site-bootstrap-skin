@@ -25,6 +25,7 @@
 #parse( "projectbar-macros.vm" )
 #parse( "sidebar-macros.vm" )
 #parse( "svg/scm.vm" )
+
 ########################################################################################################################
 ##
 ########################################################################################################################
@@ -76,12 +77,12 @@
     #set ( $navbarMenuOrientation = $decoration.getCustomValue( 'bootstrapSkin.navbar.menuOrientation', 'left' ) )
     #set ( $navbarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.enabled', 'true' ) ) )
     #set ( $sideBarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.sidebar.enabled', 'false' ) ) )
-    <header>
+    <header class="sticky-top">
 ########################################################################################################################
 ## The Site.xml allows you to specify a left/right banner
 ########################################################################################################################
       #if ( $decoration.bannerLeft.src || $decoration.bannerRight.src )
-        <nav class="navbar navbar-expand-md $navBarStyle">
+        <nav class="navbar navbar-expand-sm $navBarStyle">
           <div id="banner" class="container-fluid">
             <div class="justify-content-start flex-fill">##
               #banner( "bannerLeft" $decoration.bannerLeft.name $decoration.bannerLeft.title $decoration.bannerLeft.href
@@ -111,7 +112,7 @@
 
     #set ( $bodyStyle = $decoration.getCustomValue( 'bootstrapSkin.body.style', 'mt-3 rounded' ) )
     #if ( $sideBarEnabled )
-      <main class="d-flex flex-row flex-shrink-0" role="main">
+      <main class="d-flex flex-row flex-grow-1" role="main">
         <nav id="sidebar" class="nav navbar-expand-lg align-items-start $navBarStyle">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarSupportedContent" aria-controls="#sidebarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -127,7 +128,7 @@
           ## the source body sections using a flex class
           #set ( $sourceBodyClass = 'd-inline-flex' )
     #else
-      <main class="flex-shrink-0" role="main">
+      <main class="flex-grow-1" role="main">
         <div class="container $bodyStyle">
           ## The grid system  contains the source code areas
           #set ( $sourceBodyClass = '' )
@@ -149,7 +150,7 @@
       </div>
     </main>
 
-#set ( $footerStyle = $decoration.getCustomValue( 'bootstrapSkin.footer.style', 'footer mt-auto py-4 bg-dark text-light' ) )
+#set ( $footerStyle = $decoration.getCustomValue( 'bootstrapSkin.footer.style', 'footer d-flex align-items-end mt-auto py-4 bg-dark text-light' ) )
   <footer class="$footerStyle">
     <div class="container-fluid">
         <div class="row">
