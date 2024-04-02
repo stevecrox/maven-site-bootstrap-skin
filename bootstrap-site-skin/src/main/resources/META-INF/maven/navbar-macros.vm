@@ -21,7 +21,7 @@
 ########################################################################################################################
 #macro ( navBrandBar $navbarOrientation )
   <nav class="navbar navbar-expand-sm $navBarStyle">
-    #if ( $navbarOrientation == 'Center' || $navbarOrientation === 'Centre')
+    #if ( $navbarOrientation == 'Center' || $navbarOrientation == 'Centre' )
       <div id="NavBrandBar.Container" class="container-fluid justify-content-center">
     #else
       <div id="NavBrandBar.Container" class="container-fluid">
