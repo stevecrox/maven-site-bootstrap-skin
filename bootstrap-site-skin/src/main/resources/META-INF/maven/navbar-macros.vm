@@ -21,7 +21,7 @@
 ########################################################################################################################
 #macro ( navBrandBar $navbarOrientation )
   <nav class="navbar navbar-expand-sm $navBarStyle">
-    #if ( $navbarOrientation == $navbarOrientationCenter )
+    #if ( $navbarOrientation == 'Center' || $navbarOrientation === 'Centre')
       <div id="NavBrandBar.Container" class="container-fluid justify-content-center">
     #else
       <div id="NavBrandBar.Container" class="container-fluid">
@@ -59,9 +59,31 @@
   ## Builds the collapse component as it exists on the navBrandBar
   <div id="NavBrandBar.Collapse.Container" class="${navbarCollapseClass}">
     <div class="d-flex navbar-nav">
-      <a id="NavBrandBar.Link.scm" href="https://github.com/PallasSystems/react-bootstrap-table" data-rr-ui-event-key="https://github.com/PallasSystems/react-bootstrap-table" class="nav-link">
-        #gitHubSVG( $width $height )
-      </a>
+      #if ( $decoration.getCustomValue( 'bootstrapSkin.gitHub.organisation' ) && $decoration.getCustomValue( 'bootstrapSkin.gitHub.repository' ) )
+        #set ( $githubProject = $decoration.getCustomValue( 'bootstrapSkin.gitHub.organisation' ) )
+        #set ( $githubRepository = $decoration.getCustomValue( 'bootstrapSkin.gitHub.repository' ) )
+        <a id="NavBrandBar.Link.scm" class="nav-link" href="https://github.com/${githubProject}/${githubRepository}" data-rr-ui-event-key="https://github.com/${githubProject}/${githubRepository}" >
+          #gitHubSVG( $width $height )
+        </a>
+      #end
+
+      #if ( $decoration.getCustomValue( 'bootstrapSkin.gitlab.project' ) && $decoration.getCustomValue( 'bootstrapSkin.gitlab.repository' ) )
+        #set ( $gitlabProject = $decoration.getCustomValue( 'bootstrapSkin.gitlab.project' ) )
+        #set ( $gitlabRepository = $decoration.getCustomValue( 'bootstrapSkin.gitlab.repository' ) )
+        <a id="NavBrandBar.Link.scm" class="nav-link" href="https://gitlab.com/${gitlabProject}/${gitlabRepository}" data-rr-ui-event-key="https://github.com/${gitlabProject}/${gitlabRepository}" >
+          #gitLabSVG( $width $height )
+        </a>
+      #end
+
+      #if ( $decoration.getCustomValue( 'bootstrapSkin.git.project' ) && $decoration.getCustomValue( 'bootstrapSkin.git.repository') && $decoration.getCustomValue( 'bootstrapSkin.git.endpoint') )
+        #set ( $gitProject = $decoration.getCustomValue( 'bootstrapSkin.git.project' ) )
+        #set ( $gitRepository = $decoration.getCustomValue( 'bootstrapSkin.git.repository' ) )
+        #set ( $gitEndpoint = $decoration.getCustomValue( 'bootstrapSkin.git.repository' ) )
+        <a id="NavBrandBar.Link.scm" class="nav-link" href="${gitEndpoint}/${gitProject}/${gitRepository}" data-rr-ui-event-key="${gitEndpoint}/${gitProject}/${gitRepository}" >
+          #gitSVG( $width $height )
+        </a>
+      #end
+
       #if( $decoration.body && $decoration.body.menus )
         <ul id="NavBrandBar.Menu.List" class="navbar-nav">
           #topMenu( $decoration.body.menus $navbarOrientation 'navbar_collapse_menu' )
