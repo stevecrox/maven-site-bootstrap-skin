@@ -12,6 +12,9 @@
 
 
 
+
+
+
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -34,20 +37,28 @@
   </head>
   <body class="d-flex flex-column h-100">
 
-    <header>
-                      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-          <div id="projectBarContainer" class="container-fluid">
+    <header class="sticky-top">
+                      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+          <div id="NavBrandBar.Container" class="container-fluid">
         
+      
     
-
-<a href="./index.html" id="navbarIconLink" title="Navbar Brand Icon" class="navbar-brand text-wrap ps-2"> Maven Site Bootstrap Skin Parent
-</a>      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavBrandBar.Collapse.Container" aria-controls="NavBrandBar.Collapse.Container" aria-expanded="false" aria-label="Toggle navigation">
+                      <a href="./index.html" id="NavBrandBar.BrandLink"
+              title="Navbar Brand Icon"
+            
+              class="text-light active navbar-brand"
+          >
+  
+  
+                  Maven Site Bootstrap Skin Parent
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#NavBrandBar.Collapse.Container" aria-controls="NavBrandBar.Collapse.Container" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
               
   
-    <div id="NavBrandBar.Collapse.Container" class="collapse navbar-collapse justify-content-end">
+    <div id="NavBrandBar.Collapse.Container" class="justify-content-end navbar-collapse collapse">
     <div class="d-flex navbar-nav">
       <a id="NavBrandBar.Link.scm" href="https://github.com/PallasSystems/react-bootstrap-table" data-rr-ui-event-key="https://github.com/PallasSystems/react-bootstrap-table" class="nav-link">
         
@@ -264,15 +275,15 @@
                   <div id="breadcrumbSpacer" ></div>
 
                   <div id="projectBaDateVersionContainer" class="justify-content-end">
-                                      <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2024-03-26</span>
+                                      <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2024-04-02</span>
                                       <span id="projectDateVersionSpacer" class="px-1 navbar-text">|</span>
-                                                  <span id="projectVersion" class="px-1 navbar-text">Version: 1.1.8</span>
+                                                  <span id="projectVersion" class="px-1 navbar-text">Version: 1.1.10</span>
                       </div>
               </div>
     </nav>
       </header>
 
-              <main class="flex-shrink-0" role="main">
+              <main class="flex-grow-1" role="main">
         <div class="container mt-3 rounded">
                   
     
@@ -488,7 +499,7 @@
       </div>
     </main>
 
-  <footer class="footer mt-auto py-4 bg-dark text-light">
+  <footer class="footer d-flex align-items-end mt-auto py-4 bg-dark text-light">
     <div class="container-fluid">
         <div class="row">
           <div class="mx-auto mb-md-0 mb-4 col-xl-3 col-lg-3 col-md-4">
@@ -511,9 +522,11 @@
           <div class="mx-auto mb-md-0 mb-4 col-xl-3 col-lg-3 col-md-4">
             <div id="copyrightDiv" class="pt-3">
               <p>&#169;
-                      2022&#x2013;2024
-Stephen Crocker
-              </p>
+                  
+          2022&#x2013;2024
+    
+                                        Stephen Crocker
+                                            </p>
                           </div>
           </div>
         </div>
