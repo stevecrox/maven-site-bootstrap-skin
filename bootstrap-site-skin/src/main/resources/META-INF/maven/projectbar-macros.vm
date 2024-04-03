@@ -26,44 +26,82 @@
   #set ( $pbarMenu = $decoration.body.menus )
 
   #if ( $pbarGenerateDate != 'none' || $pbarGenerateVersion != 'none' 
-        || ( $breadcrumbs && $breadcrumbs.size() > 0 || ( $pbarMenu && $pbarMenu.size() > 0 ) ) )
+        || ( $pbarBreadcrumbs && $pbarBreadcrumbs.size() > 0 || ( $pbarMenu && $pbarMenu.size() > 0 ) ) )
     <nav id="projectBar" class="navbar navbar-expand-sm $navBarStyle" aria-label="projectBarList">
-      <div id="projectBarContainer" class="border-top  container-fluid">
-
         #if ( $pbarGenerateDate == 'left' || $pbarGenerateVersion == 'left' || $navbarMenuOrientation == 'left' )
 
-            #if ( $navbarMenuOrientation == 'left' 
+          #if ( $navbarMenuOrientation == 'left' 
+                && ( ( $pbarMenu && $pbarMenu.size() > 0 ) || ( $pbarLinks && $pbarLinks.size() > 0 )) )
+            <ul id="projectBar.navbar.list" class="navbar-nav navbar_suffix_menu">
+              #topLinks( $pbarLinks 'navbar_suffix_menu' )
+              #topMenu( $pbarMenu $navbarOrientation 'navbar_suffix_menu' )
+              
+            </ul>
+          #end
+
+          #breadcrumbs( $pbarBreadcrumbs "" "" "" )
+
+          #if ( $pbarGenerateDate == 'left' || $pbarGenerateVersion == 'left' )
+            <div id="projectBar.DateVersion.Container" class="justify-content-start">
+              #if ( $pbarGenerateDate == 'left' )
+                #publishDate( "px-1 navbar-text" )
+              #end
+          
+              #if ( $pbarGenerateDate == 'left' && $pbarGenerateVersion == 'left' )
+                <span id="projectBar.DateVersion.Spacer" $cssClass>|</span>
+              #end
+          
+              #if ( $pbarGenerateVersion == 'left' )
+                #publishVersion( "px-1 navbar-text" )
+              #end
+            </div>
+          #end
+        #end
+        
+        #if ( $pbarGenerateDate == 'center' || $pbarGenerateVersion == 'center' || $navbarMenuOrientation == 'center' )
+          ## Added to push the generated date to the right of the screen
+          <div id="projectBar.Container.Center.Prefix" class="d-flex flex-fill"></div>
+          <div id="projectBar.DateVersion.Container" class="justify-content-center">
+            #if ( $navbarMenuOrientation == 'center' 
                   && ( ( $pbarMenu && $pbarMenu.size() > 0 ) || ( $pbarLinks && $pbarLinks.size() > 0 )) )
-                <ul id="navbarList" class="navbar-nav navbar_suffix_menu">
-                  #topLinks( $pbarLinks 'navbar_suffix_menu' )
-                  #topMenu( $pbarMenu $navbarOrientation 'navbar_suffix_menu' )
-                </ul>
+              <ul id="projectBar.navbar.list" class="navbar-nav navbar_suffix_menu">
+                #topLinks( $pbarLinks 'navbar_suffix_menu' )
+                #topMenu( $pbarMenu $navbarOrientation 'navbar_suffix_menu' )
+              </ul>
             #end
 
-          <div id="projectBaDateVersionContainer" class="justify-content-start">
-            #if ( $pbarGenerateDate == 'left' )
+            #if ( $pbarGenerateDate == 'center' )
               #publishDate( "px-1 navbar-text" )
             #end
-          
-            #if ( $pbarGenerateDate == 'left' && $pbarGenerateVersion == 'left' )
-              <span id="projectDateVersionSpacer" $cssClass>|</span>
+            #if ( $pbarGenerateDate == 'center' && $pbarGenerateVersion == 'center' )
+              <span id="projectBar.DateVersion.Spacer" $cssClass>|</span>
             #end
-          
-            #if ( $pbarGenerateVersion == 'left' )
+            #if ( $pbarGenerateVersion == 'center' )
               #publishVersion( "px-1 navbar-text" )
             #end
           </div>
-        #end
-        
-        #breadcrumbs( $breadcrumbs "justify-content-start" "" "col justify-content-start" )
 
-        #if ( $pbarGenerateDate == 'right' || $pbarGenerateVersion == 'right' )
-          <div id="projectBaDateVersionContainer" class="justify-content-end">
+          <div id="projectBar.Container.Center.Suffix" class="d-flex flex-fill"></div>
+        #end
+
+
+        #if ( $pbarGenerateDate == 'right' || $pbarGenerateVersion == 'right' || $navbarMenuOrientation == 'right' )
+          ## Added to push the generated date to the right of the screen
+          <div id="projectBar.Container.Right.Prefix" class="d-flex flex-fill"></div>
+          <div id="projectBar.DateVersion.Container" class="justify-content-end">
+            #if ( $navbarMenuOrientation == 'right' 
+                  && ( ( $pbarMenu && $pbarMenu.size() > 0 ) || ( $pbarLinks && $pbarLinks.size() > 0 )) )
+              <ul id="projectBar.navbar.list" class="navbar-nav navbar_suffix_menu">
+                #topLinks( $pbarLinks 'navbar_suffix_menu' )
+                #topMenu( $pbarMenu $navbarOrientation 'navbar_suffix_menu' )
+              </ul>
+            #end
+
             #if ( $pbarGenerateDate == 'right' )
               #publishDate( "px-1 navbar-text" )
             #end
             #if ( $pbarGenerateDate == 'right' && $pbarGenerateVersion == 'right' )
-              <span id="projectDateVersionSpacer" $cssClass>|</span>
+              <span id="projectBar.DateVersion.Spacer" $cssClass>|</span>
             #end
             #if ( $pbarGenerateVersion == 'right' )
               #publishVersion( "px-1 navbar-text" )
@@ -77,35 +115,24 @@
 ########################################################################################################################
 ##
 ########################################################################################################################
-#macro ( breadcrumbs $listCSSCLass $listItemCSSClass $spacerCSSClass )
+#macro ( breadcrumbs $breadcrumbs $listCSSCLass $listItemCSSClass $spacerCSSClass )
+  
   #set ( $breadcrumbDivider = $decoration.getCustomValue( 'bootstrapSkin.breadcrumbDivider', '/' ) )
-  #set ( $breadcrumbs = $decoration.body.breadcrumbs )
 
   #if ( $breadcrumbs && $breadcrumbs.size() > 0 )
-    #if ( $listCSSCLass )
-      #set ( $listCSSCLass = ' class="breadcrumb ' + $listCSSCLass + '"' )
-    #else
-      #set ( $listCSSCLass = ' class="breadcrumb"' )
-    #end
+    <ol class="breadcrumb ${listCSSCLass}" >
+      #foreach( $item in $breadcrumbs )
+      
+        #set ( $currentItemHref = $PathTool.calculateLink( $item.href, $relativePath ) )
+        #set ( $currentItemHref = $currentItemHref.replaceAll( "\\", '/' ) )
+        #if ( ( $currentItemHref == '' ) )
+          #set ( $currentItemHref = './' )
+        #end
 
-    #if ( $listItemCSSClass )
-      #set ( $listItemCSSClass = ' class="breadcrumb-item ' + $listItemCSSClass + '"' )
-    #else
-      #set ( $listItemCSSClass = ' class="breadcrumb-item"' )
-    #end
-    
-    <ol id="breadcrumbList" $listCSSCLass>
-    #foreach( $item in $breadcrumbs )
-      #set ( $currentItemHref = $PathTool.calculateLink( $item.href, $relativePath ) )
-      #set ( $currentItemHref = $currentItemHref.replaceAll( "\\", '/' ) )
-      #if ( ( $currentItemHref == '' ) )
-        #set ( $currentItemHref = './' )
+        <li class="breadcrumb-item ${listItemCSSClass}" aria-current="page">
+          #link( $currentItemHref $item.name $item.target $item.img $item.position $item.alt $item.border $item.width $item.height false )
+        </li>
       #end
-
-      <li id="breadcrumb${item.name}ListItem" $listItemCSSClass aria-current="page">##
-        #link( $currentItemHref $item.name $item.target $item.img $item.position $item.alt $item.border $item.width $item.height false )##
-      </li>
-    #end
     </ol>
   #else
     ########################################################################################################################
