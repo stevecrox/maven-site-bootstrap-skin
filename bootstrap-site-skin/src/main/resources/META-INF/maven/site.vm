@@ -74,7 +74,9 @@
 ## go above, otherwise it seems maven tools can inject a banner into the project
 ########################################################################################################################
     #set ( $navBarStyle = $decoration.getCustomValue( 'bootstrapSkin.navbar.style', 'navbar-dark bg-dark' ) )
-    #set ( $navbarMenuOrientation = $decoration.getCustomValue( 'bootstrapSkin.navbar.menuOrientation', 'left' ) )
+    #set ( $projectBarStyle = $decoration.getCustomValue( 'bootstrapSkin.projectbar.style', $navBarStyle ) )
+    #set ( $navbarMenuOrientation = $decoration.getCustomValue( 'bootstrapSkin.navbar.menuOrientation', 'right' ) )
+    #set ( $projectBarMenuOrientation = $decoration.getCustomValue( 'bootstrapSkin.projectbar.menuOrientation', 'left' ) )
     #set ( $navbarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.navbar.enabled', 'true' ) ) )
     #set ( $sideBarEnabled = $convert.toBoolean( $decoration.getCustomValue( 'bootstrapSkin.sidebar.enabled', 'false' ) ) )
     <header class="sticky-top">
@@ -101,13 +103,13 @@
 ## If this conditional is true it will generate a standard fixed top navigation bar using Bootstrap standard layout
 ########################################################################################################################
       #if ( $navbarEnabled )
-        #navBrandBar( $navbarMenuOrientation )
+        #navBrandBar( $navBarStyle $navbarMenuOrientation )
       #end
 ########################################################################################################################
 ## If we don't have a Navigation bar, doxia-tools will allow the injection of banners at the top of the page. This
 ## section uses the bootstrap nav bar to inject them at the top of the page.
 ########################################################################################################################
-      #projectBar( $navBarStyle $navbarMenuOrientation )
+      #projectBar( $projectBarStyle $projectBarMenuOrientation )
     </header>
 
     #set ( $bodyStyle = $decoration.getCustomValue( 'bootstrapSkin.body.style', 'mt-3 rounded' ) )

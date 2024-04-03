@@ -19,7 +19,7 @@
 ########################################################################################################################
 ##
 ########################################################################################################################
-#macro ( navBrandBar $navbarOrientation )
+#macro ( navBrandBar $navBarStyle $navbarOrientation )
   <nav class="navbar navbar-expand-sm $navBarStyle">
     #if ( $navbarOrientation == 'Center' || $navbarOrientation == 'Centre' )
       <div id="NavBrandBar.Container" class="container-fluid justify-content-center">
