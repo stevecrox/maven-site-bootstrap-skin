@@ -30,7 +30,7 @@
 ##
 ########################################################################################################################
 <!doctype html>
-<html lang="en" class="h-100">
+<html lang="en" style="height:100%">
   <head>
     <meta charset="${outputEncoding}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -46,20 +46,20 @@
     <title>$title</title>
 #end
 
-    <link rel="icon" href="$relativePath/img/favicons/favicon.ico">
+    <link rel="icon" href="${relativePath}/img/favicons/favicon.ico">
     <!-- CSS Stylesheets, site.css is included so downstream projects can override them as appropriate. -->
-    <link rel="stylesheet" href="$relativePath/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="$relativePath/css/bootstrap-icons.css" />
-    <link rel="stylesheet" href="$relativePath/css/maven-base.css" />
-    <link rel="stylesheet" href="$relativePath/css/prettify.css" />
+    <link rel="stylesheet" href="${relativePath}/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="${relativePath}/css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="${relativePath}/css/maven-base.css" />
+    <link rel="stylesheet" href="${relativePath}/css/prettify.css" />
 
 #set ( $themeCssLink = $decoration.getCustomValue( 'bootstrapSkin.bootswatchStyle' ) )
 
 #if( $themeCssLink )
     <link rel="stylesheet" href="https://bootswatch.com/5/$themeCssLink/bootstrap.min.css" />
 #end
-    <link rel="stylesheet" href="$relativePath/css/maven-theme.css" />
-    <link rel="stylesheet" href="$relativePath/css/site.css" />
+    <link rel="stylesheet" href="${relativePath}/css/maven-theme.css" />
+    <link rel="stylesheet" href="${relativePath}/css/site.css" />
 ##
 #if( $decoration.body.head )
   $render.eval( $decoration.body.head )
