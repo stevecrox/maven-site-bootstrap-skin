@@ -16,8 +16,10 @@
 
 
 
+
+
 <!doctype html>
-<html lang="en" class="h-100">
+<html lang="en" style="height:100%">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -57,9 +59,9 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-              
+      
   
-    <div id="NavBrandBar.Collapse.Container" class="justify-content-end navbar-collapse collapse">
+    <div id="NavBrandBar.Collapse.Container" class="justify-content-start navbar-collapse collapse">
     <div class="d-flex navbar-nav">
               <a id="NavBrandBar.Link.scm" class="nav-link" href="https://github.com/stevecrox/maven-site-bootstrap-skin" data-rr-ui-event-key="https://github.com/stevecrox/maven-site-bootstrap-skin" >
           
@@ -72,7 +74,8 @@
       
       
               <ul id="NavBrandBar.Menu.List" class="navbar-nav">
-                  
+            
+                    
             <li class="nav-item dropdown">
         <a class="navbar_collapse_menu nav-link dropdown-toggle" href="#" id="Menu.Dropdown.Getting Started" role="button" data-bs-toggle="dropdown" aria-expanded="false">Getting Started <b class="caret"></b></a>
         <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.Getting Started">
@@ -172,11 +175,10 @@
   </nav>
             
       <nav id="projectBar" class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="projectBarList">
-      <div id="projectBarContainer" class="border-top  container-fluid">
-
         
-                            <ul id="navbarList" class="navbar-nav navbar_suffix_menu">
-                          
+                      <ul id="projectBar.navbar.list" class="navbar-nav navbar_suffix_menu">
+                
+                        
             <li class="nav-item dropdown">
         <a class="navbar_suffix_menu nav-link dropdown-toggle" href="#" id="Menu.Dropdown.Getting Started" role="button" data-bs-toggle="dropdown" aria-expanded="false">Getting Started <b class="caret"></b></a>
         <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.Getting Started">
@@ -269,19 +271,29 @@
               </li>
                               </ul>
       </li>
-                      </ul>
+                    
+            </ul>
+          
             
-          <div id="projectBaDateVersionContainer" class="justify-content-start">
-                      
-                      
-                      </div>
-                
-                  <div id="breadcrumbSpacer" ></div>
+  
+                              
+    <div id="breadcrumbSpacer" ></div>
+  
+                          
+        
 
-                  <div id="projectBaDateVersionContainer" class="justify-content-end">
-                                      <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2024-04-03</span>
-                                      <span id="projectDateVersionSpacer" class="px-1 navbar-text">|</span>
-                                                  <span id="projectVersion" class="px-1 navbar-text">Version: 1.3.0</span>
+                            <div id="projectBar.Container.Right.Prefix" class="d-flex flex-fill"></div>
+          <div id="projectBar.DateVersion.Container" class="justify-content-end">
+            
+                          
+      
+      
+  <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2024-04-03</span>
+                                      <span id="projectBar.DateVersion.Spacer" class="px-1 navbar-text">|</span>
+                                      
+    
+      
+    <span id="projectVersion" class="px-1 navbar-text">Version: 1.3.1</span>
                       </div>
               </div>
     </nav>
@@ -322,7 +334,7 @@
 <td>bootstrap-site-skin-parent</td></tr>
 <tr class="b">
 <td style="text-align: left;">Version</td>
-<td>1.3.0</td></tr>
+<td>1.3.1</td></tr>
 <tr class="a">
 <td style="text-align: left;">Type</td>
 <td>pom</td></tr></table></section></section>
