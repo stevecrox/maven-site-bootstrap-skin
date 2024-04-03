@@ -36,20 +36,16 @@
 ########################################################################################################################
 ##
 ########################################################################################################################
-#macro ( navBrandBarCollapse $navbarOrientation $navbarOrientationLeft )
+#macro ( navBrandBarCollapse $navbarOrientation )
   <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#NavBrandBar.Collapse.Container" aria-controls="NavBrandBar.Collapse.Container" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   ## Sets the alignment of buttons in the navbar
-  #if ( $navbarOrientation == $navbarOrientationLeft )
+  #if ( $navbarOrientation == "left" )
     #set ( $navbarCollapseClass = "justify-content-start navbar-collapse collapse" )
   #else
-    #if ( $navbarOrientation == "center" )
-      #set ( $navbarCollapseClass = "navbar-collapse collapse flex-grow-1" )
-    #else
-      #set ( $navbarCollapseClass = "justify-content-end navbar-collapse collapse" )
-    #end
+    #set ( $navbarCollapseClass = "justify-content-end navbar-collapse collapse" )
   #end
 
   ## Get the size for the SCM Icon, based on the size of the branding itself.
