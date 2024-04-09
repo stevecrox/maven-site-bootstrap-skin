@@ -113,14 +113,17 @@ li.L5, li.L6, li.L7, li.L8 {
  * screen width changes the text height (and the
  * required height of the box).
  */
- @media only screen and (max-width: 765px) {
-    ul.navbar_suffix_menu {
-      display: none;
-    }
+ @media only screen and (max-width: 576px) {
+  ul.navbar_suffix_menu {
+    display: none;
   }
-  
-  @media only screen and (min-width: 765px) {
-    a.navbar_collapse_menu {
-      display: none;
-    }
+  nav.navbar_suffix_menu {
+    display: none;
   }
+}
+
+@media only screen and (min-width: 576px) {
+  a.navbar_collapse_menu {
+    display: none;
+  }
+}
