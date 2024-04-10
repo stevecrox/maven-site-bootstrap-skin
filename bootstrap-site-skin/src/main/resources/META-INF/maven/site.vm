@@ -46,20 +46,27 @@
     <title>$title</title>
 #end
 
-    <link rel="icon" href="${relativePath}/img/favicons/favicon.ico">
+    #set ( $faviconHref = $PathTool.calculateLink( "./img/favicons/favicon.ico", $relativePath ) )
+    <link rel="icon" href="${faviconHref}">
     <!-- CSS Stylesheets, site.css is included so downstream projects can override them as appropriate. -->
-    <link rel="stylesheet" href="${relativePath}/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="${relativePath}/css/bootstrap-icons.css" />
-    <link rel="stylesheet" href="${relativePath}/css/maven-base.css" />
-    <link rel="stylesheet" href="${relativePath}/css/prettify.css" />
+    #set ( $bootstrapMinCSSHref = $PathTool.calculateLink( "./css/bootstrap.min.css", $relativePath ) )
+    <link rel="stylesheet" href="${bootstrapMinCSSHref}" />
+    #set ( $bootstrapIconsCSSHref = $PathTool.calculateLink( "./css/bootstrap-icons.css", $relativePath ) )
+    <link rel="stylesheet" href="${bootstrapIconsCSSHref}" />
+    #set ( $mavenBaseCSSHref = $PathTool.calculateLink( "./css/maven-base.css", $relativePath ) )
+    <link rel="stylesheet" href="${mavenBaseCSSHref}" />
+    #set ( $prettifyCSSHref = $PathTool.calculateLink( "./css/prettify.css", $relativePath ) )
+    <link rel="stylesheet" href="${prettifyCSSHref}" />
 
 #set ( $themeCssLink = $decoration.getCustomValue( 'bootstrapSkin.bootswatchStyle' ) )
 
 #if( $themeCssLink )
     <link rel="stylesheet" href="https://bootswatch.com/5/$themeCssLink/bootstrap.min.css" />
 #end
-    <link rel="stylesheet" href="${relativePath}/css/maven-theme.css" />
-    <link rel="stylesheet" href="${relativePath}/css/site.css" />
+    #set ( $mavenThemeCSSHref = $PathTool.calculateLink( "./css/maven-theme.css", $relativePath ) )
+    <link rel="stylesheet" href="${mavenThemeCSSHref}" />
+    #set ( $siteCSSHref = $PathTool.calculateLink( "./css/site.css", $relativePath ) )
+    <link rel="stylesheet" href="${siteCSSHref}" />
 ##
 #if( $decoration.body.head )
   $render.eval( $decoration.body.head )
@@ -183,10 +190,14 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="$relativePath/js/jquery.slim.min.js"></script>
-    <script src="$relativePath/js/popper.min.js"></script>
-    <script src="$relativePath/js/bootstrap.min.js"></script>
-    <script src="$relativePath/js/prettify.js"></script>
+    #set ( $jqueryHref = $PathTool.calculateLink( "./js/jquery.slim.min.js", $relativePath ) )
+    <script src="${jqueryHref}"></script>
+    #set ( $popperHref = $PathTool.calculateLink( "./js/popper.min.js", $relativePath ) )
+    <script src="${popperHref}"></script>
+    #set ( $bootstrapHref = $PathTool.calculateLink( "./js/bootstrap.min.js", $relativePath ) )
+    <script src="${bootstrapHref}"></script>
+    #set ( $prettifyHref = $PathTool.calculateLink( "./js/prettify.js", $relativePath ) )
+    <script src="${prettifyHref}"></script>
 
     <!-- Used to enable the code-prettify running on the view. -->
     <script>

@@ -19,151 +19,150 @@
 ##
 ########################################################################################################################
 #macro ( displayTree $display $item )
-#**##if ( $item && $item.items && $item.items.size() > 0 )
-#*  *##foreach( $subitem in $item.items )
-#*    *##set ( $subitemHref = $PathTool.calculateLink( $subitem.href, $relativePath ) )
-#*    *##set ( $subitemHref = $subitemHref.replaceAll( '\\', '/' ) )
-##
-#*    *##if ( $alignedFileName == $subitemHref )
-#*      *##set ( $display = true )
-#*    *##end
-##
-#*    *##displayTree( $display $subitem )
-#*  *##end
-#**##end
+   #if ( $item && $item.items && $item.items.size() > 0 )
+     #foreach( $subitem in $item.items )
+      #set ( $subitemHref = $PathTool.calculateLink( $subitem.href, $relativePath ) )
+      #set ( $subitemHref = $subitemHref.replaceAll( "\\", '/' ) )
+      #if ( $alignedFileName == $subitemHref )
+        #set ( $display = true )
+      #end
+      #displayTree( $display $subitem )
+     #end
+   #end
 #end
+
 ########################################################################################################################
 ##
 ########################################################################################################################
 #macro ( mainMenu $menus )
   <ul class="navbar-nav nav nav-tabs flex-column">
-#**##foreach( $menu in $menus )
-#**##if ( $menu.name )
-#*  *##if ( $menu.img )
-#*    *##if( $menu.position )
-#*      *##set ( $position = $menu.position )
-#*    *##else
-#*      *##set ( $position = "left" )
-#*    *##end
+   #foreach( $menu in $menus )
+    #if ( $menu.name )
+      #if ( $menu.img )
+        #if( $menu.position )
+          #set ( $position = $menu.position )
+        #else
+          #set ( $position = "left" )
+        #end
 ##
-#*    *##if ( !$decoration.isLink( $menu.img ) )
-#*      *##set ( $src = $PathTool.calculateLink( $menu.img, $relativePath ) )
-#*      *##set ( $src = $src.replaceAll( '\\', '/' ) )
-#*      *##set ( $src = ' src="' + $src + '"' )
-#*    *##else
-#*      *##set ( $src = ' src="' + $menu.img + '"' )
-#*    *##end
+        #if ( !$decoration.isLink( $menu.img ) )
+          #set ( $src = $PathTool.calculateLink( $menu.img, $relativePath ) )
+          #set ( $src = $src.replaceAll( "\\", '/' ) )
+          #set ( $src = ' src="' + $src + '"' )
+        #else
+          #set ( $src = ' src="' + $menu.img + '"' )
+        #end
 ##
-#*    *##if( $menu.alt )
-#*      *##set ( $alt = ' alt="' + $menu.alt + '"' )
-#*    *##else
-#*      *##set ( $alt = ' alt="' + $menu.name + '"' )
-#*    *##end
+        #if( $menu.alt )
+          #set ( $alt = ' alt="' + $menu.alt + '"' )
+        #else
+          #set ( $alt = ' alt="' + $menu.name + '"' )
+        #end
 ##
-#*    *##if( $menu.border )
-#*      *##set ( $border = 'border: ' + $menu.border + '; ' )
-#*    *##else
-#*      *##set ( $border = 'border: 0;' )
-#*    *##end
+        #if( $menu.border )
+          #set ( $border = 'border: ' + $menu.border + '; ' )
+        #else
+          #set ( $border = 'border: 0;' )
+        #end
 ##
-#*    *##if( $menu.width )
-#*      *##set ( $width = 'width: ' + $menu.width + '; ' )
-#*    *##else
-#*      *##set ( $width = "" )
-#*    *##end
-#*    *##if( $menu.height )
-#*      *##set ( $height = 'height: ' + $menu.height + ';' )
-#*    *##else
-#*      *##set ( $height = "" )
-#*    *##end
+        #if( $menu.width )
+          #set ( $width = 'width: ' + $menu.width + '; ' )
+        #else
+          #set ( $width = "" )
+        #end
+        #if( $menu.height )
+          #set ( $height = 'height: ' + $menu.height + ';' )
+        #else
+          #set ( $height = "" )
+        #end
 ##
-#*    *##set ( $img = '<img class="imageLink"' + $src + $alt + ' style="' + $border + $width + $height + '" />' )
+        #set ( $img = '<img class="imageLink"' + $src + $alt + ' style="' + $border + $width + $height + '" />' )
 ##
-#*    *##if ( $position == "left" )
+        #if ( $position == "left" )
    <li class="nav-header">$img $menu.name</li>
-#*    *##else
+        #else
    <li class="nav-header">$menu.name $img</li>
-#*    *##end
-#*  *##else
+        #end
+      #else
    <li class="nav-header">$menu.name</li>
-#*  *##end
-#**##end
-#**##if ( $menu.items && $menu.items.size() > 0 )
-#*  *##foreach( $item in $menu.items )
-#*    *##menuItem( $item '' )
-#*  *##end
-#**##end
-#**##end
+      #end
+    #end
+    #if ( $menu.items && $menu.items.size() > 0 )
+      #foreach( $item in $menu.items )
+        #menuItem( $item '' )
+      #end
+    #end
+    #end
   </ul>
 #end
 ########################################################################################################################
 ##
 ########################################################################################################################
 #macro ( menuItem $item $indent )
-#**##set ( $collapseClass = "none" )
-#**##set ( $linkClass = "nav-link" )
-#**##set ( $currentItemHref = $PathTool.calculateLink( $item.href, $relativePath ) )
-#**##set ( $currentItemHref = $currentItemHref.replaceAll( '\\', '/' ) )
+    #set ( $collapseClass = "none" )
+    #set ( $linkClass = "nav-link" )
+    #set ( $currentItemHref = $PathTool.calculateLink( $item.href, $relativePath ) )
+    #set ( $currentItemHref = $currentItemHref.replaceAll( "\\", '/' ) )
 ##
-#**##if ( $item && $item.items && $item.items.size() > 0 )
-#*  *##if ( $item.collapse == false )
-#*    *##set ( $collapseClass = "glyphicon glyphicon-chevron-down flex-row flex-wrap ms-md-auto" )
-#*  *##else
-#*    *### By default collapsed
-#*    *##set ( $collapseClass = "glyphicon glyphicon-chevron-right flex-row flex-wrap ms-md-auto" )
-#*  *##end
+    #if ( $item && $item.items && $item.items.size() > 0 )
+      #if ( $item.collapse == false )
+        #set ( $collapseClass = "glyphicon glyphicon-chevron-down flex-row flex-wrap ms-md-auto" )
+      #else
+        ## By default collapsed
+        #set ( $collapseClass = "glyphicon glyphicon-chevron-right flex-row flex-wrap ms-md-auto" )
+      #end
 ##
-#*  *##set ( $display = false )
-#*  *##displayTree( $display $item )
+      #set ( $display = false )
+      #displayTree( $display $item )
 ##
-#*  *##if ( $alignedFileName == $currentItemHref || $display )
-#*    *##set ( $collapseClass = "glyphicon glyphicon-chevron-down flex-row flex-wrap ms-md-auto" )
-#*  *##end
-#**##end
+      #if ( $alignedFileName == $currentItemHref || $display )
+        #set ( $collapseClass = "glyphicon glyphicon-chevron-down flex-row flex-wrap ms-md-auto" )
+      #end
+    #end
 ##
-#**##if ( $alignedFileName == $currentItemHref )
-#*  *##if ( $collapseClass == "glyphicon glyphicon-chevron-down flex-row flex-wrap ms-md-auto" )
+    #if ( $alignedFileName == $currentItemHref )
+      #if ( $collapseClass == "glyphicon glyphicon-chevron-down flex-row flex-wrap ms-md-auto" )
 $indent    <li class="active nav-header">##
-#*  *##else
+      #else
 $indent    <li class="active nav-item">##
-#*  *##end
-#**##else
-#*  *##if ( $collapseClass == "glyphicon glyphicon-chevron-down flex-row flex-wrap ms-md-auto" )
+      #end
+    #else
+      #if ( $collapseClass == "glyphicon glyphicon-chevron-down flex-row flex-wrap ms-md-auto" )
 $indent    <li class="nav-header">##
-#*  *##else
+      #else
 $indent    <li class="nav-item">##
-#*  *##end
-#**##end
+      #end
+    #end
 ##
-#**##if ( $item.img )
-#*  *##if ( $item.position == "left" )
-#*    *##if ( $alignedFileName == $currentItemHref )
-#*      *#<a>#image( $item.img $item.alt $item.border $item.width $item.height ) $item.name</a>##
-#*    *##else
-#*      *##link( $currentItemHref $item.name $item.target $item.img $item.position $item.alt $item.border $item.width $item.height false $linkClass)
-#*    *##end
-#*  *##else
-#*    *##if ( $alignedFileName == $currentItemHref )
-#*      *#<a>$item.name #image( $item.img $item.alt $item.border $item.width $item.height )</a>##
-#*    *##else
-#*      *##link( $currentItemHref $item.name $item.target $item.img $item.position $item.alt $item.border $item.width $item.height false $linkClass)
-#*    *##end
-#*  *##end
-#**##else
-#*  *##if ( $alignedFileName == $currentItemHref )
-#*    *#<a><span class="$collapseClass"></span>$item.name</a>##
-#*  *##else
-#*    *##link( $currentItemHref $item.name $item.target $item.img $item.position $item.alt $item.border $item.width $item.height $collapseClass $linkClass)
-#*  *##end
-#**##end
-#**##if ( $item && $item.items && $item.items.size() > 0 )
-#*  *##if ( $collapseClass == "glyphicon glyphicon-chevron-down flex-row flex-wrap ms-md-auto" )
+    #if ( $item.img )
+      #if ( $item.position == "left" )
+        #if ( $alignedFileName == $currentItemHref )
+          <a>#image( $item.img $item.alt $item.border $item.width $item.height ) $item.name</a>##
+        #else
+          #link( $currentItemHref $item.name $item.target $item.img $item.position $item.alt $item.border $item.width $item.height false $linkClass)
+        #end
+      #else
+        #if ( $alignedFileName == $currentItemHref )
+          <a>$item.name #image( $item.img $item.alt $item.border $item.width $item.height )</a>##
+        #else
+          #link( $currentItemHref $item.name $item.target $item.img $item.position $item.alt $item.border $item.width $item.height false $linkClass)
+        #end
+      #end
+    #else
+      #if ( $alignedFileName == $currentItemHref )
+        <a><span class="$collapseClass"></span>$item.name</a>##
+      #else
+        #link( $currentItemHref $item.name $item.target $item.img $item.position $item.alt $item.border $item.width $item.height $collapseClass $linkClass)
+      #end
+    #end
+    #if ( $item && $item.items && $item.items.size() > 0 )
+      #if ( $collapseClass == "glyphicon glyphicon-chevron-down flex-row flex-wrap ms-md-auto" )
       <ul class="nav nav-tabs flex-column">
-#*    *##foreach( $subitem in $item.items )
-#*      *##menuItem( $subitem "$indent  " )
-#*    *##end
+        #foreach( $subitem in $item.items )
+          #menuItem( $subitem "$indent  " )
+        #end
       </ul>##
-#*  *##end
-#**##end
-#**#</li>
+      #end
+    #end
+    </li>
 #end
