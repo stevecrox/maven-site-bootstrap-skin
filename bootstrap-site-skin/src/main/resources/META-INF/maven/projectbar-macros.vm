@@ -27,7 +27,7 @@
 
   #if ( $pbarGenerateDate != 'none' || $pbarGenerateVersion != 'none' 
         || ( $pbarBreadcrumbs && $pbarBreadcrumbs.size() > 0 || ( $pbarMenu && $pbarMenu.size() > 0 ) ) )
-    <nav id="projectBar" class="navbar navbar-expand-sm $navBarStyle" aria-label="projectBarList">
+    <nav id="projectBar" class="navbar navbar-expand-sm navbar_suffix_menu $navBarStyle" aria-label="projectBarList">
         #if ( $pbarGenerateDate == 'left' || $pbarGenerateVersion == 'left' || $navbarMenuOrientation == 'left' )
 
           #if ( $navbarMenuOrientation == 'left' 

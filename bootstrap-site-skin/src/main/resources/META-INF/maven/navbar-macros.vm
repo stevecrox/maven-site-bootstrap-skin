@@ -167,7 +167,16 @@
   #foreach( $link in $links )
     #if ( ${link.name} )
       <li class="nav-item">
-        <a class="$navbarLinkCSS nav-link" href="${link.href}" id="Link.Dropdown.${link.name}" role="button" aria-expanded="false">${link.name}</a>
+      #if ( !$decoration.isLink( $link.href ) )
+        #set ( $linkItemhref = $PathTool.calculateLink( $link.href, $relativePath ) )
+        #set ( $linkItemhref = $linkItemhref.replaceAll( "\\", '/' ) )
+        
+        #if ( $linkItemhref == '' )
+          #set ( $linkItemhref = './' )
+        #end
+
+        <a class="$navbarLinkCSS nav-link" href="${linkItemhref}" id="Link.Dropdown.${link.name}" role="button" aria-expanded="false">${link.name}</a>
+      #end
       </li>
     #end
   #end
@@ -183,7 +192,7 @@
     #else
       #if ( !$decoration.isLink( $href ) )
         #set ( $href = $PathTool.calculateLink( $href, $relativePath ) )
-        ##set ( $href = $href.replaceAll( '\\', '/' ) )
+        #set ( $href = $href.replaceAll( "\\", '/' ) )
         #if ( ( $href == '' ) )
           #set ( $href = './' )
         #end
