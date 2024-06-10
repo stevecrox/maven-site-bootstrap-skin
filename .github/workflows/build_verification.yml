@@ -102,7 +102,7 @@ jobs:
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
 
       - name: Checkstyle analyse
-        uses: dbelyaev/action-checkstyle@v1.8.0
+        uses: dbelyaev/action-checkstyle@v1.13.0
         with:
           github_token: ${{ secrets.SCM_TOKEN }}
           reporter: github-pr-review
