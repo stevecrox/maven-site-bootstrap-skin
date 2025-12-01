@@ -98,7 +98,7 @@ jobs:
         run: git push origin main
 
       - name: Upload Release Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: "v${{ env.BRANCH_NAME }}"
           path: "**/target/*${{ env.BRANCH_NAME }}*"
