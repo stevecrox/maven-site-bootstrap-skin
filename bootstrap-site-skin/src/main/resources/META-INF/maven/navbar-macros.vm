@@ -58,7 +58,12 @@
       #if ( $decoration.getCustomValue( 'bootstrapSkin.gitHub.organisation' ) && $decoration.getCustomValue( 'bootstrapSkin.gitHub.repository' ) )
         #set ( $githubProject = $decoration.getCustomValue( 'bootstrapSkin.gitHub.organisation' ) )
         #set ( $githubRepository = $decoration.getCustomValue( 'bootstrapSkin.gitHub.repository' ) )
-        <a id="NavBrandBar.Link.scm" class="nav-link" href="https://github.com/${githubProject}/${githubRepository}" data-rr-ui-event-key="https://github.com/${githubProject}/${githubRepository}" >
+        #if ( $decoration.getCustomValue( 'bootstrapSkin.gitHub.endpoint' ) )
+          #set ( $githubendpoint = $decoration.getCustomValue( 'bootstrapSkin.gitHub.endpoint' ) )
+        #else
+          #set ( $githubendpoint = "https://github.com" )
+        #end
+        <a id="NavBrandBar.Link.scm" class="nav-link" href="${githubendpoint}/${githubProject}/${githubRepository}" data-rr-ui-event-key="${githubendpoint}/${githubProject}/${githubRepository}" >
           #gitHubSVG( $width $height )
         </a>
       #end
@@ -66,7 +71,12 @@
       #if ( $decoration.getCustomValue( 'bootstrapSkin.gitlab.project' ) && $decoration.getCustomValue( 'bootstrapSkin.gitlab.repository' ) )
         #set ( $gitlabProject = $decoration.getCustomValue( 'bootstrapSkin.gitlab.project' ) )
         #set ( $gitlabRepository = $decoration.getCustomValue( 'bootstrapSkin.gitlab.repository' ) )
-        <a id="NavBrandBar.Link.scm" class="nav-link" href="https://gitlab.com/${gitlabProject}/${gitlabRepository}" data-rr-ui-event-key="https://github.com/${gitlabProject}/${gitlabRepository}" >
+        #if ( $decoration.getCustomValue( 'bootstrapSkin.gitlab.endpoint' ) )
+          #set ( $gitlabendpoint = $decoration.getCustomValue( 'bootstrapSkin.gitlab.endpoint' ) )
+        #else
+          #set ( $gitlabendpoint = "https://gitlab.com" )
+        #end
+        <a id="NavBrandBar.Link.scm" class="nav-link" href="${gitlabendpoint}/${gitlabProject}/${gitlabRepository}" data-rr-ui-event-key="${gitlabendpoint}/${gitlabProject}/${gitlabRepository}" >
           #gitLabSVG( $width $height )
         </a>
       #end
@@ -74,7 +84,7 @@
       #if ( $decoration.getCustomValue( 'bootstrapSkin.git.project' ) && $decoration.getCustomValue( 'bootstrapSkin.git.repository') && $decoration.getCustomValue( 'bootstrapSkin.git.endpoint') )
         #set ( $gitProject = $decoration.getCustomValue( 'bootstrapSkin.git.project' ) )
         #set ( $gitRepository = $decoration.getCustomValue( 'bootstrapSkin.git.repository' ) )
-        #set ( $gitEndpoint = $decoration.getCustomValue( 'bootstrapSkin.git.repository' ) )
+        #set ( $gitEndpoint = $decoration.getCustomValue( 'bootstrapSkin.git.endpoint' ) )
         <a id="NavBrandBar.Link.scm" class="nav-link" href="${gitEndpoint}/${gitProject}/${gitRepository}" data-rr-ui-event-key="${gitEndpoint}/${gitProject}/${gitRepository}" >
           #gitSVG( $width $height )
         </a>
