@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 8, 11, 17, 21]
+        version: [17, 21]
     steps:
       - name: Check out Source Code
         uses: actions/checkout@v6.0.2
@@ -49,8 +49,8 @@ jobs:
           passphrase: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
           git_user_signingkey: true
           git_config_global: true
-          git_committer_name: "stevecrox"
-          git_committer_email: "stevecrox@hotmail.com"
+          git_committer_name: 'stevecrox'
+          git_committer_email: 'stevecrox@hotmail.com'
           git_commit_gpgsign: true
           git_push_gpgsign: false
           git_tag_gpgsign: true
@@ -85,8 +85,8 @@ jobs:
           passphrase: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
           git_user_signingkey: true
           git_config_global: true
-          git_committer_name: "stevecrox"
-          git_committer_email: "stevecrox@hotmail.com"
+          git_committer_name: 'stevecrox'
+          git_committer_email: 'stevecrox@hotmail.com'
           git_commit_gpgsign: true
           git_push_gpgsign: false
           git_tag_gpgsign: true
