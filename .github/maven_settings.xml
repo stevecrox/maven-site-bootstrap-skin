@@ -4,14 +4,19 @@
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
     <servers>
         <server>
-            <id>main</id>
+            <id>central</id>
             <username>${env.OSSRH_USER}</username>
             <password>${env.OSSRH_TOKEN}</password>
         </server>
         <server>
+            <id>main</id>
+            <username>${env.GITHUB_USER}</username>
+            <password>${env.GITHUB_TOKEN}</password>
+        </server>
+        <server>
             <id>snapshots</id>
-            <username>${env.OSSRH_USER}</username>
-            <password>${env.OSSRH_TOKEN}</password>
+            <username>${env.GITHUB_USER}</username>
+            <password>${env.GITHUB_TOKEN}</password>
         </server>
         <server>
             <id>git@github.com</id>
