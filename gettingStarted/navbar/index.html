@@ -26,7 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="generator" content="#generatedBy()" />
 
-    <title>Maven Site Bootstrap Skin Parent &#x2013; Navigation Bar</title>
+    <title>Navigation Bar – Maven Site Bootstrap Skin Parent</title>
 
         <link rel="icon" href="../.././img/favicons/favicon.ico">
     <!-- CSS Stylesheets, site.css is included so downstream projects can override them as appropriate. -->
@@ -126,7 +126,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../../dependency-convergence.html" id="Dependency ConvergenceDropdownLink" title="Dependency Convergence"  class="dropdown-item" >Dependency Convergence</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../../dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                          </li>
+                                                      <a href="../../dependency-info.html" id="Maven CoordinatesDropdownLink" title="Maven Coordinates"  class="dropdown-item" >Maven Coordinates</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="../../distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -158,13 +158,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../../jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../../changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../../file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../../dev-activity.html" id="Developer ActivityDropdownLink" title="Developer Activity"  class="dropdown-item" >Developer Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../../surefire-report.html" id="Surefire ReportDropdownLink" title="Surefire Report"  class="dropdown-item" >Surefire Report</a>                          </li>
+                                                      <a href="../../surefire.html" id="SurefireDropdownLink" title="Surefire"  class="dropdown-item" >Surefire</a>                          </li>
                                   </ul>
               </li>
                               </ul>
@@ -229,7 +223,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../../dependency-convergence.html" id="Dependency ConvergenceDropdownLink" title="Dependency Convergence"  class="dropdown-item" >Dependency Convergence</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../../dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                          </li>
+                                                      <a href="../../dependency-info.html" id="Maven CoordinatesDropdownLink" title="Maven Coordinates"  class="dropdown-item" >Maven Coordinates</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="../../distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -261,13 +255,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../../jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../../changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../../file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../../dev-activity.html" id="Developer ActivityDropdownLink" title="Developer Activity"  class="dropdown-item" >Developer Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../../surefire-report.html" id="Surefire ReportDropdownLink" title="Surefire Report"  class="dropdown-item" >Surefire Report</a>                          </li>
+                                                      <a href="../../surefire.html" id="SurefireDropdownLink" title="Surefire"  class="dropdown-item" >Surefire</a>                          </li>
                                   </ul>
               </li>
                               </ul>
@@ -289,12 +277,12 @@
                           
       
       
-  <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2024-04-10</span>
+  <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2026-02-10</span>
                                       <span id="projectBar.DateVersion.Spacer" class="px-1 navbar-text">|</span>
                                       
     
       
-    <span id="projectVersion" class="px-1 navbar-text">Version: 1.4.3</span>
+    <span id="projectVersion" class="px-1 navbar-text">Version: 1.5.0</span>
                       </div>
               </div>
     </nav>
@@ -304,15 +292,14 @@
         <div class="container mt-3 rounded">
                   
     
-    <section>
+    <section><a id="Navigation_Bar"></a>
 <h1>Navigation Bar</h1>
 <hr />
 By default the skin will generate a [Fixed Navbar](https://getbootstrap.com/docs/5.0/examples/navbar-fixed/) , however there are a number of configuration options to change the design of the navigation bar.
-<section>
+<section><a id="Enable.2FDisable_the_navigation_bar"></a>
 <h2>Enable/Disable the navigation bar</h2>
 <p>The skin allows you to disable or enable the navigation bar by setting a custom element, as shown below:</p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;custom&gt;
@@ -324,11 +311,10 @@ By default the skin will generate a [Fixed Navbar](https://getbootstrap.com/docs
     &lt;/custom&gt;
     [...]
 &lt;/project&gt;
-</code></pre></div></section><section>
+</code></pre></section><section><a id="Navigation_Bar_Brand"></a>
 <h2>Navigation Bar Brand</h2>
 <p>The bootstrap navigation bar has the concept of &#x2018;navbar-brand&#x2019;, this is a section of the navigation bar that can be used to advertise the product name and provide an icon. By default the project name (as defined within the POM) is used as the name of the brand, however you are able to define an icon as well.</p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;custom&gt;
@@ -344,12 +330,11 @@ By default the skin will generate a [Fixed Navbar](https://getbootstrap.com/docs
     &lt;/custom&gt;
     [...]
 &lt;/project&gt;
-</code></pre></div>
-<p>Similar to the banner bar the icon element can contain the same attributes as the <code>&lt;img&gt;</code> tag. If the icon element is left blank then no icon is added to the page, as a minimum the navbar-brand icon requires a <code>alt</code> or <code>src</code> attribute for something to be displayed.</p></section><section>
+</code></pre>
+<p>Similar to the banner bar the icon element can contain the same attributes as the <code>&lt;img&gt;</code> tag. If the icon element is left blank then no icon is added to the page, as a minimum the navbar-brand icon requires a <code>alt</code> or <code>src</code> attribute for something to be displayed.</p></section><section><a id="Navigation_Bar_Style"></a>
 <h2>Navigation Bar Style</h2>
 <p>You can configure the CSS classes used on the navbar style. Bootstrap 5 contains a number of classes for common colouring, by default &#x2018;navbar-dark bg-dark&#x2019; has been set as this provides a clear contrast between the banner and the main text.</p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;custom&gt;
@@ -361,9 +346,9 @@ By default the skin will generate a [Fixed Navbar](https://getbootstrap.com/docs
     &lt;/custom&gt;
     [...]
 &lt;/project&gt;
-</code></pre></div>
+</code></pre>
 <p>The above configuration would change the NavBar to look like the following</p>
-<p><img src="navbarlight.png" alt="" /></p></section><section>
+<p><img src="navbarlight.png" alt="" /></p></section><section><a id="Navigation_Bar_Orientation"></a>
 <h2>Navigation Bar Orientation</h2>
 <p>By default the Navigation bar will place the dropdown menu on the right side of the navigation bar like so.</p>
 <p><img src="navbarorientationright.png" alt="" /></p>
@@ -396,7 +381,7 @@ By default the skin will generate a [Fixed Navbar](https://getbootstrap.com/docs
             <div id="copyrightDiv" class="pt-3">
               <p>&#169;
                   
-          2022&#x2013;2024
+          2022&#x2013;2026
     
                                         Stephen Crocker
                                             </p>

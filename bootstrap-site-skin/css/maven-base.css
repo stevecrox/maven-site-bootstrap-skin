@@ -17,152 +17,113 @@
  * under the License.
  */
 
-body {
-  margin: 0px;
-  padding: 0px;
+/* Tweaks to the bootstrap theme
+--------------------------------- */
+
+/** MSKINS-191 Added to ensure the breadcrumb version bar is displayed correctly. */
+.breadcrumb {
+  margin-bottom: 0px;
 }
-table {
-  padding:0px;
-  width: 100%;
-  margin-left: -2px;
-  margin-right: -2px;
+
+/** MSKINS-191 Added for the sidebar to ensure the menu items get the same style as the original look. */
+#sidebarList{
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
-acronym {
-  cursor: help;
-  border-bottom: 1px dotted #feb;
+
+/** MSKINS-191 Added for the sidebar to ensure the menu items get the same style as the original look. */
+#sidebarList > .nav > li > a {
+    font-size: 14px;
+    padding: 5px;
+    text-transform: none;
 }
-table.bodyTable th, table.bodyTable td {
-  padding: 2px 4px 2px 4px;
-  vertical-align: top;
+
+/** MSKINS-191 Added for the sidebar so pills take up the bar width rather than act as buttons. */
+#sidebarList > .nav > .nav-header > .nav-tabs > li {
+  float: none;
 }
-div.clear {
-  clear:both;
-  visibility: hidden;
+
+/** MSKINS-191 Added for the sidebar to ensure the menu items get the same style as the original look. */
+#sidebarList > .nav > .nav-header > .nav-tabs > li > a {
+  font-size: 14px;
+  font-weight: normal;
+  padding: 5px;
+  text-transform: none;
 }
-div.clear hr {
-  display: none;
-}
-#bannerLeft, #bannerRight {
-  font-size: xx-large;
+
+/** MSKINS-191 added since nav-header isn't styled in >2.8, this recreates the sidebar section title layout. */
+#sidebarList > .nav > li.nav-header {
+  font-size: 11px;
   font-weight: bold;
+  line-height: 20px;
+  margin-top: 9px;
+  text-transform: uppercase;
 }
-#bannerLeft img, #bannerRight img {
-  margin: 0px;
-}
-.xleft, #bannerLeft img {
-  float:left;
-}
-.xright, #bannerRight {
-  float:right;
-}
-#banner {
-  padding: 0px;
-}
-#breadcrumbs {
-  padding: 3px 10px 3px 10px;
-}
-#leftColumn {
- width: 170px;
- float:left;
- overflow: auto;
-}
-#bodyColumn {
-  margin-right: 1.5em;
-  margin-left: 197px;
-}
-#legend {
-  padding: 8px 0 8px 0;
-}
-#navcolumn {
-  padding: 8px 4px 0 8px;
-}
-#navcolumn h5 {
-  margin: 0;
-  padding: 0;
-  font-size: small;
-}
-#navcolumn ul {
-  margin: 0;
-  padding: 0;
-  font-size: small;
-}
-#navcolumn li {
-  list-style-type: none;
-  background-image: none;
-  background-repeat: no-repeat;
-  background-position: 0 0.4em;
-  padding-left: 16px;
-  list-style-position: outside;
-  line-height: 1.2em;
-  font-size: smaller;
-}
-#navcolumn li.expanded {
-  background-image: url(../images/expanded.gif);
-}
-#navcolumn li.collapsed {
-  background-image: url(../images/collapsed.gif);
-}
-#navcolumn li.none {
-  text-indent: -1em;
-  margin-left: 1em;
-}
-#poweredBy {
-  text-align: center;
-}
-#navcolumn img {
-  margin-top: 10px;
-  margin-bottom: 3px;
-}
-#poweredBy img {
-  display:block;
-  margin: 20px 0 20px 17px;
-}
-#search img {
-    margin: 0px;
-    display: block;
-}
-#search #q, #search #btnG {
-    border: 1px solid #999;
-    margin-bottom:10px;
-}
-#search form {
-    margin: 0px;
-}
-#lastPublished {
-  font-size: x-small;
-}
-.navSection {
-  margin-bottom: 2px;
-  padding: 8px;
-}
-.navSectionHead {
+
+/** MSKINS-191 added since nav-header isn't styled in >2.8, this recreates the sidebar section title layout. */
+#sidebarList> .nav > .nav-header > a {
+  font-size: 11px;
   font-weight: bold;
-  font-size: x-small;
-}
-.section {
-  padding: 4px;
-}
-#footer {
-  padding: 3px 10px 3px 10px;
-  font-size: x-small;
-}
-#breadcrumbs {
-  font-size: x-small;
-  margin: 0pt;
-}
-.source {
-  padding: 12px;
-  margin: 1em 7px 1em 7px;
-}
-.source pre {
-  margin: 0px;
+  line-height: 20px;
+  margin-top: 9px;
   padding: 0px;
+  text-transform: uppercase;
 }
-#navcolumn img.imageLink, .imageLink {
-  padding-left: 0px;
-  padding-bottom: 0px;
-  padding-top: 0px;
-  padding-right: 2px;
-  border: 0px;
-  margin: 0px;
+
+/** MSKINS-191 Added to restore line numbers to every line in the pretty print statement. */
+li.L0, li.L1, li.L2, li.L3,
+li.L5, li.L6, li.L7, li.L8 {
+  list-style-type: decimal !important;
+}
+
+/* MSKINS-191 Added for submenu in responsive small screens */
+.dropdown-submenu {
+  position: relative;
+}
+/* MSKINS-191 Added for submenu in responsive small screens */
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+/* MSKINS-191 Added for submenu in responsive small screens */
+.navbar-nav li:hover > ul.submenu {
+  display: block;
+}
+
+/* MSKINS-191 Added for submenu in responsive small screens */
+@media all and (min-width: 992px) {
+  .dropdown-menu li{
+    position: relative;
+  }
+  .dropdown-menu .submenu{
+    display: none;
+  	position: absolute;
+  	right:100%; left:auto;
+  }
+  .dropdown-menu .submenu-left{
+  	right:100%; top:-7px;
+  }
+}
+
+/*
+ * Declare different heights because we have used
+ * rem and that is a function of text height and
+ * screen width changes the text height (and the
+ * required height of the box).
+ */
+ @media only screen and (max-width: 576px) {
+  ul.navbar_suffix_menu {
+    display: none;
+  }
+  nav.navbar_suffix_menu {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  a.navbar_collapse_menu {
+    display: none;
+  }
 }

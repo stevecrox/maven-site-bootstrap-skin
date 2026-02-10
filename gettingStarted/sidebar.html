@@ -126,7 +126,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../dependency-convergence.html" id="Dependency ConvergenceDropdownLink" title="Dependency Convergence"  class="dropdown-item" >Dependency Convergence</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                          </li>
+                                                      <a href="../dependency-info.html" id="Maven CoordinatesDropdownLink" title="Maven Coordinates"  class="dropdown-item" >Maven Coordinates</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="../distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -158,13 +158,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../dev-activity.html" id="Developer ActivityDropdownLink" title="Developer Activity"  class="dropdown-item" >Developer Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../surefire-report.html" id="Surefire ReportDropdownLink" title="Surefire Report"  class="dropdown-item" >Surefire Report</a>                          </li>
+                                                      <a href="../surefire.html" id="SurefireDropdownLink" title="Surefire"  class="dropdown-item" >Surefire</a>                          </li>
                                   </ul>
               </li>
                               </ul>
@@ -229,7 +223,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../dependency-convergence.html" id="Dependency ConvergenceDropdownLink" title="Dependency Convergence"  class="dropdown-item" >Dependency Convergence</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                          </li>
+                                                      <a href="../dependency-info.html" id="Maven CoordinatesDropdownLink" title="Maven Coordinates"  class="dropdown-item" >Maven Coordinates</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="../distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -261,13 +255,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../dev-activity.html" id="Developer ActivityDropdownLink" title="Developer Activity"  class="dropdown-item" >Developer Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../surefire-report.html" id="Surefire ReportDropdownLink" title="Surefire Report"  class="dropdown-item" >Surefire Report</a>                          </li>
+                                                      <a href="../surefire.html" id="SurefireDropdownLink" title="Surefire"  class="dropdown-item" >Surefire</a>                          </li>
                                   </ul>
               </li>
                               </ul>
@@ -289,12 +277,12 @@
                           
       
       
-  <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2024-04-10</span>
+  <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2026-02-10</span>
                                       <span id="projectBar.DateVersion.Spacer" class="px-1 navbar-text">|</span>
                                       
     
       
-    <span id="projectVersion" class="px-1 navbar-text">Version: 1.4.3</span>
+    <span id="projectVersion" class="px-1 navbar-text">Version: 1.5.0</span>
                       </div>
               </div>
     </nav>
@@ -307,11 +295,10 @@
     <p>#Side Bar</p>
 <hr />
 By default the [sidebar](https://getbootstrap.com/docs/5.2/examples/sidebars/) is disabled, it is included as one of the goals of the skin was to support the Maven 2 general layout which placed the navigation menu on the screen as a sidebar. This section will outline the configuration options offered by the sidebar.
-<section><section>
+<section><section><a id="Enable.2FDisable_the_side_bar"></a>
 <h2>Enable/Disable the side bar</h2>
 <p>The skin allows you to disable or enable the sidebar by setting a custom element, as shown below:</p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;custom&gt;
@@ -323,11 +310,10 @@ By default the [sidebar](https://getbootstrap.com/docs/5.2/examples/sidebars/) i
     &lt;/custom&gt;
     [...]
 &lt;/project&gt;
-</code></pre></div></section><section>
+</code></pre></section><section><a id="Sidebar_Bar_Style"></a>
 <h2>Sidebar Bar Style</h2>
 <p>You can configure the CSS classes used on the sidebar. Bootstrap 5 contains a number of classes for common colouring, by default &#x2018;navbar-dark bg-dark&#x2019; has been set as this provides a clear contrast between the banner and the main text.</p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;custom&gt;
@@ -339,7 +325,7 @@ By default the [sidebar](https://getbootstrap.com/docs/5.2/examples/sidebars/) i
     &lt;/custom&gt;
     [...]
 &lt;/project&gt;
-</code></pre></div>
+</code></pre>
 <p>The above configuration would change the NavBar to look like the following</p></section></section>
       </div>
     </main>
@@ -368,7 +354,7 @@ By default the [sidebar](https://getbootstrap.com/docs/5.2/examples/sidebars/) i
             <div id="copyrightDiv" class="pt-3">
               <p>&#169;
                   
-          2022&#x2013;2024
+          2022&#x2013;2026
     
                                         Stephen Crocker
                                             </p>

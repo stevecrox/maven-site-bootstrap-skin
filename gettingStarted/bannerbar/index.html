@@ -26,7 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="generator" content="#generatedBy()" />
 
-    <title>Maven Site Bootstrap Skin Parent &#x2013; Banner Bar</title>
+    <title>Banner Bar – Maven Site Bootstrap Skin Parent</title>
 
         <link rel="icon" href="../.././img/favicons/favicon.ico">
     <!-- CSS Stylesheets, site.css is included so downstream projects can override them as appropriate. -->
@@ -126,7 +126,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../../dependency-convergence.html" id="Dependency ConvergenceDropdownLink" title="Dependency Convergence"  class="dropdown-item" >Dependency Convergence</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../../dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                          </li>
+                                                      <a href="../../dependency-info.html" id="Maven CoordinatesDropdownLink" title="Maven Coordinates"  class="dropdown-item" >Maven Coordinates</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="../../distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -158,13 +158,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../../jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../../changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../../file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../../dev-activity.html" id="Developer ActivityDropdownLink" title="Developer Activity"  class="dropdown-item" >Developer Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../../surefire-report.html" id="Surefire ReportDropdownLink" title="Surefire Report"  class="dropdown-item" >Surefire Report</a>                          </li>
+                                                      <a href="../../surefire.html" id="SurefireDropdownLink" title="Surefire"  class="dropdown-item" >Surefire</a>                          </li>
                                   </ul>
               </li>
                               </ul>
@@ -229,7 +223,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../../dependency-convergence.html" id="Dependency ConvergenceDropdownLink" title="Dependency Convergence"  class="dropdown-item" >Dependency Convergence</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../../dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                          </li>
+                                                      <a href="../../dependency-info.html" id="Maven CoordinatesDropdownLink" title="Maven Coordinates"  class="dropdown-item" >Maven Coordinates</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="../../distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -261,13 +255,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../../jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../../changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../../file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../../dev-activity.html" id="Developer ActivityDropdownLink" title="Developer Activity"  class="dropdown-item" >Developer Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../../surefire-report.html" id="Surefire ReportDropdownLink" title="Surefire Report"  class="dropdown-item" >Surefire Report</a>                          </li>
+                                                      <a href="../../surefire.html" id="SurefireDropdownLink" title="Surefire"  class="dropdown-item" >Surefire</a>                          </li>
                                   </ul>
               </li>
                               </ul>
@@ -289,12 +277,12 @@
                           
       
       
-  <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2024-04-10</span>
+  <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2026-02-10</span>
                                       <span id="projectBar.DateVersion.Spacer" class="px-1 navbar-text">|</span>
                                       
     
       
-    <span id="projectVersion" class="px-1 navbar-text">Version: 1.4.3</span>
+    <span id="projectVersion" class="px-1 navbar-text">Version: 1.5.0</span>
                       </div>
               </div>
     </nav>
@@ -304,7 +292,7 @@
         <div class="container mt-3 rounded">
                   
     
-    <section>
+    <section><a id="Banner_Bar"></a>
 <h1>Banner Bar</h1>
 <hr />
 Most Apache Maven sites have a 'banner' along the top this typically contains two icons referencing the Apache project and a proejct logo as shown below.
@@ -312,7 +300,6 @@ Most Apache Maven sites have a 'banner' along the top this typically contains tw
 <p><img src="bannerbar.png" alt="" /></p>
 <p>The maven-site-plugin supports the definition of the icons using &#x2018;bannerLeft&#x2019; and &#x2018;bannerRight&#x2019; elements. Below is an example of these sections being defined within a <code>site.xml</code> file.</p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;bannerLeft&gt;
@@ -332,15 +319,14 @@ Most Apache Maven sites have a 'banner' along the top this typically contains tw
     &lt;/bannerRight&gt;
     [...]
 &lt;/project&gt;
-</code></pre></div>
+</code></pre>
 <p>The attributes of these elements should match the attributes of an <code>&lt;img&gt;</code> element within HTML. The skin will extract these values and create a floating container at the top of the page and populate images with the information provided.</p>
-<p>If these sections are left blank then no banner is added to the page, as a minimum the banner requires a <code>alt</code> or <code>src</code> attribute for something to be displayed.</p><section><section>
+<p>If these sections are left blank then no banner is added to the page, as a minimum the banner requires a <code>alt</code> or <code>src</code> attribute for something to be displayed.</p><section><section><a id="Source_Control_Management_.28SCM.29"></a>
 <h3>Source Control Management (SCM)</h3>
-<p>As part of the Social Media bar you are able to include links to the project. The following configurations are supported.</p></section><section>
+<p>As part of the Social Media bar you are able to include links to the project. The following configurations are supported.</p></section><section><a id="Git"></a>
 <h3>Git</h3>
 <p>There are a variety of Git endpoints not currently supported by Bootstrap Icons, for those we expect an &#x2018;endpoint&#x2019; (hostname), the project and the repository.The skin will use this to build the URL with the path <code>https://bitbucket.com/&lt;project&gt;/&lt;repository&gt;</code></p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
   [...]
   &lt;custom&gt;
@@ -354,11 +340,10 @@ Most Apache Maven sites have a 'banner' along the top this typically contains tw
   &lt;/custom&gt;
   [...]
 &lt;/project&gt;
-</code></pre></div></section><section>
+</code></pre></section><section><a id="GitHub"></a>
 <h3>GitHub</h3>
 <p>Github is one of several source control management solutions supported in the media bar, the Github element has 2 attributes, <code>organisation</code> and <code>repository</code>. <code>organisation</code> is the Github user/organisation to whom the repository belongs, while <code>repository</code> is the Github repository name. The skin will use this to build the URL with the path <code>https://github.com/&lt;organisation&gt;/&lt;repository&gt;</code></p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
   [...]
   &lt;custom&gt;
@@ -371,11 +356,10 @@ Most Apache Maven sites have a 'banner' along the top this typically contains tw
   &lt;/custom&gt;
   [...]
 &lt;/project&gt;
-</code></pre></div></section><section>
+</code></pre></section><section><a id="GitLab"></a>
 <h3>GitLab</h3>
 <p>GitLab is one of several source control management solutions supported in the media bar, the GitLab element has 2 attributes, <code>project</code> and <code>repository</code>. <code>GitLab</code> is the GitLab user/organisation to whom the repository belongs, while <code>repository</code> is the GitLab repository name. The skin will use this to build the URL with the path <code>https://gitlab.com/&lt;project&gt;/&lt;repository&gt;</code></p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;custom&gt;
@@ -388,7 +372,7 @@ Most Apache Maven sites have a 'banner' along the top this typically contains tw
     &lt;/custom&gt;
     [...]
 &lt;/project&gt;
-</code></pre></div></section></section></section>
+</code></pre></section></section></section>
       </div>
     </main>
 
@@ -416,7 +400,7 @@ Most Apache Maven sites have a 'banner' along the top this typically contains tw
             <div id="copyrightDiv" class="pt-3">
               <p>&#169;
                   
-          2022&#x2013;2024
+          2022&#x2013;2026
     
                                         Stephen Crocker
                                             </p>

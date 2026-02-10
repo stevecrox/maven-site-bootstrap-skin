@@ -26,7 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="generator" content="#generatedBy()" />
 
-    <title>Maven Site Bootstrap Skin Parent &#x2013; Contribute</title>
+    <title>Contribute – Maven Site Bootstrap Skin Parent</title>
 
         <link rel="icon" href=".././img/favicons/favicon.ico">
     <!-- CSS Stylesheets, site.css is included so downstream projects can override them as appropriate. -->
@@ -126,7 +126,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../dependency-convergence.html" id="Dependency ConvergenceDropdownLink" title="Dependency Convergence"  class="dropdown-item" >Dependency Convergence</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                          </li>
+                                                      <a href="../dependency-info.html" id="Maven CoordinatesDropdownLink" title="Maven Coordinates"  class="dropdown-item" >Maven Coordinates</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="../distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -158,13 +158,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../dev-activity.html" id="Developer ActivityDropdownLink" title="Developer Activity"  class="dropdown-item" >Developer Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../surefire-report.html" id="Surefire ReportDropdownLink" title="Surefire Report"  class="dropdown-item" >Surefire Report</a>                          </li>
+                                                      <a href="../surefire.html" id="SurefireDropdownLink" title="Surefire"  class="dropdown-item" >Surefire</a>                          </li>
                                   </ul>
               </li>
                               </ul>
@@ -229,7 +223,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../dependency-convergence.html" id="Dependency ConvergenceDropdownLink" title="Dependency Convergence"  class="dropdown-item" >Dependency Convergence</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                          </li>
+                                                      <a href="../dependency-info.html" id="Maven CoordinatesDropdownLink" title="Maven Coordinates"  class="dropdown-item" >Maven Coordinates</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="../distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -261,13 +255,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../dev-activity.html" id="Developer ActivityDropdownLink" title="Developer Activity"  class="dropdown-item" >Developer Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../surefire-report.html" id="Surefire ReportDropdownLink" title="Surefire Report"  class="dropdown-item" >Surefire Report</a>                          </li>
+                                                      <a href="../surefire.html" id="SurefireDropdownLink" title="Surefire"  class="dropdown-item" >Surefire</a>                          </li>
                                   </ul>
               </li>
                               </ul>
@@ -289,12 +277,12 @@
                           
       
       
-  <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2024-04-10</span>
+  <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2026-02-10</span>
                                       <span id="projectBar.DateVersion.Spacer" class="px-1 navbar-text">|</span>
                                       
     
       
-    <span id="projectVersion" class="px-1 navbar-text">Version: 1.4.3</span>
+    <span id="projectVersion" class="px-1 navbar-text">Version: 1.5.0</span>
                       </div>
               </div>
     </nav>
@@ -304,28 +292,26 @@
         <div class="container mt-3 rounded">
                   
     
-    <section>
+    <section><a id="Contribute"></a>
 <h1>Contribute</h1>
 <hr />
 Contributions via GitHub pull requests are gladly accepted from their original author. Along with any pull requests, please state that the contribution is your original work and that you license the work to the project under the project's open source license. Whether or not you state this explicitly, by submitting any copyrighted material via pull request, email, or other means you agree to license the material under the project's open source license and warrant that you have the legal authority to do so.
-<section>
+<section><a id="Compiling"></a>
 <h2>Compiling</h2>
-<p>You can compile the project with a local instance of Maven (3.x or later) or with Maven Wrapper. You will need Java 1.8 or later to compile the application.</p><section>
+<p>You can compile the project with a local instance of Maven (3.x or later) or with Maven Wrapper. You will need Java 1.8 or later to compile the application.</p><section><a id="Maven"></a>
 <h3>Maven</h3>
 
-<div class="verbatim">
 <pre><code class="language-bash">$ mvn clean install site site:stage
-</code></pre></div></section><section>
+</code></pre></section><section><a id="Maven_Wrapper"></a>
 <h3>Maven Wrapper</h3>
 
-<div class="verbatim">
 <pre><code class="language-bash">$ ./mvnw clean install site site:stage
-</code></pre></div></section><section>
+</code></pre></section><section><a id="Notes"></a>
 <h3>Notes</h3>
 <p>The project <code>io.github.stevecrox.maven.skins:bootstrap-site-skin-parent</code> contains the actual skin (under <code>src/main/resources/META-INF/maven</code>). The modules under the &#x2018;io.github.stevecrox.maven.skins.example:bootstrap-site-skin-example-parent&#x2019; are used to test various layouts and configurations. For those modules to build you need to have packaged <code>io.github.stevecrox.maven.skins:bootstrap-site-skin-parent</code> and installed it into the local repository. This is achieved by the &#x2018;clean install&#x2019; step of the command, the <code>site</code> command ensures each module builds its own site, the use of <code>site:stage' tells Maven to pull in the child module sites into the root parent pom. This allows you to access thc combined results under</code>target/staging/bootstrap-site-skin-parent' I would then look at each Layout option to gain an understanding of how your change has affected the skin.</p>
-<p>You will note the parent projects <code>site.xml</code> uses an older version of the plugin (typically a release). This is because when pacakging a parent POM, maven starts the site phase before it completes the child module package phase, at this point an instance of the skin doesn't exist and so we can't use the current skin version at this level.</p></section></section><section>
+<p>You will note the parent projects <code>site.xml</code> uses an older version of the plugin (typically a release). This is because when pacakging a parent POM, maven starts the site phase before it completes the child module package phase, at this point an instance of the skin doesn't exist and so we can't use the current skin version at this level.</p></section></section><section><a id="Issues"></a>
 <h2>Issues</h2>
-<p>Please report any bugs found, feature requests or other issues on <a href="https://github.com/stevecrox/maven-site-bootstrap-skin/issues" class="externalLink">maven-site-bootstrap-skin issue tracker</a>.</p></section><section>
+<p>Please report any bugs found, feature requests or other issues on <a href="https://github.com/stevecrox/maven-site-bootstrap-skin/issues" class="externalLink">maven-site-bootstrap-skin issue tracker</a>.</p></section><section><a id="Submitting_Changes"></a>
 <h2>Submitting Changes</h2>
 <p>To submit a bug fix, ensure there is an issue raised on the issue track and create a fork of the project, resolve the issue within a branch and then raise a pull request against the project. When submitting a Pull Request please follow these guidelines:</p>
 <ul>
@@ -338,7 +324,7 @@ Contributions via GitHub pull requests are gladly accepted from their original a
 ** Only use spaces for indentation.
 ** Create minimal diffs - disable on save actions like reformat source code or organize imports. If you feel the source code should be reformatted, create a separate PR for this change.
 ** Check for unnecessary whitespace with git diff &#x2013;check before committing.</li>
-</ul></section><section>
+</ul></section><section><a id="License"></a>
 <h2>License</h2>
 <p>Licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" class="externalLink">Apache License, Version 2.0</a> (the &#x201c;License&#x201d;); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:</p></section></section>
       </div>
@@ -368,7 +354,7 @@ Contributions via GitHub pull requests are gladly accepted from their original a
             <div id="copyrightDiv" class="pt-3">
               <p>&#169;
                   
-          2022&#x2013;2024
+          2022&#x2013;2026
     
                                         Stephen Crocker
                                             </p>

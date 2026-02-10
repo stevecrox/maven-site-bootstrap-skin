@@ -42,44 +42,6 @@
   <body class="d-flex flex-column h-100">
 
     <header class="sticky-top">
-              <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-          <div id="banner" class="container-fluid">
-            <div class="justify-content-start flex-fill">                        <a href="https://github.com/stevecrox/maven-site-bootstrap-skin" id="bannerLeftLink"
-            
-              class="navbar-brand ps-2"
-          >
-  
-          
-        
-        
-        
-        
-        
-      <img id="bannerLeft.Img" src="image/example-banner-left.png"  alt=""  width="340px" height="86px" 
-                  style="border: 0; " 
-              />
-  
-          </a>
-              </div>
-            <div class="justify-content-end">                        <a href="https://github.com/stevecrox/maven-site-bootstrap-skin" id="bannerRightLink"
-            
-              class="navbar-brand ps-2"
-          >
-  
-          
-        
-        
-        
-        
-        
-      <img id="bannerRight.Img" src="image/example-banner-right.png"  alt=""  width="256px" height="125px" 
-                  style="border: 0; " 
-              />
-  
-          </a>
-              </div>
-          </div>
-        </nav>
                   
       <nav id="projectBar" class="navbar navbar-expand-sm navbar_suffix_menu navbar-dark bg-dark" aria-label="projectBarList">
         
@@ -133,7 +95,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="ci-management.html" id="CI ManagementDropdownLink" title="CI Management"  class="dropdown-item" >CI Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                          </li>
+                                                      <a href="dependency-info.html" id="Maven CoordinatesDropdownLink" title="Maven Coordinates"  class="dropdown-item" >Maven Coordinates</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -158,12 +120,6 @@
                                                 <a href="project-reports.html" id="Project ReportsDropdownLink" title="Project Reports"  class="dropdown-item" >Project Reports</a>                      <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu">
                                       <li class="nav-item dropdown-item">
                                                       <a href="jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="dev-activity.html" id="Developer ActivityDropdownLink" title="Developer Activity"  class="dropdown-item" >Developer Activity</a>                          </li>
                                   </ul>
               </li>
                               </ul>
@@ -199,12 +155,12 @@
                           
       
       
-  <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2024-04-10</span>
+  <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2026-02-10</span>
                                       <span id="projectBar.DateVersion.Spacer" class="px-1 navbar-text">|</span>
                                       
     
       
-    <span id="projectVersion" class="px-1 navbar-text">Version: 1.4.3</span>
+    <span id="projectVersion" class="px-1 navbar-text">Version: 1.5.0</span>
                       </div>
               </div>
     </nav>
@@ -292,8 +248,8 @@
         </a>
                     </li>
                                       <li class="nav-item">                                                
-      <a id="Dependency InformationLink" href="$href" class="nav-link" title="Dependency Information">
-    Dependency Information          <span id="Dependency InformationLinkSpan" class="none"></span>
+      <a id="Maven CoordinatesLink" href="$href" class="nav-link" title="Maven Coordinates">
+    Maven Coordinates          <span id="Maven CoordinatesLinkSpan" class="none"></span>
         </a>
                     </li>
                                       <li class="nav-item">                                                
@@ -338,7 +294,7 @@
         </a>
                     </li>
               </ul>              </li>
-                                                                                                                                                               <li class="nav-item">                                                
+                                                                                                   <li class="nav-item">                                                
       <a id="Project ReportsLink" href="$href" class="nav-link" title="Project Reports">
     Project Reports          <span id="Project ReportsLinkSpan" class="glyphicon glyphicon-chevron-right flex-row flex-wrap ms-md-auto"></span>
         </a>
@@ -350,19 +306,18 @@
                             
     
     <p>This example disabled the project information bar and aligns the Navbar links to the left to mimic a MkDocs layout, it also includes the <a href="https://bootswatch.com/superhero/" class="externalLink">&#x2018;SuperHero&#x2019; Bootswatch theme</a>. The <a href="https://maven.apache.org/skins/maven-default-skin/sample/" class="externalLink">Maven Default Skin</a> link has been provided to compare with this skin.</p>
-<p>The purpose of this theme is to allow us to demonstrate various capabilities of the skin to confirm nothing is obviously broken (and to also demonstrate what the skin can deliver.)</p><section><section>
+<p>The purpose of this theme is to allow us to demonstrate various capabilities of the skin to confirm nothing is obviously broken (and to also demonstrate what the skin can deliver.)</p><section><section><a id="Markdown_Render_Tests"></a>
 <h2>Markdown Render Tests</h2>
-<p>The below sections are provided to test various Markdown elements have translated correctly into a maven site.</p><section>
+<p>The below sections are provided to test various Markdown elements have translated correctly into a maven site.</p><section><a id="Code_Example"></a>
 <h3>Code Example</h3>
 <p>Below is some embedded JSON to confirm the prettify plugin is working as expected.</p>
 
-<div class="verbatim">
 <pre><code class="language-json">{
   &quot;first name&quot;: &quot;Joe&quot;,
   &quot;surname&quot;: &quot;Bloggs&quot;,
   &quot;age&quot;:  &quot;26&quot;
 }
-</code></pre></div></section><section>
+</code></pre></section><section><a id="Table_Example"></a>
 <h3>Table Example</h3>
 <p>A simple table to confirm this is rendering correctly.</p>
 <table class="table table-striped">
@@ -376,10 +331,10 @@
 <td>Bloggs</td>
 <td>26</td></tr></tbody>
 </table>
-</section><section>
+</section><section><a id="Emphasis"></a>
 <h3>Emphasis</h3>
 <p>I just love <strong>bold text</strong> using stars, if we use a single star we create <em>italic text</em> and similarly <em>one underscore</em> should work.</p>
-<p>When we <em><strong>use three stars</strong></em> it becomes bold and italic, similarly <em><strong>three underscores</strong></em> should work</p></section><section>
+<p>When we <em><strong>use three stars</strong></em> it becomes bold and italic, similarly <em><strong>three underscores</strong></em> should work</p></section><section><a id="Blockquotes"></a>
 <h3>Blockquotes</h3>
 <p>Blockquotes can contain multiple paragraphs. Add a &gt; on the blank lines between the paragraphs.</p>
 <blockquote>
@@ -391,10 +346,10 @@ Well maybe toast is better</p>
 
 <p>This line should be nested</p>
 </blockquote>
-</blockquote></section><section>
+</blockquote></section><section><a id="Lists"></a>
 <h3>Lists</h3>
 <p>Below is an ordered list:</p>
-<ol style="list-style-type: decimal">
+<ol style="list-style-type: decimal;">
 
 <li>Bread</li>
 <li>Toaster</li>
@@ -410,15 +365,14 @@ Well maybe toast is better</p>
 <p>Best Song Ever (Best song ever should be indented and attached to bullet 2)</p></li>
 <li>
 <p>And I think it went Oh oh oh!</p></li>
-</ul></section></section><section>
+</ul></section></section><section><a id="Configuration"></a>
 <h2>Configuration</h2>
-<p>The following sections identify the various custom settings used within the site.xml and explains what we expect to result on the page.</p><section>
+<p>The following sections identify the various custom settings used within the site.xml and explains what we expect to result on the page.</p><section><a id="Footer_Elements"></a>
 <h3>Footer Elements</h3>
-<p>The sections below relate to configuration of the page footer.</p><section>
+<p>The sections below relate to configuration of the page footer.</p><section><a id="GitHub"></a>
 <h4>GitHub</h4>
 <p>Github is one of several source control management solutions supported in the media bar, the Github element has 2 attributes, organisation and repository. organisation is the Github user/organisation to whom the repository belongs, while repository is the Github repository name. The skin will use this to build the URL with the path <a href="https://github.com/stevecrox/maven-site-bootstrap-skin" class="externalLink">https://github.com/stevecrox/maven-site-bootstrap-skin</a></p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
   [...]
   &lt;custom&gt;
@@ -431,11 +385,10 @@ Well maybe toast is better</p>
   &lt;/custom&gt;
   [...]
 &lt;/project&gt;
-</code></pre></div></section><section>
+</code></pre></section><section><a id="Twitter"></a>
 <h4>Twitter</h4>
 <p>I have added a Twitter element to ensure the footer has some content and the icon should appear on the right side of the footer. This will create the url <code>https://twitter.com/stevecrox0914</code></p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
   [...]
   &lt;custom&gt;
@@ -447,7 +400,7 @@ Well maybe toast is better</p>
   &lt;/custom&gt;
   [...]
 &lt;/project&gt;
-</code></pre></div></section></section></section></section>
+</code></pre></section></section></section></section>
       </div>
     </main>
 
@@ -475,20 +428,11 @@ Well maybe toast is better</p>
             <div id="copyrightDiv" class="pt-3">
               <p>&#169;
                   
-          2022&#x2013;2024
+          2022&#x2013;2026
     
                                         Stephen Crocker
                                             </p>
                               <div id="poweredByDiv">                                        
-          
-        
-        
-        
-        
-        
-      <img id="poweredBy.Img" src="image/example-banner-right.png"  alt="alternativeText"  width="128px" height="62px" 
-                  style="border: 0; " 
-              />
   
                                     </div>
                           </div>

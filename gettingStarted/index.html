@@ -26,7 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="generator" content="#generatedBy()" />
 
-    <title>Maven Site Bootstrap Skin Parent &#x2013; Getting Started</title>
+    <title>Getting Started – Maven Site Bootstrap Skin Parent</title>
 
         <link rel="icon" href=".././img/favicons/favicon.ico">
     <!-- CSS Stylesheets, site.css is included so downstream projects can override them as appropriate. -->
@@ -126,7 +126,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../dependency-convergence.html" id="Dependency ConvergenceDropdownLink" title="Dependency Convergence"  class="dropdown-item" >Dependency Convergence</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                          </li>
+                                                      <a href="../dependency-info.html" id="Maven CoordinatesDropdownLink" title="Maven Coordinates"  class="dropdown-item" >Maven Coordinates</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="../distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -158,13 +158,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../dev-activity.html" id="Developer ActivityDropdownLink" title="Developer Activity"  class="dropdown-item" >Developer Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../surefire-report.html" id="Surefire ReportDropdownLink" title="Surefire Report"  class="dropdown-item" >Surefire Report</a>                          </li>
+                                                      <a href="../surefire.html" id="SurefireDropdownLink" title="Surefire"  class="dropdown-item" >Surefire</a>                          </li>
                                   </ul>
               </li>
                               </ul>
@@ -229,7 +223,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../dependency-convergence.html" id="Dependency ConvergenceDropdownLink" title="Dependency Convergence"  class="dropdown-item" >Dependency Convergence</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                          </li>
+                                                      <a href="../dependency-info.html" id="Maven CoordinatesDropdownLink" title="Maven Coordinates"  class="dropdown-item" >Maven Coordinates</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="../distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -261,13 +255,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="../jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="../changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../dev-activity.html" id="Developer ActivityDropdownLink" title="Developer Activity"  class="dropdown-item" >Developer Activity</a>                          </li>
-                                      <li class="nav-item dropdown-item">
-                                                      <a href="../surefire-report.html" id="Surefire ReportDropdownLink" title="Surefire Report"  class="dropdown-item" >Surefire Report</a>                          </li>
+                                                      <a href="../surefire.html" id="SurefireDropdownLink" title="Surefire"  class="dropdown-item" >Surefire</a>                          </li>
                                   </ul>
               </li>
                               </ul>
@@ -289,12 +277,12 @@
                           
       
       
-  <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2024-04-10</span>
+  <span id="projectLastPublished" class="px-1 navbar-text">Last Published: 2026-02-10</span>
                                       <span id="projectBar.DateVersion.Spacer" class="px-1 navbar-text">|</span>
                                       
     
       
-    <span id="projectVersion" class="px-1 navbar-text">Version: 1.4.3</span>
+    <span id="projectVersion" class="px-1 navbar-text">Version: 1.5.0</span>
                       </div>
               </div>
     </nav>
@@ -304,25 +292,24 @@
         <div class="container mt-3 rounded">
                   
     
-    <section>
+    <section><a id="Getting_Started"></a>
 <h1>Getting Started</h1>
 <hr />
 The aim of this skin is to make each aspect of the layout configuration but provide sane defaults so you can minimise the amount of configuration you need to provide
-<section>
+<section><a id="Usage"></a>
 <h2>Usage</h2>
 <p>To use this skin in your project, use the skin element of the site.xml site descriptor:</p>
 
-<div class="verbatim">
 <pre><code class="language-xml">    &lt;project name=&quot;xxx&quot;&gt;
       [...]
       &lt;skin&gt;
           &lt;groupId&gt;io.github.stevecrox.maven.skins&lt;/groupId&gt;
           &lt;artifactId&gt;bootstrap-site-skin&lt;/artifactId&gt;
-          &lt;version&gt;1.4.3&lt;/version&gt;
+          &lt;version&gt;1.5.0&lt;/version&gt;
       &lt;/skin&gt;
       [...]
     &lt;/project&gt;
-</code></pre></div></section><section>
+</code></pre></section><section><a id="Site_Configuration"></a>
 <h2>Site Configuration</h2>
 <p>This skin supports a number of configuration options, allowing you to enable various Bootstrap components and configure them to meet your needs. The configuration is specified within the <a href="https://maven.apache.org/doxia/doxia-sitetools/doxia-decoration-model/decoration.html" class="externalLink"><code>site.xml</code></a> using the <code>&lt;custom&gt;&lt;bootstrapSkin&gt;</code> element. The following links provide information on various aspects of the skins.</p>
 <ul>
@@ -332,11 +319,10 @@ The aim of this skin is to make each aspect of the layout configuration but prov
 <li><a href="footer/index.html">Footer Configuration</a></li>
 <li><a href="projectinfobar/index.html">Project Info Bar Configuration</a></li>
 <li><a href="sidebar.html">Sidebar Configuration</a></li>
-</ul></section><section>
+</ul></section><section><a id="Theming"></a>
 <h2>Theming</h2>
 <p>The Bootstrap default theme is used unless either a Bootswatch theme is specified or a <code>css/maven-theme.css</code> file has been included within the site resources. Below is an example of adding the <a href="https://bootswatch.com/darkly/" class="externalLink">darkly bootswatch theme</a> to the site.</p>
 
-<div class="verbatim">
 <pre><code class="language-xml">    &lt;project name=&quot;xxx&quot;&gt;
       [...]
       &lt;custom&gt;
@@ -346,9 +332,9 @@ The aim of this skin is to make each aspect of the layout configuration but prov
       &lt;/custom&gt;
       [...]
     &lt;/project&gt;
-</code></pre></div></section><section>
+</code></pre></section><section><a id="Responsive_Design"></a>
 <h2>Responsive Design</h2>
-<p>All elements within the skin should follow responsive design using Bootstraps inherit Responsive design elements. The site layout is tested using the test widths the <a href="https://getbootstrap.com/docs/5.0/layout/grid/" class="externalLink">bootstrap grid system</a> specifies to confirm it scales correctly.</p></section><section>
+<p>All elements within the skin should follow responsive design using Bootstraps inherit Responsive design elements. The site layout is tested using the test widths the <a href="https://getbootstrap.com/docs/5.0/layout/grid/" class="externalLink">bootstrap grid system</a> specifies to confirm it scales correctly.</p></section><section><a id="Examples"></a>
 <h2>Examples</h2>
 <p>The layout options are sites using different <code>site.xml</code> configurations, these are provided for testing purposes but should also be useful in identifying how you can use the tool. The Source code can be <a href="https://github.com/stevecrox/maven-site-bootstrap-skin" class="externalLink">found on github</a>, you can find the site.xml files here:</p>
 <table class="table table-striped">
@@ -399,7 +385,7 @@ The aim of this skin is to make each aspect of the layout configuration but prov
             <div id="copyrightDiv" class="pt-3">
               <p>&#169;
                   
-          2022&#x2013;2024
+          2022&#x2013;2026
     
                                         Stephen Crocker
                                             </p>
