@@ -1,19 +1,19 @@
 {
-    "name": "@pallassystems/bootstrap-site-skin",
-    "version": "0.0.1",
-    "description": "Package JSON to help pulled down the libraries needed for the Apache Velocity templates and so dependabot can update when needed.",
-    "homepage": "https://github.com/stevecrox/maven-site-bootstrap-skin",
-    "keywords": [
-      "bootstrap",
-      "maven",
-      "docs"
-    ],
-    "license": "Apache-2.0",
-    "private": false,
-    "dependencies": {
-      "bootstrap": "^5.3.3",
-      "bootstrap-icons":"^1.11.3",
-      "code-prettify":"^0.1.0", 
-      "jquery":"^4.0.0"
-    }
+  "name": "@pallassystems/bootstrap-site-skin",
+  "version": "0.0.1",
+  "description": "Package JSON to help pulled down the libraries needed for the Apache Velocity templates and so dependabot can update when needed.",
+  "homepage": "https://github.com/stevecrox/maven-site-bootstrap-skin",
+  "keywords": [
+    "bootstrap",
+    "maven",
+    "docs"
+  ],
+  "license": "Apache-2.0",
+  "private": false,
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "code-prettify": "^0.1.0",
+    "jquery": "^4.0.0"
   }
+}
